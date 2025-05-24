@@ -54,6 +54,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         
         /* Header */
@@ -64,10 +65,12 @@
             padding: 20px 0;
             position: relative;
             z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -76,17 +79,20 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         nav a {
@@ -95,7 +101,7 @@
             font-weight: 500;
             position: relative;
             padding: 5px 0;
-            font-size: 16px;
+            font-size: clamp(14px, 2vw, 16px);
         }
         
         nav a::after {
@@ -117,18 +123,24 @@
         .hero {
             display: flex;
             align-items: center;
-            padding: 80px 0 60px;
-            gap: 40px;
+            padding: clamp(40px, 8vw, 80px) 0 clamp(30px, 6vw, 60px);
+            gap: clamp(20px, 5vw, 40px);
             position: relative;
+            flex-direction: column;
         }
         
         .hero-content {
             flex: 1;
             z-index: 2;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: clamp(32px, 6vw, 48px);
             margin-bottom: 20px;
             line-height: 1.2;
             background: linear-gradient(to right, var(--light), var(--accent));
@@ -138,7 +150,7 @@
         }
         
         .hero p {
-            font-size: 18px;
+            font-size: clamp(16px, 3vw, 18px);
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 30px;
             max-width: 600px;
@@ -148,11 +160,13 @@
             flex: 1;
             position: relative;
             z-index: 1;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .hero-image img {
             width: 100%;
-            max-width: 600px;
             border-radius: 16px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
             animation: float 6s ease-in-out infinite;
@@ -161,20 +175,22 @@
         /* Category Tabs */
         .category-tabs {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 30px;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 0 10px;
         }
         
         .category-tab {
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 14px;
+            font-size: clamp(12px, 2vw, 14px);
             font-weight: 500;
+            white-space: nowrap;
         }
         
         .category-tab:hover, .category-tab.active {
@@ -185,13 +201,13 @@
         
         /* Tools Section */
         .tools-section {
-            padding: 40px 0 60px;
+            padding: clamp(30px, 5vw, 40px) 0 clamp(40px, 6vw, 60px);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 36px;
+            margin-bottom: clamp(25px, 5vw, 40px);
+            font-size: clamp(28px, 5vw, 36px);
             position: relative;
             display: inline-block;
         }
@@ -209,12 +225,13 @@
         
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
         }
         
         .tool-card {
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -257,7 +274,7 @@
         }
         
         .tool-icon {
-            font-size: 42px;
+            font-size: clamp(36px, 6vw, 42px);
             margin-bottom: 15px;
             background: linear-gradient(to bottom, var(--primary), var(--secondary));
             -webkit-background-clip: text;
@@ -271,21 +288,21 @@
         }
         
         .tool-card h3 {
-            font-size: 20px;
+            font-size: clamp(18px, 3vw, 20px);
             margin-bottom: 12px;
             color: var(--light);
         }
         
         .tool-card p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
+            font-size: clamp(13px, 2vw, 14px);
         }
         
         /* AdSense Container */
         .ad-container {
             width: 100%;
-            margin: 40px 0;
-            padding: 20px;
+            margin: 30px 0;
+            padding: 15px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             display: flex;
@@ -303,20 +320,21 @@
         
         /* Features Section */
         .features-section {
-            padding: 60px 0;
+            padding: clamp(40px, 6vw, 60px) 0;
             background: rgba(0, 0, 0, 0.1);
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
         }
         
         .feature-card {
-            padding: 30px;
+            padding: 25px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             transition: all 0.3s ease;
         }
         
@@ -326,7 +344,7 @@
         }
         
         .feature-icon {
-            font-size: 36px;
+            font-size: clamp(30px, 4vw, 36px);
             color: var(--accent);
             flex-shrink: 0;
             transition: transform 0.3s ease;
@@ -337,20 +355,20 @@
         }
         
         .feature-content h3 {
-            font-size: 20px;
+            font-size: clamp(18px, 3vw, 20px);
             margin-bottom: 10px;
             color: var(--light);
         }
         
         .feature-content p {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 15px;
+            font-size: clamp(14px, 2vw, 15px);
         }
         
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.2);
-            padding: 60px 0 30px;
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
             position: relative;
             overflow: hidden;
         }
@@ -369,15 +387,16 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
         }
         
         .footer-column h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 18px;
+            margin-bottom: 15px;
+            font-size: clamp(16px, 2vw, 18px);
             position: relative;
             display: inline-block;
         }
@@ -402,7 +421,7 @@
         }
         
         .footer-column li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             transition: all 0.3s ease;
         }
         
@@ -414,7 +433,7 @@
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 15px;
+            font-size: clamp(14px, 2vw, 15px);
             display: block;
             position: relative;
             padding-left: 0;
@@ -438,16 +457,16 @@
         
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             margin-top: 15px;
         }
         
         .social-links a {
             color: var(--light);
-            font-size: 20px;
+            font-size: 18px;
             transition: all 0.3s ease;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -463,26 +482,27 @@
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
+            font-size: clamp(12px, 2vw, 14px);
+            padding: 0 15px;
         }
         
         /* Floating CTA Button */
         .floating-cta {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 20px;
+            right: 20px;
             background: var(--secondary);
             color: var(--darker);
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 22px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             z-index: 100;
@@ -527,64 +547,47 @@
             }
         }
         
-        /* Responsive Design */
-        @media (max-width: 992px) {
+        /* Desktop Specific Styles */
+        @media (min-width: 992px) {
             .hero {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row;
+                text-align: left;
             }
             
             .hero-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                text-align: left;
+                align-items: flex-start;
             }
             
             .hero p {
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .section-title {
-                font-size: 30px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .tool-card {
-                padding: 20px;
+                text-align: left;
             }
             
             .category-tabs {
-                gap: 8px;
+                padding: 0;
             }
             
-            .category-tab {
-                padding: 8px 15px;
-                font-size: 12px;
+            .tools-grid {
+                padding: 0;
+            }
+            
+            .features-grid {
+                padding: 0;
+            }
+            
+            .footer-content {
+                padding: 0;
+            }
+            
+            .copyright {
+                padding: 0;
+            }
+        }
+        
+        /* Tablet Adjustments */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
         }
     </style>
@@ -664,11 +667,14 @@
             
             <div class="tools-grid">
                 <!-- PDF Management (8 tools) -->
-                <div class="tool-card glass-card popular" data-category="organize" style="animation-delay: 0.1s">
-                    <div class="tool-icon"><i class="fas fa-object-group"></i></div>
-                    <h3>Merge PDF</h3>
-                    <p>Combine multiple PDFs into one document</p>
-                </div>
+              <a href="Marge-Pdf.html" style="text-decoration: none; color: inherit;">
+                   <div class="tool-card glass-card popular" data-category="organize" style="animation-delay: 0.1s">
+                   <div class="tool-icon"><i class="fas fa-object-group"></i></div>
+                   <h3>Merge PDF</h3>
+                   <p>Combine multiple PDFs into one document</p>
+             </div>
+                </a>
+                
                 <div class="tool-card glass-card popular" data-category="organize" style="animation-delay: 0.2s">
                     <div class="tool-icon"><i class="fas fa-cut"></i></div>
                     <h3>Split PDF</h3>
@@ -1106,19 +1112,6 @@
                         card.style.display = 'none';
                     }
                 });
-            });
-        });
-        
-        // Tool Card Click Handler
-        document.querySelectorAll('.tool-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const toolName = this.querySelector('h3').textContent;
-                // In a real implementation, this would redirect to the tool page
-                // window.location.href = `/tools/${toolName.toLowerCase().replace(' ', '-')}`;
-                
-                // For demo purposes:
-                console.log(`Opening tool: ${toolName}`);
-                alert(`You clicked on ${toolName}. This would normally open the tool interface.`);
             });
         });
         
