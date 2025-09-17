@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator | PDFMasterPro</title>
+    <meta name="description" content="Free online QR code generator with custom colors, gradients, shapes, and logo upload.">
+    
+    <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(30, 41, 59, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --error: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            background-attachment: fixed;
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--secondary), #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .tool-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .tool-description {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .main-card {
+            padding: 30px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .settings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .settings-group {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .group-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .group-title i {
+            font-size: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.2);
+        }
+        
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .checkbox-label {
+            margin-left: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .range-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .range-value {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+        
+        .range-control {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        
+        .range-control::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .color-picker-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .color-picker {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: transparent;
+        }
+        
+        .color-picker::-webkit-color-swatch {
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .color-picker::-moz-color-swatch {
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .color-stops-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .color-stop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .color-stop input[type="color"] {
+             width: 30px;
+             height: 30px;
+        }
+        
+        .color-stop-remove {
+            background: none;
+            border: none;
+            color: var(--error);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #1d4ed8, var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            min-height: 400px;
+        }
+        
+        .qr-preview {
+            width: 250px;
+            height: 250px;
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #qrcode {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        #qrcode canvas, #qrcode svg {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tool-title { font-size: 28px; }
+            .tool-description { font-size: 16px; }
+            .main-card { padding: 20px; }
+            .btn { padding: 10px 15px; font-size: 14px; }
+        }
+        
+        @media (max-width: 480px) {
+            .tool-title { font-size: 24px; }
+            .btn-group { gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">
+                <i class="fas fa-qrcode"></i>
+                <span>PDFMasterPro</span>
+            </a>
+            <h1 class="tool-title animate__animated animate__fadeIn">QR Code Generator</h1>
+            <p class="tool-description animate__animated animate__fadeIn">Create custom QR codes with advanced styling options</p>
+        </header>
+
+        <div class="main-card glass-card animate__animated animate__fadeIn">
+            <div class="content-container">
+                <div class="settings-container">
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-edit"></i> QR Code Content</h4>
+                        <div class="form-group">
+                            <textarea id="qrText" class="form-control" rows="4" placeholder="Enter text, URL, or data for QR code">https://pdfmasterpro.com</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-shapes"></i> Shapes & Style</h4>
+                        <div class="form-group">
+                            <div class="form-label">Dots Style</div>
+                            <select id="dotsStyle" class="form-control form-select">
+                                <option value="square">Squares</option>
+                                <option value="dots">Dots</option>
+                                <option value="rounded" selected>Rounded</option>
+                                <option value="extra-rounded">Extra Rounded</option>
+                                <option value="classy">Classy</option>
+                                <option value="classy-rounded">Classy Rounded</option>
+                            </select>
+                        </div>
+                         <div class="form-group">
+                            <div class="form-label">Corner Eye Style</div>
+                            <select id="cornersSquareStyle" class="form-control form-select">
+                                <option value="square">Square</option>
+                                <option value="dot">Dot</option>
+                                <option value="extra-rounded" selected>Extra Rounded</option>
+                            </select>
+                        </div>
+                         <div class="form-group">
+                            <div class="form-label">Corner Dot Style</div>
+                            <select id="cornersDotStyle" class="form-control form-select">
+                                <option value="square">Square</option>
+                                <option value="dot" selected>Dot</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-palette"></i> Colors</h4>
+                        
+                        <div class="form-group">
+                            <div class="form-label">Foreground</div>
+                            <select id="fgType" class="form-control form-select">
+                                <option value="solid">Solid Color</option>
+                                <option value="gradient">Gradient</option>
+                            </select>
+                        </div>
+                        <div id="fgSolidColor" class="form-group">
+                             <input type="color" id="fgColor" class="color-picker" value="#000000">
+                        </div>
+                        <div id="fgGradientOptions" class="form-group" style="display: none;">
+                            <div class="color-stops-container" id="fgColorStops"></div>
+                            <button id="addFgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
+                             <div class="form-group" style="margin-top:10px;">
+                                <select id="fgGradientType" class="form-control form-select">
+                                    <option value="linear">Linear</option>
+                                    <option value="radial">Radial</option>
+                                </select>
+                             </div>
+                             <div id="fgGradientAngleContainer" class="range-group">
+                                <div class="form-label">Angle (<span id="fgGradientAngleValue">0</span>°)</div>
+                                <input type="range" id="fgGradientAngle" class="range-control" min="0" max="360" value="0">
+                             </div>
+                        </div>
+
+                         <div class="form-group">
+                            <div class="form-label">Background</div>
+                            <select id="bgType" class="form-control form-select">
+                                <option value="solid">Solid Color</option>
+                                <option value="gradient">Gradient</option>
+                            </select>
+                        </div>
+                        <div id="bgSolidColor" class="form-group">
+                             <input type="color" id="bgColor" class="color-picker" value="#ffffff">
+                        </div>
+                        <div id="bgGradientOptions" class="form-group" style="display: none;">
+                            <div class="color-stops-container" id="bgColorStops"></div>
+                            <button id="addBgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
+                             <div class="form-group" style="margin-top:10px;">
+                                <select id="bgGradientType" class="form-control form-select">
+                                    <option value="linear">Linear</option>
+                                    <option value="radial">Radial</option>
+                                </select>
+                             </div>
+                              <div id="bgGradientAngleContainer" class="range-group">
+                                <div class="form-label">Angle (<span id="bgGradientAngleValue">0</span>°)</div>
+                                <input type="range" id="bgGradientAngle" class="range-control" min="0" max="360" value="0">
+                             </div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-image"></i> Logo</h4>
+                        <div class="form-group">
+                            <div class="form-label">Upload Logo</div>
+                            <input type="file" id="logoUpload" accept="image/*" class="form-control" style="padding: 5px;">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">Logo Size (<span id="logoSizeValue">30</span>%)</div>
+                            <input type="range" id="logoSize" class="range-control" min="0.1" max="0.5" step="0.05" value="0.3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="preview-container">
+                    <div class="qr-preview">
+                        <div id="qrcode"></div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download PNG
+                        </button>
+                         <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PDFMasterPro &copy; 2025 | Free Online Tools</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const getEl = (id) => document.getElementById(id);
+
+            // --- DOM Elements ---
+            const qrText = getEl('qrText');
+            const dotsStyle = getEl('dotsStyle');
+            const cornersSquareStyle = getEl('cornersSquareStyle');
+            const cornersDotStyle = getEl('cornersDotStyle');
+            
+            // Foreground
+            const fgType = getEl('fgType');
+            const fgSolidColor = getEl('fgSolidColor');
+            const fgColor = getEl('fgColor');
+            const fgGradientOptions = getEl('fgGradientOptions');
+            const fgColorStopsContainer = getEl('fgColorStops');
+            const addFgColorBtn = getEl('addFgColor');
+            const fgGradientType = getEl('fgGradientType');
+            const fgGradientAngleContainer = getEl('fgGradientAngleContainer');
+            const fgGradientAngle = getEl('fgGradientAngle');
+            const fgGradientAngleValue = getEl('fgGradientAngleValue');
+
+            // Background
+            const bgType = getEl('bgType');
+            const bgSolidColor = getEl('bgSolidColor');
+            const bgColor = getEl('bgColor');
+            const bgGradientOptions = getEl('bgGradientOptions');
+            const bgColorStopsContainer = getEl('bgColorStops');
+            const addBgColorBtn = getEl('addBgColor');
+            const bgGradientType = getEl('bgGradientType');
+            const bgGradientAngleContainer = getEl('bgGradientAngleContainer');
+            const bgGradientAngle = getEl('bgGradientAngle');
+            const bgGradientAngleValue = getEl('bgGradientAngleValue');
+
+            // Logo
+            const logoUpload = getEl('logoUpload');
+            const logoSize = getEl('logoSize');
+            const logoSizeValue = getEl('logoSizeValue');
+            
+            // Actions
+            const downloadBtn = getEl('downloadBtn');
+            const resetBtn = getEl('resetBtn');
+            const qrcodeDiv = getEl('qrcode');
+            
+            let logoImage = null;
+
+            // --- QR Code Styling Instance ---
+            const qrCode = new QRCodeStyling({
+                width: 220,
+                height: 220,
+                data: "https://pdfmasterpro.com",
+                image: "",
+                dotsOptions: { color: "#000000", type: "rounded" },
+                backgroundOptions: { color: "#ffffff" },
+                cornersSquareOptions: { type: "extra-rounded" },
+                cornersDotOptions: { type: "dot" },
+                imageOptions: { crossOrigin: "anonymous", margin: 5, imageSize: 0.3 }
+            });
+
+            qrCode.append(qrcodeDiv);
+
+            // --- Main Update Function ---
+            function updateQRCode() {
+                const options = {
+                    data: qrText.value || "https://pdfmasterpro.com",
+                    dotsOptions: { type: dotsStyle.value },
+                    cornersSquareOptions: { type: cornersSquareStyle.value },
+                    cornersDotOptions: { type: cornersDotStyle.value },
+                    image: logoImage || "",
+                    imageOptions: {
+                        imageSize: parseFloat(logoSize.value),
+                        margin: 5
+                    }
+                };
+
+                // Set Foreground
+                if (fgType.value === 'solid') {
+                    options.dotsOptions.color = fgColor.value;
+                } else {
+                    options.dotsOptions.gradient = {
+                        type: fgGradientType.value,
+                        rotation: parseFloat(fgGradientAngle.value),
+                        colorStops: getColorStops(fgColorStopsContainer)
+                    };
+                }
+
+                // Set Background
+                if (bgType.value === 'solid') {
+                    options.backgroundOptions = { color: bgColor.value };
+                } else {
+                    options.backgroundOptions = {
+                        gradient: {
+                            type: bgGradientType.value,
+                            rotation: parseFloat(bgGradientAngle.value),
+                            colorStops: getColorStops(bgColorStopsContainer)
+                        }
+                    };
+                }
+                
+                qrCode.update(options);
+            }
+
+            // --- Gradient & Color Stop Helpers ---
+            function createColorStop(color) {
+                const stopDiv = document.createElement('div');
+                stopDiv.className = 'color-stop';
+                const colorInput = document.createElement('input');
+                colorInput.type = 'color';
+                colorInput.className = 'gradient-color';
+                colorInput.value = color;
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'color-stop-remove';
+                removeBtn.innerHTML = '&times;';
+                
+                stopDiv.appendChild(colorInput);
+                stopDiv.appendChild(removeBtn);
+
+                removeBtn.addEventListener('click', () => {
+                    stopDiv.remove();
+                    updateQRCode();
+                });
+                colorInput.addEventListener('input', updateQRCode);
+                return stopDiv;
+            }
+            
+            function addColorStop(container) {
+                if (container.children.length < 5) {
+                    const newColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+                    container.appendChild(createColorStop(newColor));
+                    updateQRCode();
+                } else {
+                    alert("Maximum of 5 color stops reached.");
+                }
+            }
+
+            function getColorStops(container) {
+                const stops = [];
+                const children = container.children;
+                for (let i = 0; i < children.length; i++) {
+                    const color = children[i].querySelector('.gradient-color').value;
+                    const offset = children.length === 1 ? 0 : i / (children.length - 1);
+                    stops.push({ offset: offset, color: color });
+                }
+                return stops;
+            }
+
+            // --- Event Listeners ---
+            [qrText, dotsStyle, cornersSquareStyle, cornersDotStyle, fgColor, bgColor].forEach(el => {
+                el.addEventListener('input', updateQRCode);
+            });
+
+            // Foreground Type Change
+            fgType.addEventListener('change', () => {
+                fgSolidColor.style.display = (fgType.value === 'solid') ? 'block' : 'none';
+                fgGradientOptions.style.display = (fgType.value === 'gradient') ? 'block' : 'none';
+                updateQRCode();
+            });
+
+            // Background Type Change
+            bgType.addEventListener('change', () => {
+                bgSolidColor.style.display = (bgType.value === 'solid') ? 'block' : 'none';
+                bgGradientOptions.style.display = (bgType.value === 'gradient') ? 'block' : 'none';
+                updateQRCode();
+            });
+
+            // Gradient Control Events
+            [fgGradientType, fgGradientAngle, bgGradientType, bgGradientAngle].forEach(el => {
+                el.addEventListener('input', () => {
+                    fgGradientAngleContainer.style.display = (fgGradientType.value === 'linear') ? 'block' : 'none';
+                    bgGradientAngleContainer.style.display = (bgGradientType.value === 'linear') ? 'block' : 'none';
+                    fgGradientAngleValue.textContent = fgGradientAngle.value;
+                    bgGradientAngleValue.textContent = bgGradientAngle.value;
+                    updateQRCode();
+                });
+            });
+
+            addFgColorBtn.addEventListener('click', () => addColorStop(fgColorStopsContainer));
+            addBgColorBtn.addEventListener('click', () => addColorStop(bgColorStopsContainer));
+
+            // Logo Events
+            logoSize.addEventListener('input', () => {
+                logoSizeValue.textContent = Math.round(parseFloat(logoSize.value) * 100);
+                updateQRCode();
+            });
+
+            logoUpload.addEventListener('change', (e) => {
+                if (e.target.files && e.target.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        logoImage = event.target.result;
+                        updateQRCode();
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                } else {
+                    logoImage = null;
+                    updateQRCode();
+                }
+            });
+
+            // Action Buttons
+            downloadBtn.addEventListener('click', () => {
+                qrCode.download({ name: "qrcode-pdfmasterpro", extension: "png" });
+            });
+
+            resetBtn.addEventListener('click', () => {
+                location.reload();
+            });
+            
+            // --- Initial Setup ---
+            fgColorStopsContainer.appendChild(createColorStop("#000000"));
+            fgColorStopsContainer.appendChild(createColorStop("#2563eb"));
+            bgColorStopsContainer.appendChild(createColorStop("#ffffff"));
+            
+            updateQRCode();
+        });
+    </script>
+</body>
+</html>
