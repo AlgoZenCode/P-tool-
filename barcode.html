@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Generator | PDFMasterPro</title>
+    <meta name="description" content="Free online barcode generator for retail, inventory, and personal use.">
+    <meta name="keywords" content="barcode generator, custom barcode, free barcode maker">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(30, 41, 59, 0.5);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --error: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            background-attachment: fixed;
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--secondary), #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .tool-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .tool-description {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .main-card {
+            padding: 30px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .settings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .settings-group {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .group-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .group-title i {
+            font-size: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.2);
+        }
+        
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+        
+        .range-control {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        
+        .range-control::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        .color-picker {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: transparent;
+        }
+        
+        .color-picker::-webkit-color-swatch {
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .color-picker::-moz-color-swatch {
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .color-stops-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .color-stop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .color-stop input[type="color"] {
+             width: 30px;
+             height: 30px;
+        }
+        
+        .color-stop-remove {
+            background: none;
+            border: none;
+            color: var(--error);
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #1d4ed8, var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+            min-height: 400px;
+        }
+        
+        .barcode-preview {
+            width: 100%;
+            min-height: 150px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #barcode {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tool-title { font-size: 28px; }
+            .tool-description { font-size: 16px; }
+            .main-card { padding: 20px; }
+            .btn { padding: 10px 15px; font-size: 14px; }
+        }
+        
+        @media (max-width: 480px) {
+            .tool-title { font-size: 24px; }
+            .btn-group { gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">
+                <i class="fas fa-barcode"></i>
+                <span>PDFMasterPro</span>
+            </a>
+            <h1 class="tool-title animate__animated animate__fadeIn">Barcode Generator</h1>
+            <p class="tool-description animate__animated animate__fadeIn">Create custom barcodes for your products and inventory</p>
+        </header>
+
+        <div class="main-card glass-card animate__animated animate__fadeIn">
+            <div class="content-container">
+                <div class="settings-container">
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-edit"></i> Barcode Data & Type</h4>
+                        <div class="form-group">
+                             <div class="form-label">Data</div>
+                            <input type="text" id="barcodeData" class="form-control" value="1234567890">
+                        </div>
+                         <div class="form-group">
+                            <div class="form-label">Format</div>
+                             <select id="barcodeFormat" class="form-control form-select">
+                                <option value="CODE128" selected>CODE128</option>
+                                <option value="CODE39">CODE39</option>
+                                <option value="EAN13">EAN-13</option>
+                                <option value="UPC">UPC-A</option>
+                                <option value="ITF">ITF-14</option>
+                                <option value="MSI">MSI</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-ruler-combined"></i> Dimensions & Display</h4>
+                        <div class="form-group">
+                            <div class="form-label">Bar Width (<span id="widthValue">2</span>px)</div>
+                            <input type="range" id="barWidth" class="range-control" min="1" max="4" value="2">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-label">Height (<span id="heightValue">100</span>px)</div>
+                            <input type="range" id="barHeight" class="range-control" min="40" max="150" value="100">
+                        </div>
+                        <div class="form-group">
+                           <div class="form-label">Display Value</div>
+                           <select id="displayValue" class="form-control form-select">
+                                <option value="true">Show</option>
+                                <option value="false">Hide</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h4 class="group-title"><i class="fas fa-palette"></i> Colors</h4>
+                        <div class="form-group">
+                            <div class="form-label">Bar Color</div>
+                             <input type="color" id="lineColor" class="color-picker" value="#000000">
+                        </div>
+                       
+                        <div class="form-group">
+                            <div class="form-label">Background</div>
+                            <select id="bgType" class="form-control form-select">
+                                <option value="solid">Solid Color</option>
+                                <option value="gradient">Gradient</option>
+                            </select>
+                        </div>
+                        <div id="bgSolidColor" class="form-group">
+                             <input type="color" id="bgColor" class="color-picker" value="#ffffff">
+                        </div>
+                        <div id="bgGradientOptions" class="form-group" style="display: none;">
+                            <div class="color-stops-container" id="bgColorStops"></div>
+                            <button id="addBgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
+                             <div class="form-group" style="margin-top:10px;">
+                                <select id="bgGradientType" class="form-control form-select">
+                                    <option value="linear">Linear</option>
+                                    <option value="radial">Radial</option>
+                                </select>
+                             </div>
+                              <div id="bgGradientAngleContainer" class="range-group">
+                                <div class="form-label">Angle (<span id="bgGradientAngleValue">0</span>°)</div>
+                                <input type="range" id="bgGradientAngle" class="range-control" min="0" max="360" value="0">
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="preview-container">
+                    <div class="barcode-preview">
+                        <svg id="barcode"></svg>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="downloadSVG">
+                            <i class="fas fa-download"></i> Download SVG
+                        </button>
+                         <button class="btn btn-secondary" id="downloadPNG">
+                            <i class="fas fa-download"></i> Download PNG
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>PDFMasterPro &copy; 2024 | Free Online Tools</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const getEl = (id) => document.getElementById(id);
+
+            // --- DOM Elements ---
+            const barcodeData = getEl('barcodeData');
+            const barcodeFormat = getEl('barcodeFormat');
+            const barWidth = getEl('barWidth');
+            const widthValue = getEl('widthValue');
+            const barHeight = getEl('barHeight');
+            const heightValue = getEl('heightValue');
+            const displayValue = getEl('displayValue');
+            const lineColor = getEl('lineColor');
+            
+            // Background
+            const bgType = getEl('bgType');
+            const bgSolidColor = getEl('bgSolidColor');
+            const bgColor = getEl('bgColor');
+            const bgGradientOptions = getEl('bgGradientOptions');
+            const bgColorStopsContainer = getEl('bgColorStops');
+            const addBgColorBtn = getEl('addBgColor');
+            const bgGradientType = getEl('bgGradientType');
+            const bgGradientAngleContainer = getEl('bgGradientAngleContainer');
+            const bgGradientAngle = getEl('bgGradientAngle');
+            const bgGradientAngleValue = getEl('bgGradientAngleValue');
+
+            // Preview & Actions
+            const barcodePreview = getEl('barcode');
+            const barcodePreviewContainer = document.querySelector('.barcode-preview');
+            const downloadSVG = getEl('downloadSVG');
+            const downloadPNG = getEl('downloadPNG');
+
+            // --- Main Update Function ---
+            function generateBarcode() {
+                const data = barcodeData.value;
+                if (!data) {
+                    barcodePreview.innerHTML = '';
+                    return;
+                }
+
+                // Update background style
+                if (bgType.value === 'solid') {
+                    barcodePreviewContainer.style.background = bgColor.value;
+                } else {
+                    const stops = getColorStops(bgColorStopsContainer);
+                    const stopString = stops.map(s => `${s.color} ${s.offset * 100}%`).join(', ');
+                    if(bgGradientType.value === 'linear') {
+                         barcodePreviewContainer.style.background = `linear-gradient(${bgGradientAngle.value}deg, ${stopString})`;
+                    } else {
+                         barcodePreviewContainer.style.background = `radial-gradient(circle, ${stopString})`;
+                    }
+                }
+                
+                try {
+                    JsBarcode("#barcode", data, {
+                        format: barcodeFormat.value,
+                        lineColor: lineColor.value,
+                        width: parseInt(barWidth.value),
+                        height: parseInt(barHeight.value),
+                        displayValue: displayValue.value === "true",
+                        background: "transparent" // Make the barcode background transparent
+                    });
+                } catch (e) {
+                    barcodePreview.innerHTML = ''; // Clear on error
+                    console.error(e);
+                }
+            }
+            
+            // --- Gradient & Color Stop Helpers ---
+             function createColorStop(color) {
+                const stopDiv = document.createElement('div');
+                stopDiv.className = 'color-stop';
+                const colorInput = document.createElement('input');
+                colorInput.type = 'color';
+                colorInput.className = 'gradient-color';
+                colorInput.value = color;
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'color-stop-remove';
+                removeBtn.innerHTML = '&times;';
+                
+                stopDiv.appendChild(colorInput);
+                stopDiv.appendChild(removeBtn);
+
+                removeBtn.addEventListener('click', () => {
+                    stopDiv.remove();
+                    generateBarcode();
+                });
+                colorInput.addEventListener('input', generateBarcode);
+                return stopDiv;
+            }
+            
+            function addColorStop(container) {
+                if (container.children.length < 5) {
+                    const newColor = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+                    container.appendChild(createColorStop(newColor));
+                    generateBarcode();
+                } else {
+                    alert("Maximum of 5 color stops reached.");
+                }
+            }
+
+            function getColorStops(container) {
+                const stops = [];
+                const children = container.children;
+                for (let i = 0; i < children.length; i++) {
+                    const color = children[i].querySelector('.gradient-color').value;
+                    const offset = children.length === 1 ? 0 : i / (children.length - 1);
+                    stops.push({ offset: offset, color: color });
+                }
+                return stops;
+            }
+            
+            // --- Event Listeners ---
+            [barcodeData, barcodeFormat, barWidth, barHeight, displayValue, lineColor, bgColor].forEach(el => {
+                el.addEventListener('input', generateBarcode);
+            });
+            
+            barWidth.addEventListener('input', () => widthValue.textContent = barWidth.value);
+            barHeight.addEventListener('input', () => heightValue.textContent = barHeight.value);
+
+            // Background Type Change
+            bgType.addEventListener('change', () => {
+                bgSolidColor.style.display = (bgType.value === 'solid') ? 'block' : 'none';
+                bgGradientOptions.style.display = (bgType.value === 'gradient') ? 'block' : 'none';
+                generateBarcode();
+            });
+            
+            [bgGradientType, bgGradientAngle].forEach(el => {
+                el.addEventListener('input', () => {
+                    bgGradientAngleContainer.style.display = (bgGradientType.value === 'linear') ? 'block' : 'none';
+                    bgGradientAngleValue.textContent = bgGradientAngle.value;
+                    generateBarcode();
+                });
+            });
+
+            addBgColorBtn.addEventListener('click', () => addColorStop(bgColorStopsContainer));
+
+            // --- Download Logic ---
+            function getSVGString() {
+                const svg = barcodePreview;
+                const serializer = new XMLSerializer();
+                let source = serializer.serializeToString(svg);
+                if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+                    source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+                }
+                return '<?xml version="1.0" standalone="no"?>\r\n' + source;
+            }
+
+            downloadSVG.addEventListener('click', () => {
+                 const svgString = getSVGString();
+                 const blob = new Blob([svgString], {type: "image/svg+xml;charset=utf-8"});
+                 saveAs(blob, "barcode.svg");
+            });
+
+            downloadPNG.addEventListener('click', () => {
+                const svgString = getSVGString();
+                const svgBlob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+                const url = URL.createObjectURL(svgBlob);
+                
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Draw background
+                    if (bgType.value === 'solid') {
+                         ctx.fillStyle = bgColor.value;
+                    } else {
+                        const stops = getColorStops(bgColorStopsContainer);
+                        let gradient;
+                        if(bgGradientType.value === 'linear') {
+                             const angle = bgGradientAngle.value * Math.PI / 180;
+                             const x2 = Math.cos(angle) * canvas.width;
+                             const y2 = Math.sin(angle) * canvas.height;
+                             gradient = ctx.createLinearGradient(0, 0, x2, y2);
+                        } else {
+                             gradient = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 0, canvas.width/2, canvas.height/2, canvas.width/2);
+                        }
+                        stops.forEach(s => gradient.addColorStop(s.offset, s.color));
+                        ctx.fillStyle = gradient;
+                    }
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Draw barcode image
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Trigger download
+                    canvas.toBlob(function(blob) {
+                         saveAs(blob, "barcode.png");
+                    });
+                    URL.revokeObjectURL(url);
+                };
+                img.src = url;
+            });
+            
+            // --- Initial Setup ---
+            bgColorStopsContainer.appendChild(createColorStop("#ffffff"));
+            bgColorStopsContainer.appendChild(createColorStop("#dddddd"));
+            generateBarcode();
+        });
+    </script>
+</body>
+</html>
