@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions | PDFMasterPro</title>
+    <meta name="description" content="Terms and Conditions for PDFMasterPro - Understand the rules and guidelines for using our services.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(37, 99, 235, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --error: #ef4444;
+            --selected-blue: #3b82f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            background-attachment: fixed;
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--secondary), #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .page-description {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .content-card {
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .terms-section {
+            margin-bottom: 30px;
+        }
+        
+        .terms-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .terms-icon {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+        
+        .terms-title {
+            font-size: 22px;
+            color: var(--light);
+        }
+        
+        .terms-content {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+        
+        .terms-content p {
+            margin-bottom: 15px;
+        }
+        
+        .terms-content ul, .terms-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .terms-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-title {
+            font-size: 20px;
+            color: var(--light);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            font-size: 20px;
+            color: var(--accent);
+        }
+        
+        .contact-text {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #1d4ed8, var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .warning-note {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--error);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning-icon {
+            color: var(--error);
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 28px;
+            }
+            
+            .page-description {
+                font-size: 16px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            .terms-title {
+                font-size: 20px;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 24px;
+            }
+            
+            .btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDFMasterPro</span>
+            </a>
+            <h1 class="page-title animate__animated animate__fadeIn">Terms and Conditions</h1>
+            <p class="page-description animate__animated animate__fadeIn">Understand the rules and guidelines for using our services</p>
+        </header>
+
+        <div class="last-updated animate__animated animate__fadeIn">
+            Effective Date: 19/09/2025 | Last Updated: 19/09/2025
+        </div>
+
+        <div class="content-card glass-card animate__animated animate__fadeIn">
+            <div class="warning-note">
+                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                <span>By using PDFMasterPro.in, you acknowledge that you have read, understood, and agreed to be bound by these Terms.</span>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h2 class="terms-title">1. Eligibility</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>You must be at least <span class="highlight">18 years of age</span> to use our services.</li>
+                        <li>By using PDFMasterPro.in, you represent and warrant that you meet the eligibility requirements.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2 class="terms-title">2. Services Offered</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>We provide online tools for PDF management, including but not limited to: merging, splitting, compressing, converting, securing, and editing PDF files.</li>
+                        <li>We may add, modify, or discontinue services at our sole discretion without prior notice.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h2 class="terms-title">3. User Responsibilities</h2>
+                </div>
+                <div class="terms-content">
+                    <p>By using our website, you agree that:</p>
+                    <ol>
+                        <li>You will use the services only for <span class="highlight">lawful purposes</span>.</li>
+                        <li>You will not upload files containing harmful, illegal, offensive, or copyrighted content without proper authorization.</li>
+                        <li>You are <span class="highlight">solely responsible</span> for the files and content you upload or process using our tools.</li>
+                        <li>You will not attempt to hack, reverse-engineer, or disrupt our services.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h2 class="terms-title">4. Account Registration</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>Some features may require account creation. You must provide accurate and complete information.</li>
+                        <li>You are responsible for maintaining the confidentiality of your login credentials.</li>
+                        <li>All activities conducted under your account are your responsibility.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h2 class="terms-title">5. File Handling and Data Policy</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>Files uploaded to our service are used <span class="highlight">only for the purpose of processing</span> and are not stored permanently.</li>
+                        <li>Files processed on our server are <span class="highlight">automatically deleted within 12 to 24 hours</span> after completion.</li>
+                        <li>We do not manually review, access, or claim ownership of your files.</li>
+                        <li>For more details, please read our <a href="/privacy-policy" style="color: var(--accent);">Privacy Policy</a>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-copyright"></i>
+                    </div>
+                    <h2 class="terms-title">6. Intellectual Property</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>All content, software, tools, designs, logos, trademarks, and graphics available on PDFMasterPro.in are the intellectual property of the Company.</li>
+                        <li>You are granted a limited, non-transferable license to use the website strictly for personal or business purposes in compliance with these Terms.</li>
+                        <li>You may not copy, reproduce, resell, or exploit our content or services without prior written permission.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h2 class="terms-title">7. Payments and Subscriptions</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>Some services may be free, while others require paid subscriptions.</li>
+                        <li>All payments are processed securely via third-party payment gateways (e.g., Razorpay, Stripe, PayPal).</li>
+                        <li>Fees are <span class="highlight">non-refundable</span> unless required by applicable law.</li>
+                        <li>We reserve the right to change subscription pricing or plans with prior notice.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h2 class="terms-title">8. Limitation of Liability</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>We strive to provide reliable services but do not guarantee uninterrupted, error-free, or 100% secure operation.</li>
+                        <li>PDFMasterPro.in shall not be liable for:
+                            <ul>
+                                <li>Loss of data or files.</li>
+                                <li>Business interruptions or downtime.</li>
+                                <li>Any indirect, incidental, or consequential damages.</li>
+                            </ul>
+                        </li>
+                        <li>Your use of the website and services is at your own risk.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="terms-title">9. Disclaimer of Warranties</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>Our services are provided <span class="highlight">"as is" and "as available"</span>.</li>
+                        <li>We make no warranties regarding accuracy, reliability, or suitability of the services for any particular purpose.</li>
+                        <li>We disclaim all implied warranties to the maximum extent permitted by law.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h2 class="terms-title">10. Third-Party Links</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>Our website may contain links to external third-party websites.</li>
+                        <li>We are not responsible for their content, policies, or practices.</li>
+                        <li>Accessing such links is at your own risk.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h2 class="terms-title">11. Termination of Use</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>We reserve the right to suspend or terminate your account or access if we believe you violated these Terms.</li>
+                        <li>Termination may occur without prior notice.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h2 class="terms-title">12. Indemnification</h2>
+                </div>
+                <div class="terms-content">
+                    <p>You agree to indemnify and hold harmless PDFMasterPro.in, its owners, employees, and affiliates from any claims, damages, liabilities, costs, or expenses arising from:</p>
+                    <ul>
+                        <li>Your use of the services.</li>
+                        <li>Violation of these Terms.</li>
+                        <li>Uploading or sharing unauthorized/copyrighted content.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h2 class="terms-title">13. Governing Law and Dispute Resolution</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>These Terms are governed by the laws of <span class="highlight">India</span>.</li>
+                        <li>Any disputes shall be subject to the jurisdiction of the courts located in India.</li>
+                        <li>We encourage amicable resolution before seeking legal remedies.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="terms-section">
+                <div class="terms-header">
+                    <div class="terms-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h2 class="terms-title">14. Modifications to Terms</h2>
+                </div>
+                <div class="terms-content">
+                    <ul>
+                        <li>We may update or modify these Terms at any time.</li>
+                        <li>Changes will be effective once posted on this page with an updated "Last Updated" date.</li>
+                        <li>Continued use of the services after modifications constitutes acceptance of the revised Terms.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3 class="contact-title">15. Contact Us</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Email:</strong> pdfmasterpro01@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Website:</strong> www.pdfmasterpro.in
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+                <a href="/privacy-policy" class="btn btn-primary">
+                    <i class="fas fa-shield-alt"></i> Privacy Policy
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>PDFMasterPro &copy; 2025 | Free Online PDF Tools</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add animation to terms sections when they come into view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__fadeInUp');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.terms-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
