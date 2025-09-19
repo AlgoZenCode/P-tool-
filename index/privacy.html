@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | PDFMasterPro</title>
+    <meta name="description" content="Privacy Policy for PDFMasterPro - Learn how we handle your data and protect your privacy.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --glass-bg: rgba(37, 99, 235, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --error: #ef4444;
+            --selected-blue: #3b82f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            background-attachment: fixed;
+            color: var(--light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--secondary), #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .page-description {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .content-card {
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .policy-section {
+            margin-bottom: 30px;
+        }
+        
+        .policy-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .policy-icon {
+            font-size: 24px;
+            color: var(--secondary);
+            margin-right: 15px;
+        }
+        
+        .policy-title {
+            font-size: 22px;
+            color: var(--light);
+        }
+        
+        .policy-content {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+        
+        .policy-content p {
+            margin-bottom: 15px;
+        }
+        
+        .policy-content ul, .policy-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .policy-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-title {
+            font-size: 20px;
+            color: var(--light);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            font-size: 20px;
+            color: var(--accent);
+        }
+        
+        .contact-text {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #1d4ed8, var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 28px;
+            }
+            
+            .page-description {
+                font-size: 16px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            .policy-title {
+                font-size: 20px;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 24px;
+            }
+            
+            .btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDFMasterPro</span>
+            </a>
+            <h1 class="page-title animate__animated animate__fadeIn">Privacy Policy</h1>
+            <p class="page-description animate__animated animate__fadeIn">Learn how we handle your data and protect your privacy</p>
+        </header>
+
+        <div class="last-updated animate__animated animate__fadeIn">
+            Effective Date: 19/09/2025 | Last Update Date: 19/09/2025
+        </div>
+
+        <div class="content-card glass-card animate__animated animate__fadeIn">
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h2 class="policy-title">1. Introduction</h2>
+                </div>
+                <div class="policy-content">
+                    <p>At <span class="highlight">PDFMasterPro.in</span> ("Company," "we"), we respect your privacy and are committed to protecting the information you share with us. This Privacy Policy outlines how we handle user data, uploaded files, and other information when you access or use our services. By using our website, you agree to the practices described in this policy.</p>
+                    <p>We provide online PDF tools including merging, splitting, compressing, converting, securing, and editing documents. Since we deal with sensitive files, protecting user privacy is our top priority.</p>
+                    <p>This Privacy Policy explains:</p>
+                    <ul>
+                        <li>What information we collect.</li>
+                        <li>How uploaded files are processed and deleted.</li>
+                        <li>How we protect your data.</li>
+                        <li>Your rights regarding data usage.</li>
+                        <li>Our compliance with data protection laws.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h2 class="policy-title">2. Information We Collect</h2>
+                </div>
+                <div class="policy-content">
+                    <p>When you use our services, we may collect the following types of information:</p>
+                    
+                    <h3 class="highlight">a) Uploaded Files</h3>
+                    <ul>
+                        <li>Files you upload to PDFMasterPro.in for processing (e.g., PDF merge, or convert) are <span class="highlight">used only for the requested task</span>.</li>
+                        <li>We <span class="highlight">do not permanently store</span> or back up your files.</li>
+                        <li>Any file temporarily stored on our servers for processing is <span class="highlight">automatically deleted within 12 to 24 hours</span>.</li>
+                    </ul>
+                    
+                    <h3 class="highlight">b) Personal Information</h3>
+                    <ul>
+                        <li>If you create an account, we may collect your name, email address, and password.</li>
+                        <li>If you subscribe to premium services, payment-related details (processed via secure third-party gateways) may be collected.</li>
+                    </ul>
+                    
+                    <h3 class="highlight">c) Technical Data</h3>
+                    <ul>
+                        <li>Device type, operating system, browser type, IP address, language preferences, and session activity may be logged automatically for analytics and security purposes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h2 class="policy-title">3. How We Use Collected Data</h2>
+                </div>
+                <div class="policy-content">
+                    <p>We use your information strictly for providing and improving our services:</p>
+                    <ol>
+                        <li><span class="highlight">File Processing</span> – To complete your PDF-related tasks securely.</li>
+                        <li><span class="highlight">User Accounts</span> – To manage subscriptions, access, and customer support.</li>
+                        <li><span class="highlight">Analytics</span> – To monitor website performance and improve user experience.</li>
+                        <li><span class="highlight">Security</span> – To detect fraud, abuse, or unauthorized access.</li>
+                        <li><span class="highlight">Communication</span> – To send account updates, technical notifications, or promotional offers (optional).</li>
+                    </ol>
+                    <p>We <span class="highlight">do not sell, rent, or trade</span> your personal data or uploaded files to third parties.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h2 class="policy-title">4. File Storage and Deletion Policy</h2>
+                </div>
+                <div class="policy-content">
+                    <ul>
+                        <li>Uploaded files are temporarily stored on secure servers to process your request.</li>
+                        <li>All files are <span class="highlight">automatically deleted within 12 to 24 hours</span> after processing is complete.</li>
+                        <li>We <span class="highlight">do not manually review or access</span> your documents unless required by law enforcement with proper authorization.</li>
+                        <li>Since files are auto-deleted, users do not need to request manual file deletion.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="policy-title">5. Data Security</h2>
+                </div>
+                <div class="policy-content">
+                    <p>We take robust security measures to protect your data:</p>
+                    <ul>
+                        <li>All file transfers are encrypted using <span class="highlight">HTTPS/SSL</span>.</li>
+                        <li>Access to temporary files is restricted and controlled.</li>
+                        <li>Industry-standard security practices are followed to prevent unauthorized access, modification, or disclosure of data.</li>
+                        <li>While we strive for maximum security, no method of data transmission over the internet can be guaranteed as 100% secure.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <h2 class="policy-title">6. Cookies and Tracking Technologies</h2>
+                </div>
+                <div class="policy-content">
+                    <ul>
+                        <li>We use cookies to enhance functionality, remember user preferences, and provide analytics.</li>
+                        <li>These cookies do not access your uploaded files.</li>
+                        <li>Users can disable cookies in their browser settings, but some features of the website may not work properly.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                    <h2 class="policy-title">7. Third-Party Services</h2>
+                </div>
+                <div class="policy-content">
+                    <ul>
+                        <li>Payments and subscriptions are handled via trusted third-party providers such as <span class="highlight">Razorpay, Stripe, or PayPal</span>.</li>
+                        <li>We do not store sensitive payment information such as credit/debit card numbers.</li>
+                        <li>Our website may include links to external websites; we are not responsible for their privacy practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h2 class="policy-title">8. User Rights</h2>
+                </div>
+                <div class="policy-content">
+                    <p>Depending on your location, you may have the following rights under applicable data protection laws (e.g., GDPR, Indian IT Act):</p>
+                    <ul>
+                        <li>Right to access the data we hold about you.</li>
+                        <li>Right to request correction of inaccurate information.</li>
+                        <li>Right to request deletion of your personal account data.</li>
+                        <li>Right to opt-out of promotional communications.</li>
+                    </ul>
+                    <p>Since uploaded files are automatically deleted, these rights apply primarily to account and subscription data.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h2 class="policy-title">9. Children's Privacy</h2>
+                </div>
+                <div class="policy-content">
+                    <ul>
+                        <li>Our services are <span class="highlight">not intended for children under 13 years of age</span>.</li>
+                        <li>We do not knowingly collect data from children. If you believe a child has provided information, please contact us for immediate removal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h2 class="policy-title">10. Legal Compliance</h2>
+                </div>
+                <div class="policy-content">
+                    <p>We may disclose information if required by law, court order, or government authority, or to protect our legal rights and user safety.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <div class="policy-header">
+                    <div class="policy-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h2 class="policy-title">11. Updates to Privacy Policy</h2>
+                </div>
+                <div class="policy-content">
+                    <ul>
+                        <li>We may revise this Privacy Policy from time to time.</li>
+                        <li>Changes will be effective once posted on this page with the Last update date.</li>
+                        <li>Continued use of our services after updates constitutes acceptance of the revised policy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3 class="contact-title">12. Contact Us</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Email:</strong> pdfmasterpro01@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Website:</strong> www.pdfmasterpro.in
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>PDFMasterPro &copy; 2025 | Free Online PDF Tools</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add animation to policy sections when they come into view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__fadeInUp');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.policy-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
