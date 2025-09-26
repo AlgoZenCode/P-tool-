@@ -10,14 +10,14 @@
 
   <!-- Example tools pages -->
   <url>
-    <loc>https://pdfmasterpro.in/mergepdf</loc>
+    <loc>https://pdfmasterpro.in/splitpdf</loc>
     <lastmod>2025-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://pdfmasterpro.in/splitpdf</loc>
+    <loc>https://pdfmasterpro.in/rotate-pdf</loc>
     <lastmod>2025-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -31,30 +31,63 @@
   </url>
   
   <url>
-    <loc>https://pdfmasterpro.in/rotate-pdf</loc>
+    <loc>https://pdfmasterpro.in/pdf-to-svg</loc>
     
   </url>
 
   <url>
-    <loc>https://pdfmasterpro.in/html-to-pdf</loc>
+    <loc>https://pdfmasterpro.in/pdf-to-json</loc>
     
   </url>
 <url>
-    <loc>https://pdfmasterpro.in/extractpdf</loc>
+    <loc>https://pdfmasterpro.in/pdf-to-jpg</loc>
     
   </url>
 
   <url>
-    <loc>https://pdfmasterpro.in/linkshortner-Qr</loc>
+    <loc>https://pdfmasterpro.in/pdf-to-img</loc>
+    
+  </url>
+  <url>
+    <loc>https://pdfmasterpro.in/pdf-to-html</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://pdfmasterpro.in/page-number</loc>
+    
+  </url>  
+
+  <url>
+    <loc>https://pdfmasterpro.in/organize-pdf</loc>
     
   </url>
   <url>
     <loc>https://pdfmasterpro.in/meta-data-remove</loc>
     
   </url>
-
   <url>
-    <loc>https://pdfmasterpro.in/</loc>
+    <loc>https://pdfmasterpro.in/mergepdf</loc>
     
   </url>
+  <url>
+    <loc>https://pdfmasterpro.in/linkshortner-Qr</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://pdfmasterpro.in/img-to-pdf</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://pdfmasterpro.in/extractpdf</loc>
+    
+  </url>
+<url>
+    <loc>https://pdfmasterpro.in/barcode</loc>
+    
+  </url>
+
+  
 </urlset>
