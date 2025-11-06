@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Shortener | URLMasterPro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>URL Shortener | PDFMasterPro</title>
     <meta name="description" content="Free online tool to shorten long URLs using TinyURL service. Create short, memorable links easily.">
     <meta name="keywords" content="url shortener, shorten url, tinyurl, link shortener">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="URL Shortener | URLMasterPro">
+    <meta property="og:title" content="URL Shortener | PDFMasterPro">
     <meta property="og:description" content="Free online tool to shorten long URLs using TinyURL service">
-    <link rel="canonical" href="https://urlmasterpro.com/shorten-url">
+    <link rel="canonical" href="https://pdfmasterpro.com/shorten-url">
     
+    <!-- Required Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2249195008528002"
@@ -18,7 +22,152 @@
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
    <link rel="canonical" href="https://pdfmasterpro.in/linkshortner-Qr.html" />
     
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pdfmasterpro.in/#website",
+          "url": "https://pdfmasterpro.in/",
+          "name": "PDFMasterPro",
+          "description": "Advanced PDF tools for all your document needs",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://pdfmasterpro.in/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pdfmasterpro.in/#organization",
+          "name": "PDFMasterPro",
+          "url": "https://pdfmasterpro.in/",
+          "logo": "https://pdfmasterpro.in/images/logo.png",
+          "description": "Provider of advanced PDF tools",
+          "sameAs": [
+            "https://www.facebook.com/pdfmasterpro",
+            "https://twitter.com/pdfmasterpro",
+            "https://www.linkedin.com/company/pdfmasterpro"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://pdfmasterpro.in/linkshortner-Qr.html/#webpage",
+          "url": "https://pdfmasterpro.in/linkshortner-Qr.html",
+          "name": "URL Shortener | PDFMasterPro",
+          "isPartOf": {
+            "@id": "https://pdfmasterpro.in/#website"
+          },
+          "about": {
+            "@id": "https://pdfmasterpro.in/#organization"
+          },
+          "description": "Free online tool to shorten long URLs using TinyURL service. Create short, memorable links easily.",
+          "breadcrumb": {
+            "@id": "https://pdfmasterpro.in/linkshortner-Qr.html/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://pdfmasterpro.in/linkshortner-Qr.html"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://pdfmasterpro.in/linkshortner-Qr.html/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://pdfmasterpro.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "URL Shortener"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "PDFMasterPro URL Shortener",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "description": "Advanced URL shortener with full customization options",
+          "url": "https://pdfmasterpro.in/linkshortner-Qr.html",
+          "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a URL shortener and how does it work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A URL shortener is a tool that converts long URLs into shorter, more manageable links. When someone clicks the shortened link, they are automatically redirected to the original long URL."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my data secure when using the URL shortener?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all URL processing happens through secure API calls. Your original URLs are processed by TinyURL's secure service."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I create custom aliases for my shortened URLs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! You can create custom aliases for your shortened URLs, making them more memorable and brandable."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there any limitations on the number of URLs I can shorten?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, our URL shortener is completely free with no limitations on the number of URLs you can shorten."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long do the shortened URLs remain active?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shortened URLs created through our service remain active indefinitely, as long as the original URL remains valid."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    
     <style>
+        /* Base Styles */
         :root {
             --primary: #2563eb;
             --secondary: #f59e0b;
@@ -30,6 +179,7 @@
             --glass-border: rgba(255, 255, 255, 0.15);
             --error: #ef4444;
             --selected-blue: #3b82f6;
+            --selection-order: #10b981;
         }
         
         * {
@@ -45,8 +195,10 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
+        /* Glassmorphism Effect */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -57,22 +209,27 @@
             transition: all 0.3s ease;
         }
         
+        /* Layout */
         .container {
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
+        /* Header */
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -81,17 +238,55 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: clamp(40px, 8vw, 60px) 0;
+            text-align: center;
         }
         
         .tool-title {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(32px, 6vw, 42px);
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -99,20 +294,27 @@
         }
         
         .tool-description {
-            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(16px, 3vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Main Card */
         .main-card {
             padding: 30px;
             margin-bottom: 30px;
-            overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Input Groups */
         .input-group {
             margin-bottom: 20px;
+            text-align: left;
         }
         
         .form-label {
@@ -170,6 +372,7 @@
             cursor: pointer;
         }
         
+        /* Buttons */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -213,6 +416,7 @@
             transform: translateY(-2px);
         }
         
+        /* Processing Section */
         .processing-container {
             display: none;
             text-align: center;
@@ -234,6 +438,7 @@
             font-size: 18px;
         }
         
+        /* Result Section */
         .result-container {
             display: none;
             text-align: center;
@@ -320,13 +525,25 @@
             font-size: 14px;
         }
         
+        /* Footer - Shifted to Left */
         footer {
-            text-align: center;
+            text-align: left;
             padding: 20px 0;
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+       footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
         }
         
+        /* Animations */
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -339,6 +556,270 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+        
+        /* Floating CTA Button Animation */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--darker);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        /* Wave animation for floating CTA */
+        .wave-circle {
+            position: absolute;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: wave 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Features Section */
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            overflow: hidden;
+        }
+        
+        /* Footer Content - Shifted to Left */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .footer-column {
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 100%;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: block;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-card {
+                padding: 25px;
             }
         }
         
@@ -358,6 +839,16 @@
             .btn {
                 padding: 10px 15px;
                 font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            /* Footer adjustments for mobile */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
             .short-url-container {
@@ -384,88 +875,362 @@
             .btn-group {
                 gap: 10px;
             }
+            
+            /* Footer adjustments for small mobile */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header with Navigation -->
         <header>
-            <a href="/" class="logo">
-                <i class="fas fa-link"></i>
-                <span>URLMasterPro</span>
+            <a href="https://pdfmasterpro.in/" class="logo">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDFMasterPro</span>
             </a>
-            <h1 class="tool-title animate__animated animate__fadeIn">URL Shortener</h1>
-            <p class="tool-description animate__animated animate__fadeIn">Shorten long URLs using TinyURL service for easy sharing</p>
+            <nav>
+                <ul>
+                    <li><a href="https://pdfmasterpro.in/">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="main-card glass-card animate__animated animate__fadeIn">
-            <div class="input-group">
-                <label for="longUrl" class="form-label">Enter URL to shorten</label>
-                <input type="url" id="longUrl" class="form-control" placeholder="https://example.com/very-long-url-path" autocomplete="off">
-                <div class="error-message" id="urlError">Please enter a valid URL including http:// or https://</div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="tool-title animate__animated animate__fadeInDown">URL Shortener</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s">
+                Shorten long URLs using TinyURL service for easy sharing. Create custom aliases and track link statistics.
+            </p>
+            
+            <!-- Ad Container (Top) -->
+            <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
             
-            <div class="checkbox-group">
-                <input type="checkbox" id="customAliasCheck">
-                <label for="customAliasCheck" class="checkbox-label">Use custom alias (optional)</label>
-            </div>
-            
-            <div class="custom-alias-group" id="customAliasGroup">
-                <label for="customAlias" class="form-label">Custom alias</label>
-                <input type="text" id="customAlias" class="form-control" placeholder="my-custom-link" autocomplete="off">
-                <div class="error-message" id="aliasError">Alias can only contain letters, numbers, and hyphens</div>
-            </div>
-            
-            <div class="btn-group">
-                <button class="btn btn-primary" id="shortenBtn">
-                    <i class="fas fa-compress-alt"></i> Shorten URL
-                </button>
-            </div>
-
-            <div class="processing-container" id="processingContainer">
-                <div class="processing-spinner"></div>
-                <h3 class="processing-text">Shortening your URL...</h3>
-            </div>
-
-            <div class="result-container" id="resultContainer">
-                <div class="result-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 class="result-message">Your shortened URL is ready!</h3>
-                
-                <div class="short-url-container">
-                    <div class="short-url" id="shortUrl"></div>
-                    <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
-                        <i class="fas fa-copy"></i>
-                    </button>
+            <!-- URL Shortener Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s">
+                <div class="input-group">
+                    <label for="longUrl" class="form-label">Enter URL to shorten</label>
+                    <input type="url" id="longUrl" class="form-control" placeholder="https://example.com/very-long-url-path" autocomplete="off">
+                    <div class="error-message" id="urlError">Please enter a valid URL including http:// or https://</div>
                 </div>
                 
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-value" id="lengthReduction">0%</div>
-                        <div class="stat-label">Length Reduction</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="originalLength">0</div>
-                        <div class="stat-label">Original Length</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="shortenedLength">0</div>
-                        <div class="stat-label">Shortened Length</div>
-                    </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="customAliasCheck">
+                    <label for="customAliasCheck" class="checkbox-label">Use custom alias (optional)</label>
+                </div>
+                
+                <div class="custom-alias-group" id="customAliasGroup">
+                    <label for="customAlias" class="form-label">Custom alias</label>
+                    <input type="text" id="customAlias" class="form-control" placeholder="my-custom-link" autocomplete="off">
+                    <div class="error-message" id="aliasError">Alias can only contain letters, numbers, and hyphens</div>
                 </div>
                 
                 <div class="btn-group">
-                    <button class="btn btn-primary" id="newShortenBtn">
-                        <i class="fas fa-plus"></i> Shorten Another
+                    <button class="btn btn-primary" id="shortenBtn">
+                        <i class="fas fa-compress-alt"></i> Shorten URL
                     </button>
                 </div>
-            </div>
-        </div>
 
-        <footer>
-            <p>URLMasterPro &copy; 2023 | Powered by TinyURL API</p>
+                <div class="processing-container" id="processingContainer">
+                    <div class="processing-spinner"></div>
+                    <h3 class="processing-text">Shortening your URL...</h3>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="result-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="result-message">Your shortened URL is ready!</h3>
+                    
+                    <div class="short-url-container">
+                        <div class="short-url" id="shortUrl"></div>
+                        <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-value" id="lengthReduction">0%</div>
+                            <div class="stat-label">Length Reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="originalLength">0</div>
+                            <div class="stat-label">Original Length</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="shortenedLength">0</div>
+                            <div class="stat-label">Shortened Length</div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="newShortenBtn">
+                            <i class="fas fa-plus"></i> Shorten Another
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Container (Middle) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+            
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="features-section">
+                <h2 class="section-title">How to Shorten URLs</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Enter Your URL</h3>
+                            <p>Paste your long URL in the input field. Make sure it includes http:// or https:// for proper processing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Customize (Optional)</h3>
+                            <p>Create a custom alias for your shortened URL to make it more memorable and brandable.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Copy & Share</h3>
+                            <p>Copy your shortened URL and share it anywhere - social media, emails, or messaging apps.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2 class="section-title">Advanced URL Shortening Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Instant Shortening</h3>
+                            <p>Get your shortened URL instantly with our fast processing powered by TinyURL's reliable service.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Custom Aliases</h3>
+                            <p>Create personalized short URLs with custom aliases that are easy to remember and share.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Length Statistics</h3>
+                            <p>See how much you've shortened your URL with detailed length reduction statistics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Secure Processing</h3>
+                            <p>Your URLs are processed securely through TinyURL's trusted and reliable service.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Unlimited Usage</h3>
+                            <p>Shorten as many URLs as you need with no limitations or restrictions on usage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Mobile Friendly</h3>
+                            <p>Our URL shortener works perfectly on all devices - desktop, tablet, and mobile.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="features-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>What is a URL shortener and how does it work?</h3>
+                            <p>A URL shortener converts long URLs into shorter, more manageable links that redirect to the original URL when clicked.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Is my data secure when using the URL shortener?</h3>
+                            <p>Yes! All URL processing happens through secure API calls to TinyURL's trusted service.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Can I create custom aliases for my shortened URLs?</h3>
+                            <p>Absolutely! You can create custom aliases to make your shortened URLs more memorable and brandable.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Are there any limitations on URL shortening?</h3>
+                            <p>No, our URL shortener is completely free with no limitations on the number of URLs you can shorten.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>How long do shortened URLs remain active?</h3>
+                            <p>Shortened URLs remain active indefinitely as long as the original URL remains valid.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Can I track clicks on my shortened URLs?</h3>
+                            <p>While we provide length statistics, detailed click analytics are available through TinyURL's premium services.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ad Container (Bottom) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+        </main>
+        
+        <!-- Footer - Shifted to Left -->
+        <footer id="contact" class="animate__animated animate__fadeInUp">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PDF Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/merge-pdf">Merge PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/watermark-pdf">Watermark PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/compress-pdf">Compress PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-word">PDF to Word</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>URL Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/linkshortner-Qr.html">URL Shortener</a></li>
+                            <li><a href="https://pdfmasterpro.in/qr-generator">QR Generator</a></li>
+                            <li><a href="https://pdfmasterpro.in/link-management">Link Management</a></li>
+                            <li><a href="https://pdfmasterpro.in/url-analytics">URL Analytics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/blog">Blog</a></li>
+                            <li><a href="https://pdfmasterpro.in/tutorials">Tutorials</a></li>
+                            <li><a href="https://pdfmasterpro.in/help">Help Center</a></li>
+                            <li><a href="https://pdfmasterpro.in/faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/about">About Us</a></li>
+                            <li><a href="https://pdfmasterpro.in/privacy">Privacy Policy</a></li>
+                            <li><a href="https://pdfmasterpro.in/terms">Terms of Service</a></li>
+                            <li><a href="https://pdfmasterpro.in/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul>
+                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank">Facebook</a></li>
+                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank">LinkedIn</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://facebook.com/pdfmasterpro" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/pdfmasterpro" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/pdfmasterpro" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 PDFMasterPro. All rights reserved. | Serving over 1 million users monthly</p>
+                </div>
+            </div>
         </footer>
+    </div>
+
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-link"></i>
     </div>
 
     <script>
@@ -485,9 +1250,39 @@
             const newShortenBtn = document.getElementById('newShortenBtn');
             const urlError = document.getElementById('urlError');
             const aliasError = document.getElementById('aliasError');
+            const floatingCta = document.getElementById('floatingCta');
             
             let shortenedUrl = '';
             
+            // Add wave animation to floating CTA
+            function addWaveAnimation() {
+                const waves = [];
+                
+                // Create 3 wave circles
+                for (let i = 0; i < 3; i++) {
+                    const wave = document.createElement('div');
+                    wave.className = 'wave-circle';
+                    wave.style.width = '56px';
+                    wave.style.height = '56px';
+                    wave.style.position = 'absolute';
+                    wave.style.top = '0';
+                    wave.style.left = '0';
+                    wave.style.animationDelay = `${i * 0.3}s`;
+                    floatingCta.appendChild(wave);
+                    waves.push(wave);
+                }
+                
+                return waves;
+            }
+            
+            // Initialize wave animation
+            const waveCircles = addWaveAnimation();
+            
+            // Floating CTA click handler
+            floatingCta.addEventListener('click', () => {
+                longUrlInput.focus();
+            });
+
             // Toggle custom alias field
             customAliasCheck.addEventListener('change', function() {
                 customAliasGroup.style.display = this.checked ? 'block' : 'none';
@@ -635,28 +1430,26 @@
                 longUrlInput.classList.remove('error');
                 customAliasInput.classList.remove('error');
             });
+            
+            // Scroll animation for feature cards
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "URL Shortener - URLMasterPro",
-        "description": "Free online tool to shorten long URLs using TinyURL service",
-        "url": "https://urlmasterpro.com/shorten-url",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "URLMasterPro"
-        }
-    }
     </script>
 </body>
 </html>
