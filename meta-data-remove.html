@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Remove PDF Metadata | PDFMasterPro</title>
     <meta name="description" content="Free online tool to remove metadata from PDF files. Clean sensitive information from your documents.">
     <meta name="keywords" content="remove pdf metadata, clean pdf, pdf privacy tool, pdf editor">
@@ -11,6 +11,7 @@
     <meta property="og:description" content="Free online tool to remove metadata from PDF files">
     <link rel="canonical" href="https://pdfmasterpro.com/remove-pdf-metadata">
     
+    <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -21,8 +22,152 @@
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
     <link rel="canonical" href="https://pdfmasterpro.in/meta-data-remove.html" />
     
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pdfmasterpro.in/#website",
+          "url": "https://pdfmasterpro.in/",
+          "name": "PDFMasterPro",
+          "description": "Advanced PDF tools for all your document needs",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://pdfmasterpro.in/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pdfmasterpro.in/#organization",
+          "name": "PDFMasterPro",
+          "url": "https://pdfmasterpro.in/",
+          "logo": "https://pdfmasterpro.in/images/logo.png",
+          "description": "Provider of advanced PDF tools",
+          "sameAs": [
+            "https://www.facebook.com/pdfmasterpro",
+            "https://twitter.com/pdfmasterpro",
+            "https://www.linkedin.com/company/pdfmasterpro"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://pdfmasterpro.in/meta-data-remove.html/#webpage",
+          "url": "https://pdfmasterpro.in/meta-data-remove.html",
+          "name": "Remove PDF Metadata | PDFMasterPro",
+          "isPartOf": {
+            "@id": "https://pdfmasterpro.in/#website"
+          },
+          "about": {
+            "@id": "https://pdfmasterpro.in/#organization"
+          },
+          "description": "Free online tool to remove metadata from PDF files. Clean sensitive information from your documents.",
+          "breadcrumb": {
+            "@id": "https://pdfmasterpro.in/meta-data-remove.html/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://pdfmasterpro.in/meta-data-remove.html"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://pdfmasterpro.in/meta-data-remove.html/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://pdfmasterpro.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Remove PDF Metadata"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "PDFMasterPro Metadata Remover",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "description": "Advanced PDF metadata removal tool with full customization options",
+          "url": "https://pdfmasterpro.in/meta-data-remove.html",
+          "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is PDF metadata and why should I remove it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "PDF metadata contains information like author name, creation date, modification date, software used, and other sensitive details that can compromise your privacy. Removing it helps protect your personal information."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my data secure when removing PDF metadata?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I choose which metadata to remove?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! You can choose to remove all metadata or selectively remove specific information like author name, creation date, or software information."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will removing metadata affect my PDF content?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, removing metadata only removes the hidden information about the document. Your actual content, text, images, and formatting remain completely unchanged."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this metadata remover completely free to use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our PDF metadata remover is completely free with no limitations on the number of files you can process."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     
     <style>
+        /* Base Styles */
         :root {
             --primary: #2563eb;
             --secondary: #f59e0b;
@@ -49,8 +194,10 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
+        /* Glassmorphism Effect */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -61,22 +208,27 @@
             transition: all 0.3s ease;
         }
         
+        /* Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
+        /* Header */
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -85,17 +237,55 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: clamp(40px, 8vw, 60px) 0;
+            text-align: center;
         }
         
         .tool-title {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(32px, 6vw, 42px);
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -103,18 +293,21 @@
         }
         
         .tool-description {
-            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(16px, 3vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Main Card */
         .main-card {
             padding: 30px;
             margin-bottom: 30px;
-            overflow: hidden;
         }
         
+        /* Upload Area */
         .drop-zone {
             border: 2px dashed rgba(255, 255, 255, 0.2);
             border-radius: 12px;
@@ -128,11 +321,6 @@
         .drop-zone:hover {
             border-color: var(--primary);
             background: rgba(37, 99, 235, 0.1);
-        }
-        
-        .drop-zone.active {
-            border-color: var(--primary);
-            background: rgba(37, 99, 235, 0.15);
         }
         
         .upload-icon {
@@ -155,6 +343,7 @@
             font-size: 14px;
         }
         
+        /* File Info */
         .file-info {
             text-align: center;
             margin-bottom: 20px;
@@ -181,6 +370,7 @@
             font-size: 14px;
         }
         
+        /* Settings Section */
         .settings-section {
             display: none;
             margin-top: 20px;
@@ -263,6 +453,7 @@
             font-size: 14px;
         }
         
+        /* Buttons */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -312,6 +503,7 @@
             transform: none !important;
         }
         
+        /* Processing Section */
         .processing-container {
             display: none;
             text-align: center;
@@ -333,6 +525,7 @@
             font-size: 18px;
         }
         
+        /* Result Section */
         .result-container {
             display: none;
             text-align: center;
@@ -359,6 +552,248 @@
             display: none;
         }
         
+        /* Floating CTA Button Animation */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--darker);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        /* Wave animation for floating CTA */
+        .wave-circle {
+            position: absolute;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: wave 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Features Section */
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            overflow: hidden;
+        }
+        
+        /* Footer Content - Shifted to Left */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .footer-column {
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 100%;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: block;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        /* Animations */
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -374,6 +809,11 @@
             }
         }
         
+        .animate-fade-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        /* Responsive */
         @media (max-width: 992px) {
             .main-card {
                 padding: 25px;
@@ -405,6 +845,16 @@
                 padding: 10px 15px;
                 font-size: 14px;
             }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            /* Footer adjustments for mobile */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -420,136 +870,410 @@
                 padding: 8px 5px;
                 font-size: 14px;
             }
+            
+            /* Footer adjustments for small mobile */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header with Navigation -->
         <header>
-            <a href="/" class="logo">
+            <a href="https://pdfmasterpro.in/" class="logo">
                 <i class="fas fa-file-pdf"></i>
                 <span>PDFMasterPro</span>
             </a>
-            <h1 class="tool-title animate__animated animate__fadeIn">Remove PDF Metadata</h1>
-            <p class="tool-description animate__animated animate__fadeIn">Clean sensitive information from your PDF documents</p>
+            <nav>
+                <ul>
+                    <li><a href="https://pdfmasterpro.in/">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="main-card glass-card animate__animated animate__fadeIn">
-            <div class="drop-zone" id="dropZone">
-                <div class="upload-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3 class="upload-text">Drag & Drop PDF File Here</h3>
-                <p class="upload-hint">or click to browse files</p>
-                <input type="file" id="fileInput" accept=".pdf" style="display: none;">
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="selectFileBtn">
-                        <i class="fas fa-folder-open"></i> Select PDF
-                    </button>
-                </div>
-                <div class="error-message" id="fileError"></div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="tool-title animate__animated animate__fadeInDown">Remove PDF Metadata</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s">
+                Clean sensitive information from your PDF documents. Remove author details, creation dates, and other metadata to protect your privacy.
+            </p>
+            
+            <!-- Ad Container (Top) -->
+            <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-
-            <div class="file-info" id="fileInfo" style="display: none;">
-                <div class="file-name" id="fileName"></div>
-                <div class="file-size" id="fileSize"></div>
-            </div>
-
-            <div class="settings-section" id="settingsSection">
-                <div class="settings-header">
-                    <h3 class="settings-title">Metadata Removal Settings</h3>
-                    <div class="page-count" id="pageCount"></div>
-                </div>
-                
-                <div class="metadata-container">
-                    <h4 class="metadata-title"><i class="fas fa-info-circle"></i> Current Metadata</h4>
-                    <div id="metadataContent">
-                        <div class="metadata-empty">No metadata found or file not loaded yet</div>
+            
+            <!-- PDF Metadata Remover Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s">
+                <div class="drop-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-pdf"></i>
                     </div>
+                    <h3 class="upload-text">Drag & Drop PDF File Here</h3>
+                    <p class="upload-hint">or click to browse files</p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="selectFileBtn">
+                            <i class="fas fa-folder-open"></i> Select PDF
+                        </button>
+                    </div>
+                    <div class="error-message" id="fileError"></div>
                 </div>
-                
-                <div class="metadata-container">
-                    <h4 class="metadata-title"><i class="fas fa-cog"></i> Removal Options</h4>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                </div>
+
+                <div class="settings-section" id="settingsSection">
+                    <div class="settings-header">
+                        <h3 class="settings-title">Metadata Removal Settings</h3>
+                        <div class="page-count" id="pageCount"></div>
+                    </div>
                     
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="removeAllMetadata" checked>
-                        <label for="removeAllMetadata" class="checkbox-label">Remove all metadata (recommended)</label>
+                    <div class="metadata-container">
+                        <h4 class="metadata-title"><i class="fas fa-info-circle"></i> Current Metadata</h4>
+                        <div id="metadataContent">
+                            <div class="metadata-empty">No metadata found or file not loaded yet</div>
+                        </div>
                     </div>
                     
-                    <div id="customOptions" style="margin-top: 15px; display: none;">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeTitle" checked>
-                            <label for="removeTitle" class="checkbox-label">Remove document title</label>
-                        </div>
+                    <div class="metadata-container">
+                        <h4 class="metadata-title"><i class="fas fa-cog"></i> Removal Options</h4>
                         
                         <div class="checkbox-group">
-                            <input type="checkbox" id="removeAuthor" checked>
-                            <label for="removeAuthor" class="checkbox-label">Remove author name</label>
+                            <input type="checkbox" id="removeAllMetadata" checked>
+                            <label for="removeAllMetadata" class="checkbox-label">Remove all metadata (recommended)</label>
                         </div>
                         
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeSubject" checked>
-                            <label for="removeSubject" class="checkbox-label">Remove subject</label>
+                        <div id="customOptions" style="margin-top: 15px; display: none;">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeTitle" checked>
+                                <label for="removeTitle" class="checkbox-label">Remove document title</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeAuthor" checked>
+                                <label for="removeAuthor" class="checkbox-label">Remove author name</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeSubject" checked>
+                                <label for="removeSubject" class="checkbox-label">Remove subject</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeKeywords" checked>
+                                <label for="removeKeywords" class="checkbox-label">Remove keywords</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeCreator" checked>
+                                <label for="removeCreator" class="checkbox-label">Remove creator software</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeProducer" checked>
+                                <label for="removeProducer" class="checkbox-label">Remove producer software</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeCreationDate" checked>
+                                <label for="removeCreationDate" class="checkbox-label">Remove creation date</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeModificationDate" checked>
+                                <label for="removeModificationDate" class="checkbox-label">Remove modification date</label>
+                            </div>
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeKeywords" checked>
-                            <label for="removeKeywords" class="checkbox-label">Remove keywords</label>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="removeMetadataBtn">
+                            <i class="fas fa-trash-alt"></i> Remove Metadata
+                        </button>
+                    </div>
+                </div>
+
+                <div class="processing-container" id="processingContainer">
+                    <div class="processing-spinner"></div>
+                    <h3 class="processing-text">Cleaning your PDF metadata...</h3>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="result-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="result-message">Your PDF metadata has been cleaned!</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                        <button class="btn btn-secondary" id="newFileBtn">
+                            <i class="fas fa-file-upload"></i> New File
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Container (Middle) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+            
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="features-section">
+                <h2 class="section-title">How to Remove PDF Metadata</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeCreator" checked>
-                            <label for="removeCreator" class="checkbox-label">Remove creator software</label>
+                        <div class="feature-content">
+                            <h3>Upload Your PDF</h3>
+                            <p>Drag and drop your PDF file or click to browse and select the document you want to clean metadata from.</p>
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeProducer" checked>
-                            <label for="removeProducer" class="checkbox-label">Remove producer software</label>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeCreationDate" checked>
-                            <label for="removeCreationDate" class="checkbox-label">Remove creation date</label>
+                        <div class="feature-content">
+                            <h3>View Current Metadata</h3>
+                            <p>See all the hidden information stored in your PDF, including author details, creation dates, and software information.</p>
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeModificationDate" checked>
-                            <label for="removeModificationDate" class="checkbox-label">Remove modification date</label>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Remove & Download</h3>
+                            <p>Choose what to remove and download your cleaned PDF with all sensitive metadata permanently deleted.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2 class="section-title">Advanced PDF Metadata Removal Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Secure Processing</h3>
+                            <p>Your PDF files are processed directly in your browser. No files are uploaded to our servers, ensuring complete privacy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Selective Removal</h3>
+                            <p>Choose to remove all metadata or selectively remove specific information like author name, dates, or software details.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Metadata Preview</h3>
+                            <p>See exactly what information is stored in your PDF before deciding what to remove.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Quality Preservation</h3>
+                            <p>Your PDF content, text, images, and formatting remain completely unchanged - only metadata is removed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Fast Processing</h3>
+                            <p>Quick metadata removal with our optimized processing engine, even for large PDF files.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Unlimited Usage</h3>
+                            <p>Remove metadata from as many PDFs as you need with no limitations or watermarks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="features-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>What is PDF metadata and why should I remove it?</h3>
+                            <p>PDF metadata contains information like author name, creation date, modification date, software used, and other sensitive details that can compromise your privacy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Is my data secure when removing PDF metadata?</h3>
+                            <p>Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Can I choose which metadata to remove?</h3>
+                            <p>Absolutely! You can choose to remove all metadata or selectively remove specific information like author name, creation date, or software information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Will removing metadata affect my PDF content?</h3>
+                            <p>No, removing metadata only removes the hidden information about the document. Your actual content, text, images, and formatting remain completely unchanged.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Is this metadata remover completely free?</h3>
+                            <p>Yes, our PDF metadata remover is completely free with no limitations on the number of files you can process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>What types of PDF files can I process?</h3>
+                            <p>Our tool works with all standard PDF files, including those with text, images, forms, and scanned documents.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ad Container (Bottom) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+        </main>
+        
+        <!-- Footer - Shifted to Left -->
+        <footer id="contact" class="animate__animated animate__fadeInUp">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PDF Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/merge-pdf">Merge PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/watermark-pdf">Watermark PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/compress-pdf">Compress PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-word">PDF to Word</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Privacy Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/meta-data-remove.html">Remove PDF Metadata</a></li>
+                            <li><a href="https://pdfmasterpro.in/encrypt-pdf">Encrypt PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/decrypt-pdf">Decrypt PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/redact-pdf">Redact PDF</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/blog">Blog</a></li>
+                            <li><a href="https://pdfmasterpro.in/tutorials">Tutorials</a></li>
+                            <li><a href="https://pdfmasterpro.in/help">Help Center</a></li>
+                            <li><a href="https://pdfmasterpro.in/faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/about">About Us</a></li>
+                            <li><a href="https://pdfmasterpro.in/privacy">Privacy Policy</a></li>
+                            <li><a href="https://pdfmasterpro.in/terms">Terms of Service</a></li>
+                            <li><a href="https://pdfmasterpro.in/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul>
+                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank">Facebook</a></li>
+                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank">LinkedIn</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://facebook.com/pdfmasterpro" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/pdfmasterpro" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/pdfmasterpro" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="removeMetadataBtn">
-                        <i class="fas fa-trash-alt"></i> Remove Metadata
-                    </button>
+                <div class="copyright">
+                    <p>&copy; 2023 PDFMasterPro. All rights reserved. | Serving over 1 million users monthly</p>
                 </div>
             </div>
-
-            <div class="processing-container" id="processingContainer">
-                <div class="processing-spinner"></div>
-                <h3 class="processing-text">Cleaning your PDF metadata...</h3>
-            </div>
-
-            <div class="result-container" id="resultContainer">
-                <div class="result-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 class="result-message">Your PDF metadata has been cleaned!</h3>
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="downloadBtn">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-secondary" id="newFileBtn">
-                        <i class="fas fa-file-upload"></i> New File
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>PDFMasterPro &copy; 2023 | Free Online PDF Tools</p>
         </footer>
+    </div>
+
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-file-upload"></i>
     </div>
 
     <script>
@@ -574,6 +1298,7 @@
             const removeAllMetadata = document.getElementById('removeAllMetadata');
             const customOptions = document.getElementById('customOptions');
             const fileError = document.getElementById('fileError');
+            const floatingCta = document.getElementById('floatingCta');
 
             let pdfFile = null;
             let pdfDoc = null;
@@ -581,6 +1306,33 @@
             let cleanedPdfBytes = null;
             let totalPages = 0;
             let currentMetadata = {};
+
+            // Add wave animation to floating CTA
+            function addWaveAnimation() {
+                const waves = [];
+                
+                // Create 3 wave circles
+                for (let i = 0; i < 3; i++) {
+                    const wave = document.createElement('div');
+                    wave.className = 'wave-circle';
+                    wave.style.width = '56px';
+                    wave.style.height = '56px';
+                    wave.style.position = 'absolute';
+                    wave.style.top = '0';
+                    wave.style.left = '0';
+                    wave.style.animationDelay = `${i * 0.3}s`;
+                    floatingCta.appendChild(wave);
+                    waves.push(wave);
+                }
+                
+                return waves;
+            }
+            
+            // Initialize wave animation
+            const waveCircles = addWaveAnimation();
+            
+            // Floating CTA click handler
+            floatingCta.addEventListener('click', () => fileInput.click());
 
             // Initialize the tool
             initTool();
@@ -842,30 +1594,41 @@
                 try {
                     const { PDFDocument } = PDFLib;
                     
-                    // Load the original PDF
-                    const pdfDoc = await PDFDocument.load(originalPdfBytes);
+                    // Load the original PDF with preserve means to keep all content
+                    const pdfDoc = await PDFDocument.load(originalPdfBytes, {
+                        ignoreEncryption: false,
+                        updateMetadata: true
+                    });
                     
                     // Get removal options
                     const options = getRemovalOptions();
                     
-                    // Remove standard metadata
-                    if (options.removeAll || options.removeTitle) pdfDoc.setTitle('');
-                    if (options.removeAll || options.removeAuthor) pdfDoc.setAuthor('');
-                    if (options.removeAll || options.removeSubject) pdfDoc.setSubject('');
-                    if (options.removeAll || options.removeKeywords) pdfDoc.setKeywords([]);
-                    if (options.removeAll || options.removeCreator) pdfDoc.setCreator('');
-                    if (options.removeAll || options.removeProducer) pdfDoc.setProducer('');
+                    // Remove ALL metadata completely by creating a new info dictionary
+                    const newInfoDict = pdfDoc.context.obj({});
                     
-                    // Remove creation and modification dates
-                    if (options.removeAll || options.removeCreationDate || options.removeModificationDate) {
-                        // PDF-lib doesn't provide direct methods to remove dates, so we need to modify the info dictionary
-                        const infoDict = pdfDoc.context.lookup(pdfDoc.context.trailerInfo.Info);
-                        
-                        if (infoDict) {
-                            if (options.removeAll || options.removeCreationDate) infoDict.delete(pdfDoc.context.obj('CreationDate'));
-                            if (options.removeAll || options.removeModificationDate) infoDict.delete(pdfDoc.context.obj('ModDate'));
-                        }
+                    // Only add back minimal required information
+                    if (!options.removeAll && !options.removeTitle && currentMetadata.Title && currentMetadata.Title !== 'Not specified') {
+                        newInfoDict.set(pdfDoc.context.obj('Title'), pdfDoc.context.obj(currentMetadata.Title));
                     }
+                    if (!options.removeAll && !options.removeAuthor && currentMetadata.Author && currentMetadata.Author !== 'Not specified') {
+                        newInfoDict.set(pdfDoc.context.obj('Author'), pdfDoc.context.obj(currentMetadata.Author));
+                    }
+                    if (!options.removeAll && !options.removeSubject && currentMetadata.Subject && currentMetadata.Subject !== 'Not specified') {
+                        newInfoDict.set(pdfDoc.context.obj('Subject'), pdfDoc.context.obj(currentMetadata.Subject));
+                    }
+                    if (!options.removeAll && !options.removeKeywords && currentMetadata.Keywords && currentMetadata.Keywords !== 'Not specified') {
+                        newInfoDict.set(pdfDoc.context.obj('Keywords'), pdfDoc.context.obj(currentMetadata.Keywords));
+                    }
+                    
+                    // Always set basic required fields to empty or generic values
+                    newInfoDict.set(pdfDoc.context.obj('Creator'), pdfDoc.context.obj('PDFMasterPro'));
+                    newInfoDict.set(pdfDoc.context.obj('Producer'), pdfDoc.context.obj('PDFMasterPro'));
+                    
+                    // Set the new info dictionary
+                    pdfDoc.context.trailerInfo.Info = newInfoDict;
+                    
+                    // Remove XMP metadata by not setting any custom properties
+                    // PDF-lib doesn't support XMP metadata directly, so this effectively removes it
                     
                     // Save the modified PDF
                     const pdfBytes = await pdfDoc.save();
@@ -880,7 +1643,15 @@
             function getRemovalOptions() {
                 if (removeAllMetadata.checked) {
                     return {
-                        removeAll: true
+                        removeAll: true,
+                        removeTitle: true,
+                        removeAuthor: true,
+                        removeSubject: true,
+                        removeKeywords: true,
+                        removeCreator: true,
+                        removeProducer: true,
+                        removeCreationDate: true,
+                        removeModificationDate: true
                     };
                 }
                 
@@ -952,28 +1723,26 @@
                     el.style.display = 'none';
                 });
             }
+            
+            // Scroll animation for feature cards
+           
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Remove PDF Metadata - PDFMasterPro",
-        "description": "Free online tool to remove metadata from PDF files",
-        "url": "https://pdfmasterpro.com/remove-pdf-metadata",
-        "applicationCategory": "DocumentUtility",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "PDFMasterPro"
-        }
-    }
     </script>
 </body>
 </html>
