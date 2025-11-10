@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Add Page Numbers to PDF | PDFMasterPro</title>
     <meta name="description" content="Free online tool to add page numbers to PDF files. Customize position, format, and style of page numbers.">
     <meta name="keywords" content="number PDF, add page numbers, PDF numbering tool, PDF editor">
@@ -11,6 +11,7 @@
     <meta property="og:description" content="Free online tool to add page numbers to PDF files">
     <link rel="canonical" href="https://pdfmasterpro.com/number-pdf">
     
+    <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -21,7 +22,152 @@
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
    <link rel="canonical" href="https://pdfmasterpro.in/page-number.html" />
     
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pdfmasterpro.in/#website",
+          "url": "https://pdfmasterpro.in/",
+          "name": "PDFMasterPro",
+          "description": "Advanced PDF tools for all your document needs",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://pdfmasterpro.in/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://pdfmasterpro.in/#organization",
+          "name": "PDFMasterPro",
+          "url": "https://pdfmasterpro.in/",
+          "logo": "https://pdfmasterpro.in/images/logo.png",
+          "description": "Provider of advanced PDF tools",
+          "sameAs": [
+            "https://www.facebook.com/pdfmasterpro",
+            "https://twitter.com/pdfmasterpro",
+            "https://www.linkedin.com/company/pdfmasterpro"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://pdfmasterpro.in/page-number.html/#webpage",
+          "url": "https://pdfmasterpro.in/page-number.html",
+          "name": "Add Page Numbers to PDF | PDFMasterPro",
+          "isPartOf": {
+            "@id": "https://pdfmasterpro.in/#website"
+          },
+          "about": {
+            "@id": "https://pdfmasterpro.in/#organization"
+          },
+          "description": "Free online tool to add page numbers to PDF files. Customize position, format, and style of page numbers.",
+          "breadcrumb": {
+            "@id": "https://pdfmasterpro.in/page-number.html/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://pdfmasterpro.in/page-number.html"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://pdfmasterpro.in/page-number.html/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://pdfmasterpro.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Add Page Numbers to PDF"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "PDFMasterPro PDF Page Number Tool",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "Any",
+          "description": "Advanced PDF page numbering tool with full customization options",
+          "url": "https://pdfmasterpro.in/page-number.html",
+          "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What types of PDF files can I add page numbers to?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our PDF page numbering tool works with all standard PDF files, including those with text, images, forms, and scanned documents."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my data secure when adding page numbers to PDF?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I customize the position and style of page numbers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! You can choose from multiple positions, customize font, size, color, and choose from various numbering formats."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I add page numbers to specific pages only?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can choose to add page numbers to all pages or specify a custom page range."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this PDF page numbering tool completely free to use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our PDF page numbering tool is completely free with no limitations on the number of pages you can process."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    
     <style>
+        /* Base Styles */
         :root {
             --primary: #2563eb;
             --secondary: #f59e0b;
@@ -33,6 +179,7 @@
             --glass-border: rgba(255, 255, 255, 0.15);
             --error: #ef4444;
             --selected-blue: #3b82f6;
+            --selection-order: #10b981;
         }
         
         * {
@@ -48,8 +195,10 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
+        /* Glassmorphism Effect */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -60,22 +209,27 @@
             transition: all 0.3s ease;
         }
         
+        /* Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
+        /* Header */
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -84,17 +238,55 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: clamp(40px, 8vw, 60px) 0;
+            text-align: center;
         }
         
         .tool-title {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(32px, 6vw, 42px);
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -102,18 +294,21 @@
         }
         
         .tool-description {
-            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(16px, 3vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Main Card */
         .main-card {
             padding: 30px;
             margin-bottom: 30px;
-            overflow: hidden;
         }
         
+        /* Upload Area */
         .drop-zone {
             border: 2px dashed rgba(255, 255, 255, 0.2);
             border-radius: 12px;
@@ -149,25 +344,19 @@
             font-size: 14px;
         }
         
+        /* File Info */
         .file-info {
             text-align: center;
             margin-bottom: 20px;
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
         }
         
         .file-name {
             font-weight: 500;
             margin-bottom: 5px;
             color: var(--light);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         
         .file-size {
@@ -175,6 +364,7 @@
             font-size: 14px;
         }
         
+        /* Settings Section */
         .settings-section {
             display: none;
             margin-top: 20px;
@@ -272,23 +462,6 @@
             font-size: 14px;
         }
         
-        .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .radio-option {
-            display: flex;
-            align-items: center;
-        }
-        
-        .radio-label {
-            margin-left: 8px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-        }
-        
         .color-picker {
             width: 30px;
             height: 30px;
@@ -298,6 +471,7 @@
             cursor: pointer;
         }
         
+        /* Preview Section */
         .preview-section {
             display: none;
             margin-top: 20px;
@@ -317,42 +491,56 @@
             color: var(--light);
         }
         
+        .view-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: auto;
+        }
+        
+        .view-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
         .preview-scroll-container {
-            max-height: 60vh;
+            max-height: 65vh;
             overflow-y: auto;
-            padding: 5px;
+            padding: 15px;
             margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
+            scroll-behavior: smooth;
         }
         
         .preview-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 15px;
-            padding: 5px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
         
-        .preview-container.vertical-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .preview-container.vertical-layout .page-preview {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
+        .preview-container.grid-view {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            height: auto;
         }
         
         .page-preview {
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            padding: 10px;
+            padding: 15px;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.05);
             position: relative;
-            user-select: none;
+            height: 0;
+            padding-bottom: 141.4%; /* A4 aspect ratio (1:√2) */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         .page-preview:hover {
@@ -363,25 +551,94 @@
         
         .page-number {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 15px;
+            left: 15px;
             background: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 3px 8px;
             border-radius: 4px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
             z-index: 1;
         }
         
         .page-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: contain;
             border-radius: 4px;
-            pointer-events: none;
         }
         
+        /* Zoom Modal */
+        .zoom-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .zoom-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .zoom-canvas {
+            max-width: 100%;
+            max-height: 90vh;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+        
+        .zoom-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .zoom-controls {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        
+        .zoom-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .zoom-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Buttons */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -425,6 +682,7 @@
             transform: translateY(-2px);
         }
         
+        /* Processing Section */
         .processing-container {
             display: none;
             text-align: center;
@@ -446,6 +704,7 @@
             font-size: 18px;
         }
         
+        /* Result Section */
         .result-container {
             display: none;
             text-align: center;
@@ -465,13 +724,50 @@
             color: var(--light);
         }
         
-        footer {
+        .download-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .download-option {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .download-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .download-btn {
+            margin-top: 15px;
+            width: 100%;
+        }
+        
+        /* Footer - Shifted to Left */
+        footer {
+            text-align: left;
             padding: 20px 0;
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+       footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
         }
         
+        /* Animations */
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -487,8 +783,10 @@
             }
         }
         
+        /* Scrollbar */
         .preview-scroll-container::-webkit-scrollbar {
             width: 8px;
+            height: 8px;
         }
         
         .preview-scroll-container::-webkit-scrollbar-track {
@@ -501,6 +799,268 @@
             border-radius: 10px;
         }
         
+        .preview-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Floating CTA Button Animation */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--darker);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        /* Wave animation for floating CTA */
+        .wave-circle {
+            position: absolute;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: wave 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Features Section */
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            overflow: hidden;
+        }
+        
+        /* Footer Content - Shifted to Left */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .footer-column {
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 100%;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: block;
+            position: relative;
+            padding-left: 0;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        /* Responsive */
         @media (max-width: 992px) {
             .main-card {
                 padding: 25px;
@@ -511,7 +1071,11 @@
             }
             
             .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .preview-container.grid-view {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -533,12 +1097,30 @@
             }
             
             .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .preview-container.grid-view {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .download-options {
+                grid-template-columns: 1fr;
             }
             
             .btn {
                 padding: 10px 15px;
                 font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            /* Footer adjustments for mobile */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
         }
         
@@ -548,226 +1130,514 @@
             }
             
             .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
                 gap: 10px;
+            }
+            
+            .preview-container.grid-view {
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .btn-group {
                 gap: 10px;
             }
             
-            .settings-container {
+            /* Footer adjustments for small mobile */
+            .footer-content {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
-        }
+        } 
+        
+html {
+  scroll-behavior: smooth;
+}
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header with Navigation -->
         <header>
-            <a href="/" class="logo">
+            <a href="https://pdfmasterpro.in/" class="logo">
                 <i class="fas fa-file-pdf"></i>
                 <span>PDFMasterPro</span>
             </a>
-            <h1 class="tool-title animate__animated animate__fadeIn">Number PDF Pages</h1>
-            <p class="tool-description animate__animated animate__fadeIn">Add page numbers to your PDF document with custom formatting</p>
+            <nav>
+                <ul>
+                    <li><a href="https://pdfmasterpro.in/">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="main-card glass-card animate__animated animate__fadeIn">
-            <div class="drop-zone" id="dropZone">
-                <div class="upload-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3 class="upload-text">Drag & Drop PDF File Here</h3>
-                <p class="upload-hint">or click to browse files</p>
-                <input type="file" id="fileInput" accept=".pdf" style="display: none;">
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="selectFileBtn">
-                        <i class="fas fa-folder-open"></i> Select PDF
-                    </button>
-                </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="tool-title animate__animated animate__fadeInDown">Add Page Numbers to PDF</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s">
+                Add professional page numbers to your PDF documents. Customize position, format, font, and style to match your needs.
+            </p>
+            
+            <!-- Ad Container (Top) -->
+            <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-
-            <div class="file-info" id="fileInfo" style="display: none;">
-                <div class="file-name" id="fileName"></div>
-                <div class="file-size" id="fileSize"></div>
-            </div>
-
-            <div class="settings-section" id="settingsSection">
-                <div class="settings-header">
-                    <h3 class="settings-title">Page Number Settings</h3>
-                    <div class="page-count" id="pageCount"></div>
+            
+            <!-- PDF Page Number Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s">
+                <div class="drop-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="upload-text">Drag & Drop PDF File Here</h3>
+                    <p class="upload-hint">or click to browse files</p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="selectFileBtn">
+                            <i class="fas fa-folder-open"></i> Select PDF
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="settings-container">
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-file-alt"></i> Page Range</h4>
-                        
-                        <div class="form-group">
-                            <div class="checkbox-group">
-                                <input type="checkbox" id="allPagesCheckbox" checked>
-                                <label for="allPagesCheckbox" class="checkbox-label">All Pages</label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="pageRangeGroup" style="display: none;">
-                            <div class="form-label">Page Range</div>
-                            <div style="display: flex; gap: 10px; align-items: center;">
-                                <input type="number" id="fromPage" class="form-control" placeholder="From" min="1" style="width: 80px;">
-                                <span>to</span>
-                                <input type="number" id="toPage" class="form-control" placeholder="To" min="1" style="width: 80px;">
-                            </div>
-                        </div>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                </div>
+
+                <div class="settings-section" id="settingsSection">
+                    <div class="settings-header">
+                        <h3 class="settings-title">Page Number Settings</h3>
+                        <div class="page-count" id="pageCount"></div>
                     </div>
                     
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-tag"></i> Number Format</h4>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Format</div>
-                            <select id="numberFormat" class="form-control form-select">
-                                <option value="1">1, 2, 3...</option>
-                                <option value="2">Page 1, Page 2...</option>
-                                <option value="3">- 1 -, - 2 -...</option>
-                                <option value="4">-- 1 --, -- 2 --...</option>
-                                <option value="5">Custom Format</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group" id="customFormatGroup" style="display: none;">
-                            <div class="form-label">Custom Format</div>
-                            <input type="text" id="customFormat" class="form-control" placeholder="E.g. Page {n} of {t}">
-                            <small style="color: rgba(255,255,255,0.6); font-size: 12px;">{n} = page number, {t} = total pages</small>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Starting Number</div>
-                            <input type="number" id="startNumber" class="form-control" value="1" min="1">
-                        </div>
-                    </div>
-                    
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-map-marker-alt"></i> Position</h4>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Position</div>
-                            <select id="numberPosition" class="form-control form-select">
-                                <option value="top-left">Top Left</option>
-                                <option value="top-right">Top Right</option>
-                                <option value="bottom-left">Bottom Left</option>
-                                <option value="bottom-right" selected>Bottom Right</option>
-                                <option value="bottom-center">Bottom Center</option>
-                                <option value="top-center">Top Center</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Margin (px)</div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                                <div>
-                                    <label style="font-size: 12px; color: rgba(255,255,255,0.6);">Horizontal</label>
-                                    <input type="number" id="marginX" class="form-control" value="20" min="0">
-                                </div>
-                                <div>
-                                    <label style="font-size: 12px; color: rgba(255,255,255,0.6);">Vertical</label>
-                                    <input type="number" id="marginY" class="form-control" value="20" min="0">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-font"></i> Font Style</h4>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Font Family</div>
-                            <select id="fontFamily" class="form-control form-select">
-                                <option value="Helvetica">Helvetica</option>
-                                <option value="Times-Roman">Times New Roman</option>
-                                <option value="Courier">Courier</option>
-                                <option value="Arial">Arial</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Font Size</div>
-                            <input type="number" id="fontSize" class="form-control" value="12" min="6" max="72">
-                        </div>
-                        
-                        <div class="form-group">
-                            <div class="form-label">Style</div>
-                            <div style="display: flex; gap: 15px;">
+                    <div class="settings-container">
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-file-alt"></i> Page Range</h4>
+                            
+                            <div class="form-group">
                                 <div class="checkbox-group">
-                                    <input type="checkbox" id="fontBold">
-                                    <label for="fontBold" class="checkbox-label">Bold</label>
+                                    <input type="checkbox" id="allPagesCheckbox" checked>
+                                    <label for="allPagesCheckbox" class="checkbox-label">All Pages</label>
                                 </div>
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="fontItalic">
-                                    <label for="fontItalic" class="checkbox-label">Italic</label>
+                            </div>
+                            
+                            <div class="form-group" id="pageRangeGroup" style="display: none;">
+                                <div class="form-label">Page Range</div>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <input type="number" id="fromPage" class="form-control" placeholder="From" min="1" style="width: 80px;">
+                                    <span>to</span>
+                                    <input type="number" id="toPage" class="form-control" placeholder="To" min="1" style="width: 80px;">
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <div class="form-label">Color</div>
-                            <input type="color" id="fontColor" class="color-picker" value="#000000">
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-tag"></i> Number Format</h4>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Format</div>
+                                <select id="numberFormat" class="form-control form-select">
+                                    <option value="1">1, 2, 3...</option>
+                                    <option value="2">Page 1, Page 2...</option>
+                                    <option value="3">- 1 -, - 2 -...</option>
+                                    <option value="4">-- 1 --, -- 2 --...</option>
+                                    <option value="5">Custom Format</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="customFormatGroup" style="display: none;">
+                                <div class="form-label">Custom Format</div>
+                                <input type="text" id="customFormat" class="form-control" placeholder="E.g. Page {n} of {t}">
+                                <small style="color: rgba(255,255,255,0.6); font-size: 12px;">{n} = page number, {t} = total pages</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Starting Number</div>
+                                <input type="number" id="startNumber" class="form-control" value="1" min="1">
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-map-marker-alt"></i> Position</h4>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Position</div>
+                                <select id="numberPosition" class="form-control form-select">
+                                    <option value="top-left">Top Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="bottom-right" selected>Bottom Right</option>
+                                    <option value="bottom-center">Bottom Center</option>
+                                    <option value="top-center">Top Center</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Margin (px)</div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div>
+                                        <label style="font-size: 12px; color: rgba(255,255,255,0.6);">Horizontal</label>
+                                        <input type="number" id="marginX" class="form-control" value="20" min="0">
+                                    </div>
+                                    <div>
+                                        <label style="font-size: 12px; color: rgba(255,255,255,0.6);">Vertical</label>
+                                        <input type="number" id="marginY" class="form-control" value="20" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-font"></i> Font Style</h4>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Font Family</div>
+                                <select id="fontFamily" class="form-control form-select">
+                                    <option value="Helvetica">Helvetica</option>
+                                    <option value="Times-Roman">Times New Roman</option>
+                                    <option value="Courier">Courier</option>
+                                    <option value="Arial">Arial</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Font Size</div>
+                                <input type="number" id="fontSize" class="form-control" value="12" min="6" max="72">
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Style</div>
+                                <div style="display: flex; gap: 15px;">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="fontBold">
+                                        <label for="fontBold" class="checkbox-label">Bold</label>
+                                    </div>
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="fontItalic">
+                                        <label for="fontItalic" class="checkbox-label">Italic</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Color</div>
+                                <input type="color" id="fontColor" class="color-picker" value="#000000">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="previewBtn">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                        <button class="btn btn-primary" id="addNumbersBtn">
+                            <i class="fas fa-plus-circle"></i> Add Page Numbers
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preview-section" id="previewSection">
+                    <div class="preview-header">
+                        <h3 class="preview-title">Preview</h3>
+                        <div class="view-toggle" id="viewToggle">
+                            <i class="fas fa-th"></i>
+                            <span>Grid View</span>
+                        </div>
+                    </div>
+                    
+                    <div class="preview-scroll-container" id="previewScrollContainer">
+                        <div class="preview-container" id="previewContainer"></div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="backToSettingsBtn">
+                            <i class="fas fa-arrow-left"></i> Back to Settings
+                        </button>
+                        <button class="btn btn-primary" id="saveBtn">
+                            <i class="fas fa-save"></i> Save Numbered PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="processing-container" id="processingContainer">
+                    <div class="processing-spinner"></div>
+                    <h3 class="processing-text">Processing your PDF...</h3>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="result-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="result-message">Your numbered PDF is ready!</h3>
+                    <div class="download-options" id="downloadOptions"></div>
+                </div>
+            </div>
+
+            <!-- Ad Container (Middle) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+            
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="features-section">
+                <h2 class="section-title">How to Add Page Numbers to PDF</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Upload Your PDF</h3>
+                            <p>Drag and drop your PDF file or click to browse and select the document you want to add page numbers to.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Customize Settings</h3>
+                            <p>Choose page range, number format, position, font style, and color to match your document's design.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Download & Save</h3>
+                            <p>Preview your numbered PDF and download the final document with professional page numbers added.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2 class="section-title">Advanced PDF Page Numbering Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Secure Processing</h3>
+                            <p>Your PDF files are processed directly in your browser. No files are uploaded to our servers, ensuring complete privacy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-sort"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Flexible Page Range</h3>
+                            <p>Add numbers to all pages or specify a custom range. Perfect for documents with cover pages or appendices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Multiple Formats</h3>
+                            <p>Choose from various numbering formats including simple numbers, page labels, or create custom formats.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Custom Position</h3>
+                            <p>Place page numbers in any corner or center position with adjustable margins for perfect alignment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Font Customization</h3>
+                            <p>Choose from multiple fonts, sizes, colors, and styles to match your document's branding and design.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Unlimited Usage</h3>
+                            <p>Add page numbers to as many PDFs as you need with no limitations or watermarks on your documents.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="features-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>What types of PDF files can I add page numbers to?</h3>
+                            <p>Our PDF page numbering tool works with all standard PDF files, including those with text, images, forms, and scanned documents.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Is my data secure when adding page numbers to PDF?</h3>
+                            <p>Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-sort"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Can I customize the position and style of page numbers?</h3>
+                            <p>Absolutely! You can choose from multiple positions, customize font, size, color, and choose from various numbering formats.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Can I add page numbers to specific pages only?</h3>
+                            <p>Yes, you can choose to add page numbers to all pages or specify a custom page range for precise control.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Is this PDF page numbering tool completely free?</h3>
+                            <p>Yes, our PDF page numbering tool is completely free with no limitations on the number of pages you can process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Will the original PDF quality be preserved?</h3>
+                            <p>Yes, all page numbers are added as vector elements, preserving the original quality of your PDF document.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ad Container (Bottom) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+        </main>
+        
+        <!-- Footer - Shifted to Left -->
+        <footer id="contact" class="animate__animated animate__fadeInUp">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PDF Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/merge-pdf">Merge PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/watermark-pdf">Watermark PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/compress-pdf">Compress PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-word">PDF to Word</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Page Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/extractpdf.html">Extract PDF Pages</a></li>
+                            <li><a href="https://pdfmasterpro.in/split-pdf">Split PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/reorder-pdf-pages">Reorder PDF Pages</a></li>
+                            <li><a href="https://pdfmasterpro.in/page-number.html">Add Page Numbers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/blog">Blog</a></li>
+                            <li><a href="https://pdfmasterpro.in/tutorials">Tutorials</a></li>
+                            <li><a href="https://pdfmasterpro.in/help">Help Center</a></li>
+                            <li><a href="https://pdfmasterpro.in/faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/about">About Us</a></li>
+                            <li><a href="https://pdfmasterpro.in/privacy">Privacy Policy</a></li>
+                            <li><a href="https://pdfmasterpro.in/terms">Terms of Service</a></li>
+                            <li><a href="https://pdfmasterpro.in/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul>
+                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank">Facebook</a></li>
+                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank">LinkedIn</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://facebook.com/pdfmasterpro" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/pdfmasterpro" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/pdfmasterpro" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="btn-group">
-                    <button class="btn btn-secondary" id="previewBtn">
-                        <i class="fas fa-eye"></i> Preview
-                    </button>
-                    <button class="btn btn-primary" id="addNumbersBtn">
-                        <i class="fas fa-plus-circle"></i> Add Page Numbers
-                    </button>
+                <div class="copyright">
+                    <p>&copy; 2023 PDFMasterPro. All rights reserved. | Serving over 1 million users monthly</p>
                 </div>
             </div>
+        </footer>
+    </div>
 
-            <div class="preview-section" id="previewSection" style="display: none;">
-                <div class="preview-header">
-                    <h3 class="preview-title">Preview</h3>
-                </div>
-                
-                <div class="preview-scroll-container" id="previewScrollContainer">
-                    <div class="preview-container" id="previewContainer"></div>
-                </div>
-                
-                <div class="btn-group">
-                    <button class="btn btn-secondary" id="backToSettingsBtn">
-                        <i class="fas fa-arrow-left"></i> Back to Settings
-                    </button>
-                    <button class="btn btn-primary" id="saveBtn">
-                        <i class="fas fa-save"></i> Save Numbered PDF
-                    </button>
-                </div>
-            </div>
-
-            <div class="processing-container" id="processingContainer">
-                <div class="processing-spinner"></div>
-                <h3 class="processing-text">Processing your PDF...</h3>
-            </div>
-
-            <div class="result-container" id="resultContainer">
-                <div class="result-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 class="result-message">Your numbered PDF is ready!</h3>
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="downloadBtn">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-secondary" id="newFileBtn">
-                        <i class="fas fa-file-upload"></i> New File
-                    </button>
-                </div>
+    <!-- Zoom Modal -->
+    <div class="zoom-modal" id="zoomModal">
+        <div class="zoom-content">
+            <span class="zoom-close" id="zoomClose">&times;</span>
+            <canvas class="zoom-canvas" id="zoomCanvas"></canvas>
+            <div class="zoom-controls">
+                <button class="zoom-btn" id="zoomInBtn"><i class="fas fa-search-plus"></i></button>
+                <button class="zoom-btn" id="zoomOutBtn"><i class="fas fa-search-minus"></i></button>
+                <button class="zoom-btn" id="zoomResetBtn"><i class="fas fa-sync-alt"></i></button>
             </div>
         </div>
+    </div>
 
-        <footer>
-            <p>PDFMasterPro &copy; 2023 | Free Online PDF Tools</p>
-        </footer>
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-file-upload"></i>
     </div>
 
     <script>
@@ -803,25 +1673,77 @@
             const addNumbersBtn = document.getElementById('addNumbersBtn');
             const previewSection = document.getElementById('previewSection');
             const previewContainer = document.getElementById('previewContainer');
+            const viewToggle = document.getElementById('viewToggle');
             const backToSettingsBtn = document.getElementById('backToSettingsBtn');
             const saveBtn = document.getElementById('saveBtn');
             const processingContainer = document.getElementById('processingContainer');
             const resultContainer = document.getElementById('resultContainer');
-            const downloadBtn = document.getElementById('downloadBtn');
-            const newFileBtn = document.getElementById('newFileBtn');
+            const downloadOptions = document.getElementById('downloadOptions');
+            const floatingCta = document.getElementById('floatingCta');
+            
+            // Zoom modal elements
+            const zoomModal = document.getElementById('zoomModal');
+            const zoomCanvas = document.getElementById('zoomCanvas');
+            const zoomClose = document.getElementById('zoomClose');
+            const zoomInBtn = document.getElementById('zoomInBtn');
+            const zoomOutBtn = document.getElementById('zoomOutBtn');
+            const zoomResetBtn = document.getElementById('zoomResetBtn');
 
             let pdfFile = null;
             let pdfDoc = null;
             let originalPdfBytes = null;
             let modifiedPdfBytes = null;
             let totalPages = 0;
-            let isVerticalLayout = false;
+            let isGridView = false;
+            let zoomLevel = 1;
+            let currentZoomPage = null;
+
+            // Add wave animation to floating CTA
+            function addWaveAnimation() {
+                const waves = [];
+                
+                // Create 3 wave circles
+                for (let i = 0; i < 3; i++) {
+                    const wave = document.createElement('div');
+                    wave.className = 'wave-circle';
+                    wave.style.width = '56px';
+                    wave.style.height = '56px';
+                    wave.style.position = 'absolute';
+                    wave.style.top = '0';
+                    wave.style.left = '0';
+                    wave.style.animationDelay = `${i * 0.3}s`;
+                    floatingCta.appendChild(wave);
+                    waves.push(wave);
+                }
+                
+                return waves;
+            }
+            
+            // Initialize wave animation
+            const waveCircles = addWaveAnimation();
+            
+            // Floating CTA click handler
+            floatingCta.addEventListener('click', () => fileInput.click());
 
             // Handle file selection via button
             selectFileBtn.addEventListener('click', () => fileInput.click());
             
             // Handle file input change
             fileInput.addEventListener('change', handleFile);
+
+            // Toggle grid view
+            viewToggle.addEventListener('click', toggleGridView);
+
+            function toggleGridView() {
+                isGridView = !isGridView;
+                if (isGridView) {
+                    previewContainer.classList.add('grid-view');
+                    viewToggle.innerHTML = '<i class="fas fa-list"></i><span>List View</span>';
+                } else {
+                    previewContainer.classList.remove('grid-view');
+                    viewToggle.innerHTML = '<i class="fas fa-th"></i><span>Grid View</span>';
+                }
+            }
 
             // Handle drag and drop
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -983,6 +1905,9 @@
                     processingContainer.style.display = 'none';
                     resultContainer.style.display = 'block';
                     
+                    // Render download options
+                    renderDownloadOptions();
+                    
                 } catch (error) {
                     console.error('Error saving PDF:', error);
                     processingContainer.style.display = 'none';
@@ -1010,6 +1935,9 @@
                     // Show result section with download ready
                     processingContainer.style.display = 'none';
                     resultContainer.style.display = 'block';
+                    
+                    // Render download options
+                    renderDownloadOptions();
                     
                 } catch (error) {
                     console.error('Error saving PDF:', error);
@@ -1039,13 +1967,13 @@
                 }
                 
                 // Show only first few pages in preview for performance
-                const previewPages = pagesToShow.slice(0, 5);
+                const previewPages = pagesToShow.slice(0, 6);
                 
                 // Render each page with number
                 for (const pageNum of previewPages) {
                     try {
                         const page = await pdfDoc.getPage(pageNum);
-                        const viewport = page.getViewport({ scale: 0.5 });
+                        const viewport = page.getViewport({ scale: 0.6 });
                         
                         const pagePreview = document.createElement('div');
                         pagePreview.className = 'page-preview';
@@ -1073,6 +2001,24 @@
                         
                         // Draw page number on canvas
                         drawPageNumber(context, canvas, pageNum, settings);
+                        
+                        // Add zoom button
+                        const zoomBtn = document.createElement('button');
+                        zoomBtn.className = 'zoom-btn';
+                        zoomBtn.style.position = 'absolute';
+                        zoomBtn.style.bottom = '15px';
+                        zoomBtn.style.right = '15px';
+                        zoomBtn.style.background = 'rgba(0, 0, 0, 0.7)';
+                        zoomBtn.style.border = 'none';
+                        zoomBtn.style.borderRadius = '4px';
+                        zoomBtn.style.padding = '5px';
+                        zoomBtn.style.cursor = 'pointer';
+                        zoomBtn.innerHTML = '<i class="fas fa-search-plus" style="color: white; font-size: 14px;"></i>';
+                        zoomBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            openZoomModal(pageNum, settings);
+                        });
+                        pagePreview.appendChild(zoomBtn);
                         
                     } catch (error) {
                         console.error(`Error rendering page ${pageNum}:`, error);
@@ -1152,6 +2098,79 @@
                 // Draw the text
                 context.fillText(numberText, x, y);
             }
+
+            // Zoom modal functions
+            async function openZoomModal(pageNumber, settings) {
+                currentZoomPage = pageNumber;
+                zoomLevel = 1;
+                
+                const page = await pdfDoc.getPage(pageNumber);
+                const viewport = page.getViewport({ scale: 1.0 });
+                
+                zoomCanvas.width = viewport.width;
+                zoomCanvas.height = viewport.height;
+                
+                await page.render({
+                    canvasContext: zoomCanvas.getContext('2d'),
+                    viewport: viewport
+                }).promise;
+                
+                // Draw page number on zoom canvas
+                const ctx = zoomCanvas.getContext('2d');
+                drawPageNumber(ctx, zoomCanvas, pageNumber, settings);
+                
+                zoomModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeZoomModal() {
+                zoomModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            function applyZoom() {
+                const ctx = zoomCanvas.getContext('2d');
+                ctx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
+                
+                pdfDoc.getPage(currentZoomPage).then(page => {
+                    const viewport = page.getViewport({ scale: zoomLevel });
+                    
+                    // Resize canvas
+                    zoomCanvas.width = viewport.width;
+                    zoomCanvas.height = viewport.height;
+                    
+                    // Re-render page with new zoom level
+                    page.render({
+                        canvasContext: ctx,
+                        viewport: viewport
+                    });
+                });
+            }
+
+            // Zoom event listeners
+            zoomClose.addEventListener('click', closeZoomModal);
+            
+            zoomInBtn.addEventListener('click', () => {
+                zoomLevel = Math.min(zoomLevel + 0.25, 3);
+                applyZoom();
+            });
+            
+            zoomOutBtn.addEventListener('click', () => {
+                zoomLevel = Math.max(zoomLevel - 0.25, 0.5);
+                applyZoom();
+            });
+            
+            zoomResetBtn.addEventListener('click', () => {
+                zoomLevel = 1;
+                applyZoom();
+            });
+
+            // Close modal when clicking outside
+            zoomModal.addEventListener('click', (e) => {
+                if (e.target === zoomModal) {
+                    closeZoomModal();
+                }
+            });
 
             async function createNumberedPdf() {
                 try {
@@ -1283,44 +2302,70 @@
                 return pageNum >= settings.fromPage && pageNum <= settings.toPage;
             }
 
-            // Download the numbered PDF
-            downloadBtn.addEventListener('click', async function() {
-                if (!modifiedPdfBytes) {
-                    try {
-                        // If modifiedPdfBytes doesn't exist, create it first
-                        modifiedPdfBytes = await createNumberedPdf();
-                    } catch (error) {
-                        alert('Error preparing PDF for download. Please try again.');
-                        return;
-                    }
-                }
+            function renderDownloadOptions() {
+                downloadOptions.innerHTML = '';
                 
-                try {
-                    // Ensure we have Uint8Array
-                    const pdfBytes = modifiedPdfBytes instanceof Uint8Array 
-                        ? modifiedPdfBytes 
-                        : new Uint8Array(modifiedPdfBytes);
-                    
-                    // Create a Blob
-                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-                    
-                    // Generate filename
-                    let filename = 'numbered.pdf';
-                    if (fileName.textContent) {
-                        filename = fileName.textContent.replace(/\.pdf$/i, '') + '_numbered.pdf';
+                // Add download option
+                const downloadOption = document.createElement('div');
+                downloadOption.className = 'download-option';
+                downloadOption.innerHTML = `
+                    <div>Numbered PDF Document</div>
+                    <button class="btn btn-primary download-btn" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                `;
+                downloadOptions.appendChild(downloadOption);
+                
+                // Add new file option
+                const newFileOption = document.createElement('div');
+                newFileOption.className = 'download-option';
+                newFileOption.innerHTML = `
+                    <div>Process Another File</div>
+                    <button class="btn btn-secondary download-btn" id="newFileBtn">
+                        <i class="fas fa-file-upload"></i> New File
+                    </button>
+                `;
+                downloadOptions.appendChild(newFileOption);
+                
+                // Download the numbered PDF
+                document.getElementById('downloadBtn').addEventListener('click', async function() {
+                    if (!modifiedPdfBytes) {
+                        try {
+                            // If modifiedPdfBytes doesn't exist, create it first
+                            modifiedPdfBytes = await createNumberedPdf();
+                        } catch (error) {
+                            alert('Error preparing PDF for download. Please try again.');
+                            return;
+                        }
                     }
                     
-                    // Save the file
-                    saveAs(blob, filename);
-                    
-                } catch (error) {
-                    console.error('Error downloading PDF:', error);
-                    alert('Error downloading PDF. Please try again.');
-                }
-            });
+                    try {
+                        // Ensure we have Uint8Array
+                        const pdfBytes = modifiedPdfBytes instanceof Uint8Array 
+                            ? modifiedPdfBytes 
+                            : new Uint8Array(modifiedPdfBytes);
+                        
+                        // Create a Blob
+                        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                        
+                        // Generate filename
+                        let filename = 'numbered.pdf';
+                        if (fileName.textContent) {
+                            filename = fileName.textContent.replace(/\.pdf$/i, '') + '_numbered.pdf';
+                        }
+                        
+                        // Save the file
+                        saveAs(blob, filename);
+                        
+                    } catch (error) {
+                        console.error('Error downloading PDF:', error);
+                        alert('Error downloading PDF. Please try again.');
+                    }
+                });
 
-            // Start with a new file
-            newFileBtn.addEventListener('click', resetTool);
+                // Start with a new file
+                document.getElementById('newFileBtn').addEventListener('click', resetTool);
+            }
 
             function resetTool() {
                 fileInfo.style.display = 'none';
@@ -1343,28 +2388,39 @@
                     reader.readAsArrayBuffer(file);
                 });
             }
+            
+            // Scroll animation for feature cards
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate-fade-in');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.animation = `fadeInUp 0.5s forwards ${element.dataset.animationDelay || '0s'}`;
+                    }
+                });
+            };
+            
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Number PDF Pages - PDFMasterPro",
-        "description": "Free online tool to add page numbers to PDF files",
-        "url": "https://pdfmasterpro.com/number-pdf",
-        "applicationCategory": "DocumentUtility",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "PDFMasterPro"
-        }
-    }
     </script>
 </body>
 </html>
