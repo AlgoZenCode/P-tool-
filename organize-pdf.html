@@ -951,7 +951,11 @@
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-        }
+        } 
+        
+html {
+  scroll-behavior: smooth;
+}
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -967,7 +971,7 @@
                     <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
                     <li><a href="#features" itemprop="url">Features</a></li>
                     <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
-                    <li><a href="#contact" itemprop="url">Contact</a></li>
+                    <li><a href="#contact" itemprop="url">contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -1353,7 +1357,8 @@
         <i class="fas fa-file-upload"></i>
     </div>
 
-    <script>
+    <script> 
+  
         // Initialize PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
 
@@ -1660,11 +1665,9 @@
                 selectPage(pageNum);
                 
                 // Scroll to the selected page
-                const pageElement = document.querySelector(`.page-preview[data-page-number="${pageNum}"]`);
-                if (pageElement) {
-                    pageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
+document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+});
 
             function selectPage(pageNum) {
                 // Deselect previous selection
