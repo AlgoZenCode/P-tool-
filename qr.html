@@ -1,11 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>QR Code Generator | PDFMasterPro</title>
     <meta name="description" content="Free online QR code generator with custom colors, gradients, shapes, and logo upload.">
+    <meta name="keywords" content="QR code generator, create QR code, custom QR code, QR code with logo, free QR code">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="QR Code Generator | PDFMasterPro">
+    <meta property="og:description" content="Free online QR code generator with custom colors, gradients, shapes, and logo upload">
+    <link rel="canonical" href="https://pdfmasterpro.in/qr.html">
     
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDFMasterPro - QR Code Generator",
+        "description": "Free online QR code generator with custom colors, gradients, shapes, and logo upload",
+        "url": "https://pdfmasterpro.in/qr.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "permissions": "none",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfmasterpro.in/logo.png",
+                "width": "200",
+                "height": "60"
+            }
+        },
+        "screenshot": "https://pdfmasterpro.in/screenshot-qr-generator.jpg",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfmasterpro.in/qr.html"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pdfmasterpro.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Tools",
+                "item": "https://pdfmasterpro.in/tools"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "QR Code Generator",
+                "item": "https://pdfmasterpro.in/qr.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What types of QR codes can I create?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can create QR codes for URLs, text, contact information, and more with custom styling including colors, gradients, shapes, and logos."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I add my logo to the QR code?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! You can upload your logo and customize its size to create branded QR codes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What customization options are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can customize dot styles, corner styles, colors (solid or gradient), background colors, and add gradients for both foreground and background."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this QR code generator completely free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our QR code generator is completely free with no limitations on usage or downloads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What file formats can I download my QR code in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can download your QR codes as PNG images with high resolution."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do the QR codes work with all scanners?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all generated QR codes are fully compliant with QR code standards and work with any standard QR code scanner."
+                }
+            }
+        ]
+    }
+    </script>
+
     <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,7 +143,6 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2249195008528002"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
-      <link rel="canonical" href="https://pdfmasterpro.in/qr.html" />
     
     <style>
         :root {
@@ -23,9 +152,10 @@
             --dark: #1e293b;
             --darker: #0f172a;
             --light: #f8fafc;
-            --glass-bg: rgba(30, 41, 59, 0.5);
+            --glass-bg: rgba(37, 99, 235, 0.1);
             --glass-border: rgba(255, 255, 255, 0.15);
             --error: #ef4444;
+            --selected-blue: #3b82f6;
         }
         
         * {
@@ -41,6 +171,7 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .glass-card {
@@ -54,21 +185,25 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 0 20px;
         }
         
+        /* Header */
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -77,17 +212,56 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: clamp(40px, 8vw, 60px) 0;
+            text-align: center;
         }
         
         .tool-title {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(32px, 6vw, 42px);
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -95,16 +269,18 @@
         }
         
         .tool-description {
-            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(16px, 3vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Main Card */
         .main-card {
             padding: 30px;
             margin-bottom: 30px;
-            overflow: hidden;
         }
         
         .content-container {
@@ -126,7 +302,7 @@
         }
         
         .settings-group {
-            background: rgba(15, 23, 42, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             padding: 15px;
         }
@@ -327,7 +503,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            background: rgba(15, 23, 42, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             min-height: 400px;
         }
@@ -360,10 +536,276 @@
             margin-top: 20px;
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        /* Footer */
+        footer {
+            text-align: left;
+            padding: 20px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+        footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
         }
         
+        /* Floating CTA Button Animation */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--darker);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        /* Wave animation for floating CTA */
+        .wave-circle {
+            position: absolute;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: wave 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Features Section */
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            overflow: hidden;
+        }
+        
+        /* Footer Content */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .footer-column {
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 100%;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: block;
+            position: relative;
+            padding-left: 0;
+            cursor: pointer;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -375,156 +817,501 @@
             }
         }
         
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-card {
+                padding: 25px;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .tool-title { font-size: 28px; }
-            .tool-description { font-size: 16px; }
-            .main-card { padding: 20px; }
-            .btn { padding: 10px 15px; font-size: 14px; }
+            .tool-title {
+                font-size: 28px;
+            }
+            
+            .tool-description {
+                font-size: 16px;
+            }
+            
+            .main-card {
+                padding: 20px;
+            }
+            
+            .btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
         }
         
         @media (max-width: 480px) {
-            .tool-title { font-size: 24px; }
-            .btn-group { gap: 10px; }
+            .tool-title {
+                font-size: 24px;
+            }
+            
+            .btn-group {
+                gap: 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <div class="container">
+        <!-- Header with Navigation -->
         <header>
-            <a href="#" class="logo">
+            <a href="https://pdfmasterpro.in/" class="logo" itemprop="url">
                 <i class="fas fa-qrcode"></i>
-                <span>PDFMasterPro</span>
+                <span itemprop="name">PDFMasterPro</span>
             </a>
-            <h1 class="tool-title animate__animated animate__fadeIn">QR Code Generator</h1>
-            <p class="tool-description animate__animated animate__fadeIn">Create custom QR codes with advanced styling options</p>
+            <nav>
+                <ul>
+                    <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
+                    <li><a href="#features" itemprop="url">Features</a></li>
+                    <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
+                    <li><a href="#contact" itemprop="url">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="main-card glass-card animate__animated animate__fadeIn">
-            <div class="content-container">
-                <div class="settings-container">
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-edit"></i> QR Code Content</h4>
-                        <div class="form-group">
-                            <textarea id="qrText" class="form-control" rows="4" placeholder="Enter text, URL, or data for QR code">https://pdfmasterpro.in</textarea>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">QR Code Generator</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
+                Create custom QR codes with advanced styling options including colors, gradients, shapes, and logo upload.
+            </p>
+            
+            <!-- Ad Container (Top) -->
+            <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+            
+            <!-- QR Code Generator Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <meta itemprop="applicationCategory" content="UtilityApplication">
+                <meta itemprop="operatingSystem" content="Any">
+                <meta itemprop="name" content="PDFMasterPro QR Code Generator">
+                <meta itemprop="description" content="Free online QR code generator with custom colors, gradients, shapes, and logo upload">
+                <meta itemprop="url" content="https://pdfmasterpro.in/qr.html">
+                <meta itemprop="softwareVersion" content="1.0">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="USD">
+                </div>
+                
+                <div class="content-container">
+                    <div class="settings-container">
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-edit"></i> QR Code Content</h4>
+                            <div class="form-group">
+                                <textarea id="qrText" class="form-control" rows="4" placeholder="Enter text, URL, or data for QR code">https://pdfmasterpro.in</textarea>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-shapes"></i> Shapes & Style</h4>
-                        <div class="form-group">
-                            <div class="form-label">Dots Style</div>
-                            <select id="dotsStyle" class="form-control form-select">
-                                <option value="square">Squares</option>
-                                <option value="dots">Dots</option>
-                                <option value="rounded" selected>Rounded</option>
-                                <option value="extra-rounded">Extra Rounded</option>
-                                <option value="classy">Classy</option>
-                                <option value="classy-rounded">Classy Rounded</option>
-                            </select>
-                        </div>
-                         <div class="form-group">
-                            <div class="form-label">Corner Eye Style</div>
-                            <select id="cornersSquareStyle" class="form-control form-select">
-                                <option value="square">Square</option>
-                                <option value="dot">Dot</option>
-                                <option value="extra-rounded" selected>Extra Rounded</option>
-                            </select>
-                        </div>
-                         <div class="form-group">
-                            <div class="form-label">Corner Dot Style</div>
-                            <select id="cornersDotStyle" class="form-control form-select">
-                                <option value="square">Square</option>
-                                <option value="dot" selected>Dot</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-palette"></i> Colors</h4>
                         
-                        <div class="form-group">
-                            <div class="form-label">Foreground</div>
-                            <select id="fgType" class="form-control form-select">
-                                <option value="solid">Solid Color</option>
-                                <option value="gradient">Gradient</option>
-                            </select>
-                        </div>
-                        <div id="fgSolidColor" class="form-group">
-                             <input type="color" id="fgColor" class="color-picker" value="#000000">
-                        </div>
-                        <div id="fgGradientOptions" class="form-group" style="display: none;">
-                            <div class="color-stops-container" id="fgColorStops"></div>
-                            <button id="addFgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
-                             <div class="form-group" style="margin-top:10px;">
-                                <select id="fgGradientType" class="form-control form-select">
-                                    <option value="linear">Linear</option>
-                                    <option value="radial">Radial</option>
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-shapes"></i> Shapes & Style</h4>
+                            <div class="form-group">
+                                <div class="form-label">Dots Style</div>
+                                <select id="dotsStyle" class="form-control form-select">
+                                    <option value="square">Squares</option>
+                                    <option value="dots">Dots</option>
+                                    <option value="rounded" selected>Rounded</option>
+                                    <option value="extra-rounded">Extra Rounded</option>
+                                    <option value="classy">Classy</option>
+                                    <option value="classy-rounded">Classy Rounded</option>
                                 </select>
-                             </div>
-                             <div id="fgGradientAngleContainer" class="range-group">
-                                <div class="form-label">Angle (<span id="fgGradientAngleValue">0</span>°)</div>
-                                <input type="range" id="fgGradientAngle" class="range-control" min="0" max="360" value="0">
-                             </div>
+                            </div>
+                             <div class="form-group">
+                                <div class="form-label">Corner Eye Style</div>
+                                <select id="cornersSquareStyle" class="form-control form-select">
+                                    <option value="square">Square</option>
+                                    <option value="dot">Dot</option>
+                                    <option value="extra-rounded" selected>Extra Rounded</option>
+                                </select>
+                            </div>
+                             <div class="form-group">
+                                <div class="form-label">Corner Dot Style</div>
+                                <select id="cornersDotStyle" class="form-control form-select">
+                                    <option value="square">Square</option>
+                                    <option value="dot" selected>Dot</option>
+                                </select>
+                            </div>
                         </div>
 
-                         <div class="form-group">
-                            <div class="form-label">Background</div>
-                            <select id="bgType" class="form-control form-select">
-                                <option value="solid">Solid Color</option>
-                                <option value="gradient">Gradient</option>
-                            </select>
-                        </div>
-                        <div id="bgSolidColor" class="form-group">
-                             <input type="color" id="bgColor" class="color-picker" value="#ffffff">
-                        </div>
-                        <div id="bgGradientOptions" class="form-group" style="display: none;">
-                            <div class="color-stops-container" id="bgColorStops"></div>
-                            <button id="addBgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
-                             <div class="form-group" style="margin-top:10px;">
-                                <select id="bgGradientType" class="form-control form-select">
-                                    <option value="linear">Linear</option>
-                                    <option value="radial">Radial</option>
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-palette"></i> Colors</h4>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Foreground</div>
+                                <select id="fgType" class="form-control form-select">
+                                    <option value="solid">Solid Color</option>
+                                    <option value="gradient">Gradient</option>
                                 </select>
-                             </div>
-                              <div id="bgGradientAngleContainer" class="range-group">
-                                <div class="form-label">Angle (<span id="bgGradientAngleValue">0</span>°)</div>
-                                <input type="range" id="bgGradientAngle" class="range-control" min="0" max="360" value="0">
-                             </div>
+                            </div>
+                            <div id="fgSolidColor" class="form-group">
+                                 <input type="color" id="fgColor" class="color-picker" value="#000000">
+                            </div>
+                            <div id="fgGradientOptions" class="form-group" style="display: none;">
+                                <div class="color-stops-container" id="fgColorStops"></div>
+                                <button id="addFgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
+                                 <div class="form-group" style="margin-top:10px;">
+                                    <select id="fgGradientType" class="form-control form-select">
+                                        <option value="linear">Linear</option>
+                                        <option value="radial">Radial</option>
+                                    </select>
+                                 </div>
+                                 <div id="fgGradientAngleContainer" class="range-group">
+                                    <div class="form-label">Angle (<span id="fgGradientAngleValue">0</span>°)</div>
+                                    <input type="range" id="fgGradientAngle" class="range-control" min="0" max="360" value="0">
+                                 </div>
+                            </div>
+
+                             <div class="form-group">
+                                <div class="form-label">Background</div>
+                                <select id="bgType" class="form-control form-select">
+                                    <option value="solid">Solid Color</option>
+                                    <option value="gradient">Gradient</option>
+                                </select>
+                            </div>
+                            <div id="bgSolidColor" class="form-group">
+                                 <input type="color" id="bgColor" class="color-picker" value="#ffffff">
+                            </div>
+                            <div id="bgGradientOptions" class="form-group" style="display: none;">
+                                <div class="color-stops-container" id="bgColorStops"></div>
+                                <button id="addBgColor" class="btn btn-secondary" style="font-size:12px; padding: 5px 10px; margin-top: 10px;"><i class="fas fa-plus"></i> Add Color Stop</button>
+                                 <div class="form-group" style="margin-top:10px;">
+                                    <select id="bgGradientType" class="form-control form-select">
+                                        <option value="linear">Linear</option>
+                                        <option value="radial">Radial</option>
+                                    </select>
+                                 </div>
+                                  <div id="bgGradientAngleContainer" class="range-group">
+                                    <div class="form-label">Angle (<span id="bgGradientAngleValue">0</span>°)</div>
+                                    <input type="range" id="bgGradientAngle" class="range-control" min="0" max="360" value="0">
+                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-image"></i> Logo</h4>
+                            <div class="form-group">
+                                <div class="form-label">Upload Logo</div>
+                                <input type="file" id="logoUpload" accept="image/*" class="form-control" style="padding: 5px;">
+                            </div>
+                            <div class="form-group">
+                                <div class="form-label">Logo Size (<span id="logoSizeValue">30</span>%)</div>
+                                <input type="range" id="logoSize" class="range-control" min="0.1" max="0.5" step="0.05" value="0.3">
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-image"></i> Logo</h4>
-                        <div class="form-group">
-                            <div class="form-label">Upload Logo</div>
-                            <input type="file" id="logoUpload" accept="image/*" class="form-control" style="padding: 5px;">
+                    <div class="preview-container">
+                        <div class="qr-preview">
+                            <div id="qrcode"></div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-label">Logo Size (<span id="logoSizeValue">30</span>%)</div>
-                            <input type="range" id="logoSize" class="range-control" min="0.1" max="0.5" step="0.05" value="0.3">
+                        <div class="btn-group">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download PNG
+                            </button>
+                             <button class="btn btn-secondary" id="resetBtn">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Container (Middle) -->
+            <div class="ad-container">
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+            
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="features-section" itemscope itemtype="https://schema.org/HowTo">
+                <h2 class="section-title" itemprop="name">How to Create QR Codes</h2>
+                <meta itemprop="description" content="Step-by-step guide on how to create custom QR codes using PDFMasterPro">
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Enter Your Content</h3>
+                            <p itemprop="text">Add your URL, text, or any data you want to encode in the QR code.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Customize Design</h3>
+                            <p itemprop="text">Choose from various dot styles, colors, gradients, and background options.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Add Logo (Optional)</h3>
+                            <p itemprop="text">Upload your logo and adjust its size to create branded QR codes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Download & Use</h3>
+                            <p itemprop="text">Download your custom QR code as PNG and use it anywhere you need.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2 class="section-title">Advanced QR Code Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-shapes"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Multiple Dot Styles</h3>
+                            <p>Choose from squares, dots, rounded, classy, and various corner styles for unique QR codes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Gradient Colors</h3>
+                            <p>Create stunning QR codes with linear and radial gradients for both foreground and background.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Logo Integration</h3>
+                            <p>Add your brand logo to the center of QR codes with adjustable size and positioning.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>High Quality Export</h3>
+                            <p>Download your QR codes as high-resolution PNG files suitable for both digital and print use.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Real-time Preview</h3>
+                            <p>See your QR code changes instantly as you customize colors, styles, and logos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Unlimited Generation</h3>
+                            <p>Create as many QR codes as you need with no limitations or watermarks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">What types of QR codes can I create?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">You can create QR codes for URLs, text, contact information, and more with custom styling including colors, gradients, shapes, and logos.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Can I add my logo to the QR code?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes! You can upload your logo and customize its size to create branded QR codes.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">What customization options are available?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">You can customize dot styles, corner styles, colors (solid or gradient), background colors, and add gradients for both foreground and background.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Is this QR code generator completely free?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, our QR code generator is completely free with no limitations on usage or downloads.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">What file formats can I download my QR code in?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">You can download your QR codes as PNG images with high resolution.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Do the QR codes work with all scanners?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, all generated QR codes are fully compliant with QR code standards and work with any standard QR code scanner.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ad Container (Bottom) -->
+            <div class="ad-container">
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PDF Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/merge-pdf" itemprop="url">Merge PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/watermark-pdf" itemprop="url">Watermark PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/compress-pdf" itemprop="url">Compress PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-word" itemprop="url">PDF to Word</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Conversion Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-img" itemprop="url">PDF to Images</a></li>
+                            <li><a href="https://pdfmasterpro.in/qr.html" itemprop="url">QR Code Generator</a></li>
+                            <li><a href="https://pdfmasterpro.in/image-tools" itemprop="url">Image Tools</a></li>
+                            <li><a href="https://pdfmasterpro.in/document-tools" itemprop="url">Document Tools</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/blog" itemprop="url">Blog</a></li>
+                            <li><a href="https://pdfmasterpro.in/tutorials" itemprop="url">Tutorials</a></li>
+                            <li><a href="https://pdfmasterpro.in/help" itemprop="url">Help Center</a></li>
+                            <li><a href="https://pdfmasterpro.in/faq" itemprop="url">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/about" itemprop="url">About Us</a></li>
+                            <li><a href="https://pdfmasterpro.in/privacy" itemprop="url">Privacy Policy</a></li>
+                            <li><a href="https://pdfmasterpro.in/terms" itemprop="url">Terms of Service</a></li>
+                            <li><a href="https://pdfmasterpro.in/contact" itemprop="url">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul>
+                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank" itemprop="url">Facebook</a></li>
+                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank" itemprop="url">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank" itemprop="url">LinkedIn</a></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://facebook.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="preview-container">
-                    <div class="qr-preview">
-                        <div id="qrcode"></div>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-primary" id="downloadBtn">
-                            <i class="fas fa-download"></i> Download PNG
-                        </button>
-                         <button class="btn btn-secondary" id="resetBtn">
-                            <i class="fas fa-redo"></i> Reset
-                        </button>
-                    </div>
+                <div class="copyright">
+                    <p>&copy; 2025 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">PDFMasterPro</span></span>. All rights reserved. | Serving over 1 million users monthly</p>
                 </div>
             </div>
-        </div>
-
-        <footer>
-            <p>PDFMasterPro &copy; 2025 | Free Online Tools</p>
         </footer>
+    </div>
+
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-qrcode"></i>
     </div>
 
     <script>
@@ -570,6 +1357,7 @@
             const downloadBtn = getEl('downloadBtn');
             const resetBtn = getEl('resetBtn');
             const qrcodeDiv = getEl('qrcode');
+            const floatingCta = getEl('floatingCta');
             
             let logoImage = null;
 
@@ -577,7 +1365,7 @@
             const qrCode = new QRCodeStyling({
                 width: 220,
                 height: 220,
-                data: "https://pdfmasterpro.com",
+                data: "https://pdfmasterpro.in",
                 image: "",
                 dotsOptions: { color: "#000000", type: "rounded" },
                 backgroundOptions: { color: "#ffffff" },
@@ -591,7 +1379,7 @@
             // --- Main Update Function ---
             function updateQRCode() {
                 const options = {
-                    data: qrText.value || "https://pdfmasterpro.com",
+                    data: qrText.value || "https://pdfmasterpro.in",
                     dotsOptions: { type: dotsStyle.value },
                     cornersSquareOptions: { type: cornersSquareStyle.value },
                     cornersDotOptions: { type: cornersDotStyle.value },
@@ -735,7 +1523,106 @@
             resetBtn.addEventListener('click', () => {
                 location.reload();
             });
+
+            // --- Floating CTA Wave Animation ---
+            function addWaveAnimation() {
+                const waves = [];
+                
+                // Create 3 wave circles
+                for (let i = 0; i < 3; i++) {
+                    const wave = document.createElement('div');
+                    wave.className = 'wave-circle';
+                    wave.style.width = '56px';
+                    wave.style.height = '56px';
+                    wave.style.position = 'absolute';
+                    wave.style.top = '0';
+                    wave.style.left = '0';
+                    wave.style.animationDelay = `${i * 0.3}s`;
+                    floatingCta.appendChild(wave);
+                    waves.push(wave);
+                }
+                
+                return waves;
+            }
             
+            // Initialize wave animation
+            const waveCircles = addWaveAnimation();
+            
+            // Floating CTA click handler
+            floatingCta.addEventListener('click', () => {
+                document.getElementById('mainToolCard').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
+            });
+
+            // --- Scroll Animation for Feature Cards ---
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
+                });
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
+            
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
+             
+            // --- Navigation Functionality ---
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Initialize navigation when page loads
+            initializeNavigation();
+
             // --- Initial Setup ---
             fgColorStopsContainer.appendChild(createColorStop("#000000"));
             fgColorStopsContainer.appendChild(createColorStop("#2563eb"));
