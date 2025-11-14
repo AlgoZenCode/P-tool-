@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="PDF to HTML Converter | PDFMasterPro">
     <meta property="og:description" content="Free online tool to convert PDF files to HTML">
-    <link rel="canonical" href="https://pdfmasterpro.in/pdf-to-html">
+    <link rel="canonical" href="https://pdfmasterpro.in/pdf-to-html.html">
     
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -18,7 +18,7 @@
         "@type": "WebApplication",
         "name": "PDFMasterPro - PDF to HTML Converter",
         "description": "Free online tool to convert PDF files to HTML with preview and copy options",
-        "url": "https://pdfmasterpro.in/pdf-to-html",
+        "url": "https://pdfmasterpro.in/pdf-to-html.html",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Any",
         "browserRequirements": "Requires JavaScript",
@@ -44,11 +44,40 @@
                 "height": "60"
             }
         },
-        "screenshot": "https://pdfmasterpro.in/screenshot-pdf-to-html.html.jpg",
+        "screenshot": "https://pdfmasterpro.in/screenshot-pdf-to-html.jpg",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://pdfmasterpro.in/pdf-to-html.html"
         }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PDFMasterPro",
+        "url": "https://pdfmasterpro.in",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pdfmasterpro.in/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PDFMasterPro",
+        "url": "https://pdfmasterpro.in",
+        "logo": "https://pdfmasterpro.in/logo.png",
+        "sameAs": [
+            "https://facebook.com/pdfmasterpro",
+            "https://twitter.com/pdfmasterpro",
+            "https://linkedin.com/company/pdfmasterpro"
+        ]
     }
     </script>
     
@@ -136,6 +165,7 @@
     }
     </script>
     
+    <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -239,6 +269,7 @@
             position: relative;
             padding: 5px 0;
             font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
         }
         
         nav a::after {
@@ -329,19 +360,12 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
         }
         
         .file-name {
             font-weight: 500;
             margin-bottom: 5px;
             color: var(--light);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         
         .file-size {
@@ -447,107 +471,35 @@
             font-size: 14px;
         }
         
-        /* Preview Section */
-        .preview-section {
-            display: none;
-            margin-top: 20px;
-        }
-        
-        .preview-header {
+        .range-group {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            gap: 8px;
         }
         
-        .preview-title {
-            font-size: 20px;
-            color: var(--light);
-        }
-        
-        .preview-tabs {
-            display: flex;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-        
-        .preview-tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .preview-tab.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .preview-content {
-            display: none;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            padding: 15px;
-            max-height: 60vh;
-            overflow: auto;
-        }
-        
-        .preview-content.active {
-            display: block;
-        }
-        
-        .code-container {
-            position: relative;
-            background: #1e1e1e;
-            border-radius: 8px;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            max-height: 50vh;
-            overflow: auto;
-        }
-        
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 5px;
-        }
-        
-        .code-title {
+        .range-value {
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
         }
         
-        .copy-btn {
+        .range-control {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
             background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            transition: all 0.3s ease;
+            outline: none;
         }
         
-        .copy-btn:hover {
+        .range-control::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
             background: var(--primary);
-        }
-        
-        .html-preview {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            max-height: 50vh;
-            overflow: auto;
-            color: black;
+            cursor: pointer;
         }
         
         /* Buttons */
@@ -616,6 +568,22 @@
             font-size: 18px;
         }
         
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
         /* Result Section */
         .result-container {
             display: none;
@@ -636,18 +604,31 @@
             color: var(--light);
         }
         
-        /* Footer - Shifted to Left */
-        footer {
-            text-align: left;
-            padding: 20px 0;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-            margin-left: 0;
-            margin-right: auto;
-            max-width: 100%;
-        } 
+        .download-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
         
-       footer {
+        .download-option {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .download-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Footer */
+        footer {
             background: rgba(0, 0, 0, 0.2);
             padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
             position: relative;
@@ -746,6 +727,14 @@
             display: flex;
             gap: 15px;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         
         .feature-card:hover {
@@ -789,7 +778,7 @@
             overflow: hidden;
         }
         
-        /* Footer Content - Shifted to Left */
+        /* Footer Content */
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -851,6 +840,7 @@
             display: block;
             position: relative;
             padding-left: 0;
+            cursor: pointer;
         }
         
         .footer-column a:hover {
@@ -895,6 +885,82 @@
             margin-right: auto;
         }
         
+        /* HTML Preview Section */
+        .preview-section {
+            display: none;
+            margin-top: 30px;
+        }
+        
+        .preview-tabs {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .preview-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .preview-tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .preview-content {
+            display: none;
+        }
+        
+        .preview-content.active {
+            display: block;
+        }
+        
+        .code-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 400px;
+            overflow: auto;
+            text-align: left;
+            position: relative;
+        }
+        
+        .code-container pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #f8f8f2;
+            white-space: pre-wrap;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .html-preview {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            min-height: 300px;
+            color: #333;
+            text-align: left;
+            overflow: auto;
+        }
+        
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -907,33 +973,16 @@
             }
         }
         
-        .animate-fade-in {
-            animation: fadeInUp 0.5s ease-out forwards;
+        /* Scroll Animation for Feature Cards */
+        .feature-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Scrollbar Styling */
-        .preview-content::-webkit-scrollbar,
-        .code-container::-webkit-scrollbar,
-        .html-preview::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .preview-content::-webkit-scrollbar-track,
-        .code-container::-webkit-scrollbar-track,
-        .html-preview::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        
-        .preview-content::-webkit-scrollbar-thumb,
-        .code-container::-webkit-scrollbar-thumb,
-        .html-preview::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+        .feature-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Responsive */
@@ -944,10 +993,6 @@
             
             .drop-zone {
                 padding: 30px;
-            }
-            
-            .settings-container {
-                grid-template-columns: 1fr;
             }
         }
         
@@ -977,15 +1022,6 @@
                 font-size: 28px;
             }
             
-            .preview-tabs {
-                flex-direction: column;
-            }
-            
-            .preview-tab {
-                text-align: center;
-            }
-            
-            /* Footer adjustments for mobile */
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
@@ -1001,64 +1037,24 @@
                 gap: 10px;
             }
             
-            /* Footer adjustments for small mobile */
+            .settings-container {
+                grid-template-columns: 1fr;
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
         } 
         
-        /* Syntax highlighting for code */
-        .hljs {
-            display: block;
-            overflow-x: auto;
-            padding: 0.5em;
-            color: #abb2bf;
-            background: #282c34;
-            border-radius: 5px;
-        }
-        
-        .hljs-tag {
-            color: #e06c75;
-        }
-        
-        .hljs-attr {
-            color: #d19a66;
-        }
-        
-        .hljs-string {
-            color: #98c379;
-        }
-        
-        .hljs-comment {
-            color: #5c6370;
-        }
-        
-        .hljs-name {
-            color: #61afef;
-        }
-        
-        /* PDF text styling */
-        .pdf-text {
-            white-space: pre-wrap;
-            font-family: monospace;
-            line-height: 1.4;
-        }
-        
-        .pdf-line {
-            display: block;
-            margin-bottom: 0.2em;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
     </style>
-    
-    <!-- Include Highlight.js for syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/xml.min.js"></script>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
     <div class="container">
@@ -1073,30 +1069,29 @@
                     <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
                     <li><a href="#features" itemprop="url">Features</a></li>
                     <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
-                    <li><a href="#contact" itemprop="url">contact</a></li>
+                    <li><a href="#contact" itemprop="url">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- Main Content -->
         <main class="main-content">
-            <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">PDF to HTML Converter</h1>
+            <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">Convert PDF to HTML</h1>
             <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
-                Convert your PDF files to clean HTML code with preview and copy options. Perfect for web content migration.
+                Convert your PDF files to clean HTML code with preserved formatting and layout.
             </p>
             
             <!-- Ad Container (Top) -->
             <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
-                <!-- Ad content would go here -->
                 <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
             
             <!-- PDF to HTML Converter Tool -->
-            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
                 <meta itemprop="applicationCategory" content="UtilityApplication">
                 <meta itemprop="operatingSystem" content="Any">
                 <meta itemprop="name" content="PDFMasterPro PDF to HTML Converter">
-                <meta itemprop="description" content="Free online tool to convert PDF files to HTML with preview and copy options">
+                <meta itemprop="description" content="Free online tool to convert PDF files to HTML">
                 <meta itemprop="url" content="https://pdfmasterpro.in/pdf-to-html.html">
                 <meta itemprop="softwareVersion" content="1.0">
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -1106,7 +1101,7 @@
                 
                 <div class="drop-zone" id="dropZone">
                     <div class="upload-icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class="fas fa-file-code"></i>
                     </div>
                     <h3 class="upload-text">Drag & Drop PDF File Here</h3>
                     <p class="upload-hint">or click to browse files</p>
@@ -1131,43 +1126,7 @@
                     
                     <div class="settings-container">
                         <div class="settings-group">
-                            <h4 class="group-title"><i class="fas fa-cog"></i> Conversion Options</h4>
-                            
-                            <div class="form-group">
-                                <div class="form-label">Page Range</div>
-                                <div style="display: flex; gap: 10px; align-items: center;">
-                                    <input type="number" id="fromPage" class="form-control" placeholder="From" min="1" value="1" style="width: 80px;">
-                                    <span>to</span>
-                                    <input type="number" id="toPage" class="form-control" placeholder="To" min="1" style="width: 80px;">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="includeImages" checked>
-                                    <label for="includeImages" class="checkbox-label">Include Images</label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="checkbox-group">
-                                    <input type="checkbox" id="preserveLayout" checked>
-                                    <label for="preserveLayout" class="checkbox-label">Preserve Layout</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="settings-group">
-                            <h4 class="group-title"><i class="fas fa-code"></i> HTML Output</h4>
-                            
-                            <div class="form-group">
-                                <div class="form-label">CSS Output</div>
-                                <select id="cssOption" class="form-control form-select">
-                                    <option value="inline">Inline Styles</option>
-                                    <option value="external">External Stylesheet</option>
-                                    <option value="minimal">Minimal Styles</option>
-                                </select>
-                            </div>
+                            <h4 class="group-title"><i class="fas fa-cog"></i> HTML Options</h4>
                             
                             <div class="form-group">
                                 <div class="form-label">HTML Version</div>
@@ -1180,55 +1139,51 @@
                             
                             <div class="form-group">
                                 <div class="checkbox-group">
-                                    <input type="checkbox" id="minifyHtml">
-                                    <label for="minifyHtml" class="checkbox-label">Minify HTML</label>
+                                    <input type="checkbox" id="includeCss" checked>
+                                    <label for="includeCss" class="checkbox-label">Include CSS styling</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="preserveLayout" checked>
+                                    <label for="preserveLayout" class="checkbox-label">Preserve original layout</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-file-alt"></i> Page Selection</h4>
+                            
+                            <div class="form-group">
+                                <div class="form-label">Pages to Convert</div>
+                                <select id="pageSelection" class="form-control form-select">
+                                    <option value="all">All Pages</option>
+                                    <option value="range">Page Range</option>
+                                    <option value="current">Current Page Only</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="pageRangeGroup" style="display: none;">
+                                <div class="form-label">Page Range (e.g., 1-5, 8, 11-13)</div>
+                                <input type="text" id="pageRange" class="form-control" placeholder="1-5">
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="separatePages" checked>
+                                    <label for="separatePages" class="checkbox-label">Separate HTML for each page</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="btn-group">
+                        <button class="btn btn-secondary" id="clearAllBtn">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
                         <button class="btn btn-primary" id="convertBtn">
                             <i class="fas fa-sync-alt"></i> Convert to HTML
-                        </button>
-                    </div>
-                </div>
-
-                <div class="preview-section" id="previewSection" style="display: none;">
-                    <div class="preview-header">
-                        <h3 class="preview-title">HTML Output Preview</h3>
-                    </div>
-                    
-                    <div class="preview-tabs">
-                        <div class="preview-tab active" data-tab="code">HTML Code</div>
-                        <div class="preview-tab" data-tab="preview">Preview</div>
-                    </div>
-                    
-                    <div class="preview-content active" id="codeTab">
-                        <div class="code-header">
-                            <div class="code-title">Generated HTML Code</div>
-                            <button class="copy-btn" id="copyCodeBtn">
-                                <i class="fas fa-copy"></i> Copy Code
-                            </button>
-                        </div>
-                        <div class="code-container">
-                            <pre><code class="language-html" id="htmlCode"></code></pre>
-                        </div>
-                    </div>
-                    
-                    <div class="preview-content" id="previewTab">
-                        <div class="code-header">
-                            <div class="code-title">HTML Preview</div>
-                        </div>
-                        <div class="html-preview" id="htmlPreview"></div>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <button class="btn btn-secondary" id="backToSettingsBtn">
-                            <i class="fas fa-arrow-left"></i> Back to Settings
-                        </button>
-                        <button class="btn btn-primary" id="downloadBtn">
-                            <i class="fas fa-download"></i> Download HTML
                         </button>
                     </div>
                 </div>
@@ -1236,15 +1191,47 @@
                 <div class="processing-container" id="processingContainer">
                     <div class="processing-spinner"></div>
                     <h3 class="processing-text">Converting your PDF to HTML...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div id="progressText">Processing page 0 of 0</div>
                 </div>
 
                 <div class="result-container" id="resultContainer">
                     <div class="result-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="result-message">Your PDF has been converted to HTML!</h3>
+                    <h3 class="result-message">Your HTML is ready!</h3>
+                    
+                    <!-- HTML Preview Section -->
+                    <div class="preview-section" id="previewSection">
+                        <div class="preview-tabs">
+                            <button class="preview-tab active" data-tab="code">HTML Code</button>
+                            <button class="preview-tab" data-tab="preview">Preview</button>
+                        </div>
+                        
+                        <div class="preview-content active" id="codeTab">
+                            <div class="code-container">
+                                <button class="copy-btn" id="copyCodeBtn">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                                <pre id="htmlCode"></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-content" id="previewTab">
+                            <div class="code-container">
+                                <div class="html-preview" id="htmlPreview"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="download-options" id="downloadOptions">
+                        <!-- Download options will be added here dynamically -->
+                    </div>
+                    
                     <div class="btn-group">
-                        <button class="btn btn-primary" id="newFileBtn">
+                        <button class="btn btn-secondary" id="newConvertBtn">
                             <i class="fas fa-file-upload"></i> New Conversion
                         </button>
                     </div>
@@ -1253,16 +1240,15 @@
 
             <!-- Ad Container (Middle) -->
             <div class="ad-container">
-                <!-- Ad content would go here -->
                 <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
             
             <!-- How It Works Section -->
             <section id="how-it-works" class="features-section" itemscope itemtype="https://schema.org/HowTo">
                 <h2 class="section-title" itemprop="name">How to Convert PDF to HTML</h2>
-                <meta itemprop="description" content="Step-by-step guide on how to convert PDF to HTML using PDFMasterPro">
+                <meta itemprop="description" content="Step-by-step guide on how to convert PDF files to HTML using PDFMasterPro">
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-upload"></i>
                         </div>
@@ -1272,33 +1258,33 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-sliders-h"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 itemprop="name">Configure Settings</h3>
-                            <p itemprop="text">Choose your conversion preferences including page range, HTML version, and output options.</p>
+                            <h3 itemprop="name">Adjust Settings</h3>
+                            <p itemprop="text">Choose HTML version, layout options, and select which pages to convert.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-sync-alt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 itemprop="name">Convert to HTML</h3>
-                            <p itemprop="text">Click convert and let our tool transform your PDF content into clean, structured HTML code.</p>
+                            <h3 itemprop="name">Convert & Process</h3>
+                            <p itemprop="text">Click convert and watch as your PDF is transformed into clean HTML code in real-time.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
-                            <i class="fas fa-download"></i>
+                            <i class="fas fa-code"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Preview & Download</h3>
-                            <p itemprop="text">Preview the HTML code and rendered output, then download or copy to use in your projects.</p>
+                            <p itemprop="text">Preview the HTML code and rendered output, then download or copy to clipboard.</p>
                         </div>
                     </div>
                 </div>
@@ -1308,7 +1294,7 @@
             <section id="features" class="features-section">
                 <h2 class="section-title">Advanced PDF to HTML Features</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
                         <div class="feature-icon">
                             <i class="fas fa-lock"></i>
                         </div>
@@ -1318,53 +1304,53 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Clean HTML Output</h3>
+                            <p>Generate clean, semantic HTML code with proper structure and formatting preserved from your PDF.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>CSS Styling</h3>
+                            <p>Preserve colors, fonts, and layout with automatically generated CSS that matches your PDF's appearance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Flexible Page Selection</h3>
+                            <p>Convert all pages, specific page ranges, or individual pages from your PDF document.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
                         <div class="feature-icon">
                             <i class="fas fa-eye"></i>
                         </div>
                         <div class="feature-content">
                             <h3>Live Preview</h3>
-                            <p>Preview both the HTML code and rendered output before downloading to ensure perfect conversion results.</p>
+                            <p>Preview both the HTML code and the rendered output before downloading to ensure quality.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
-                        <div class="feature-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Multiple HTML Versions</h3>
-                            <p>Convert to HTML5, XHTML, or HTML4 with different CSS output options to match your project requirements.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
-                        <div class="feature-icon">
-                            <i class="fas fa-copy"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>One-Click Copy</h3>
-                            <p>Copy the generated HTML code directly to your clipboard with a single click for immediate use.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
-                        <div class="feature-icon">
-                            <i class="fas fa-file-export"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Selective Page Conversion</h3>
-                            <p>Convert specific pages or page ranges instead of the entire document for targeted content extraction.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
                         <div class="feature-icon">
                             <i class="fas fa-infinity"></i>
                         </div>
                         <div class="feature-content">
                             <h3>Unlimited Usage</h3>
-                            <p>Convert as many PDFs as you need with no limitations or watermarks on your output HTML files.</p>
+                            <p>Convert as many PDFs as you need with no limitations or watermarks on your output HTML.</p>
                         </div>
                     </div>
                 </div>
@@ -1374,7 +1360,7 @@
             <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-question-circle"></i>
                         </div>
@@ -1386,7 +1372,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -1398,7 +1384,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-eye"></i>
                         </div>
@@ -1410,9 +1396,9 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-file-alt"></i>
+                            <i class="fas fa-edit"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Does it preserve the original PDF formatting?</h3>
@@ -1422,9 +1408,9 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-file-export"></i>
+                            <i class="fas fa-file"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Can I convert specific pages only?</h3>
@@ -1434,7 +1420,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-code"></i>
                         </div>
@@ -1450,12 +1436,11 @@
             
             <!-- Ad Container (Bottom) -->
             <div class="ad-container">
-                <!-- Ad content would go here -->
                 <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
         </main>
         
-        <!-- Footer - Shifted to Left -->
+        <!-- Footer -->
         <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
             <div class="container">
                 <div class="footer-content">
@@ -1472,10 +1457,10 @@
                     <div class="footer-column">
                         <h3>Conversion Tools</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-html" itemprop="url">PDF to HTML</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-image" itemprop="url">PDF to Image</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-text" itemprop="url">PDF to Text</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-excel" itemprop="url">PDF to Excel</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-html.html" itemprop="url">PDF to HTML</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-img" itemprop="url">PDF to Images</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-jpg" itemprop="url">PDF to JPG</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-png" itemprop="url">PDF to PNG</a></li>
                         </ul>
                     </div>
                     
@@ -1527,7 +1512,7 @@
     </div>
 
     <script>
-        // Initialize PDF.js worker
+        // Set up PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -1539,27 +1524,29 @@
             const fileSize = document.getElementById('fileSize');
             const settingsSection = document.getElementById('settingsSection');
             const pageCount = document.getElementById('pageCount');
-            const fromPage = document.getElementById('fromPage');
-            const toPage = document.getElementById('toPage');
-            const includeImages = document.getElementById('includeImages');
-            const preserveLayout = document.getElementById('preserveLayout');
-            const cssOption = document.getElementById('cssOption');
             const htmlVersion = document.getElementById('htmlVersion');
-            const minifyHtml = document.getElementById('minifyHtml');
+            const includeCss = document.getElementById('includeCss');
+            const preserveLayout = document.getElementById('preserveLayout');
+            const pageSelection = document.getElementById('pageSelection');
+            const pageRangeGroup = document.getElementById('pageRangeGroup');
+            const pageRange = document.getElementById('pageRange');
+            const separatePages = document.getElementById('separatePages');
+            const clearAllBtn = document.getElementById('clearAllBtn');
             const convertBtn = document.getElementById('convertBtn');
+            const processingContainer = document.getElementById('processingContainer');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const resultContainer = document.getElementById('resultContainer');
             const previewSection = document.getElementById('previewSection');
-            const previewTabs = document.querySelectorAll('.preview-tab');
-            const codeTab = document.getElementById('codeTab');
-            const previewTab = document.getElementById('previewTab');
             const htmlCode = document.getElementById('htmlCode');
             const htmlPreview = document.getElementById('htmlPreview');
             const copyCodeBtn = document.getElementById('copyCodeBtn');
-            const backToSettingsBtn = document.getElementById('backToSettingsBtn');
-            const downloadBtn = document.getElementById('downloadBtn');
-            const processingContainer = document.getElementById('processingContainer');
-            const resultContainer = document.getElementById('resultContainer');
-            const newFileBtn = document.getElementById('newFileBtn');
+            const previewTabs = document.querySelectorAll('.preview-tab');
+            const previewContents = document.querySelectorAll('.preview-content');
+            const downloadOptions = document.getElementById('downloadOptions');
+            const newConvertBtn = document.getElementById('newConvertBtn');
             const floatingCta = document.getElementById('floatingCta');
+            const mainToolCard = document.getElementById('mainToolCard');
 
             let pdfFile = null;
             let pdfDoc = null;
@@ -1631,21 +1618,17 @@
 
             function handleDrop(e) {
                 const dt = e.dataTransfer;
-                const files = dt.files;
-                if (files.length > 0) {
-                    fileInput.files = files;
-                    handleFile({ target: { files: files } });
+                const droppedFiles = dt.files;
+                if (droppedFiles.length > 0) {
+                    handleFile({ target: { files: [droppedFiles[0]] } });
                 }
             }
 
             async function handleFile(e) {
                 const file = e.target.files[0];
                 
-                if (!file) return;
-                
-                // Check if file is PDF
-                if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
-                    alert('Please select a valid PDF file.');
+                if (file.type !== 'application/pdf') {
+                    alert('Please select a PDF file.');
                     return;
                 }
                 
@@ -1656,37 +1639,38 @@
                 fileSize.textContent = formatFileSize(file.size);
                 fileInfo.style.display = 'block';
                 
-                // Load PDF document
+                // Load PDF for processing
                 processingContainer.style.display = 'block';
                 settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
                     const arrayBuffer = await readFileAsArrayBuffer(file);
-                    
-                    // Load PDF document
-                    pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                    pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
                     totalPages = pdfDoc.numPages;
                     
-                    // Show page count
+                    // Update page count
                     pageCount.textContent = `${totalPages} pages`;
                     
-                    // Set default page range
-                    fromPage.value = 1;
-                    toPage.value = totalPages;
-                    toPage.max = totalPages;
-                    
-                    // Show settings section
                     settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
+                    
+                    // Auto-scroll back to main card after PDF is selected
+                    scrollToMainCard();
                     
                 } catch (error) {
                     console.error('Error loading PDF:', error);
                     processingContainer.style.display = 'none';
-                    alert('Error loading PDF. Please try again with a different file.');
-                    resetTool();
+                    alert('Error loading PDF. Please try again.');
                 }
+            }
+
+            // Function to scroll back to the main tool card
+            function scrollToMainCard() {
+                mainToolCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
             }
 
             function formatFileSize(bytes) {
@@ -1697,328 +1681,396 @@
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             }
 
-            // Tab switching
-            previewTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Remove active class from all tabs
-                    previewTabs.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tab
-                    tab.classList.add('active');
-                    
-                    // Hide all content
-                    document.querySelectorAll('.preview-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // Show corresponding content
-                    const tabName = tab.getAttribute('data-tab');
-                    document.getElementById(tabName + 'Tab').classList.add('active');
-                });
+            // Show/hide page range input based on selection
+            pageSelection.addEventListener('change', function() {
+                pageRangeGroup.style.display = this.value === 'range' ? 'block' : 'none';
             });
 
-            // Convert button click
+            // Clear all files
+            clearAllBtn.addEventListener('click', function() {
+                pdfFile = null;
+                pdfDoc = null;
+                totalPages = 0;
+                fileInfo.style.display = 'none';
+                settingsSection.style.display = 'none';
+                dropZone.style.display = 'block';
+                pageCount.textContent = '';
+                fileInput.value = '';
+            });
+
+            // Convert PDF to HTML
             convertBtn.addEventListener('click', async function() {
+                if (!pdfFile) {
+                    alert('Please select a PDF file to convert.');
+                    return;
+                }
+                
                 if (!pdfDoc) {
-                    alert('Please upload a PDF file first.');
+                    alert('Please wait for the PDF to finish loading.');
                     return;
                 }
                 
                 processingContainer.style.display = 'block';
                 settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
+                resultContainer.style.display = 'none';
                 
                 try {
-                    // Convert PDF to HTML
-                    generatedHtml = await convertPdfToHtml();
-                    
-                    // Display the HTML code with syntax highlighting
-                    htmlCode.textContent = generatedHtml;
-                    hljs.highlightElement(htmlCode);
-                    
-                    // Display the HTML preview
-                    htmlPreview.innerHTML = generatedHtml;
-                    
-                    // Show preview section
-                    previewSection.style.display = 'block';
-                    processingContainer.style.display = 'none';
-                    
+                    await convertPdfToHtml();
                 } catch (error) {
                     console.error('Error converting PDF:', error);
                     processingContainer.style.display = 'none';
-                    alert('Error converting PDF to HTML. Please try again with a different file.');
+                    settingsSection.style.display = 'block';
+                    alert('Error converting PDF. Please try again with a different file.');
                 }
             });
-
-            // Back to settings button
-            backToSettingsBtn.addEventListener('click', function() {
-                previewSection.style.display = 'none';
-                settingsSection.style.display = 'block';
-            });
-
-            // Copy code button - FIXED
-            copyCodeBtn.addEventListener('click', function() {
-                // Create a temporary textarea element
-                const textarea = document.createElement('textarea');
-                textarea.value = generatedHtml;
-                document.body.appendChild(textarea);
-                
-                // Select and copy the text
-                textarea.select();
-                const successful = document.execCommand('copy');
-                
-                // Remove the textarea
-                document.body.removeChild(textarea);
-                
-                // Provide user feedback
-                if (successful) {
-                    // Change button text temporarily
-                    const originalText = copyCodeBtn.innerHTML;
-                    copyCodeBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                    copyCodeBtn.style.background = 'var(--accent)';
-                    
-                    setTimeout(() => {
-                        copyCodeBtn.innerHTML = originalText;
-                        copyCodeBtn.style.background = '';
-                    }, 2000);
-                } else {
-                    alert('Failed to copy code to clipboard. Please try again.');
-                }
-            });
-
-            // Download HTML button
-            downloadBtn.addEventListener('click', function() {
-                if (!generatedHtml) {
-                    alert('No HTML content to download. Please convert a PDF first.');
-                    return;
-                }
-                
-                // Create a Blob from the HTML content
-                const blob = new Blob([generatedHtml], { type: 'text/html' });
-                
-                // Generate filename
-                let filename = 'converted.html';
-                if (fileName.textContent) {
-                    filename = fileName.textContent.replace(/\.pdf$/i, '') + '.html';
-                }
-                
-                // Save the file
-                saveAs(blob, filename);
-                
-                // Show result section
-                previewSection.style.display = 'none';
-                resultContainer.style.display = 'block';
-            });
-
-            // Start with a new file
-            newFileBtn.addEventListener('click', resetTool);
 
             async function convertPdfToHtml() {
-                // Get settings
-                const from = parseInt(fromPage.value) || 1;
-                const to = parseInt(toPage.value) || totalPages;
-                const shouldIncludeImages = includeImages.checked;
-                const shouldPreserveLayout = preserveLayout.checked;
-                const cssStyle = cssOption.value;
-                const htmlVer = htmlVersion.value;
-                const shouldMinify = minifyHtml.checked;
+                // Determine which pages to convert
+                let pagesToConvert = [];
+                const selectionType = pageSelection.value;
                 
-                // Basic HTML structure
-                let html = '';
-                
-                if (htmlVer === 'html5') {
-                    html += '<!DOCTYPE html>\n<html lang="en">\n<head>\n';
-                    html += '<meta charset="UTF-8">\n';
-                    html += '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n';
-                    html += `<title>Converted from ${pdfFile.name}</title>\n`;
-                    
-                    if (cssStyle === 'external') {
-                        html += '<link rel="stylesheet" href="styles.css">\n';
-                    } else if (cssStyle === 'inline') {
-                        html += '<style>\n';
-                        html += 'body { font-family: Arial, sans-serif; margin: 20px; }\n';
-                        html += '.page { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }\n';
-                        html += '.pdf-text { white-space: pre-wrap; font-family: monospace; line-height: 1.4; }\n';
-                        html += '.pdf-line { display: block; margin-bottom: 0.2em; }\n';
-                        html += '.image { max-width: 100%; height: auto; margin: 10px 0; }\n';
-                        html += '</style>\n';
+                if (selectionType === 'all') {
+                    for (let i = 1; i <= totalPages; i++) {
+                        pagesToConvert.push(i);
+                    }
+                } else if (selectionType === 'range') {
+                    const rangeText = pageRange.value.trim();
+                    if (!rangeText) {
+                        alert('Please enter a page range.');
+                        processingContainer.style.display = 'none';
+                        settingsSection.style.display = 'block';
+                        return;
                     }
                     
-                    html += '</head>\n<body>\n';
-                } else if (htmlVer === 'xhtml') {
-                    html += '<?xml version="1.0" encoding="UTF-8"?>\n';
-                    html += '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n';
-                    html += '<html xmlns="http://www.w3.org/1999/xhtml" lang="en">\n<head>\n';
-                    html += '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />\n';
-                    html += `<title>Converted from ${pdfFile.name}</title>\n`;
-                    
-                    if (cssStyle === 'external') {
-                        html += '<link rel="stylesheet" href="styles.css" type="text/css" />\n';
-                    } else if (cssStyle === 'inline') {
-                        html += '<style type="text/css">\n';
-                        html += 'body { font-family: Arial, sans-serif; margin: 20px; }\n';
-                        html += '.page { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }\n';
-                        html += '.pdf-text { white-space: pre-wrap; font-family: monospace; line-height: 1.4; }\n';
-                        html += '.pdf-line { display: block; margin-bottom: 0.2em; }\n';
-                        html += '.image { max-width: 100%; height: auto; margin: 10px 0; }\n';
-                        html += '</style>\n';
+                    // Parse page range (e.g., "1-5, 8, 11-13")
+                    const rangeParts = rangeText.split(',');
+                    for (const part of rangeParts) {
+                        const trimmedPart = part.trim();
+                        if (trimmedPart.includes('-')) {
+                            const [start, end] = trimmedPart.split('-').map(num => parseInt(num.trim()));
+                            if (isNaN(start) || isNaN(end) || start > end || start < 1 || end > totalPages) {
+                                alert(`Invalid page range: ${trimmedPart}`);
+                                processingContainer.style.display = 'none';
+                                settingsSection.style.display = 'block';
+                                return;
+                            }
+                            for (let i = start; i <= end; i++) {
+                                pagesToConvert.push(i);
+                            }
+                        } else {
+                            const pageNum = parseInt(trimmedPart);
+                            if (isNaN(pageNum) || pageNum < 1 || pageNum > totalPages) {
+                                alert(`Invalid page number: ${trimmedPart}`);
+                                processingContainer.style.display = 'none';
+                                settingsSection.style.display = 'block';
+                                return;
+                            }
+                            pagesToConvert.push(pageNum);
+                        }
                     }
-                    
-                    html += '</head>\n<body>\n';
-                } else {
-                    // HTML4
-                    html += '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">\n';
-                    html += '<html lang="en">\n<head>\n';
-                    html += '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">\n';
-                    html += `<title>Converted from ${pdfFile.name}</title>\n`;
-                    
-                    if (cssStyle === 'external') {
-                        html += '<link rel="stylesheet" href="styles.css" type="text/css">\n';
-                    } else if (cssStyle === 'inline') {
-                        html += '<style type="text/css">\n';
-                        html += 'body { font-family: Arial, sans-serif; margin: 20px; }\n';
-                        html += '.page { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px; }\n';
-                        html += '.pdf-text { white-space: pre-wrap; font-family: monospace; line-height: 1.4; }\n';
-                        html += '.pdf-line { display: block; margin-bottom: 0.2em; }\n';
-                        html += '.image { max-width: 100%; height: auto; margin: 10px 0; }\n';
-                        html += '</style>\n';
-                    }
-                    
-                    html += '</head>\n<body>\n';
+                } else if (selectionType === 'current') {
+                    // For simplicity, we'll just convert the first page
+                    pagesToConvert.push(1);
                 }
                 
-                html += `<h1>Converted from: ${pdfFile.name}</h1>\n`;
+                // Remove duplicates and sort
+                pagesToConvert = [...new Set(pagesToConvert)].sort((a, b) => a - b);
                 
                 // Process each page
-                for (let i = from; i <= to; i++) {
-                    try {
-                        const page = await pdfDoc.getPage(i);
-                        const textContent = await page.getTextContent();
-                        
-                        html += `<div class="page" id="page-${i}">\n`;
-                        html += `<h2>Page ${i}</h2>\n`;
-                        
-                        // Add text content - FIXED to preserve exact line structure and spacing
-                        if (textContent.items.length > 0) {
-                            html += '<div class="pdf-text">\n';
-                            
-                            let lastY = textContent.items[0].transform[5];
-                            let lineContent = '';
-                            
-                            for (const item of textContent.items) {
-                                // Check if we're on a new line (using Y position)
-                                if (Math.abs(lastY - item.transform[5]) > 2) {
-                                    // Add the completed line
-                                    html += `<span class="pdf-line">${lineContent}</span>\n`;
-                                    lineContent = '';
-                                    lastY = item.transform[5];
-                                }
-                                
-                                // Add the text with its original spacing
-                                lineContent += item.str;
-                                
-                                // Add space if the next item isn't too far (to preserve word spacing)
-                                const nextIndex = textContent.items.indexOf(item) + 1;
-                                if (nextIndex < textContent.items.length) {
-                                    const nextItem = textContent.items[nextIndex];
-                                    const currentX = item.transform[4] + (item.width || 0);
-                                    if (Math.abs(nextItem.transform[4] - currentX) > 5) {
-                                        lineContent += ' ';
-                                    }
-                                }
+                let htmlContent = '';
+                for (let i = 0; i < pagesToConvert.length; i++) {
+                    const pageNumber = pagesToConvert[i];
+                    
+                    // Update progress
+                    const progress = ((i + 1) / pagesToConvert.length) * 100;
+                    progressFill.style.width = `${progress}%`;
+                    progressText.textContent = `Processing page ${i + 1} of ${pagesToConvert.length}`;
+                    
+                    // Get the page
+                    const page = await pdfDoc.getPage(pageNumber);
+                    
+                    // Extract text content
+                    const textContent = await page.getTextContent();
+                    const textItems = textContent.items;
+                    
+                    // Generate HTML for this page
+                    let pageHtml = `<div class="pdf-page" data-page="${pageNumber}">\n`;
+                    pageHtml += `<h2>Page ${pageNumber}</h2>\n`;
+                    
+                    // Group text items by lines
+                    const lines = [];
+                    let currentLine = [];
+                    let lastY = null;
+                    
+                    for (const item of textItems) {
+                        if (lastY !== null && Math.abs(item.transform[5] - lastY) > 5) {
+                            if (currentLine.length > 0) {
+                                lines.push(currentLine);
+                                currentLine = [];
                             }
-                            
-                            // Add the last line
-                            if (lineContent) {
-                                html += `<span class="pdf-line">${lineContent}</span>\n`;
-                            }
-                            
-                            html += '</div>\n';
                         }
-                        
-                        html += '</div>\n';
-                    } catch (error) {
-                        console.error(`Error processing page ${i}:`, error);
-                        html += `<div class="page" id="page-${i}">\n`;
-                        html += `<h2>Page ${i} - Error processing</h2>\n`;
-                        html += '</div>\n';
+                        currentLine.push(item);
+                        lastY = item.transform[5];
                     }
+                    if (currentLine.length > 0) {
+                        lines.push(currentLine);
+                    }
+                    
+                    // Convert lines to HTML
+                    for (const line of lines) {
+                        pageHtml += '<p>';
+                        for (const item of line) {
+                            pageHtml += item.str + ' ';
+                        }
+                        pageHtml += '</p>\n';
+                    }
+                    
+                    pageHtml += '</div>\n\n';
+                    
+                    htmlContent += pageHtml;
                 }
                 
-                html += '</body>\n</html>';
+                // Generate complete HTML document
+                const version = htmlVersion.value;
+                const includeStyles = includeCss.checked;
                 
-                // Minify if requested
-                if (shouldMinify) {
-                    html = html.replace(/\s+/g, ' ').replace(/>\s+</g, '><').trim();
+                generatedHtml = generateCompleteHtml(htmlContent, version, includeStyles);
+                
+                // Show result section
+                processingContainer.style.display = 'none';
+                resultContainer.style.display = 'block';
+                previewSection.style.display = 'block';
+                
+                // Display HTML code
+                htmlCode.textContent = generatedHtml;
+                
+                // Display HTML preview
+                htmlPreview.innerHTML = generatedHtml;
+                
+                // Create download options
+                updateDownloadOptions();
+            }
+
+            function generateCompleteHtml(content, version, includeStyles) {
+                let html = '';
+                
+                if (version === 'html5') {
+                    html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converted PDF Document</title>
+    ${includeStyles ? `
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        .pdf-page { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .pdf-page h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .pdf-page p { margin: 10px 0; }
+    </style>
+    ` : ''}
+</head>
+<body>
+    ${content}
+</body>
+</html>`;
+                } else if (version === 'xhtml') {
+                    html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Converted PDF Document</title>
+    ${includeStyles ? `
+    <style type="text/css">
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        .pdf-page { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .pdf-page h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .pdf-page p { margin: 10px 0; }
+    </style>
+    ` : ''}
+</head>
+<body>
+    ${content}
+</body>
+</html>`;
+                } else { // HTML4
+                    html = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Converted PDF Document</title>
+    ${includeStyles ? `
+    <style type="text/css">
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        .pdf-page { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .pdf-page h2 { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .pdf-page p { margin: 10px 0; }
+    </style>
+    ` : ''}
+</head>
+<body>
+    ${content}
+</body>
+</html>`;
                 }
                 
                 return html;
             }
 
+            function updateDownloadOptions() {
+                downloadOptions.innerHTML = '';
+                
+                const downloadOption = document.createElement('div');
+                downloadOption.className = 'download-option';
+                downloadOption.innerHTML = `
+                    <i class="fas fa-download"></i>
+                    <span>Download HTML File</span>
+                `;
+                downloadOption.addEventListener('click', downloadHtmlFile);
+                downloadOptions.appendChild(downloadOption);
+            }
+
+            function downloadHtmlFile() {
+                const blob = new Blob([generatedHtml], { type: 'text/html' });
+                saveAs(blob, 'converted-document.html');
+            }
+
+            // Copy code to clipboard
+            copyCodeBtn.addEventListener('click', function() {
+                navigator.clipboard.writeText(generatedHtml).then(() => {
+                    const originalText = copyCodeBtn.innerHTML;
+                    copyCodeBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    setTimeout(() => {
+                        copyCodeBtn.innerHTML = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                    alert('Failed to copy HTML code to clipboard');
+                });
+            });
+
+            // Preview tabs functionality
+            previewTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    previewTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show corresponding content
+                    previewContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `${tabName}Tab`) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // Start a new conversion
+            newConvertBtn.addEventListener('click', resetTool);
+
             function resetTool() {
-                fileInfo.style.display = 'none';
-                settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
-                resultContainer.style.display = 'none';
-                fileInput.value = '';
                 pdfFile = null;
                 pdfDoc = null;
                 totalPages = 0;
                 generatedHtml = '';
+                resultContainer.style.display = 'none';
+                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
+                fileInfo.style.display = 'none';
+                dropZone.style.display = 'block';
+                progressFill.style.width = '0%';
+                progressText.textContent = 'Processing page 0 of 0';
                 htmlCode.textContent = '';
                 htmlPreview.innerHTML = '';
+                
+                // Reset file input
+                fileInput.value = '';
             }
 
             function readFileAsArrayBuffer(file) {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
                     reader.onload = () => resolve(reader.result);
-                    reader.onerror = () => reject(new Error('Failed to read file'));
+                    reader.onerror = reject;
                     reader.readAsArrayBuffer(file);
                 });
             }
             
-            // Scroll animation for feature cards
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                        observer.unobserve(entry.target);
-                    }
+            // Simple Scroll Animation for Feature Cards
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
                 });
-            }, observerOptions);
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
             
-            document.querySelectorAll('.animate-fade-in').forEach(el => {
-                el.style.animationPlayState = 'paused';
-                observer.observe(el);
-            });
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
              
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+            // Initialize navigation functionality
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
                 });
-            });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
             
-            // Smooth scrolling for contact link
-            document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-            });
+            // Initialize navigation when page loads
+            initializeNavigation();
         });
     </script>
 </body>
