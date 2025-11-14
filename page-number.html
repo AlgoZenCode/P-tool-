@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Add Page Numbers to PDF | PDFMasterPro">
     <meta property="og:description" content="Free online tool to add page numbers to PDF files">
-    <link rel="canonical" href="https://pdfmasterpro.in/number-pdf">
+    <link rel="canonical" href="https://pdfmasterpro.in/number-pdf.html">
     
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -241,6 +241,7 @@
             position: relative;
             padding: 5px 0;
             font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
         }
         
         nav a::after {
@@ -442,110 +443,35 @@
             font-size: 14px;
         }
         
-        .color-picker {
-            width: 30px;
-            height: 30px;
-            padding: 2px;
-            background: white;
-            border-radius: 4px;
+        .range-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .range-value {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+        
+        .range-control {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        
+        .range-control::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
             cursor: pointer;
-        }
-        
-        /* Preview Section */
-        .preview-section {
-            display: none;
-            margin-top: 20px;
-        }
-        
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .preview-title {
-            font-size: 20px;
-            color: var(--light);
-        }
-        
-        .page-count {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-        }
-        
-        .preview-scroll-container {
-            max-height: 65vh;
-            overflow-y: auto;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            scroll-behavior: smooth;
-        }
-        
-        .preview-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        
-        .preview-container.vertical-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .preview-container.vertical-layout .page-preview {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        
-        .page-preview {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            padding: 15px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
-            position: relative;
-            height: 0;
-            padding-bottom: 141.4%; /* A4 aspect ratio (1:√2) */
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .page-preview:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border-color: var(--primary);
-        }
-        
-        .page-number {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 1;
-        }
-        
-        .page-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 4px;
-            pointer-events: none;
         }
         
         /* Buttons */
@@ -614,6 +540,22 @@
             font-size: 18px;
         }
         
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
         /* Result Section */
         .result-container {
             display: none;
@@ -632,6 +574,29 @@
             font-size: 20px;
             margin-bottom: 25px;
             color: var(--light);
+        }
+        
+        .download-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .download-option {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .download-option:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
         
         /* Footer - Shifted to Left */
@@ -744,6 +709,14 @@
             display: flex;
             gap: 15px;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         
         .feature-card:hover {
@@ -849,6 +822,7 @@
             display: block;
             position: relative;
             padding-left: 0;
+            cursor: pointer;
         }
         
         .footer-column a:hover {
@@ -905,10 +879,6 @@
             }
         }
         
-        .animate-fade-in {
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-        
         /* Responsive */
         @media (max-width: 992px) {
             .main-card {
@@ -917,10 +887,6 @@
             
             .drop-zone {
                 padding: 30px;
-            }
-            
-            .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             }
         }
         
@@ -939,10 +905,6 @@
             
             .drop-zone {
                 padding: 25px 15px;
-            }
-            
-            .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
             
             .btn {
@@ -966,13 +928,12 @@
                 font-size: 24px;
             }
             
-            .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            .btn-group {
                 gap: 10px;
             }
             
-            .btn-group {
-                gap: 10px;
+            .settings-container {
+                grid-template-columns: 1fr;
             }
             
             /* Footer adjustments for small mobile */
@@ -984,6 +945,22 @@
         
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Scroll Animation for Feature Cards */
+.feature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-card.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
     </style>
 </head>
@@ -1009,7 +986,7 @@ html {
         <main class="main-content">
             <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">Add Page Numbers to PDF</h1>
             <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
-                Add professional page numbers to your PDF documents with full customization options for position, format, and style.
+                Add professional page numbers to your PDF documents with full customization options for position, style, and format.
             </p>
             
             <!-- Ad Container (Top) -->
@@ -1018,12 +995,12 @@ html {
                 <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
             
-            <!-- PDF Page Number Tool -->
-            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <!-- PDF Page Numbering Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
                 <meta itemprop="applicationCategory" content="UtilityApplication">
                 <meta itemprop="operatingSystem" content="Any">
-                <meta itemprop="name" content="PDFMasterPro Page Number Tool">
-                <meta itemprop="description" content="Free online tool to add page numbers to PDF files with full customization">
+                <meta itemprop="name" content="PDFMasterPro PDF Page Numbering Tool">
+                <meta itemprop="description" content="Free online tool to add page numbers to PDF files">
                 <meta itemprop="url" content="https://pdfmasterpro.in/page-number.html">
                 <meta itemprop="softwareVersion" content="1.0">
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
@@ -1058,83 +1035,69 @@ html {
                     
                     <div class="settings-container">
                         <div class="settings-group">
-                            <h4 class="group-title"><i class="fas fa-file-alt"></i> Page Range</h4>
+                            <h4 class="group-title"><i class="fas fa-cog"></i> Page Selection</h4>
                             
                             <div class="form-group">
                                 <div class="checkbox-group">
                                     <input type="checkbox" id="allPagesCheckbox" checked>
-                                    <label for="allPagesCheckbox" class="checkbox-label">All Pages</label>
+                                    <label for="allPagesCheckbox" class="checkbox-label">Add numbers to all pages</label>
                                 </div>
                             </div>
                             
                             <div class="form-group" id="pageRangeGroup" style="display: none;">
                                 <div class="form-label">Page Range</div>
-                                <div style="display: flex; gap: 10px; align-items: center;">
-                                    <input type="number" id="fromPage" class="form-control" placeholder="From" min="1" style="width: 80px;">
-                                    <span>to</span>
-                                    <input type="number" id="toPage" class="form-control" placeholder="To" min="1" style="width: 80px;">
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="number" id="fromPage" class="form-control" placeholder="From" min="1">
+                                    <input type="number" id="toPage" class="form-control" placeholder="To" min="1">
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="settings-group">
-                            <h4 class="group-title"><i class="fas fa-tag"></i> Number Format</h4>
                             
                             <div class="form-group">
-                                <div class="form-label">Format</div>
+                                <div class="form-label">Numbering Format</div>
                                 <select id="numberFormat" class="form-control form-select">
                                     <option value="1">1, 2, 3...</option>
-                                    <option value="2">Page 1, Page 2...</option>
-                                    <option value="3">- 1 -, - 2 -...</option>
-                                    <option value="4">-- 1 --, -- 2 --...</option>
-                                    <option value="5">Custom Format</option>
+                                    <option value="i">i, ii, iii...</option>
+                                    <option value="I">I, II, III...</option>
+                                    <option value="a">a, b, c...</option>
+                                    <option value="A">A, B, C...</option>
+                                    <option value="custom">Custom Format</option>
                                 </select>
                             </div>
                             
                             <div class="form-group" id="customFormatGroup" style="display: none;">
                                 <div class="form-label">Custom Format</div>
-                                <input type="text" id="customFormat" class="form-control" placeholder="E.g. Page {n} of {t}">
-                                <small style="color: rgba(255,255,255,0.6); font-size: 12px;">{n} = page number, {t} = total pages</small>
+                                <input type="text" id="customFormat" class="form-control" placeholder="Page {page} of {total}">
+                                <small style="color: rgba(255,255,255,0.6); font-size: 12px;">Use {page} for current page, {total} for total pages</small>
                             </div>
                             
                             <div class="form-group">
-                                <div class="form-label">Starting Number</div>
+                                <div class="form-label">Start Number</div>
                                 <input type="number" id="startNumber" class="form-control" value="1" min="1">
                             </div>
                         </div>
                         
                         <div class="settings-group">
-                            <h4 class="group-title"><i class="fas fa-map-marker-alt"></i> Position</h4>
+                            <h4 class="group-title"><i class="fas fa-map-marker-alt"></i> Position & Style</h4>
                             
                             <div class="form-group">
                                 <div class="form-label">Position</div>
                                 <select id="numberPosition" class="form-control form-select">
                                     <option value="top-left">Top Left</option>
+                                    <option value="top-center">Top Center</option>
                                     <option value="top-right">Top Right</option>
                                     <option value="bottom-left">Bottom Left</option>
-                                    <option value="bottom-right" selected>Bottom Right</option>
                                     <option value="bottom-center">Bottom Center</option>
-                                    <option value="top-center">Top Center</option>
+                                    <option value="bottom-right">Bottom Right</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <div class="form-label">Margin (px)</div>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                                    <div>
-                                        <label style="font-size: 12px; color: rgba(255,255,255,0.6);">Horizontal</label>
-                                        <input type="number" id="marginX" class="form-control" value="20" min="0">
-                                    </div>
-                                    <div>
-                                        <label style="font-size: 12px; color: rgba(255,255,255,0.6);">Vertical</label>
-                                        <input type="number" id="marginY" class="form-control" value="20" min="0">
-                                    </div>
+                                <div class="form-label">Margin (pixels)</div>
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="number" id="marginX" class="form-control" placeholder="Horizontal" value="20" min="0">
+                                    <input type="number" id="marginY" class="form-control" placeholder="Vertical" value="20" min="0">
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="settings-group">
-                            <h4 class="group-title"><i class="fas fa-font"></i> Font Style</h4>
                             
                             <div class="form-group">
                                 <div class="form-label">Font Family</div>
@@ -1148,33 +1111,37 @@ html {
                             
                             <div class="form-group">
                                 <div class="form-label">Font Size</div>
-                                <input type="number" id="fontSize" class="form-control" value="12" min="6" max="72">
+                                <select id="fontSize" class="form-control form-select">
+                                    <option value="10">10pt</option>
+                                    <option value="12" selected>12pt</option>
+                                    <option value="14">14pt</option>
+                                    <option value="16">16pt</option>
+                                    <option value="18">18pt</option>
+                                    <option value="20">20pt</option>
+                                </select>
                             </div>
                             
                             <div class="form-group">
-                                <div class="form-label">Style</div>
-                                <div style="display: flex; gap: 15px;">
-                                    <div class="checkbox-group">
-                                        <input type="checkbox" id="fontBold">
-                                        <label for="fontBold" class="checkbox-label">Bold</label>
-                                    </div>
-                                    <div class="checkbox-group">
-                                        <input type="checkbox" id="fontItalic">
-                                        <label for="fontItalic" class="checkbox-label">Italic</label>
-                                    </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="fontBold">
+                                    <label for="fontBold" class="checkbox-label">Bold</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="fontItalic">
+                                    <label for="fontItalic" class="checkbox-label">Italic</label>
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <div class="form-label">Color</div>
-                                <input type="color" id="fontColor" class="color-picker" value="#000000">
+                                <div class="form-label">Font Color</div>
+                                <input type="color" id="fontColor" class="form-control" value="#000000" style="height: 40px;">
                             </div>
                         </div>
                     </div>
                     
                     <div class="btn-group">
-                        <button class="btn btn-secondary" id="previewBtn">
-                            <i class="fas fa-eye"></i> Preview
+                        <button class="btn btn-secondary" id="clearAllBtn">
+                            <i class="fas fa-trash"></i> Clear All
                         </button>
                         <button class="btn btn-primary" id="addNumbersBtn">
                             <i class="fas fa-plus-circle"></i> Add Page Numbers
@@ -1182,42 +1149,28 @@ html {
                     </div>
                 </div>
 
-                <div class="preview-section" id="previewSection">
-                    <div class="preview-header">
-                        <h3 class="preview-title">Preview</h3>
-                        <div class="page-count" id="previewPageCount"></div>
-                    </div>
-                    
-                    <div class="preview-scroll-container" id="previewScrollContainer">
-                        <div class="preview-container" id="previewContainer"></div>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <button class="btn btn-secondary" id="backToSettingsBtn">
-                            <i class="fas fa-arrow-left"></i> Back to Settings
-                        </button>
-                        <button class="btn btn-primary" id="saveBtn">
-                            <i class="fas fa-save"></i> Save Numbered PDF
-                        </button>
-                    </div>
-                </div>
-
                 <div class="processing-container" id="processingContainer">
                     <div class="processing-spinner"></div>
-                    <h3 class="processing-text">Processing your PDF...</h3>
+                    <h3 class="processing-text">Adding page numbers to your PDF...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div id="progressText">Processing page 0 of 0</div>
                 </div>
 
                 <div class="result-container" id="resultContainer">
                     <div class="result-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="result-message">Your numbered PDF is ready!</h3>
+                    <h3 class="result-message">Your PDF with page numbers is ready!</h3>
+                    
+                    <div class="download-options" id="downloadOptions">
+                        <!-- Download options will be added here dynamically -->
+                    </div>
+                    
                     <div class="btn-group">
-                        <button class="btn btn-primary" id="downloadBtn">
-                            <i class="fas fa-download"></i> Download PDF
-                        </button>
-                        <button class="btn btn-secondary" id="newFileBtn">
-                            <i class="fas fa-file-upload"></i> New File
+                        <button class="btn btn-secondary" id="newConvertBtn">
+                            <i class="fas fa-file-upload"></i> New Document
                         </button>
                     </div>
                 </div>
@@ -1232,9 +1185,9 @@ html {
             <!-- How It Works Section -->
             <section id="how-it-works" class="features-section" itemscope itemtype="https://schema.org/HowTo">
                 <h2 class="section-title" itemprop="name">How to Add Page Numbers to PDF</h2>
-                <meta itemprop="description" content="Step-by-step guide on how to add page numbers to PDF using PDFMasterPro">
+                <meta itemprop="description" content="Step-by-step guide on how to add page numbers to PDF files using PDFMasterPro">
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-upload"></i>
                         </div>
@@ -1244,23 +1197,33 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-sliders-h"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Customize Settings</h3>
-                            <p itemprop="text">Choose page range, number format, position, font style, and color to match your document's design.</p>
+                            <p itemprop="text">Choose page range, numbering format, position, font style, and other customization options.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Process & Add Numbers</h3>
+                            <p itemprop="text">Click to add numbers and watch as page numbers are added to your PDF in real-time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-download"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 itemprop="name">Download & Save</h3>
-                            <p itemprop="text">Preview your numbered PDF and download the final document with professional page numbers added.</p>
+                            <h3 itemprop="name">Download Numbered PDF</h3>
+                            <p itemprop="text">Download your PDF with professionally formatted page numbers added to each page.</p>
                         </div>
                     </div>
                 </div>
@@ -1270,7 +1233,7 @@ html {
             <section id="features" class="features-section">
                 <h2 class="section-title">Advanced PDF Page Numbering Features</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
                         <div class="feature-icon">
                             <i class="fas fa-lock"></i>
                         </div>
@@ -1280,53 +1243,53 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
                         <div class="feature-icon">
-                            <i class="fas fa-sort"></i>
+                            <i class="fas fa-sliders-h"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Flexible Page Range</h3>
-                            <p>Add numbers to all pages or specify a custom range. Perfect for documents with cover pages or appendices.</p>
+                            <h3>Full Customization</h3>
+                            <p>Choose from multiple positions, fonts, sizes, colors, and numbering formats to match your document style.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
                         <div class="feature-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-file-alt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Multiple Formats</h3>
-                            <p>Choose from various numbering formats including simple numbers, page labels, or create custom formats.</p>
+                            <h3>Flexible Page Selection</h3>
+                            <p>Add numbers to all pages, specific page ranges, or exclude certain pages from numbering.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
-                        <div class="feature-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="feature-content">
-                            <h3>Custom Position</h3>
-                            <p>Place page numbers in any corner or center position with adjustable margins for perfect alignment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
                         <div class="feature-icon">
                             <i class="fas fa-palette"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Font Customization</h3>
-                            <p>Choose from multiple fonts, sizes, colors, and styles to match your document's branding and design.</p>
+                            <h3>Style Options</h3>
+                            <p>Customize font family, size, weight, style, and color to perfectly match your document's design.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-vector-square"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Vector Quality</h3>
+                            <p>Page numbers are added as vector elements, preserving the original quality of your PDF document.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
                         <div class="feature-icon">
                             <i class="fas fa-infinity"></i>
                         </div>
                         <div class="feature-content">
                             <h3>Unlimited Usage</h3>
-                            <p>Add page numbers to as many PDFs as you need with no limitations or watermarks on your documents.</p>
+                            <p>Add page numbers to as many PDFs as you need with no limitations or watermarks.</p>
                         </div>
                     </div>
                 </div>
@@ -1336,7 +1299,7 @@ html {
             <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-question-circle"></i>
                         </div>
@@ -1348,43 +1311,43 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 itemprop="name">Is my data secure when adding page numbers to PDF?</h3>
+                            <h3 itemprop="name">Is my PDF data secure when using this tool?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
                                 <span itemprop="text">Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</span>
                             </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-sort"></i>
+                            <i class="fas fa-file-image"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Can I add page numbers to specific pages only?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">Absolutely! You can choose to add page numbers to all pages or specify a custom page range for precise control.</span>
+                                <span itemprop="text">Absolutely! You can choose to add page numbers to all pages or specify a custom page range.</span>
                             </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-file-pdf"></i>
+                            <i class="fas fa-list-ol"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">What types of numbering formats are available?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">We offer multiple formats including simple numbers, page labels, and custom formats with total page count.</span>
+                                <span itemprop="text">We offer multiple formats including simple numbers, Roman numerals, letters, and custom formats with total page count.</span>
                             </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
@@ -1396,9 +1359,9 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-undo"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Will the numbered PDF maintain original quality?</h3>
@@ -1432,12 +1395,12 @@ html {
                     </div>
                     
                     <div class="footer-column">
-                        <h3>Page Tools</h3>
+                        <h3>PDF Editors</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/extractpdf.html" itemprop="url">Extract PDF Pages</a></li>
+                            <li><a href="https://pdfmasterpro.in/page-number" itemprop="url">Add Page Numbers</a></li>
+                            <li><a href="https://pdfmasterpro.in/rotate-pdf" itemprop="url">Rotate PDF</a></li>
                             <li><a href="https://pdfmasterpro.in/split-pdf" itemprop="url">Split PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/reorder-pdf-pages" itemprop="url">Reorder PDF Pages</a></li>
-                            <li><a href="https://pdfmasterpro.in/page-number.html" itemprop="url">Add Page Numbers</a></li>
+                            <li><a href="https://pdfmasterpro.in/reorder-pdf" itemprop="url">Reorder PDF Pages</a></li>
                         </ul>
                     </div>
                     
@@ -1489,7 +1452,7 @@ html {
     </div>
 
     <script>
-        // Initialize PDF.js worker
+        // Set up PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -1517,23 +1480,21 @@ html {
             const fontBold = document.getElementById('fontBold');
             const fontItalic = document.getElementById('fontItalic');
             const fontColor = document.getElementById('fontColor');
-            const previewBtn = document.getElementById('previewBtn');
+            const clearAllBtn = document.getElementById('clearAllBtn');
             const addNumbersBtn = document.getElementById('addNumbersBtn');
-            const previewSection = document.getElementById('previewSection');
-            const previewContainer = document.getElementById('previewContainer');
-            const backToSettingsBtn = document.getElementById('backToSettingsBtn');
-            const saveBtn = document.getElementById('saveBtn');
             const processingContainer = document.getElementById('processingContainer');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
             const resultContainer = document.getElementById('resultContainer');
-            const downloadBtn = document.getElementById('downloadBtn');
-            const newFileBtn = document.getElementById('newFileBtn');
+            const downloadOptions = document.getElementById('downloadOptions');
+            const newConvertBtn = document.getElementById('newConvertBtn');
             const floatingCta = document.getElementById('floatingCta');
+            const mainToolCard = document.getElementById('mainToolCard');
 
             let pdfFile = null;
             let pdfDoc = null;
-            let originalPdfBytes = null;
-            let modifiedPdfBytes = null;
             let totalPages = 0;
+            let modifiedPdfBytes = null;
 
             // Add wave animation to floating CTA
             function addWaveAnimation() {
@@ -1600,21 +1561,17 @@ html {
 
             function handleDrop(e) {
                 const dt = e.dataTransfer;
-                const files = dt.files;
-                if (files.length > 0) {
-                    fileInput.files = files;
-                    handleFile({ target: { files: files } });
+                const droppedFiles = dt.files;
+                if (droppedFiles.length > 0) {
+                    handleFile({ target: { files: [droppedFiles[0]] } });
                 }
             }
 
             async function handleFile(e) {
                 const file = e.target.files[0];
                 
-                if (!file) return;
-                
-                // Check if file is PDF
-                if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
-                    alert('Please select a valid PDF file.');
+                if (file.type !== 'application/pdf') {
+                    alert('Please select a PDF file.');
                     return;
                 }
                 
@@ -1625,38 +1582,44 @@ html {
                 fileSize.textContent = formatFileSize(file.size);
                 fileInfo.style.display = 'block';
                 
-                // Load PDF for preview
+                // Load PDF for processing
                 processingContainer.style.display = 'block';
                 settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
                     const arrayBuffer = await readFileAsArrayBuffer(file);
-                    originalPdfBytes = new Uint8Array(arrayBuffer);
-                    
-                    // Load PDF document
-                    pdfDoc = await pdfjsLib.getDocument({ data: originalPdfBytes }).promise;
+                    pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
                     totalPages = pdfDoc.numPages;
                     
-                    // Show page count
+                    // Update page count
                     pageCount.textContent = `${totalPages} pages`;
                     
-                    // Set default page range
+                    // Set default page range values
                     fromPage.value = 1;
                     toPage.value = totalPages;
+                    fromPage.max = totalPages;
                     toPage.max = totalPages;
                     
-                    // Show settings section
                     settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
+                    
+                    // Auto-scroll back to main card after PDF is selected
+                    scrollToMainCard();
                     
                 } catch (error) {
                     console.error('Error loading PDF:', error);
                     processingContainer.style.display = 'none';
-                    alert('Error loading PDF. Please try again with a different file.');
-                    resetTool();
+                    alert('Error loading PDF. Please try again.');
                 }
+            }
+
+            // Function to scroll back to the main tool card
+            function scrollToMainCard() {
+                mainToolCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
             }
 
             function formatFileSize(bytes) {
@@ -1667,373 +1630,103 @@ html {
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             }
 
-            // Toggle page range input based on checkbox
+            // Show/hide page range input based on checkbox
             allPagesCheckbox.addEventListener('change', function() {
                 pageRangeGroup.style.display = this.checked ? 'none' : 'block';
             });
 
-            // Toggle custom format input based on selection
+            // Show/hide custom format input based on selection
             numberFormat.addEventListener('change', function() {
-                customFormatGroup.style.display = this.value === '5' ? 'block' : 'none';
+                customFormatGroup.style.display = this.value === 'custom' ? 'block' : 'none';
             });
 
-            // Preview button click
-            previewBtn.addEventListener('click', async function() {
-                if (!pdfDoc) {
-                    alert('Please upload a PDF file first.');
-                    return;
-                }
-                
-                processingContainer.style.display = 'block';
-                settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
-                
-                try {
-                    // Render preview with page numbers
-                    await renderPreviewWithNumbers();
-                    
-                    previewSection.style.display = 'block';
-                    processingContainer.style.display = 'none';
-                    
-                } catch (error) {
-                    console.error('Error generating preview:', error);
-                    processingContainer.style.display = 'none';
-                    alert('Error generating preview. Please try again.');
-                }
+            // Clear all files
+            clearAllBtn.addEventListener('click', function() {
+                resetTool();
             });
 
-            // Back to settings button
-            backToSettingsBtn.addEventListener('click', function() {
-                previewSection.style.display = 'none';
-                settingsSection.style.display = 'block';
-            });
-
-            // Add page numbers button
+            // Add page numbers to PDF
             addNumbersBtn.addEventListener('click', async function() {
+                if (!pdfFile) {
+                    alert('Please select a PDF file to add page numbers.');
+                    return;
+                }
+                
                 if (!pdfDoc) {
-                    alert('Please upload a PDF file first.');
+                    alert('Please wait for the PDF to finish loading.');
                     return;
                 }
                 
                 processingContainer.style.display = 'block';
                 settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
-                    // Create the numbered PDF
-                    modifiedPdfBytes = await createNumberedPdf();
-                    
-                    // Show result section with download ready
-                    processingContainer.style.display = 'none';
-                    resultContainer.style.display = 'block';
-                    
+                    await addPageNumbersToPdf();
                 } catch (error) {
-                    console.error('Error saving PDF:', error);
+                    console.error('Error adding page numbers:', error);
                     processingContainer.style.display = 'none';
-                    alert('Error: Could not process the PDF. Please try again with a different file.');
+                    settingsSection.style.display = 'block';
+                    alert('Error adding page numbers. Please try again with a different file.');
                 }
             });
 
-            // Save button in preview section
-            saveBtn.addEventListener('click', async function() {
-                if (!pdfDoc) {
-                    alert('Please upload a PDF file first.');
-                    return;
-                }
-                
-                processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
-                resultContainer.style.display = 'none';
-                
+            async function addPageNumbersToPdf() {
                 try {
-                    // Create the numbered PDF if not already created
-                    if (!modifiedPdfBytes) {
-                        modifiedPdfBytes = await createNumberedPdf();
-                    }
-                    
-                    // Show result section with download ready
-                    processingContainer.style.display = 'none';
-                    resultContainer.style.display = 'block';
-                    
-                } catch (error) {
-                    console.error('Error saving PDF:', error);
-                    processingContainer.style.display = 'none';
-                    alert('Error: Could not process the PDF. Please try again with a different file.');
-                }
-            });
-
-            // Download button
-            downloadBtn.addEventListener('click', function() {
-                if (!modifiedPdfBytes) {
-                    alert('Please process the PDF first.');
-                    return;
-                }
-                
-                try {
-                    // Ensure we have Uint8Array
-                    const pdfBytes = modifiedPdfBytes instanceof Uint8Array 
-                        ? modifiedPdfBytes 
-                        : new Uint8Array(modifiedPdfBytes);
-                    
-                    // Create a Blob
-                    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-                    
-                    // Generate filename
-                    let filename = 'numbered.pdf';
-                    if (fileName.textContent) {
-                        filename = fileName.textContent.replace(/\.pdf$/i, '') + '_numbered.pdf';
-                    }
-                    
-                    // Save the file
-                    saveAs(blob, filename);
-                    
-                } catch (error) {
-                    console.error('Error downloading PDF:', error);
-                    alert('Error downloading PDF. Please try again.');
-                }
-            });
-
-            // New file button
-            newFileBtn.addEventListener('click', resetTool);
-
-            async function renderPreviewWithNumbers() {
-                previewContainer.innerHTML = '';
-                
-                // Get settings
-                const settings = getNumberingSettings();
-                
-                // Determine which pages to show
-                const pagesToShow = [];
-                if (settings.allPages) {
-                    for (let i = 1; i <= totalPages; i++) {
-                        pagesToShow.push(i);
-                    }
-                } else {
-                    const from = Math.max(1, Math.min(settings.fromPage, totalPages));
-                    const to = Math.max(1, Math.min(settings.toPage, totalPages));
-                    for (let i = from; i <= to; i++) {
-                        pagesToShow.push(i);
-                    }
-                }
-                
-                // Show only first few pages in preview for performance
-                const previewPages = pagesToShow.slice(0, 6);
-                
-                // Render each page with number
-                for (const pageNum of previewPages) {
-                    try {
-                        const page = await pdfDoc.getPage(pageNum);
-                        const viewport = page.getViewport({ scale: 0.6 });
-                        
-                        const pagePreview = document.createElement('div');
-                        pagePreview.className = 'page-preview';
-                        pagePreview.dataset.pageNumber = pageNum;
-                        
-                        const pageNumber = document.createElement('div');
-                        pageNumber.className = 'page-number';
-                        pageNumber.textContent = pageNum;
-                        
-                        const canvas = document.createElement('canvas');
-                        canvas.className = 'page-canvas';
-                        const context = canvas.getContext('2d');
-                        canvas.height = viewport.height;
-                        canvas.width = viewport.width;
-                        
-                        pagePreview.appendChild(pageNumber);
-                        pagePreview.appendChild(canvas);
-                        previewContainer.appendChild(pagePreview);
-                        
-                        // Render page to canvas
-                        await page.render({
-                            canvasContext: context,
-                            viewport: viewport
-                        }).promise;
-                        
-                        // Draw page number on canvas
-                        drawPageNumber(context, canvas, pageNum, settings);
-                        
-                    } catch (error) {
-                        console.error(`Error rendering page ${pageNum}:`, error);
-                        continue;
-                    }
-                }
-            }
-
-            function drawPageNumber(context, canvas, pageNum, settings) {
-                const currentNumber = settings.startNumber + pageNum - (settings.allPages ? 1 : settings.fromPage);
-                const totalPages = settings.allPages ? totalPages : (settings.toPage - settings.fromPage + 1);
-                
-                // Format the page number text
-                let numberText = '';
-                switch(settings.format) {
-                    case '1': numberText = `${currentNumber}`; break;
-                    case '2': numberText = `Page ${currentNumber}`; break;
-                    case '3': numberText = `- ${currentNumber} -`; break;
-                    case '4': numberText = `-- ${currentNumber} --`; break;
-                    case '5': 
-                        numberText = settings.customFormat
-                            .replace(/{n}/g, currentNumber)
-                            .replace(/{t}/g, totalPages);
-                        break;
-                }
-                
-                // Set font style
-                let fontStyle = '';
-                if (settings.fontBold && settings.fontItalic) {
-                    fontStyle = 'bold italic';
-                } else if (settings.fontBold) {
-                    fontStyle = 'bold';
-                } else if (settings.fontItalic) {
-                    fontStyle = 'italic';
-                }
-                
-                context.font = `${fontStyle} ${settings.fontSize}px ${settings.fontFamily}`;
-                context.fillStyle = settings.fontColor;
-                context.textAlign = 'left';
-                context.textBaseline = 'alphabetic';
-                
-                // Calculate text width
-                const textWidth = context.measureText(numberText).width;
-                
-                // Determine position
-                let x, y;
-                const marginX = settings.marginX;
-                const marginY = settings.marginY;
-                
-                switch(settings.position) {
-                    case 'top-left':
-                        x = marginX;
-                        y = marginY + parseInt(settings.fontSize);
-                        break;
-                    case 'top-right':
-                        x = canvas.width - marginX - textWidth;
-                        y = marginY + parseInt(settings.fontSize);
-                        break;
-                    case 'bottom-left':
-                        x = marginX;
-                        y = canvas.height - marginY;
-                        break;
-                    case 'bottom-right':
-                        x = canvas.width - marginX - textWidth;
-                        y = canvas.height - marginY;
-                        break;
-                    case 'bottom-center':
-                        x = (canvas.width - textWidth) / 2;
-                        y = canvas.height - marginY;
-                        break;
-                    case 'top-center':
-                        x = (canvas.width - textWidth) / 2;
-                        y = marginY + parseInt(settings.fontSize);
-                        break;
-                }
-                
-                // Draw the text
-                context.fillText(numberText, x, y);
-            }
-
-            async function createNumberedPdf() {
-                try {
-                    const { PDFDocument, rgb } = PDFLib;
-                    
-                    // Load the original PDF
-                    const originalPdf = await PDFDocument.load(originalPdfBytes);
-                    const newPdf = await PDFDocument.create();
-                    
-                    // Get settings
                     const settings = getNumberingSettings();
                     
-                    // Copy all pages
-                    const pageIndices = Array.from({ length: originalPdf.getPageCount() }, (_, i) => i);
-                    const copiedPages = await newPdf.copyPages(originalPdf, pageIndices);
+                    // Load the original PDF
+                    const arrayBuffer = await readFileAsArrayBuffer(pdfFile);
+                    const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+                    const pages = pdfDoc.getPages();
                     
-                    // Add pages to new PDF with numbers
-                    for (let i = 0; i < copiedPages.length; i++) {
-                        const page = copiedPages[i];
+                    // Process each page
+                    for (let i = 0; i < pages.length; i++) {
                         const pageNum = i + 1;
                         
-                        // Check if this page should be numbered
+                        // Update progress
+                        const progress = ((i + 1) / pages.length) * 100;
+                        progressFill.style.width = `${progress}%`;
+                        progressText.textContent = `Processing page ${i + 1} of ${pages.length}`;
+                        
+                        // Check if we should add page number to this page
                         if (shouldNumberPage(pageNum, settings)) {
-                            // Format the page number text
-                            const currentNumber = settings.startNumber + pageNum - (settings.allPages ? 1 : settings.fromPage);
-                            const totalPages = settings.allPages ? originalPdf.getPageCount() : (settings.toPage - settings.fromPage + 1);
-                            
-                            let numberText = '';
-                            switch(settings.format) {
-                                case '1': numberText = `${currentNumber}`; break;
-                                case '2': numberText = `Page ${currentNumber}`; break;
-                                case '3': numberText = `- ${currentNumber} -`; break;
-                                case '4': numberText = `-- ${currentNumber} --`; break;
-                                case '5': 
-                                    numberText = settings.customFormat
-                                        .replace(/{n}/g, currentNumber)
-                                        .replace(/{t}/g, totalPages);
-                                    break;
-                            }
-                            
-                            // Get page size
+                            const page = pages[i];
                             const { width, height } = page.getSize();
                             
-                            // Calculate position
-                            let x, y;
-                            const marginX = settings.marginX;
-                            const marginY = settings.marginY;
+                            // Calculate position based on settings
+                            const position = calculatePosition(width, height, settings);
                             
-                            // Set font style
-                            const font = await newPdf.embedFont(settings.fontFamily);
-                            const fontSize = parseInt(settings.fontSize);
-                            const textWidth = font.widthOfTextAtSize(numberText, fontSize);
+                            // Get formatted page number text
+                            const pageText = formatPageNumber(pageNum, pages.length, settings);
                             
-                            switch(settings.position) {
-                                case 'top-left':
-                                    x = marginX;
-                                    y = height - marginY - fontSize;
-                                    break;
-                                case 'top-right':
-                                    x = width - marginX - textWidth;
-                                    y = height - marginY - fontSize;
-                                    break;
-                                case 'bottom-left':
-                                    x = marginX;
-                                    y = marginY;
-                                    break;
-                                case 'bottom-right':
-                                    x = width - marginX - textWidth;
-                                    y = marginY;
-                                    break;
-                                case 'bottom-center':
-                                    x = (width - textWidth) / 2;
-                                    y = marginY;
-                                    break;
-                                case 'top-center':
-                                    x = (width - textWidth) / 2;
-                                    y = height - marginY - fontSize;
-                                    break;
-                            }
-                            
-                            // Draw the text
-                            page.drawText(numberText, {
-                                x,
-                                y,
-                                size: fontSize,
-                                font,
-                                color: rgb(
+                            // Add page number to the page
+                            page.drawText(pageText, {
+                                x: position.x,
+                                y: position.y,
+                                size: parseInt(settings.fontSize),
+                                font: await getFont(pdfDoc, settings),
+                                color: PDFLib.rgb(
                                     parseInt(settings.fontColor.substr(1, 2), 16) / 255,
                                     parseInt(settings.fontColor.substr(3, 2), 16) / 255,
                                     parseInt(settings.fontColor.substr(5, 2), 16) / 255
-                                ),
-                                ...(settings.fontBold && { opacity: 0.9 }),
-                                ...(settings.fontItalic && { skew: { x: 0.1, y: 0 } })
+                                )
                             });
                         }
-                        
-                        newPdf.addPage(page);
                     }
                     
-                    // Return the modified PDF bytes as Uint8Array
-                    return await newPdf.save();
+                    // Save the modified PDF
+                    modifiedPdfBytes = await pdfDoc.save();
+                    
+                    // Show result section
+                    processingContainer.style.display = 'none';
+                    resultContainer.style.display = 'block';
+                    
+                    // Create download option
+                    updateDownloadOptions();
+                    
                 } catch (error) {
-                    console.error('Error creating numbered PDF:', error);
+                    console.error('Error in addPageNumbersToPdf:', error);
                     throw error;
                 }
             }
@@ -2062,50 +1755,236 @@ html {
                 return pageNum >= settings.fromPage && pageNum <= settings.toPage;
             }
 
+            function calculatePosition(pageWidth, pageHeight, settings) {
+                const marginX = settings.marginX;
+                const marginY = settings.marginY;
+                
+                switch (settings.position) {
+                    case 'top-left':
+                        return { x: marginX, y: pageHeight - marginY };
+                    case 'top-center':
+                        return { x: pageWidth / 2, y: pageHeight - marginY };
+                    case 'top-right':
+                        return { x: pageWidth - marginX, y: pageHeight - marginY };
+                    case 'bottom-left':
+                        return { x: marginX, y: marginY };
+                    case 'bottom-center':
+                        return { x: pageWidth / 2, y: marginY };
+                    case 'bottom-right':
+                        return { x: pageWidth - marginX, y: marginY };
+                    default:
+                        return { x: marginX, y: pageHeight - marginY };
+                }
+            }
+
+            function formatPageNumber(currentPage, totalPages, settings) {
+                const startNum = settings.startNumber;
+                const actualPageNum = currentPage + startNum - 1;
+                
+                if (settings.format === 'custom') {
+                    return settings.customFormat
+                        .replace(/{page}/g, actualPageNum.toString())
+                        .replace(/{total}/g, totalPages.toString());
+                }
+                
+                switch (settings.format) {
+                    case '1':
+                        return actualPageNum.toString();
+                    case 'i':
+                        return toRoman(actualPageNum).toLowerCase();
+                    case 'I':
+                        return toRoman(actualPageNum);
+                    case 'a':
+                        return toAlpha(actualPageNum).toLowerCase();
+                    case 'A':
+                        return toAlpha(actualPageNum);
+                    default:
+                        return actualPageNum.toString();
+                }
+            }
+
+            function toRoman(num) {
+                const romanNumerals = [
+                    { value: 1000, numeral: 'M' },
+                    { value: 900, numeral: 'CM' },
+                    { value: 500, numeral: 'D' },
+                    { value: 400, numeral: 'CD' },
+                    { value: 100, numeral: 'C' },
+                    { value: 90, numeral: 'XC' },
+                    { value: 50, numeral: 'L' },
+                    { value: 40, numeral: 'XL' },
+                    { value: 10, numeral: 'X' },
+                    { value: 9, numeral: 'IX' },
+                    { value: 5, numeral: 'V' },
+                    { value: 4, numeral: 'IV' },
+                    { value: 1, numeral: 'I' }
+                ];
+                
+                let result = '';
+                for (const { value, numeral } of romanNumerals) {
+                    while (num >= value) {
+                        result += numeral;
+                        num -= value;
+                    }
+                }
+                return result;
+            }
+
+            function toAlpha(num) {
+                let result = '';
+                while (num > 0) {
+                    num--;
+                    result = String.fromCharCode(65 + (num % 26)) + result;
+                    num = Math.floor(num / 26);
+                }
+                return result;
+            }
+
+            async function getFont(pdfDoc, settings) {
+                // For simplicity, we'll use the built-in fonts
+                // In a real implementation, you might want to embed custom fonts
+                switch (settings.fontFamily) {
+                    case 'Helvetica':
+                        return settings.fontBold ? 
+                            (settings.fontItalic ? pdfDoc.getFont(PDFLib.StandardFonts.HelveticaBoldOblique) : pdfDoc.getFont(PDFLib.StandardFonts.HelveticaBold)) :
+                            (settings.fontItalic ? pdfDoc.getFont(PDFLib.StandardFonts.HelveticaOblique) : pdfDoc.getFont(PDFLib.StandardFonts.Helvetica));
+                    case 'Times-Roman':
+                        return settings.fontBold ? 
+                            (settings.fontItalic ? pdfDoc.getFont(PDFLib.StandardFonts.TimesBoldItalic) : pdfDoc.getFont(PDFLib.StandardFonts.TimesBold)) :
+                            (settings.fontItalic ? pdfDoc.getFont(PDFLib.StandardFonts.TimesItalic) : pdfDoc.getFont(PDFLib.StandardFonts.TimesRoman));
+                    case 'Courier':
+                        return settings.fontBold ? 
+                            (settings.fontItalic ? pdfDoc.getFont(PDFLib.StandardFonts.CourierBoldOblique) : pdfDoc.getFont(PDFLib.StandardFonts.CourierBold)) :
+                            (settings.fontItalic ? pdfDoc.getFont(PDFLib.StandardFonts.CourierOblique) : pdfDoc.getFont(PDFLib.StandardFonts.Courier));
+                    default:
+                        return pdfDoc.getFont(PDFLib.StandardFonts.Helvetica);
+                }
+            }
+
+            function updateDownloadOptions() {
+                downloadOptions.innerHTML = '';
+                
+                const option = document.createElement('div');
+                option.className = 'download-option';
+                option.innerHTML = `
+                    <i class="fas fa-download"></i>
+                    <span>Download Numbered PDF</span>
+                `;
+                option.addEventListener('click', downloadNumberedPdf);
+                downloadOptions.appendChild(option);
+            }
+
+            function downloadNumberedPdf() {
+                if (!modifiedPdfBytes) {
+                    alert('No modified PDF available for download.');
+                    return;
+                }
+                
+                const blob = new Blob([modifiedPdfBytes], { type: 'application/pdf' });
+                const filename = pdfFile.name.replace('.pdf', '_numbered.pdf');
+                saveAs(blob, filename);
+            }
+
+            // Start a new conversion
+            newConvertBtn.addEventListener('click', resetTool);
+
             function resetTool() {
-                fileInfo.style.display = 'none';
-                settingsSection.style.display = 'none';
-                previewSection.style.display = 'none';
-                resultContainer.style.display = 'none';
-                fileInput.value = '';
                 pdfFile = null;
                 pdfDoc = null;
-                originalPdfBytes = null;
-                modifiedPdfBytes = null;
                 totalPages = 0;
+                modifiedPdfBytes = null;
+                resultContainer.style.display = 'none';
+                settingsSection.style.display = 'none';
+                fileInfo.style.display = 'none';
+                dropZone.style.display = 'block';
+                progressFill.style.width = '0%';
+                progressText.textContent = 'Processing page 0 of 0';
+                
+                // Reset file input
+                fileInput.value = '';
             }
 
             function readFileAsArrayBuffer(file) {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
                     reader.onload = () => resolve(reader.result);
-                    reader.onerror = () => reject(new Error('Failed to read file'));
+                    reader.onerror = reject;
                     reader.readAsArrayBuffer(file);
                 });
             }
             
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+            // Simple Scroll Animation for Feature Cards
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
                 });
-            });
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
             
-            // Smooth scrolling for contact link
-            document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-            });
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
+             
+            // Initialize navigation functionality
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navigation when page loads
+            initializeNavigation();
         });
     </script>
 </body>
