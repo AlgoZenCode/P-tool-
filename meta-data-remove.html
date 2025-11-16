@@ -563,8 +563,18 @@
             display: none;
         }
         
-        /* Footer */
+        /* Footer - Shifted to Left */
         footer {
+            text-align: left;
+            padding: 20px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+       footer {
             background: rgba(0, 0, 0, 0.2);
             padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
             position: relative;
@@ -632,7 +642,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .section-title {
             text-align: center;
             margin-bottom: 40px;
@@ -714,7 +723,7 @@
             overflow: hidden;
         }
         
-        /* Footer Content */
+        /* Footer Content - Shifted to Left */
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -722,6 +731,9 @@
             margin-bottom: 30px;
             padding: 0 15px;
             text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
         }
         
         .footer-column {
@@ -808,12 +820,14 @@
         }
         
         .copyright {
-            text-align: center;
+            text-align: left;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
             padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
         }
         
         /* Animations */
@@ -869,6 +883,7 @@
                 font-size: 28px;
             }
             
+            /* Footer adjustments for mobile */
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
@@ -888,11 +903,12 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Footer adjustments for small mobile */
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-        }
+        } 
         
         html {
             scroll-behavior: smooth;
@@ -1265,7 +1281,7 @@
             </div>
         </main>
         
-        <!-- Footer -->
+        <!-- Footer - Shifted to Left -->
         <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
             <div class="container">
                 <div class="footer-content">
@@ -1829,6 +1845,12 @@
                             });
                         }
                     });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
                 });
             }
             
