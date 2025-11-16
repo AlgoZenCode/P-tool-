@@ -9,7 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Organize PDF - Reorder, Rotate & Delete Pages | PDFMasterPro">
     <meta property="og:description" content="Free online tool to organize PDF pages">
-    <link rel="canonical" href="https://pdfmasterpro.com/organize-pdf.html">
+    <link rel="canonical" href="https://pdfmasterpro.in/organize-pdf.html">
     
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -18,7 +18,7 @@
         "@type": "WebApplication",
         "name": "PDFMasterPro - Organize PDF",
         "description": "Free online tool to organize PDF pages by reordering, rotating, and deleting pages",
-        "url": "https://pdfmasterpro.com/organize-pdf.html",
+        "url": "https://pdfmasterpro.in/organize-pdf.html",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Any",
         "browserRequirements": "Requires JavaScript",
@@ -31,23 +31,23 @@
         "author": {
             "@type": "Organization",
             "name": "PDFMasterPro",
-            "url": "https://pdfmasterpro.com"
+            "url": "https://pdfmasterpro.in"
         },
         "publisher": {
             "@type": "Organization",
             "name": "PDFMasterPro",
-            "url": "https://pdfmasterpro.com",
+            "url": "https://pdfmasterpro.in",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://pdfmasterpro.com/logo.png",
+                "url": "https://pdfmasterpro.in/logo.png",
                 "width": "200",
                 "height": "60"
             }
         },
-        "screenshot": "https://pdfmasterpro.com/screenshot-organize-pdf.html.jpg",
+        "screenshot": "https://pdfmasterpro.in/screenshot-organize-pdf.jpg",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://pdfmasterpro.com/organize-pdf.html"
+            "@id": "https://pdfmasterpro.in/organize-pdf.html"
         }
     }
     </script>
@@ -61,19 +61,19 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://pdfmasterpro.com"
+                "item": "https://pdfmasterpro.in"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "PDF Tools",
-                "item": "https://pdfmasterpro.com/tools"
+                "item": "https://pdfmasterpro.in/tools"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Organize PDF",
-                "item": "https://pdfmasterpro.com/organize-pdf.html"
+                "item": "https://pdfmasterpro.in/organize-pdf.html"
             }
         ]
     }
@@ -145,7 +145,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2249195008528002"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
-    <link rel="canonical" href="https://pdfmasterpro.in/organize-pdf.html.html" />
+    <link rel="canonical" href="https://pdfmasterpro.in/organize-pdf.html" />
     
     <style>
         /* Base Styles */
@@ -241,6 +241,7 @@
             position: relative;
             padding: 5px 0;
             font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
         }
         
         nav a::after {
@@ -344,13 +345,13 @@
             font-size: 14px;
         }
         
-        /* Preview Section */
-        .preview-section {
+        /* Settings Section */
+        .settings-section {
             display: none;
             margin-top: 20px;
         }
         
-        .preview-header {
+        .settings-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -359,7 +360,7 @@
             gap: 10px;
         }
         
-        .preview-title {
+        .settings-title {
             font-size: 20px;
             color: var(--light);
         }
@@ -367,6 +368,22 @@
         .page-count {
             color: rgba(255, 255, 255, 0.7);
             font-size: 14px;
+        }
+        
+        /* Selection Controls */
+        .selection-controls {
+            display: none;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .selection-controls.active {
+            display: flex;
         }
         
         .preview-scroll-container {
@@ -383,18 +400,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
-        }
-        
-        .preview-container.vertical-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .preview-container.vertical-layout .page-preview {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
         }
         
         .page-preview {
@@ -478,10 +483,6 @@
             background: rgba(16, 185, 129, 0.9);
         }
         
-        .page-action-btn.move {
-            background: rgba(59, 130, 246, 0.9);
-        }
-        
         .page-canvas {
             position: absolute;
             top: 0;
@@ -537,26 +538,6 @@
             transform: translateY(-2px);
         }
         
-        /* Selection Controls */
-        .selection-controls {
-            display: none;
-            justify-content: center;
-            gap: 10px;
-            margin: 15px 0;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-        }
-        
-        .selection-controls.active {
-            display: flex;
-        }
-        
-        .selection-controls .btn {
-            padding: 8px 16px;
-            font-size: 14px;
-        }
-        
         .btn-hold-active {
             background: var(--primary) !important;
             transform: scale(0.95);
@@ -583,6 +564,22 @@
         .processing-text {
             color: rgba(255, 255, 255, 0.8);
             font-size: 18px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.3s ease;
         }
         
         /* Result Section */
@@ -715,6 +712,14 @@
             display: flex;
             gap: 15px;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .feature-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         
         .feature-card:hover {
@@ -820,6 +825,7 @@
             display: block;
             position: relative;
             padding-left: 0;
+            cursor: pointer;
         }
         
         .footer-column a:hover {
@@ -876,8 +882,8 @@
             }
         }
         
-        .animate-fade-in {
-            animation: fadeInUp 0.5s ease-out forwards;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Responsive */
@@ -971,7 +977,7 @@ html {
                     <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
                     <li><a href="#features" itemprop="url">Features</a></li>
                     <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
-                    <li><a href="#contact" itemprop="url">contact</a></li>
+                    <li><a href="#contact" itemprop="url">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -990,12 +996,12 @@ html {
             </div>
             
             <!-- PDF Organizer Tool -->
-            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
                 <meta itemprop="applicationCategory" content="UtilityApplication">
                 <meta itemprop="operatingSystem" content="Any">
                 <meta itemprop="name" content="PDFMasterPro Organize PDF">
                 <meta itemprop="description" content="Free online tool to organize PDF pages by reordering, rotating, and deleting pages">
-                <meta itemprop="url" content="https://pdfmasterpro.com/organize-pdf.html">
+                <meta itemprop="url" content="https://pdfmasterpro.in/organize-pdf.html">
                 <meta itemprop="softwareVersion" content="1.0">
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                     <meta itemprop="price" content="0">
@@ -1021,25 +1027,21 @@ html {
                     <div class="file-size" id="fileSize"></div>
                 </div>
 
-                <div class="preview-section" id="previewSection">
-                    <div class="preview-header">
-                        <h3 class="preview-title">Organize Pages</h3>
+                <div class="settings-section" id="settingsSection">
+                    <div class="settings-header">
+                        <h3 class="settings-title">Organize PDF Pages</h3>
                         <div class="page-count" id="pageCount"></div>
-                        <div class="view-toggle" id="layoutBtn">
-                            <i class="fas fa-th-list"></i>
-                            <span>Vertical Layout</span>
-                        </div>
                     </div>
                     
                     <!-- Selection Controls -->
                     <div class="selection-controls" id="selectionControls">
-                        <button class="btn btn-secondary" id="moveUpBtn" title="Move Up (Up Arrow)">
+                        <button class="btn btn-secondary" id="moveUpBtn">
                             <i class="fas fa-arrow-up"></i> Move Up
                         </button>
-                        <button class="btn btn-secondary" id="moveDownBtn" title="Move Down (Down Arrow)">
+                        <button class="btn btn-secondary" id="moveDownBtn">
                             <i class="fas fa-arrow-down"></i> Move Down
                         </button>
-                        <button class="btn btn-secondary" id="deselectBtn" title="Deselect (Escape)">
+                        <button class="btn btn-secondary" id="deselectBtn">
                             <i class="fas fa-times"></i> Deselect
                         </button>
                     </div>
@@ -1064,6 +1066,10 @@ html {
                 <div class="processing-container" id="processingContainer">
                     <div class="processing-spinner"></div>
                     <h3 class="processing-text">Processing your PDF...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div id="progressText">Processing page 0 of 0</div>
                 </div>
 
                 <div class="result-container" id="resultContainer">
@@ -1093,7 +1099,7 @@ html {
                 <h2 class="section-title" itemprop="name">How to Organize PDF Pages</h2>
                 <meta itemprop="description" content="Step-by-step guide on how to organize PDF pages using PDFMasterPro">
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-upload"></i>
                         </div>
@@ -1103,7 +1109,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-arrows-alt"></i>
                         </div>
@@ -1113,7 +1119,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-sync"></i>
                         </div>
@@ -1123,7 +1129,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-download"></i>
                         </div>
@@ -1139,7 +1145,7 @@ html {
             <section id="features" class="features-section">
                 <h2 class="section-title">Advanced PDF Organization Features</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
                         <div class="feature-icon">
                             <i class="fas fa-lock"></i>
                         </div>
@@ -1149,7 +1155,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
                         <div class="feature-icon">
                             <i class="fas fa-arrows-alt"></i>
                         </div>
@@ -1159,7 +1165,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
                         <div class="feature-icon">
                             <i class="fas fa-redo"></i>
                         </div>
@@ -1169,7 +1175,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
                         <div class="feature-icon">
                             <i class="fas fa-trash"></i>
                         </div>
@@ -1179,7 +1185,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
                         <div class="feature-icon">
                             <i class="fas fa-eye"></i>
                         </div>
@@ -1189,7 +1195,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
                         <div class="feature-icon">
                             <i class="fas fa-infinity"></i>
                         </div>
@@ -1205,7 +1211,7 @@ html {
             <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-question-circle"></i>
                         </div>
@@ -1217,7 +1223,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -1229,7 +1235,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-sync"></i>
                         </div>
@@ -1241,7 +1247,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-trash"></i>
                         </div>
@@ -1253,7 +1259,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
@@ -1265,7 +1271,7 @@ html {
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
@@ -1357,9 +1363,8 @@ html {
         <i class="fas fa-file-upload"></i>
     </div>
 
-    <script> 
-  
-        // Initialize PDF.js worker
+    <script>
+        // Set up PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -1369,25 +1374,25 @@ html {
             const fileInfo = document.getElementById('fileInfo');
             const fileName = document.getElementById('fileName');
             const fileSize = document.getElementById('fileSize');
-            const previewSection = document.getElementById('previewSection');
+            const settingsSection = document.getElementById('settingsSection');
             const previewScrollContainer = document.getElementById('previewScrollContainer');
             const previewContainer = document.getElementById('previewContainer');
             const pageCount = document.getElementById('pageCount');
-            const rotateAllBtn = document.getElementById('rotateAllBtn');
-            const layoutBtn = document.getElementById('layoutBtn');
-            const resetBtn = document.getElementById('resetBtn');
-            const saveBtn = document.getElementById('saveBtn');
-            const processingContainer = document.getElementById('processingContainer');
-            const resultContainer = document.getElementById('resultContainer');
-            const downloadBtn = document.getElementById('downloadBtn');
-            const newFileBtn = document.getElementById('newFileBtn');
-            const floatingCta = document.getElementById('floatingCta');
-            
-            // New elements for selection controls
             const selectionControls = document.getElementById('selectionControls');
             const moveUpBtn = document.getElementById('moveUpBtn');
             const moveDownBtn = document.getElementById('moveDownBtn');
             const deselectBtn = document.getElementById('deselectBtn');
+            const rotateAllBtn = document.getElementById('rotateAllBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const saveBtn = document.getElementById('saveBtn');
+            const processingContainer = document.getElementById('processingContainer');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const resultContainer = document.getElementById('resultContainer');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const newFileBtn = document.getElementById('newFileBtn');
+            const floatingCta = document.getElementById('floatingCta');
+            const mainToolCard = document.getElementById('mainToolCard');
 
             let pdfFile = null;
             let pdfDoc = null;
@@ -1395,7 +1400,6 @@ html {
             let modifiedPdfBytes = null;
             let pageRotations = {};
             let deletedPages = new Set();
-            let isVerticalLayout = false;
             let selectedPage = null;
             let draggedPage = null;
             let draggedPageIndex = -1;
@@ -1408,9 +1412,7 @@ html {
             let scrollDirection = 0;
             const scrollEdgeThreshold = 100;
             const maxScrollSpeed = 40;
-            const scrollAcceleration = 1.5;
-            const scrollDeceleration = 0.7;
-            
+
             // Continuous movement variables
             let moveUpInterval = null;
             let moveDownInterval = null;
@@ -1450,28 +1452,22 @@ html {
             // Handle file input change
             fileInput.addEventListener('change', handleFile);
 
-            // Toggle between grid and vertical layouts
-            layoutBtn.addEventListener('click', async function() {
-                if (!pdfDoc) return;
-                
-                isVerticalLayout = !isVerticalLayout;
-                layoutBtn.innerHTML = isVerticalLayout 
-                    ? '<i class="fas fa-th-large"></i> Grid Layout' 
-                    : '<i class="fas fa-th-list"></i> Vertical Layout';
-                
-                processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
-                
-                try {
-                    await renderPagePreviews(pdfDoc);
-                    
-                    previewSection.style.display = 'block';
-                    processingContainer.style.display = 'none';
-                } catch (error) {
-                    console.error('Error changing layout:', error);
-                    processingContainer.style.display = 'none';
-                }
-            });
+            // Move Up button functionality
+            moveUpBtn.addEventListener('mousedown', startMoveUp);
+            moveUpBtn.addEventListener('touchstart', startMoveUp);
+            moveUpBtn.addEventListener('mouseup', stopMove);
+            moveUpBtn.addEventListener('touchend', stopMove);
+            moveUpBtn.addEventListener('mouseleave', stopMove);
+
+            // Move Down button functionality
+            moveDownBtn.addEventListener('mousedown', startMoveDown);
+            moveDownBtn.addEventListener('touchstart', startMoveDown);
+            moveDownBtn.addEventListener('mouseup', stopMove);
+            moveDownBtn.addEventListener('touchend', stopMove);
+            moveDownBtn.addEventListener('mouseleave', stopMove);
+
+            // Deselect button
+            deselectBtn.addEventListener('click', deselectPage);
 
             // Handle drag and drop
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -1526,40 +1522,53 @@ html {
                 fileSize.textContent = formatFileSize(file.size);
                 fileInfo.style.display = 'block';
                 
-                // Load PDF for preview
+                // Load PDF for processing
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
                     const arrayBuffer = await readFileAsArrayBuffer(file);
                     originalPdfBytes = arrayBuffer;
                     pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
+                    const totalPages = pdfDoc.numPages;
                     
                     // Initialize page rotations (0 degrees by default)
                     pageRotations = {};
-                    for (let i = 1; i <= pdfDoc.numPages; i++) {
+                    for (let i = 1; i <= totalPages; i++) {
                         pageRotations[i] = 0;
                     }
                     
                     // Clear deleted pages and selections
                     deletedPages = new Set();
                     selectedPage = null;
+                    selectionControls.classList.remove('active');
                     
-                    // Show page count
-                    pageCount.textContent = `${pdfDoc.numPages} pages`;
+                    // Update page count
+                    pageCount.textContent = `${totalPages} pages`;
                     
-                    // Render page previews
-                    await renderPagePreviews(pdfDoc);
+                    // Render page previews with progress
+                    await renderPagePreviewsWithProgress(pdfDoc);
                     
-                    previewSection.style.display = 'block';
+                    settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
+                    
+                    // Auto-scroll back to main card after PDF is selected
+                    scrollToMainCard();
                     
                 } catch (error) {
                     console.error('Error loading PDF:', error);
                     processingContainer.style.display = 'none';
                     alert('Error loading PDF. Please try again.');
                 }
+            }
+
+            // Function to scroll back to the main tool card
+            function scrollToMainCard() {
+                mainToolCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
             }
 
             function formatFileSize(bytes) {
@@ -1570,18 +1579,20 @@ html {
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             }
 
-            async function renderPagePreviews(pdfDoc) {
+            async function renderPagePreviewsWithProgress(pdfDoc) {
                 previewContainer.innerHTML = '';
+                const totalPages = pdfDoc.numPages;
                 
-                // Set layout class
-                previewContainer.classList.toggle('vertical-layout', isVerticalLayout);
-                
-                // Render all pages (with limited resolution for performance)
-                for (let i = 1; i <= pdfDoc.numPages; i++) {
+                for (let i = 1; i <= totalPages; i++) {
                     if (deletedPages.has(i)) continue;
                     
+                    // Update progress
+                    const progress = ((i) / totalPages) * 100;
+                    progressFill.style.width = `${progress}%`;
+                    progressText.textContent = `Processing page ${i} of ${totalPages}`;
+                    
                     const page = await pdfDoc.getPage(i);
-                    const viewport = page.getViewport({ scale: isVerticalLayout ? 0.8 : 0.6, rotation: pageRotations[i] || 0 });
+                    const viewport = page.getViewport({ scale: 0.6, rotation: pageRotations[i] || 0 });
                     
                     const pagePreview = document.createElement('div');
                     pagePreview.className = 'page-preview';
@@ -1593,6 +1604,10 @@ html {
                     
                     // Add click event listener for selection
                     pagePreview.addEventListener('click', handlePageClick);
+                    
+                    // Add drag event listeners
+                    pagePreview.addEventListener('mousedown', startDrag);
+                    pagePreview.addEventListener('touchstart', startTouchDrag, { passive: false });
                     
                     const pageNumber = document.createElement('div');
                     pageNumber.className = 'page-number';
@@ -1646,28 +1661,8 @@ html {
                 if (!pagePreview) return;
                 
                 const pageNum = parseInt(pagePreview.dataset.pageNumber);
-                
-                // If already selected, unselect it
-                if (selectedPage === pageNum) {
-                    selectedPage = null;
-                    pagePreview.classList.remove('selected');
-                    
-                    // Remove drag event listeners
-                    pagePreview.removeEventListener('mousedown', startDrag);
-                    pagePreview.removeEventListener('touchstart', startTouchDrag);
-                    
-                    // Hide selection controls
-                    selectionControls.classList.remove('active');
-                    return;
-                }
-                
-                // Select the page and scroll to it
                 selectPage(pageNum);
-                
-                // Scroll to the selected page
-document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
-  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-});
+            }
 
             function selectPage(pageNum) {
                 // Deselect previous selection
@@ -1675,8 +1670,6 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                     const prevSelected = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
                     if (prevSelected) {
                         prevSelected.classList.remove('selected');
-                        prevSelected.removeEventListener('mousedown', startDrag);
-                        prevSelected.removeEventListener('touchstart', startTouchDrag);
                     }
                 }
                 
@@ -1686,12 +1679,110 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 if (newSelected) {
                     newSelected.classList.add('selected');
                     
-                    // Add drag event listeners to the selected page
-                    newSelected.addEventListener('mousedown', startDrag);
-                    newSelected.addEventListener('touchstart', startTouchDrag, { passive: false });
-                    
                     // Show selection controls
                     selectionControls.classList.add('active');
+                    
+                    // Scroll to the selected page
+                    newSelected.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            function startMoveUp(e) {
+                e.preventDefault();
+                if (!selectedPage) return;
+                
+                // Add active class for visual feedback
+                moveUpBtn.classList.add('btn-hold-active');
+                
+                // Move immediately once
+                movePageUp();
+                
+                // Set up continuous movement after initial delay
+                moveUpInterval = setTimeout(function() {
+                    moveUpInterval = setInterval(movePageUp, moveSpeed);
+                }, moveDelay);
+            }
+
+            function startMoveDown(e) {
+                e.preventDefault();
+                if (!selectedPage) return;
+                
+                // Add active class for visual feedback
+                moveDownBtn.classList.add('btn-hold-active');
+                
+                // Move immediately once
+                movePageDown();
+                
+                // Set up continuous movement after initial delay
+                moveDownInterval = setTimeout(function() {
+                    moveDownInterval = setInterval(movePageDown, moveSpeed);
+                }, moveDelay);
+            }
+
+            function stopMove() {
+                // Remove active class
+                moveUpBtn.classList.remove('btn-hold-active');
+                moveDownBtn.classList.remove('btn-hold-active');
+                
+                // Clear intervals
+                if (moveUpInterval) {
+                    clearTimeout(moveUpInterval);
+                    clearInterval(moveUpInterval);
+                    moveUpInterval = null;
+                }
+                if (moveDownInterval) {
+                    clearTimeout(moveDownInterval);
+                    clearInterval(moveDownInterval);
+                    moveDownInterval = null;
+                }
+            }
+
+            function movePageUp() {
+                if (!selectedPage) return;
+                
+                const pageElements = Array.from(previewContainer.children);
+                const currentIndex = pageElements.findIndex(el => 
+                    parseInt(el.dataset.pageNumber) === selectedPage
+                );
+                
+                if (currentIndex > 0) {
+                    // Swap with previous element
+                    const prevElement = pageElements[currentIndex - 1];
+                    previewContainer.insertBefore(pageElements[currentIndex], prevElement);
+                    
+                    // Update selection
+                    selectPage(selectedPage);
+                }
+            }
+
+            function movePageDown() {
+                if (!selectedPage) return;
+                
+                const pageElements = Array.from(previewContainer.children);
+                const currentIndex = pageElements.findIndex(el => 
+                    parseInt(el.dataset.pageNumber) === selectedPage
+                );
+                
+                if (currentIndex < pageElements.length - 1) {
+                    // Swap with next element
+                    const nextElement = pageElements[currentIndex + 1];
+                    previewContainer.insertBefore(nextElement, pageElements[currentIndex]);
+                    
+                    // Update selection
+                    selectPage(selectedPage);
+                }
+            }
+
+            function deselectPage() {
+                if (selectedPage !== null) {
+                    const selectedElement = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
+                    if (selectedElement) {
+                        selectedElement.classList.remove('selected');
+                    }
+                    selectedPage = null;
+                    
+                    // Hide selection controls
+                    selectionControls.classList.remove('active');
                 }
             }
 
@@ -1827,9 +1918,6 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                             const adjustedDropIndex = dropIndex > draggedPageIndex ? dropIndex - 1 : dropIndex;
                             previewContainer.insertBefore(draggedPage, previewContainer.children[adjustedDropIndex]);
                         }
-                        
-                        // Update the selected page's position
-                        selectedPage = parseInt(draggedPage.dataset.pageNumber);
                     }
                 }
                 
@@ -1854,162 +1942,12 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 dropIndex = -1;
             }
 
-            // Move selected page up
-            moveUpBtn.addEventListener('mousedown', startMoveUp);
-            moveUpBtn.addEventListener('touchstart', startMoveUp);
-            moveUpBtn.addEventListener('mouseup', stopMove);
-            moveUpBtn.addEventListener('touchend', stopMove);
-            moveUpBtn.addEventListener('mouseleave', stopMove);
-
-            // Move selected page down
-            moveDownBtn.addEventListener('mousedown', startMoveDown);
-            moveDownBtn.addEventListener('touchstart', startMoveDown);
-            moveDownBtn.addEventListener('mouseup', stopMove);
-            moveDownBtn.addEventListener('touchend', stopMove);
-            moveDownBtn.addEventListener('mouseleave', stopMove);
-
-            // Deselect page
-            deselectBtn.addEventListener('click', deselectPage);
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (!selectedPage) return;
-                
-                switch(e.key) {
-                    case 'ArrowUp':
-                        e.preventDefault();
-                        movePageUp();
-                        break;
-                    case 'ArrowDown':
-                        e.preventDefault();
-                        movePageDown();
-                        break;
-                    case 'Escape':
-                        e.preventDefault();
-                        deselectPage();
-                        break;
-                }
-            });
-
-            function startMoveUp(e) {
-                e.preventDefault();
-                if (!selectedPage) return;
-                
-                // Add active class for visual feedback
-                moveUpBtn.classList.add('btn-hold-active');
-                
-                // Move immediately once
-                movePageUp();
-                
-                // Set up continuous movement after initial delay
-                moveUpInterval = setTimeout(function() {
-                    moveUpInterval = setInterval(movePageUp, moveSpeed);
-                }, moveDelay);
-            }
-
-            function startMoveDown(e) {
-                e.preventDefault();
-                if (!selectedPage) return;
-                
-                // Add active class for visual feedback
-                moveDownBtn.classList.add('btn-hold-active');
-                
-                // Move immediately once
-                movePageDown();
-                
-                // Set up continuous movement after initial delay
-                moveDownInterval = setTimeout(function() {
-                    moveDownInterval = setInterval(movePageDown, moveSpeed);
-                }, moveDelay);
-            }
-
-            function stopMove() {
-                // Remove active class
-                moveUpBtn.classList.remove('btn-hold-active');
-                moveDownBtn.classList.remove('btn-hold-active');
-                
-                // Clear intervals
-                if (moveUpInterval) {
-                    clearTimeout(moveUpInterval);
-                    clearInterval(moveUpInterval);
-                    moveUpInterval = null;
-                }
-                if (moveDownInterval) {
-                    clearTimeout(moveDownInterval);
-                    clearInterval(moveDownInterval);
-                    moveDownInterval = null;
-                }
-            }
-
-            function movePageUp() {
-                if (!selectedPage) return;
-                
-                const pageElements = Array.from(previewContainer.children);
-                const currentIndex = pageElements.findIndex(el => 
-                    parseInt(el.dataset.pageNumber) === selectedPage
-                );
-                
-                if (currentIndex > 0) {
-                    // Swap with previous element
-                    const prevElement = pageElements[currentIndex - 1];
-                    previewContainer.insertBefore(pageElements[currentIndex], prevElement);
-                    
-                    // Update selection
-                    selectPage(selectedPage);
-                    
-                    // Scroll to the moved page
-                    const pageElement = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
-                    if (pageElement) {
-                        pageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }
-            }
-
-            function movePageDown() {
-                if (!selectedPage) return;
-                
-                const pageElements = Array.from(previewContainer.children);
-                const currentIndex = pageElements.findIndex(el => 
-                    parseInt(el.dataset.pageNumber) === selectedPage
-                );
-                
-                if (currentIndex < pageElements.length - 1) {
-                    // Swap with next element
-                    const nextElement = pageElements[currentIndex + 1];
-                    previewContainer.insertBefore(nextElement, pageElements[currentIndex]);
-                    
-                    // Update selection
-                    selectPage(selectedPage);
-                    
-                    // Scroll to the moved page
-                    const pageElement = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
-                    if (pageElement) {
-                        pageElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }
-            }
-
-            function deselectPage() {
-                if (selectedPage !== null) {
-                    const selectedElement = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
-                    if (selectedElement) {
-                        selectedElement.classList.remove('selected');
-                        selectedElement.removeEventListener('mousedown', startDrag);
-                        selectedElement.removeEventListener('touchstart', startTouchDrag);
-                    }
-                    selectedPage = null;
-                    
-                    // Hide selection controls
-                    selectionControls.classList.remove('active');
-                }
-            }
-
             // Rotate all pages
             rotateAllBtn.addEventListener('click', async function() {
                 if (!pdfDoc) return;
                 
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 
                 try {
                     // Rotate all pages 90 degrees
@@ -2020,9 +1958,9 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                     }
                     
                     // Re-render previews
-                    await renderPagePreviews(pdfDoc);
+                    await renderPagePreviewsWithProgress(pdfDoc);
                     
-                    previewSection.style.display = 'block';
+                    settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
                 } catch (error) {
                     console.error('Error rotating pages:', error);
@@ -2038,7 +1976,7 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 // Re-render the preview for this page
                 const page = await pdfDoc.getPage(pageNum);
                 const viewport = page.getViewport({ 
-                    scale: isVerticalLayout ? 0.8 : 0.6, 
+                    scale: 0.6, 
                     rotation: pageRotations[pageNum] 
                 });
                 
@@ -2060,8 +1998,7 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 if (confirm(`Are you sure you want to delete page ${pageNum}?`)) {
                     deletedPages.add(pageNum);
                     if (selectedPage === pageNum) {
-                        selectedPage = null;
-                        selectionControls.classList.remove('active');
+                        deselectPage();
                     }
                     pageElement.remove();
                     
@@ -2076,7 +2013,7 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 if (!pdfDoc) return;
                 
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 
                 try {
                     // Reset rotations, deleted pages and selections
@@ -2085,16 +2022,15 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                         pageRotations[i] = 0;
                     }
                     deletedPages = new Set();
-                    selectedPage = null;
-                    selectionControls.classList.remove('active');
+                    deselectPage();
                     
                     // Re-render previews
-                    await renderPagePreviews(pdfDoc);
+                    await renderPagePreviewsWithProgress(pdfDoc);
                     
                     // Update page count
                     pageCount.textContent = `${pdfDoc.numPages} pages`;
                     
-                    previewSection.style.display = 'block';
+                    settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
                     
                 } catch (error) {
@@ -2109,7 +2045,7 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 if (!pdfDoc) return;
                 
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
@@ -2162,8 +2098,9 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
             // Start with a new file
             newFileBtn.addEventListener('click', function() {
                 fileInfo.style.display = 'none';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
+                dropZone.style.display = 'block';
                 fileInput.value = '';
                 pdfFile = null;
                 pdfDoc = null;
@@ -2171,10 +2108,7 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 modifiedPdfBytes = null;
                 pageRotations = {};
                 deletedPages = new Set();
-                selectedPage = null;
-                selectionControls.classList.remove('active');
-                isVerticalLayout = false;
-                layoutBtn.innerHTML = '<i class="fas fa-th-list"></i> Vertical Layout';
+                deselectPage();
             });
 
             function readFileAsArrayBuffer(file) {
@@ -2186,25 +2120,78 @@ document.querySelector('a[href="#contact"]').addEventListener('click', function(
                 });
             }
             
-            // Scroll animation for feature cards
-             
-             
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+            // Simple Scroll Animation for Feature Cards
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
                 });
-            });
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
+            
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
+             
+            // Initialize navigation functionality
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navigation when page loads
+            initializeNavigation();
         });
     </script>
 </body>
