@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -9,8 +9,125 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="PDF Page Selector - Extract Pages from PDF | PDFMasterPro">
     <meta property="og:description" content="Select and extract pages from PDF files for free">
-    <link rel="canonical" href="https://pdfmasterpro.com/extractpdf.html">
+    <link rel="canonical" href="https://pdfmasterpro.in/extractpdf.html">
     
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDFMasterPro - PDF Page Selector",
+        "description": "Free online tool to select and extract pages from PDF files",
+        "url": "https://pdfmasterpro.in/extractpdf.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "permissions": "none",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfmasterpro.in/logo.png",
+                "width": "200",
+                "height": "60"
+            }
+        },
+        "screenshot": "https://pdfmasterpro.in/screenshot-pdf-selector.jpg",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfmasterpro.in/extractpdf.html"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pdfmasterpro.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "PDF Tools",
+                "item": "https://pdfmasterpro.in/tools"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "PDF Page Selector",
+                "item": "https://pdfmasterpro.in/extractpdf.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What types of PDF files can I extract pages from?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our PDF page selector works with all standard PDF files, including those with text, images, forms, and scanned documents."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my data secure when extracting PDF pages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I reorder the pages before extracting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! You can select pages in any order and choose to extract them in the order you selected or sorted by page number."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What file formats can I download my extracted pages in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can download extracted pages as individual PDF files or as a combined PDF containing all selected pages."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this PDF page selector completely free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our PDF page selector is completely free with no limitations on the number of pages you can extract."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
@@ -20,151 +137,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2249195008528002"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
-   <link rel="canonical" href="https://pdfmasterpro.in/extractpdf.html" />
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://pdfmasterpro.in/#website",
-          "url": "https://pdfmasterpro.in/",
-          "name": "PDFMasterPro",
-          "description": "Advanced PDF tools for all your document needs",
-          "potentialAction": [
-            {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://pdfmasterpro.in/?s={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            }
-          ],
-          "inLanguage": "en-US"
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://pdfmasterpro.in/#organization",
-          "name": "PDFMasterPro",
-          "url": "https://pdfmasterpro.in/",
-          "logo": "https://pdfmasterpro.in/images/logo.png",
-          "description": "Provider of advanced PDF tools",
-          "sameAs": [
-            "https://www.facebook.com/pdfmasterpro",
-            "https://twitter.com/pdfmasterpro",
-            "https://www.linkedin.com/company/pdfmasterpro"
-          ]
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://pdfmasterpro.in/extractpdf.html/#webpage",
-          "url": "https://pdfmasterpro.in/extractpdf.html",
-          "name": "PDF Page Selector - Extract Pages from PDF | PDFMasterPro",
-          "isPartOf": {
-            "@id": "https://pdfmasterpro.in/#website"
-          },
-          "about": {
-            "@id": "https://pdfmasterpro.in/#organization"
-          },
-          "description": "Free online tool to select and extract pages from PDF files. Choose specific pages to download as individual PDFs or combined.",
-          "breadcrumb": {
-            "@id": "https://pdfmasterpro.in/extractpdf.html/#breadcrumb"
-          },
-          "inLanguage": "en-US",
-          "potentialAction": [
-            {
-              "@type": "ReadAction",
-              "target": [
-                "https://pdfmasterpro.in/extractpdf.html"
-              ]
-            }
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://pdfmasterpro.in/extractpdf.html/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://pdfmasterpro.in/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "PDF Page Selector"
-            }
-          ]
-        },
-        {
-          "@type": "SoftwareApplication",
-          "name": "PDFMasterPro PDF Page Selector",
-          "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": "Any",
-          "description": "Advanced PDF page selector with full customization options",
-          "url": "https://pdfmasterpro.in/extractpdf.html",
-          "author": {
-            "@type": "Organization",
-            "name": "PDFMasterPro"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What types of PDF files can I extract pages from?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our PDF page selector works with all standard PDF files, including those with text, images, forms, and scanned documents."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is my data secure when extracting PDF pages?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, all PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I reorder the pages before extracting?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Absolutely! You can select pages in any order and choose to extract them in the order you selected or sorted by page number."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What file formats can I download my extracted pages in?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "You can download extracted pages as individual PDF files or as a combined PDF containing all selected pages."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is this PDF page selector completely free to use?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, our PDF page selector is completely free with no limitations on the number of pages you can extract."
-              }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+    <link rel="canonical" href="https://pdfmasterpro.in/extractpdf.html" />
     
     <style>
         /* Base Styles */
@@ -261,6 +234,7 @@
             position: relative;
             padding: 5px 0;
             font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
         }
         
         nav a::after {
@@ -402,12 +376,6 @@
             scroll-behavior: smooth;
         }
         
-        .preview-container.grid-view {
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: 1fr;
-            height: auto;
-        }
-        
         .page-preview {
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
@@ -495,89 +463,6 @@
         .extraction-option input[type="radio"]:checked {
             background: var(--primary);
             border-color: var(--primary);
-        }
-        
-        /* View Toggle Button */
-        .view-toggle {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-left: auto;
-        }
-        
-        .view-toggle:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Zoom Modal */
-        .zoom-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .zoom-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .zoom-canvas {
-            max-width: 100%;
-            max-height: 90vh;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-        }
-        
-        .zoom-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        
-        .zoom-controls {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 15px;
-        }
-        
-        .zoom-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .zoom-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
         }
         
         /* Selection Order Indicator */
@@ -726,43 +611,6 @@
             overflow: hidden;
         }
         
-        
-        /* Animations */
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Scrollbar */
-        .preview-container::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        
-        .preview-container::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        
-        .preview-container::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-        }
-        
-        .preview-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
         /* Floating CTA Button Animation */
         .floating-cta {
             position: fixed;
@@ -818,11 +666,12 @@
         }
         
         /* Features Section */
-        .features-section {
-            padding: 60px 0;
-            background: rgba(0, 0, 0, 0.1);
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
         }
-        
         .section-title {
             text-align: center;
             margin-bottom: 40px;
@@ -854,6 +703,14 @@
             display: flex;
             gap: 15px;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         
         .feature-card:hover {
@@ -959,6 +816,7 @@
             display: block;
             position: relative;
             padding-left: 0;
+            cursor: pointer;
         }
         
         .footer-column a:hover {
@@ -1015,8 +873,8 @@
             }
         }
         
-        .animate-fade-in {
-            animation: fadeInUp 0.5s ease-out forwards;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Responsive */
@@ -1031,10 +889,6 @@
             
             .preview-container {
                 grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            }
-            
-            .preview-container.grid-view {
-                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1057,10 +911,6 @@
             
             .preview-container {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            .preview-container.grid-view {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .download-options {
@@ -1093,10 +943,6 @@
                 gap: 10px;
             }
             
-            .preview-container.grid-view {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .btn-group {
                 gap: 10px;
             }
@@ -1112,30 +958,34 @@
                 gap: 15px;
             }
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <div class="container">
         <!-- Header with Navigation -->
         <header>
-            <a href="https://pdfmasterpro.in/" class="logo">
+            <a href="https://pdfmasterpro.in/" class="logo" itemprop="url">
                 <i class="fas fa-file-pdf"></i>
-                <span>PDFMasterPro</span>
+                <span itemprop="name">PDFMasterPro</span>
             </a>
             <nav>
                 <ul>
-                    <li><a href="https://pdfmasterpro.in/">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
+                    <li><a href="#features" itemprop="url">Features</a></li>
+                    <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
+                    <li><a href="#contact" itemprop="url">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <!-- Main Content -->
         <main class="main-content">
-            <h1 class="tool-title animate__animated animate__fadeInDown">PDF Page Selector</h1>
-            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s">
+            <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">PDF Page Selector</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
                 Select and extract specific pages from your PDF documents. Download individual pages or combine them into a new PDF.
             </p>
             
@@ -1146,7 +996,18 @@
             </div>
             
             <!-- PDF Page Selector Tool -->
-            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s">
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <meta itemprop="applicationCategory" content="UtilityApplication">
+                <meta itemprop="operatingSystem" content="Any">
+                <meta itemprop="name" content="PDFMasterPro PDF Page Selector">
+                <meta itemprop="description" content="Free online tool to select and extract pages from PDF files">
+                <meta itemprop="url" content="https://pdfmasterpro.in/extractpdf.html">
+                <meta itemprop="softwareVersion" content="1.0">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="USD">
+                </div>
+                
                 <div class="drop-zone" id="dropZone">
                     <div class="upload-icon">
                         <i class="fas fa-file-pdf"></i>
@@ -1170,10 +1031,6 @@
                     <div class="preview-header">
                         <h3 class="preview-title">Select Pages</h3>
                         <div class="page-count" id="pageCount"></div>
-                        <div class="view-toggle" id="viewToggle">
-                            <i class="fas fa-th"></i>
-                            <span>Grid View</span>
-                        </div>
                     </div>
                     
                     <!-- Extraction Options -->
@@ -1214,6 +1071,12 @@
                     </div>
                     <h3 class="result-message">Your PDF pages are ready!</h3>
                     <div class="download-options" id="downloadOptions"></div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="newExtractBtn">
+                            <i class="fas fa-file-upload"></i> New Extraction
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -1224,36 +1087,37 @@
             </div>
             
             <!-- How It Works Section -->
-            <section id="how-it-works" class="features-section">
-                <h2 class="section-title">How to Extract PDF Pages</h2>
+            <section id="how-it-works" class="features-section" itemscope itemtype="https://schema.org/HowTo">
+                <h2 class="section-title" itemprop="name">How to Extract PDF Pages</h2>
+                <meta itemprop="description" content="Step-by-step guide on how to extract pages from PDF files using PDFMasterPro">
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-upload"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Upload Your PDF</h3>
-                            <p>Drag and drop your PDF file or click to browse and select the document you want to extract pages from.</p>
+                            <h3 itemprop="name">Upload Your PDF</h3>
+                            <p itemprop="text">Drag and drop your PDF file or click to browse and select the document you want to extract pages from.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-mouse-pointer"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Select Pages</h3>
-                            <p>Choose the specific pages you want to extract. You can select individual pages or use quick selection options.</p>
+                            <h3 itemprop="name">Select Pages</h3>
+                            <p itemprop="text">Choose the specific pages you want to extract. You can select individual pages or use quick selection options.</p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
                         <div class="feature-icon">
                             <i class="fas fa-download"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Download & Save</h3>
-                            <p>Download your selected pages as individual PDFs or as a combined document with all your chosen pages.</p>
+                            <h3 itemprop="name">Download & Save</h3>
+                            <p itemprop="text">Download your selected pages as individual PDFs or as a combined document with all your chosen pages.</p>
                         </div>
                     </div>
                 </div>
@@ -1263,7 +1127,7 @@
             <section id="features" class="features-section">
                 <h2 class="section-title">Advanced PDF Page Selection Features</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
                         <div class="feature-icon">
                             <i class="fas fa-lock"></i>
                         </div>
@@ -1273,7 +1137,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
                         <div class="feature-icon">
                             <i class="fas fa-sort"></i>
                         </div>
@@ -1283,7 +1147,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
                         <div class="feature-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
@@ -1293,7 +1157,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
                         <div class="feature-icon">
                             <i class="fas fa-file-export"></i>
                         </div>
@@ -1303,7 +1167,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
                         <div class="feature-icon">
                             <i class="fas fa-eye"></i>
                         </div>
@@ -1313,7 +1177,7 @@
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
                         <div class="feature-icon">
                             <i class="fas fa-infinity"></i>
                         </div>
@@ -1326,66 +1190,78 @@
             </section>
             
             <!-- FAQ Section -->
-            <section class="features-section">
+            <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="features-grid">
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-question-circle"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>What types of PDF files can I extract pages from?</h3>
-                            <p>Our PDF page selector works with all standard PDF files, including those with text, images, forms, and scanned documents.</p>
+                            <h3 itemprop="name">What types of PDF files can I extract pages from?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Our PDF page selector works with all standard PDF files, including those with text, images, forms, and scanned documents.</span>
+                            </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Is my data secure when extracting PDF pages?</h3>
-                            <p>Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</p>
+                            <h3 itemprop="name">Is my data secure when extracting PDF pages?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</span>
+                            </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.3s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-sort"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Can I reorder the pages before extracting?</h3>
-                            <p>Absolutely! You can select pages in any order and choose to extract them in the order you selected or sorted by page number.</p>
+                            <h3 itemprop="name">Can I reorder the pages before extracting?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Absolutely! You can select pages in any order and choose to extract them in the order you selected or sorted by page number.</span>
+                            </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-download"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>What file formats can I download my extracted pages in?</h3>
-                            <p>You can download extracted pages as individual PDF files or as a combined PDF containing all selected pages.</p>
+                            <h3 itemprop="name">What file formats can I download my extracted pages in?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">You can download extracted pages as individual PDF files or as a combined PDF containing all selected pages.</span>
+                            </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.5s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Is this PDF page selector completely free?</h3>
-                            <p>Yes, our PDF page selector is completely free with no limitations on the number of pages you can extract.</p>
+                            <h3 itemprop="name">Is this PDF page selector completely free?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, our PDF page selector is completely free with no limitations on the number of pages you can extract.</span>
+                            </p>
                         </div>
                     </div>
                     
-                    <div class="feature-card glass-card animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Will the extracted pages maintain their original quality?</h3>
-                            <p>Yes, all extracted pages maintain the original quality of your PDF document, including text, images, and formatting.</p>
+                            <h3 itemprop="name">Will the extracted pages maintain their original quality?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, all extracted pages maintain the original quality of your PDF document, including text, images, and formatting.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1399,82 +1275,69 @@
         </main>
         
         <!-- Footer - Shifted to Left -->
-        <footer id="contact" class="animate__animated animate__fadeInUp">
+        <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-column">
                         <h3>PDF Tools</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/merge-pdf">Merge PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/watermark-pdf">Watermark PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/compress-pdf">Compress PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-word">PDF to Word</a></li>
+                            <li><a href="https://pdfmasterpro.in/merge-pdf" itemprop="url">Merge PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/watermark-pdf" itemprop="url">Watermark PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/compress-pdf" itemprop="url">Compress PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-word" itemprop="url">PDF to Word</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h3>Page Tools</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/extractpdf.html">Extract PDF Pages</a></li>
-                            <li><a href="https://pdfmasterpro.in/split-pdf">Split PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/reorder-pdf-pages">Reorder PDF Pages</a></li>
-                            <li><a href="https://pdfmasterpro.in/delete-pdf-pages">Delete PDF Pages</a></li>
+                            <li><a href="https://pdfmasterpro.in/extractpdf.html" itemprop="url">Extract PDF Pages</a></li>
+                            <li><a href="https://pdfmasterpro.in/split-pdf" itemprop="url">Split PDF</a></li>
+                            <li><a href="https://pdfmasterpro.in/reorder-pdf-pages" itemprop="url">Reorder PDF Pages</a></li>
+                            <li><a href="https://pdfmasterpro.in/delete-pdf-pages" itemprop="url">Delete PDF Pages</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h3>Resources</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/blog">Blog</a></li>
-                            <li><a href="https://pdfmasterpro.in/tutorials">Tutorials</a></li>
-                            <li><a href="https://pdfmasterpro.in/help">Help Center</a></li>
-                            <li><a href="https://pdfmasterpro.in/faq">FAQ</a></li>
+                            <li><a href="https://pdfmasterpro.in/blog" itemprop="url">Blog</a></li>
+                            <li><a href="https://pdfmasterpro.in/tutorials" itemprop="url">Tutorials</a></li>
+                            <li><a href="https://pdfmasterpro.in/help" itemprop="url">Help Center</a></li>
+                            <li><a href="https://pdfmasterpro.in/faq" itemprop="url">FAQ</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h3>Company</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/about">About Us</a></li>
-                            <li><a href="https://pdfmasterpro.in/privacy">Privacy Policy</a></li>
-                            <li><a href="https://pdfmasterpro.in/terms">Terms of Service</a></li>
-                            <li><a href="https://pdfmasterpro.in/contact">Contact Us</a></li>
+                            <li><a href="https://pdfmasterpro.in/about" itemprop="url">About Us</a></li>
+                            <li><a href="https://pdfmasterpro.in/privacy" itemprop="url">Privacy Policy</a></li>
+                            <li><a href="https://pdfmasterpro.in/terms" itemprop="url">Terms of Service</a></li>
+                            <li><a href="https://pdfmasterpro.in/contact" itemprop="url">Contact Us</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h3>Connect With Us</h3>
                         <ul>
-                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank">Facebook</a></li>
-                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank">Twitter</a></li>
-                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank" itemprop="url">Facebook</a></li>
+                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank" itemprop="url">Twitter</a></li>
+                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank" itemprop="url">LinkedIn</a></li>
                         </ul>
                         <div class="social-links">
-                            <a href="https://facebook.com/pdfmasterpro" target="_blank"><i class="fab fa-facebook"></i></a>
-                            <a href="https://twitter.com/pdfmasterpro" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/pdfmasterpro" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="copyright">
-                    <p>&copy; 2023 PDFMasterPro. All rights reserved. | Serving over 1 million users monthly</p>
+                    <p>&copy; 2023 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">PDFMasterPro</span></span>. All rights reserved. | Serving over 1 million users monthly</p>
                 </div>
             </div>
         </footer>
-    </div>
-
-    <!-- Zoom Modal -->
-    <div class="zoom-modal" id="zoomModal">
-        <div class="zoom-content">
-            <span class="zoom-close" id="zoomClose">&times;</span>
-            <canvas class="zoom-canvas" id="zoomCanvas"></canvas>
-            <div class="zoom-controls">
-                <button class="zoom-btn" id="zoomInBtn"><i class="fas fa-search-plus"></i></button>
-                <button class="zoom-btn" id="zoomOutBtn"><i class="fas fa-search-minus"></i></button>
-                <button class="zoom-btn" id="zoomResetBtn"><i class="fas fa-sync-alt"></i></button>
-            </div>
-        </div>
     </div>
 
     <!-- Floating CTA Button with Wave Animation -->
@@ -1483,7 +1346,7 @@
     </div>
 
     <script>
-        // Initialize PDF.js worker
+        // Set up PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -1504,23 +1367,13 @@
             const downloadOptions = document.getElementById('downloadOptions');
             const orderSelected = document.getElementById('orderSelected');
             const orderSerial = document.getElementById('orderSerial');
-            const viewToggle = document.getElementById('viewToggle');
             const floatingCta = document.getElementById('floatingCta');
-            
-            // Zoom modal elements
-            const zoomModal = document.getElementById('zoomModal');
-            const zoomCanvas = document.getElementById('zoomCanvas');
-            const zoomClose = document.getElementById('zoomClose');
-            const zoomInBtn = document.getElementById('zoomInBtn');
-            const zoomOutBtn = document.getElementById('zoomOutBtn');
-            const zoomResetBtn = document.getElementById('zoomResetBtn');
+            const mainToolCard = document.getElementById('mainToolCard');
+            const newExtractBtn = document.getElementById('newExtractBtn');
 
             let pdfFile = null;
             let pdfDoc = null;
             let selectedPages = new Map(); // Using Map to maintain order
-            let zoomLevel = 1;
-            let currentZoomPage = null;
-            let isGridView = false;
 
             // Add wave animation to floating CTA
             function addWaveAnimation() {
@@ -1554,20 +1407,6 @@
             
             // Handle file input change
             fileInput.addEventListener('change', handleFile);
-
-            // Toggle grid view
-            viewToggle.addEventListener('click', toggleGridView);
-
-            function toggleGridView() {
-                isGridView = !isGridView;
-                if (isGridView) {
-                    previewContainer.classList.add('grid-view');
-                    viewToggle.innerHTML = '<i class="fas fa-list"></i><span>List View</span>';
-                } else {
-                    previewContainer.classList.remove('grid-view');
-                    viewToggle.innerHTML = '<i class="fas fa-th"></i><span>Grid View</span>';
-                }
-            }
 
             // Handle drag and drop
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -1640,11 +1479,22 @@
                     previewSection.style.display = 'block';
                     processingContainer.style.display = 'none';
                     
+                    // Auto-scroll back to main card after PDF is selected
+                    scrollToMainCard();
+                    
                 } catch (error) {
                     console.error('Error loading PDF:', error);
                     processingContainer.style.display = 'none';
                     alert('Error loading PDF. Please try again.');
                 }
+            }
+
+            // Function to scroll back to the main tool card
+            function scrollToMainCard() {
+                mainToolCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
             }
 
             function formatFileSize(bytes) {
@@ -1689,10 +1539,7 @@
                     }).promise;
                     
                     // Add click handler for selection
-                    pagePreview.addEventListener('click', function(e) {
-                        // Don't trigger selection if zoom button was clicked
-                        if (e.target.classList.contains('zoom-btn')) return;
-                        
+                    pagePreview.addEventListener('click', function() {
                         const pageNum = parseInt(this.dataset.pageNumber);
                         if (selectedPages.has(pageNum)) {
                             selectedPages.delete(pageNum);
@@ -1710,95 +1557,8 @@
                             this.appendChild(orderIndicator);
                         }
                     });
-                    
-                    // Add zoom button
-                    const zoomBtn = document.createElement('button');
-                    zoomBtn.className = 'zoom-btn';
-                    zoomBtn.style.position = 'absolute';
-                    zoomBtn.style.bottom = '15px';
-                    zoomBtn.style.right = '15px';
-                    zoomBtn.style.background = 'rgba(0, 0, 0, 0.7)';
-                    zoomBtn.style.border = 'none';
-                    zoomBtn.style.borderRadius = '4px';
-                    zoomBtn.style.padding = '5px';
-                    zoomBtn.style.cursor = 'pointer';
-                    zoomBtn.innerHTML = '<i class="fas fa-search-plus" style="color: white; font-size: 14px;"></i>';
-                    zoomBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        openZoomModal(i);
-                    });
-                    pagePreview.appendChild(zoomBtn);
                 }
             }
-
-            // Zoom modal functions
-            async function openZoomModal(pageNumber) {
-                currentZoomPage = pageNumber;
-                zoomLevel = 1;
-                
-                const page = await pdfDoc.getPage(pageNumber);
-                const viewport = page.getViewport({ scale: 1.0 });
-                
-                zoomCanvas.width = viewport.width;
-                zoomCanvas.height = viewport.height;
-                
-                await page.render({
-                    canvasContext: zoomCanvas.getContext('2d'),
-                    viewport: viewport
-                }).promise;
-                
-                zoomModal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeZoomModal() {
-                zoomModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-
-            function applyZoom() {
-                const ctx = zoomCanvas.getContext('2d');
-                ctx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
-                
-                pdfDoc.getPage(currentZoomPage).then(page => {
-                    const viewport = page.getViewport({ scale: zoomLevel });
-                    
-                    // Resize canvas
-                    zoomCanvas.width = viewport.width;
-                    zoomCanvas.height = viewport.height;
-                    
-                    // Re-render page with new zoom level
-                    page.render({
-                        canvasContext: ctx,
-                        viewport: viewport
-                    });
-                });
-            }
-
-            // Zoom event listeners
-            zoomClose.addEventListener('click', closeZoomModal);
-            
-            zoomInBtn.addEventListener('click', () => {
-                zoomLevel = Math.min(zoomLevel + 0.25, 3);
-                applyZoom();
-            });
-            
-            zoomOutBtn.addEventListener('click', () => {
-                zoomLevel = Math.max(zoomLevel - 0.25, 0.5);
-                applyZoom();
-            });
-            
-            zoomResetBtn.addEventListener('click', () => {
-                zoomLevel = 1;
-                applyZoom();
-            });
-
-            // Close modal when clicking outside
-            zoomModal.addEventListener('click', (e) => {
-                if (e.target === zoomModal) {
-                    closeZoomModal();
-                }
-            });
 
             // Select all pages
             selectAllBtn.addEventListener('click', function() {
@@ -1960,6 +1720,22 @@
                 });
             }
 
+            // Start a new extraction
+            newExtractBtn.addEventListener('click', resetTool);
+
+            function resetTool() {
+                pdfFile = null;
+                pdfDoc = null;
+                selectedPages = new Map();
+                resultContainer.style.display = 'none';
+                previewSection.style.display = 'none';
+                fileInfo.style.display = 'none';
+                dropZone.style.display = 'block';
+                
+                // Reset file input
+                fileInput.value = '';
+            }
+
             function readFileAsArrayBuffer(file) {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
@@ -1969,39 +1745,78 @@
                 });
             }
             
-            // Scroll animation for feature cards
-            const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.animate-fade-in');
+            // Simple Scroll Animation for Feature Cards
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
                 
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if (elementPosition < screenPosition) {
-                        element.style.animation = `fadeInUp 0.5s forwards ${element.dataset.animationDelay || '0s'}`;
-                    }
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
                 });
-            };
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
             
-            window.addEventListener('scroll', animateOnScroll);
-            document.addEventListener('DOMContentLoaded', animateOnScroll);
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
+             
+            // Initialize navigation functionality
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
                 });
-            });
+            }
+            
+            // Initialize navigation when page loads
+            initializeNavigation();
         });
     </script>
 </body>
