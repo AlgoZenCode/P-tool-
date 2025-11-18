@@ -1,16 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF to JSON Converter | PDFMasterPro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Convert PDF to JSON | PDFMasterPro</title>
     <meta name="description" content="Free online tool to convert PDF files to JSON format. Extract text and metadata from PDFs.">
     <meta name="keywords" content="PDF to JSON, convert PDF, extract PDF data, PDF tools">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="PDF to JSON Converter | PDFMasterPro">
+    <meta property="og:title" content="Convert PDF to JSON | PDFMasterPro">
     <meta property="og:description" content="Free online tool to convert PDF files to JSON format">
-    <link rel="canonical" href="https://pdfmasterpro.com/pdf-to-json">
+    <link rel="canonical" href="https://pdfmasterpro.in/pdf-to-json.html">
     
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDFMasterPro - Convert PDF to JSON",
+        "description": "Free online tool to convert PDF files to JSON format with text and metadata extraction",
+        "url": "https://pdfmasterpro.in/pdf-to-json",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "permissions": "none",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfmasterpro.in/logo.png",
+                "width": "200",
+                "height": "60"
+            }
+        },
+        "screenshot": "https://pdfmasterpro.in/screenshot-pdf-to-json.jpg",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfmasterpro.in/pdf-to-json.html"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pdfmasterpro.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "PDF Tools",
+                "item": "https://pdfmasterpro.in/tools"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "PDF to JSON",
+                "item": "https://pdfmasterpro.in/pdf-to-json.in"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What data can be extracted from PDF to JSON?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can extract text content, page metadata, document information, and structure data from PDF files in JSON format."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my PDF data secure when using this tool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I extract specific pages instead of the whole PDF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can extract text from all pages, specific page ranges, or individual pages from your PDF document."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What JSON structure options are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can choose between detailed JSON with metadata, text-only format, or structured pages format for different use cases."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this PDF to JSON converter completely free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our PDF to JSON converter is completely free with no limitations on usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I preview the JSON before downloading?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can preview the generated JSON structure and copy it to clipboard before downloading the file."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,9 +144,10 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2249195008528002"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-2249195008528002">
-      <link rel="canonical" href="https://pdfmasterpro.in/pdf-to-json.html" />
+    <link rel="canonical" href="https://pdfmasterpro.in/pdf-to-json.html" />
     
     <style>
+        /* Base Styles */
         :root {
             --primary: #2563eb;
             --secondary: #f59e0b;
@@ -47,8 +174,10 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
+        /* Glassmorphism Effect */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -59,22 +188,27 @@
             transition: all 0.3s ease;
         }
         
+        /* Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
+        /* Header */
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -83,17 +217,56 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: clamp(40px, 8vw, 60px) 0;
+            text-align: center;
         }
         
         .tool-title {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(32px, 6vw, 42px);
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -101,18 +274,21 @@
         }
         
         .tool-description {
-            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(16px, 3vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Main Card */
         .main-card {
             padding: 30px;
             margin-bottom: 30px;
-            overflow: hidden;
         }
         
+        /* Upload Area */
         .drop-zone {
             border: 2px dashed rgba(255, 255, 255, 0.2);
             border-radius: 12px;
@@ -148,42 +324,19 @@
             font-size: 14px;
         }
         
-        .file-list {
-            display: none;
-            margin-top: 20px;
-        }
-        
-        .file-item {
-            display: flex;
-            align-items: center;
+        /* File Info */
+        .file-info {
+            text-align: center;
+            margin-bottom: 20px;
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .file-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .file-icon {
-            font-size: 24px;
-            color: var(--secondary);
-            margin-right: 15px;
-        }
-        
-        .file-details {
-            flex-grow: 1;
-            overflow: hidden;
         }
         
         .file-name {
             font-weight: 500;
             margin-bottom: 5px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            color: var(--light);
         }
         
         .file-size {
@@ -191,33 +344,7 @@
             font-size: 14px;
         }
         
-        .file-controls {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .control-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--light);
-            transition: all 0.3s ease;
-        }
-        
-        .control-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .control-btn.remove-btn:hover {
-            color: var(--error);
-        }
-        
+        /* Settings Section */
         .settings-section {
             display: none;
             margin-top: 20px;
@@ -315,6 +442,7 @@
             font-size: 14px;
         }
         
+        /* Buttons */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -358,6 +486,7 @@
             transform: translateY(-2px);
         }
         
+        /* Processing Section */
         .processing-container {
             display: none;
             text-align: center;
@@ -379,6 +508,23 @@
             font-size: 18px;
         }
         
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        /* Result Section */
         .result-container {
             display: none;
             text-align: center;
@@ -456,17 +602,275 @@
             opacity: 1;
         }
         
+        /* Footer - Shifted to Left */
         footer {
-            text-align: center;
+            text-align: left;
             padding: 20px 0;
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+       footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        /* Floating CTA Button Animation */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--darker);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
         }
         
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        /* Wave animation for floating CTA */
+        .wave-circle {
+            position: absolute;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: wave 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Features Section */
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .feature-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            overflow: hidden;
+        }
+        
+        /* Footer Content - Shifted to Left */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .footer-column {
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 100%;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: block;
+            position: relative;
+            padding-left: 0;
+            cursor: pointer;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -478,6 +882,7 @@
             }
         }
         
+        /* Responsive */
         @media (max-width: 992px) {
             .main-card {
                 padding: 25px;
@@ -510,14 +915,14 @@
                 font-size: 14px;
             }
             
-            .file-item {
-                flex-direction: column;
-                align-items: flex-start;
+            .section-title {
+                font-size: 28px;
             }
             
-            .file-controls {
-                margin-top: 10px;
-                align-self: flex-end;
+            /* Footer adjustments for mobile */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
         }
         
@@ -533,144 +938,439 @@
             .settings-container {
                 grid-template-columns: 1fr;
             }
-        }
+            
+            /* Footer adjustments for small mobile */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        } 
+        
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <div class="container">
+        <!-- Header with Navigation -->
         <header>
-            <a href="/" class="logo">
+            <a href="https://pdfmasterpro.in/" class="logo" itemprop="url">
                 <i class="fas fa-file-pdf"></i>
-                <span>PDFMasterPro</span>
+                <span itemprop="name">PDFMasterPro</span>
             </a>
-            <h1 class="tool-title animate__animated animate__fadeIn">PDF to JSON Converter</h1>
-            <p class="tool-description animate__animated animate__fadeIn">Extract text content from PDF files and convert to structured JSON format</p>
+            <nav>
+                <ul>
+                    <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
+                    <li><a href="#features" itemprop="url">Features</a></li>
+                    <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
+                    <li><a href="#contact" itemprop="url">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="main-card glass-card animate__animated animate__fadeIn">
-            <div class="drop-zone" id="dropZone">
-                <div class="upload-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3 class="upload-text">Drag & Drop PDF File Here</h3>
-                <p class="upload-hint">or click to browse files (single PDF conversion)</p>
-                <input type="file" id="fileInput" accept=".pdf" style="display: none;">
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="selectFileBtn">
-                        <i class="fas fa-folder-open"></i> Select PDF
-                    </button>
-                </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">Convert PDF to JSON</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
+                Extract text content from PDF files and convert to structured JSON format with customizable options.
+            </p>
+            
+            <!-- Ad Container (Top) -->
+            <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-
-            <div class="file-list" id="fileList">
-                <h3 class="settings-title">Uploaded File</h3>
-                <div id="filesContainer"></div>
-            </div>
-
-            <div class="settings-section" id="settingsSection">
-                <div class="settings-header">
-                    <h3 class="settings-title">Conversion Settings</h3>
-                    <div class="page-count" id="pageCount"></div>
+            
+            <!-- PDF to JSON Converter Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <meta itemprop="applicationCategory" content="UtilityApplication">
+                <meta itemprop="operatingSystem" content="Any">
+                <meta itemprop="name" content="PDFMasterPro PDF to JSON Converter">
+                <meta itemprop="description" content="Free online tool to convert PDF files to JSON format">
+                <meta itemprop="url" content="https://pdfmasterpro.in/pdf-to-json">
+                <meta itemprop="softwareVersion" content="1.0">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="USD">
                 </div>
                 
-                <div class="settings-container">
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-cog"></i> Output Options</h4>
-                        
-                        <div class="form-group">
-                            <div class="form-label">JSON Filename</div>
-                            <input type="text" id="outputFilename" class="form-control" value="converted.json" placeholder="Output filename">
+                <div class="drop-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h3 class="upload-text">Drag & Drop PDF File Here</h3>
+                    <p class="upload-hint">or click to browse files (single PDF conversion)</p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="selectFileBtn">
+                            <i class="fas fa-folder-open"></i> Select PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                </div>
+
+                <div class="settings-section" id="settingsSection">
+                    <div class="settings-header">
+                        <h3 class="settings-title">Conversion Settings</h3>
+                        <div class="page-count" id="pageCount"></div>
+                    </div>
+                    
+                    <div class="settings-container">
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-cog"></i> Output Options</h4>
+                            
+                            <div class="form-group">
+                                <div class="form-label">JSON Filename</div>
+                                <input type="text" id="outputFilename" class="form-control" value="converted.json" placeholder="Output filename">
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-label">JSON Structure</div>
+                                <select id="jsonStructure" class="form-control form-select">
+                                    <option value="detailed">Detailed (with metadata)</option>
+                                    <option value="textOnly">Text Only</option>
+                                    <option value="pages">Pages Structure</option>
+                                </select>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="includeMetadata" checked>
+                                <label for="includeMetadata" class="checkbox-label">Include PDF Metadata</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="formatJson" checked>
+                                <label for="formatJson" class="checkbox-label">Format JSON (indented)</label>
+                            </div>
                         </div>
                         
-                        <div class="form-group">
-                            <div class="form-label">JSON Structure</div>
-                            <select id="jsonStructure" class="form-control form-select">
-                                <option value="detailed">Detailed (with metadata)</option>
-                                <option value="textOnly">Text Only</option>
-                                <option value="pages">Pages Structure</option>
-                            </select>
-                        </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="includeMetadata" checked>
-                            <label for="includeMetadata" class="checkbox-label">Include PDF Metadata</label>
-                        </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="formatJson" checked>
-                            <label for="formatJson" class="checkbox-label">Format JSON (indented)</label>
+                        <div class="settings-group">
+                            <h4 class="group-title"><i class="fas fa-filter"></i> Text Extraction</h4>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="extractByPage" checked>
+                                <label for="extractByPage" class="checkbox-label">Extract text by pages</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="removeEmptyLines">
+                                <label for="removeEmptyLines" class="checkbox-label">Remove empty lines</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="preserveFormatting">
+                                <label for="preserveFormatting" class="checkbox-label">Try to preserve formatting</label>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="settings-group">
-                        <h4 class="group-title"><i class="fas fa-filter"></i> Text Extraction</h4>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="extractByPage" checked>
-                            <label for="extractByPage" class="checkbox-label">Extract text by pages</label>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="clearAllBtn">
+                            <i class="fas fa-trash"></i> Clear All
+                        </button>
+                        <button class="btn btn-primary" id="convertBtn">
+                            <i class="fas fa-sync-alt"></i> Convert to JSON
+                        </button>
+                    </div>
+                </div>
+
+                <div class="processing-container" id="processingContainer">
+                    <div class="processing-spinner"></div>
+                    <h3 class="processing-text">Converting PDF to JSON...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div id="progressText">Processing page 0 of 0</div>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="result-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="result-message">Your PDF has been converted to JSON!</h3>
+                    
+                    <div class="json-preview-container">
+                        <div class="json-preview" id="jsonPreview">
+                            {/* JSON preview will be shown here */}
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="removeEmptyLines">
-                            <label for="removeEmptyLines" class="checkbox-label">Remove empty lines</label>
+                        <button class="copy-btn" id="copyJsonBtn" title="Copy JSON to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download JSON
+                        </button>
+                        <button class="btn btn-secondary" id="newConvertBtn">
+                            <i class="fas fa-file-upload"></i> New Conversion
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Container (Middle) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
+            </div>
+            
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="features-section" itemscope itemtype="https://schema.org/HowTo">
+                <h2 class="section-title" itemprop="name">How to Convert PDF to JSON</h2>
+                <meta itemprop="description" content="Step-by-step guide on how to convert PDF files to JSON using PDFMasterPro">
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
                         </div>
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="preserveFormatting">
-                            <label for="preserveFormatting" class="checkbox-label">Try to preserve formatting</label>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Upload Your PDF</h3>
+                            <p itemprop="text">Drag and drop your PDF file or click to browse and select the document you want to convert to JSON.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Adjust Settings</h3>
+                            <p itemprop="text">Choose your preferred JSON structure, text extraction options, and output filename.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Convert & Process</h3>
+                            <p itemprop="text">Click convert and watch as your PDF content is extracted and structured into JSON format.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Download JSON</h3>
+                            <p itemprop="text">Preview the JSON output, copy to clipboard, or download the JSON file for your applications.</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="btn-group">
-                    <button class="btn btn-secondary" id="clearAllBtn">
-                        <i class="fas fa-trash"></i> Clear
-                    </button>
-                    <button class="btn btn-primary" id="convertBtn">
-                        <i class="fas fa-sync-alt"></i> Convert to JSON
-                    </button>
-                </div>
-            </div>
-
-            <div class="processing-container" id="processingContainer">
-                <div class="processing-spinner"></div>
-                <h3 class="processing-text">Converting PDF to JSON...</h3>
-                <p id="progressText">Processing page 1 of 1</p>
-            </div>
-
-            <div class="result-container" id="resultContainer">
-                <div class="result-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 class="result-message">Your PDF has been converted to JSON!</h3>
-                
-                <div class="json-preview-container">
-                    <div class="json-preview" id="jsonPreview">
-                        {/* JSON preview will be shown here */}
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2 class="section-title">Advanced PDF to JSON Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Secure Processing</h3>
+                            <p>Your PDF files are processed directly in your browser. No files are uploaded to our servers, ensuring complete privacy.</p>
+                        </div>
                     </div>
-                    <button class="copy-btn" id="copyJsonBtn" title="Copy JSON to clipboard">
-                        <i class="fas fa-copy"></i>
-                    </button>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Multiple JSON Structures</h3>
+                            <p>Choose between detailed JSON with metadata, text-only format, or structured pages format for different use cases.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Customizable Extraction</h3>
+                            <p>Extract text by pages, preserve formatting, remove empty lines, and include or exclude metadata as needed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Flexible Page Selection</h3>
+                            <p>Extract text from all pages, specific page ranges, or individual pages from your PDF document.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Preview & Copy</h3>
+                            <p>Preview the generated JSON structure and copy it to clipboard before downloading the file.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Unlimited Usage</h3>
+                            <p>Convert as many PDFs as you need with no limitations or restrictions on your output JSON.</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="downloadBtn">
-                        <i class="fas fa-download"></i> Download JSON
-                    </button>
-                    <button class="btn btn-secondary" id="newConvertBtn">
-                        <i class="fas fa-file-upload"></i> New Conversion
-                    </button>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">What data can be extracted from PDF to JSON?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">You can extract text content, page metadata, document information, and structure data from PDF files in JSON format.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Is my PDF data secure when using this tool?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Can I extract specific pages instead of the whole PDF?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, you can extract text from all pages, specific page ranges, or individual pages from your PDF document.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">What JSON structure options are available?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">You can choose between detailed JSON with metadata, text-only format, or structured pages format for different use cases.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Is this PDF to JSON converter completely free?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, our PDF to JSON converter is completely free with no limitations on usage.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Can I preview the JSON before downloading?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, you can preview the generated JSON structure and copy it to clipboard before downloading the file.</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
+            </section>
+            
+            <!-- Ad Container (Bottom) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-        </div>
+        </main>
+        
+        <!-- Footer - Shifted to Left -->
+        <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PDF Tools</h3>
+                                     <ul>    
+                    <li><a href="https://pdfmasterpro.in/mergepdf.html" itemprop="url">Merge PDF</a></li>    
+                    <li><a href="https://pdfmasterpro.in/pdf-to-html.html" itemprop="url">Pdf to html</a></li>    
+                    <li><a href="https://pdfmasterpro.in/splitpdf.html" itemprop="url">Split Pdf</a></li>    
+                    <li><a href="https://pdfmasterpro.in/meta-data-remove.html" itemprop="url">Meta Data Remove r</a></li>    
+                </ul>    
+            </div>    
+                    
+                    <div class="footer-column">
+                        <h3>Conversion Tools</h3>
+                        <ul>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-json.html" itemprop="url">PDF to JSON</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-img.html" itemprop="url">PDF to Images</a></li>
+                            <li><a href="https://pdfmasterpro.in/qr.html" itemprop="url">Qr code Generator</a></li>
+                            <li><a href="https://pdfmasterpro.in/img-to-pdf.html" itemprop="url">Image to PDF</a></li>
+                        </ul>
+                    </div>
+                                <div class="footer-column">    
+                <h3>Company</h3>    
+                <ul>    
+                    <li><a href="https://pdfmasterpro.in/index/aboutus.html" itemprop="url">About Us</a></li>    
+                    <li><a href="https://pdfmasterpro.in/index/privacy.html" itemprop="url">Privacy Policy</a></li>    
+                    <li><a href="https://pdfmasterpro.in/index/terms.html" itemprop="url">Terms of Service</a></li>    
+                    <li><a href="https://pdfmasterpro.in/index/contact.html" itemprop="url">Contact Us</a></li>    
+                </ul>    
+            </div>    
+                
 
-        <div class="copy-notification" id="copyNotification">
-            JSON copied to clipboard!
-        </div>
+        <div class="copyright">    
+            <p>&copy; 2025 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">PDFMasterPro</span></span>. All rights reserved. | </p>    
+        </div>    
+    </div>    
+</footer>
 
-        <footer>
-            <p>PDFMasterPro &copy; 2023 | Free Online PDF Tools</p>
-        </footer>
+</div>    
+                   
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-file-upload"></i>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">
+        JSON copied to clipboard!
     </div>
 
     <script>
@@ -681,8 +1381,9 @@
             const dropZone = document.getElementById('dropZone');
             const fileInput = document.getElementById('fileInput');
             const selectFileBtn = document.getElementById('selectFileBtn');
-            const fileList = document.getElementById('fileList');
-            const filesContainer = document.getElementById('filesContainer');
+            const fileInfo = document.getElementById('fileInfo');
+            const fileName = document.getElementById('fileName');
+            const fileSize = document.getElementById('fileSize');
             const settingsSection = document.getElementById('settingsSection');
             const pageCount = document.getElementById('pageCount');
             const outputFilename = document.getElementById('outputFilename');
@@ -695,6 +1396,7 @@
             const clearAllBtn = document.getElementById('clearAllBtn');
             const convertBtn = document.getElementById('convertBtn');
             const processingContainer = document.getElementById('processingContainer');
+            const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
             const resultContainer = document.getElementById('resultContainer');
             const jsonPreview = document.getElementById('jsonPreview');
@@ -702,17 +1404,48 @@
             const copyNotification = document.getElementById('copyNotification');
             const downloadBtn = document.getElementById('downloadBtn');
             const newConvertBtn = document.getElementById('newConvertBtn');
+            const floatingCta = document.getElementById('floatingCta');
+            const mainToolCard = document.getElementById('mainToolCard');
 
             let pdfFile = null;
+            let pdfDoc = null;
+            let totalPages = 0;
             let jsonData = null;
             let jsonString = '';
+
+            // Add wave animation to floating CTA
+            function addWaveAnimation() {
+                const waves = [];
+                
+                // Create 3 wave circles
+                for (let i = 0; i < 3; i++) {
+                    const wave = document.createElement('div');
+                    wave.className = 'wave-circle';
+                    wave.style.width = '56px';
+                    wave.style.height = '56px';
+                    wave.style.position = 'absolute';
+                    wave.style.top = '0';
+                    wave.style.left = '0';
+                    wave.style.animationDelay = `${i * 0.3}s`;
+                    floatingCta.appendChild(wave);
+                    waves.push(wave);
+                }
+                
+                return waves;
+            }
+            
+            // Initialize wave animation
+            const waveCircles = addWaveAnimation();
+            
+            // Floating CTA click handler
+            floatingCta.addEventListener('click', () => fileInput.click());
 
             // Handle file selection via button
             selectFileBtn.addEventListener('click', () => fileInput.click());
             
             // Handle file input change
-            fileInput.addEventListener('change', handleFileSelect);
-            
+            fileInput.addEventListener('change', handleFile);
+
             // Handle drag and drop
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
                 dropZone.addEventListener(eventName, preventDefaults, false);
@@ -745,24 +1478,14 @@
 
             function handleDrop(e) {
                 const dt = e.dataTransfer;
-                const files = dt.files;
-                if (files.length > 0) {
-                    handleFiles(files);
+                const droppedFiles = dt.files;
+                if (droppedFiles.length > 0) {
+                    handleFile({ target: { files: [droppedFiles[0]] } });
                 }
             }
 
-            function handleFileSelect(e) {
-                const files = e.target.files;
-                if (files.length > 0) {
-                    handleFiles(files);
-                }
-            }
-
-            function handleFiles(files) {
-                if (files.length === 0) return;
-                
-                // Only process the first file for PDF to JSON conversion
-                const file = files[0];
+            async function handleFile(e) {
+                const file = e.target.files[0];
                 
                 if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
                     alert('Please select a valid PDF file.');
@@ -771,68 +1494,43 @@
                 
                 pdfFile = file;
                 
-                // Update UI
-                updateFileList();
+                // Show file info
+                fileName.textContent = file.name;
+                fileSize.textContent = formatFileSize(file.size);
+                fileInfo.style.display = 'block';
                 
-                // Show file list and settings
-                fileList.style.display = 'block';
-                settingsSection.style.display = 'block';
-                
-                // Get page count
-                getPageCount();
-            }
-
-            function updateFileList() {
-                filesContainer.innerHTML = '';
-                
-                if (pdfFile) {
-                    const fileItem = document.createElement('div');
-                    fileItem.className = 'file-item';
-                    
-                    fileItem.innerHTML = `
-                        <div class="file-icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="file-details">
-                            <div class="file-name">${pdfFile.name}</div>
-                            <div class="file-size">${formatFileSize(pdfFile.size)}</div>
-                        </div>
-                        <div class="file-controls">
-                            <button class="control-btn remove-btn" title="Remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    `;
-                    
-                    filesContainer.appendChild(fileItem);
-                    
-                    // Add event listener for remove button
-                    const removeBtn = fileItem.querySelector('.remove-btn');
-                    removeBtn.addEventListener('click', removeFile);
-                }
-            }
-
-            function removeFile() {
-                pdfFile = null;
-                fileList.style.display = 'none';
+                // Load PDF for processing
+                processingContainer.style.display = 'block';
                 settingsSection.style.display = 'none';
-                fileInput.value = '';
-            }
-
-            async function getPageCount() {
-                if (!pdfFile) return;
+                resultContainer.style.display = 'none';
                 
                 try {
-                    const arrayBuffer = await readFileAsArrayBuffer(pdfFile);
-                    const pdfData = new Uint8Array(arrayBuffer);
+                    const arrayBuffer = await readFileAsArrayBuffer(file);
+                    pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
+                    totalPages = pdfDoc.numPages;
                     
-                    // Load the PDF document to get page count
-                    const pdfDoc = await pdfjsLib.getDocument({ data: pdfData }).promise;
-                    pageCount.textContent = `${pdfDoc.numPages} pages detected`;
+                    // Update page count
+                    pageCount.textContent = `${totalPages} pages detected`;
+                    
+                    settingsSection.style.display = 'block';
+                    processingContainer.style.display = 'none';
+                    
+                    // Auto-scroll back to main card after PDF is selected
+                    scrollToMainCard();
+                    
                 } catch (error) {
-                    console.error('Error getting page count:', error);
-                    pageCount.textContent = 'Page count unavailable';
+                    console.error('Error loading PDF:', error);
+                    processingContainer.style.display = 'none';
+                    alert('Error loading PDF. Please try again.');
                 }
+            }
+
+            // Function to scroll back to the main tool card
+            function scrollToMainCard() {
+                mainToolCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
             }
 
             function formatFileSize(bytes) {
@@ -843,19 +1541,27 @@
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             }
 
-            // Clear file
+            // Clear all files
             clearAllBtn.addEventListener('click', function() {
                 pdfFile = null;
-                fileList.style.display = 'none';
+                pdfDoc = null;
+                totalPages = 0;
+                fileInfo.style.display = 'none';
                 settingsSection.style.display = 'none';
+                dropZone.style.display = 'block';
+                pageCount.textContent = '';
                 fileInput.value = '';
-                filesContainer.innerHTML = '';
             });
 
             // Convert PDF to JSON
             convertBtn.addEventListener('click', async function() {
                 if (!pdfFile) {
                     alert('Please select a PDF file to convert.');
+                    return;
+                }
+                
+                if (!pdfDoc) {
+                    alert('Please wait for the PDF to finish loading.');
                     return;
                 }
                 
@@ -887,11 +1593,6 @@
 
             async function convertPdfToJson() {
                 try {
-                    const arrayBuffer = await readFileAsArrayBuffer(pdfFile);
-                    const pdfData = new Uint8Array(arrayBuffer);
-                    
-                    // Load the PDF document
-                    const pdfDoc = await pdfjsLib.getDocument({ data: pdfData }).promise;
                     const numPages = pdfDoc.numPages;
                     
                     // Update progress text
@@ -901,6 +1602,9 @@
                     const pages = [];
                     
                     for (let i = 1; i <= numPages; i++) {
+                        // Update progress
+                        const progress = ((i) / numPages) * 100;
+                        progressFill.style.width = `${progress}%`;
                         progressText.textContent = `Processing page ${i} of ${numPages}`;
                         
                         const page = await pdfDoc.getPage(i);
@@ -1070,46 +1774,103 @@
 
             function resetTool() {
                 pdfFile = null;
+                pdfDoc = null;
+                totalPages = 0;
                 jsonData = null;
                 jsonString = '';
-                fileList.style.display = 'none';
-                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
+                settingsSection.style.display = 'none';
+                fileInfo.style.display = 'none';
+                dropZone.style.display = 'block';
+                progressFill.style.width = '0%';
+                progressText.textContent = 'Processing page 0 of 0';
+                
+                // Reset file input
                 fileInput.value = '';
-                filesContainer.innerHTML = '';
-                jsonPreview.textContent = '';
             }
 
             function readFileAsArrayBuffer(file) {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
                     reader.onload = () => resolve(reader.result);
-                    reader.onerror = () => reject(new Error('Failed to read file'));
+                    reader.onerror = reject;
                     reader.readAsArrayBuffer(file);
                 });
             }
+            
+            // Simple Scroll Animation for Feature Cards
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
+                });
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
+            
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
+             
+            // Initialize navigation functionality
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navigation when page loads
+            initializeNavigation();
         });
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "PDF to JSON Converter - PDFMasterPro",
-        "description": "Free online tool to convert PDF files to JSON format",
-        "url": "https://pdfmasterpro.com/pdf-to-json",
-        "applicationCategory": "DocumentUtility",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "PDFMasterPro"
-        }
-    }
     </script>
 </body>
 </html>
