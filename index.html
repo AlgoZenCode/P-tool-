@@ -9,123 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
-    <!-- Favicon for Browser -->
-    <link rel="icon" type="image/png" href="https://pdfmasterpro.in/favicon.png">
 
-    <!-- Social + Google Preview Logo -->
-    <meta property="og:title" content="PDF Master Pro">
-    <meta property="og:description" content="All-in-one PDF tools: Merge, Split, Compress, Watermark, Protect and more.">
-    <meta property="og:image" content="https://pdfmasterpro.in/favicon.png">
-    <meta property="og:url" content="https://pdfmasterpro.in">
-    <meta property="og:type" content="website">
+<!-- Favicon for Browser -->
+<link rel="icon" type="image/png" href="https://pdfmasterpro.in/favicon.png">
 
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": "https://pdfmasterpro.in/#website",
-                "url": "https://pdfmasterpro.in",
-                "name": "PDFMasterPro",
-                "description": "Free online PDF tools to merge, split, compress, convert, edit and protect PDF files",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://pdfmasterpro.in/?s={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                }
-            },
-            {
-                "@type": "Organization",
-                "@id": "https://pdfmasterpro.in/#organization",
-                "name": "PDFMasterPro",
-                "url": "https://pdfmasterpro.in",
-                "logo": "https://pdfmasterpro.in/favicon.png",
-                "sameAs": [
-                    "https://www.facebook.com/pdfmasterpro",
-                    "https://twitter.com/pdfmasterpro",
-                    "https://www.linkedin.com/company/pdfmasterpro"
-                ]
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://pdfmasterpro.in/#webpage",
-                "url": "https://pdfmasterpro.in",
-                "name": "PDFMasterPro - Free Online PDF Tools",
-                "description": "Free online PDF tools to merge, split, compress, convert, edit and protect PDF files",
-                "isPartOf": {
-                    "@id": "https://pdfmasterpro.in/#website"
-                },
-                "breadcrumb": {
-                    "@id": "https://pdfmasterpro.in/#breadcrumb"
-                }
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://pdfmasterpro.in/#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://pdfmasterpro.in"
-                    }
-                ]
-            },
-            {
-                "@type": "SoftwareApplication",
-                "name": "PDFMasterPro",
-                "applicationCategory": "BusinessApplication",
-                "operatingSystem": "Web Browser",
-                "description": "Free online PDF tools to merge, split, compress, convert, edit and protect PDF files",
-                "url": "https://pdfmasterpro.in",
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD"
-                }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Is PDFMasterPro completely free to use?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Yes, all our PDF tools are completely free with no hidden costs, watermarks, or limitations on usage."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Are my files secure when using PDFMasterPro?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Absolutely. We use 256-bit SSL encryption and automatically delete all files from our servers after processing to ensure your data remains private."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do I need to install any software?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "No, all our tools work directly in your web browser. There's no software to download or install."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What file formats does PDFMasterPro support?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "We support PDF, JPG, PNG, HTML, SVG, and many other formats for conversion and processing."
-                        }
-                    }
-                ]
-            }
-        ]
-    }
-    </script>
+<!-- Social + Google Preview Logo -->
+<meta property="og:title" content="PDF Master Pro">
+<meta property="og:description" content="All-in-one PDF tools: Merge, Split, Compress, Watermark, Protect and more.">
+<meta property="og:image" content="https://pdfmasterpro.in/favicon.png">
+<meta property="og:url" content="https://pdfmasterpro.in">
+<meta property="og:type" content="website">
+
+<!-- Schema Logo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PDF Master Pro",
+  "url": "https://pdfmasterpro.in",
+  "logo": "https://pdfmasterpro.in/favicon.png"
+}
+</script>
     
     <style>
         /* Base Styles */
@@ -275,31 +179,6 @@
             max-width: 600px;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .cta-button {
-            padding: 12px 24px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background: var(--secondary);
-            color: var(--darker);
-            transform: translateY(-3px);
-        }
-        
         .hero-image {
             flex: 1;
             position: relative;
@@ -344,6 +223,8 @@
         }
         
         /* Tools Section */
+ 
+ 
         .tools-section {
             padding: clamp(30px, 5vw, 40px) 0 clamp(40px, 6vw, 60px);
         }
@@ -369,13 +250,13 @@
         
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
             padding: 0 10px;
         }
         
         .tool-card {
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -383,12 +264,10 @@
             overflow: hidden;
             transform-style: preserve-3d;
             perspective: 1000px;
+            aspect-ratio: 2 / 1.5;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
-            text-decoration: none;
-            color: inherit;
+            justify-content: center;
         }
         
         .tool-card:hover {
@@ -446,61 +325,10 @@
         .tool-card p {
             color: rgba(255, 255, 255, 0.7);
             font-size: clamp(13px, 2vw, 14px);
-            margin-bottom: 15px;
         }
         
-        .tool-info {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 10px;
-            font-size: 13px;
-            line-height: 1.4;
-            color: rgba(255, 255, 255, 0.8);
-            text-align: left;
-        }
-        
-        /* Tool Details Section */
-        .tool-details {
-            display: none;
-            padding: 30px;
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .tool-details.active {
-            display: block;
-        }
-        
-        .tool-details h3 {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-        
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .detail-section {
-            margin-bottom: 20px;
-        }
-        
-        .detail-section h4 {
-            color: var(--accent);
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        
-        .detail-section p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-        
+ 
+ 
         /* How It Works Section */
         .how-it-works {
             padding: clamp(40px, 6vw, 60px) 0;
@@ -546,45 +374,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: clamp(14px, 2vw, 15px);
         }
-        
-        /* Why Use Section */
-        .why-use-section {
-            padding: clamp(40px, 6vw, 60px) 0;
-        }
-        
-        .why-use-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 0 10px;
-        }
-        
-        .why-use-card {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .why-use-icon {
-            font-size: clamp(36px, 6vw, 42px);
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .why-use-card h3 {
-            font-size: clamp(18px, 3vw, 20px);
-            margin-bottom: 12px;
-            color: var(--light);
-        }
-        
-        .why-use-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: clamp(14px, 2vw, 15px);
-            line-height: 1.6;
-        }
-        
+ 
         /* AdSense Container */
         .ad-container {
             width: 100%;
@@ -777,148 +567,32 @@
             padding: 0 15px;
         }
         
-        /* Enhanced CTA Button Styles */
-        .floating-cta-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-        }
-        
+        /* Floating CTA Button */
         .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             background: var(--secondary);
             color: var(--darker);
-            width: 70px;
-            height: 70px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             cursor: pointer;
+            z-index: 100;
             transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-            animation: cta-bounce 2s infinite, cta-pulse 2s infinite;
+            animation: bounce 2s infinite;
         }
         
         .floating-cta:hover {
             transform: scale(1.1) rotate(15deg);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
         
-        .wave {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: var(--secondary);
-            opacity: 0.5;
-            animation: cta-wave 2s infinite;
-            z-index: 1;
-        }
-        
-        .wave:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-        
-        .wave:nth-child(3) {
-            animation-delay: 1s;
-        }
-        
-        /* CTA Button Animations */
-        @keyframes cta-bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-7px); }
-        }
-        
-        @keyframes cta-wave {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0.5;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(2);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes cta-pulse {
-            0% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
-            50% { box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5); }
-            100% { box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
-        }
-
-        /* Modal Styles */
-        .cta-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-        
-        .cta-modal-content {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--glass-border);
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            color: white;
-        }
-        
-        .cta-modal h2 {
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-        
-        .cta-modal-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .cta-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .cta-btn-primary:hover {
-            background: #1d4ed8;
-        }
-        
-        .cta-btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-        
-        .cta-btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
         /* Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -931,9 +605,10 @@
             100% { transform: scale(1); }
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
         }
         
         /* Tool Entry Animation */
@@ -990,26 +665,7 @@
         /* Tablet Adjustments */
         @media (min-width: 768px) and (max-width: 991px) {
             .tools-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-        }
-        
-        /* Responsive CTA */
-        @media (max-width: 768px) {
-            .floating-cta-container {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .floating-cta {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-            }
-            
-            .wave {
-                width: 60px;
-                height: 60px;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             }
         }
     </style>
@@ -1033,7 +689,7 @@
                     <li><a href="#tools">All Tools</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#why-use">Why Use Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -1043,7 +699,6 @@
             <div class="hero-content">
                 <h1 class="animate__animated animate__fadeInDown">Powerful PDF Tools For All Your Needs</h1>
                 <p class="animate__animated animate__fadeInDown animate__delay-1s">The most comprehensive collection of free PDF tools online. Convert, edit, compress, merge, split and protect PDF files without any watermarks or limitations.</p>
-               
                 <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
                     <!-- AdSense Placeholder -->
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"
@@ -1075,9 +730,9 @@
             
             <div class="category-tabs animate__animated animate__fadeIn animate__delay-1s">
                 <div class="category-tab active" data-category="all">All Tools</div>
-                <div class="category-tab" data-category="organize">Organize</div>
                 <div class="category-tab" data-category="convert">Convert</div>
                 <div class="category-tab" data-category="edit">Edit</div>
+                <div class="category-tab" data-category="organize">Organize</div>
                 <div class="category-tab" data-category="security">Security</div>
                 <div class="category-tab" data-category="other">Other Tools</div>
             </div>
@@ -1100,195 +755,156 @@
             
             <div class="tools-grid">
                 <!-- PDF Management Tools -->
-                <a href="mergepdf.html" class="tool-card glass-card popular" data-category="organize" data-tool="merge" style="animation-delay: 0.1s">
-                    <div class="tool-icon"><i class="fas fa-object-group"></i></div>
-                    <h3>Merge PDF</h3>
-                    <p>Combine multiple PDFs into one document</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Reports, presentations, document compilation<br>
-                        <strong>Features:</strong> Drag & drop, page reordering, quality preservation
-                    </div>
-                </a>
+                <a href="mergepdf.html" style="text-decoration: none; color: inherit;">
+  <div class="tool-card glass-card popular" data-category="organize" style="animation-delay: 0.1s">
+      <div class="tool-icon"><i class="fas fa-object-group"></i></div>
+      <h3>Merge PDF</h3>
+      <p>Combine multiple PDFs into one document</p>
+  </div>
+</a>
 
-                <a href="splitpdf.html" class="tool-card glass-card popular" data-category="organize" data-tool="split" style="animation-delay: 0.2s">
+                <a href="splitpdf.html" style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card popular" data-category="organize" style="animation-delay: 0.2s">
                     <div class="tool-icon"><i class="fas fa-cut"></i></div>
                     <h3>Split PDF</h3>
                     <p>Divide PDF into separate files by pages</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Extracting chapters, sharing sections<br>
-                        <strong>Features:</strong> Page range selection, batch splitting, format preservation
-                    </div>
-                </a>
+                </div>
+            </a>   
 
-                <a href="extractpdf.html" class="tool-card glass-card" data-category="organize" data-tool="extract" style="animation-delay: 0.3s">
+                <a href="extractpdf.html" style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="organize" style="animation-delay: 0.3s">
                     <div class="tool-icon"><i class="fas fa-file-export"></i></div>
                     <h3>Extract PDF</h3>
                     <p>Select specific pages to extract</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Creating excerpts, focused sharing<br>
-                        <strong>Features:</strong> Visual page selection, multiple extraction, quality maintenance
-                    </div>
-                </a>
+                </div>
+           </a>
 
-                <a href="page-number.html" class="tool-card glass-card" data-category="organize" data-tool="page-number" style="animation-delay: 0.4s">
+                <a href=" page-number.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="organize" style="animation-delay: 0.4s">
                     <div class="tool-icon"><i class="fas fa-sort-numeric-up"></i></div>
                     <h3>PDF Page Number</h3>
                     <p>Add page numbers to your PDF</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Legal docs, academic papers, reports<br>
-                        <strong>Features:</strong> Custom positioning, various formats, font selection
-                    </div>
-                </a>
+                </div>
+           </a>   
 
-                <a href="organize-pdf.html" class="tool-card glass-card" data-category="organize" data-tool="reorder" style="animation-delay: 0.5s">
+                <a href=" organize-pdf.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="organize" style="animation-delay: 0.5s">
                     <div class="tool-icon"><i class="fas fa-layer-group"></i></div>
                     <h3>PDF Page Reorder</h3>
                     <p>Rearrange pages in any order</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Fixing scans, custom organization<br>
-                        <strong>Features:</strong> Drag & drop interface, visual preview, instant reorganization
-                    </div>
-                </a>
+                </div>
+                </a>       
+
+                
+                
 
                 <!-- PDF Conversion Tools -->
-                <a href="pdf-to-jpg.html" class="tool-card glass-card" data-category="convert" data-tool="pdf-to-jpg" style="animation-delay: 0.3s">
+                <a href=" pdf-to-jpg.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 0.3s">
                     <div class="tool-icon"><i class="fas fa-image"></i></div>
                     <h3>PDF to JPG</h3>
                     <p>Convert pages to images</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Presentations, social media, websites<br>
-                        <strong>Features:</strong> High-quality conversion, page selection, batch processing
-                    </div>
+                </div>
                 </a>
 
-                <a href="pdf-to-img.html" class="tool-card glass-card" data-category="convert" data-tool="pdf-to-img" style="animation-delay: 0.4s">
+                <a href=" pdf-to-img.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 0.4s">
                     <div class="tool-icon"><i class="fas fa-image"></i></div>
                     <h3>PDF to Image</h3>
                     <p>Convert PDF to various image formats</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Graphic design, digital publishing<br>
-                        <strong>Features:</strong> Multiple formats, quality control, resolution options
-                    </div>
+                </div>
                 </a>
 
-                <a href="pdf-to-html.html" class="tool-card glass-card" data-category="convert" data-tool="pdf-to-html" style="animation-delay: 0.6s">
+                <a href=" pdf-to-html.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 0.6s">
                     <div class="tool-icon"><i class="fas fa-file-code"></i></div>
                     <h3>PDF to HTML</h3>
                     <p>Convert to web page format</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Online publishing, CMS integration<br>
-                        <strong>Features:</strong> Structure preservation, CSS generation, clean code output
-                    </div>
+                </div>
                 </a>
 
-                <a href="pdf-to-json.html" class="tool-card glass-card" data-category="convert" data-tool="pdf-to-json" style="animation-delay: 0.7s">
+                <a href=" pdf-to-json.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 0.7s">
                     <div class="tool-icon"><i class="fas fa-file-code"></i></div>
                     <h3>PDF to JSON</h3>
                     <p>Convert PDF data to JSON format</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Data processing, API integration<br>
-                        <strong>Features:</strong> Structured extraction, customizable output, data validation
-                    </div>
+                </div>
                 </a>
 
-                <a href="pdf-to-svg.html" class="tool-card glass-card" data-category="convert" data-tool="pdf-to-svg" style="animation-delay: 0.8s">
+                <a href=" pdf-to-svg.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 0.8s">
                     <div class="tool-icon"><i class="fas fa-file-image"></i></div>
                     <h3>PDF to SVG</h3>
                     <p>Convert PDF to scalable vector graphics</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Web design, printing, vector editing<br>
-                        <strong>Features:</strong> Vector preservation, scalability, editing compatibility
-                    </div>
+                </div>
                 </a>
 
-                <a href="html-to-pdf.html" class="tool-card glass-card" data-category="convert" data-tool="html-to-pdf" style="animation-delay: 0.9s">
+                <!--<a href=" html-to-pdf.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 0.9s">
                     <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>HTML to PDF</h3>
                     <p>Convert web pages to PDF</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Archiving, printing, offline reading<br>
-                        <strong>Features:</strong> URL conversion, layout fidelity, custom styling
-                    </div>
-                </a>
+                </div>
+                </a> -->
 
-                <a href="img-to-pdf.html" class="tool-card glass-card" data-category="convert" data-tool="img-to-pdf" style="animation-delay: 1.0s">
+                <a href=" img-to-pdf.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="convert" style="animation-delay: 1.0s">
                     <div class="tool-icon"><i class="fas fa-file-image"></i></div>
                     <h3>Photo to PDF</h3>
                     <p>Convert images to PDF</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Digital albums, scanned documents<br>
-                        <strong>Features:</strong> Multiple image support, layout customization, quality preservation
-                    </div>
+                </div>
                 </a>
 
                 <!-- PDF Editing Tools -->
-                <a href="rotate-pdf.html" class="tool-card glass-card" data-category="edit" data-tool="rotate" style="animation-delay: 0.1s">
+                <a href="rotate-pdf.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="edit" style="animation-delay: 0.1s">
                     <div class="tool-icon"><i class="fas fa-sync-alt"></i></div>
                     <h3>Rotate PDF</h3>
                     <p>Rotate pages 90/180/270°</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Fixing scanned documents<br>
-                        <strong>Features:</strong> Individual page control, multiple angles, quality preservation
-                    </div>
+                </div>
                 </a>
-
-                <a href="pdf-watermark.html" class="tool-card glass-card" data-category="edit" data-tool="watermark" style="animation-delay: 0.2s">
+                <a href=" pdf-watermark.html  " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="edit" style="animation-delay: 0.2s">
                     <div class="tool-icon"><i class="fas fa-stamp"></i></div>
                     <h3>PDF Watermark</h3>
                     <p>Add text/image watermarks</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Document protection, branding<br>
-                        <strong>Features:</strong> Text & image support, custom positioning, transparency control
-                    </div>
+                </div>
                 </a>
 
                 <!-- Security Tools -->
-                <a href="meta-data-remove.html" class="tool-card glass-card" data-category="security" data-tool="metadata" style="animation-delay: 0.1s">
+                <a href="meta-data-remove.html  " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="security" style="animation-delay: 0.1s">
                     <div class="tool-icon"><i class="fas fa-search"></i></div>
                     <h3>Metadata Remover</h3>
                     <p>Clean document information</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Privacy protection, anonymous sharing<br>
-                        <strong>Features:</strong> Complete metadata removal, privacy protection, batch processing
-                    </div>
+                </div>
                 </a>
 
                 <!-- Other Tools -->
-                <a href="qr.html" class="tool-card glass-card" data-category="other" data-tool="qr" style="animation-delay: 0.1s">
+                <a href=" qr.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="other" style="animation-delay: 0.1s">
                     <div class="tool-icon"><i class="fas fa-qrcode"></i></div>
                     <h3>QR Code Generator</h3>
                     <p>Create custom QR codes</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Marketing, digital sharing<br>
-                        <strong>Features:</strong> Multiple content types, design customization, high resolution
-                    </div>
+                </div>
                 </a>
 
-                <a href="barcode.html" class="tool-card glass-card" data-category="other" data-tool="barcode" style="animation-delay: 0.2s">
+                <a href=" barcode.html " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="other" style="animation-delay: 0.2s">
                     <div class="tool-icon"><i class="fas fa-barcode"></i></div>
                     <h3>Barcode Generator</h3>
                     <p>Generate various barcode types</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Product labeling, inventory management<br>
-                        <strong>Features:</strong> Multiple barcode types, customization options, scannability testing
-                    </div>
+                </div>
                 </a>
 
-                <a href="linkshortner-Qr.html" class="tool-card glass-card" data-category="other" data-tool="link-shortener" style="animation-delay: 0.3s">
+                <a href="linkshortner-Qr.html  " style="text-decoration: none; color: inherit;">
+                <div class="tool-card glass-card" data-category="other" style="animation-delay: 0.3s">
                     <div class="tool-icon"><i class="fas fa-link"></i></div>
                     <h3>Permanent Link Shortener</h3>
                     <p>Create shortened permanent URLs</p>
-                    <div class="tool-info">
-                        <strong>Perfect for:</strong> Social media, printed materials<br>
-                        <strong>Features:</strong> Permanent links, custom slugs, basic analytics
-                    </div>
-                </a>
+                </div>
             </div>
-            
-            <!-- Tool Details Section -->
-            <div class="tool-details" id="tool-details">
-                <!-- Details will be populated by JavaScript -->
-            </div>
+        </a>
             
             <div class="ad-container">
                 <!-- AdSense Placeholder -->
@@ -1307,75 +923,35 @@
             </div>
         </section> 
         
-        <!-- Why Use Section -->
-        <section class="why-use-section" id="why-use">
-            <div class="container">
-                <h2 class="section-title animate__animated animate__fadeIn">Why Choose PDFMasterPro?</h2>
-                
-                <div class="why-use-grid">
-                    <div class="why-use-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
-                        <div class="why-use-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Complete Security & Privacy</h3>
-                        <p>Your files are protected with enterprise-grade 256-bit SSL encryption during upload, processing, and download. All files are automatically deleted from our servers within one hour of processing, ensuring your sensitive documents never remain on our systems. We don't store, share, or access your personal data beyond what's necessary to provide our services. Our commitment to privacy means you can process confidential business documents, legal files, and personal information with complete peace of mind.</p>
-                    </div>
-                    
-                    <div class="why-use-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-                        <div class="why-use-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>Lightning Fast Processing</h3>
-                        <p>Experience unparalleled processing speeds with our cloud-powered infrastructure that handles even the largest PDF files in seconds. Our distributed server architecture ensures optimal performance regardless of your location or file size. Whether you're merging hundreds of pages or converting complex documents, our optimized algorithms deliver results faster than any desktop software. No more waiting for slow processing - get your work done efficiently and move on to more important tasks with time saved using our high-performance tools.</p>
-                    </div>
-                    
-                    <div class="why-use-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
-                        <div class="why-use-icon">
-                            <i class="fas fa-infinity"></i>
-                        </div>
-                        <h3>Truly Free & Unlimited</h3>
-                        <p>Access all our premium PDF tools completely free with no hidden costs, watermarks, or usage limitations. Unlike many competitors that restrict features behind paywalls, we believe powerful PDF tools should be accessible to everyone. Process unlimited files without worrying about daily quotas or subscription fees. Our commitment to providing free tools means students, professionals, and businesses can accomplish their PDF tasks without financial barriers. Enjoy enterprise-level functionality at absolutely no cost, forever.</p>
-                    </div>
-                    
-                    <div class="why-use-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-                        <div class="why-use-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Universal Compatibility</h3>
-                        <p>Access our full suite of PDF tools from any device with a modern web browser - no downloads or installations required. Our responsive design ensures perfect functionality on desktops, tablets, and smartphones across all operating systems. Whether you're using Windows, macOS, Linux, iOS, or Android, PDFMasterPro works seamlessly. All processing happens in the cloud, so device specifications don't limit your capabilities. Work from anywhere with internet access and enjoy the same powerful features regardless of your hardware.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <!-- How It Works Section -->
         <section class="how-it-works " id="how-it-works">
             <div class="container">
-                <h2 class="section-title animate__animated animate__fadeIn">How PDFMasterPro Works?</h2>
+                <h2 class="section-title animate__animated animate__fadeIn">How It Works?</h2>
                 
                 <div class="steps-container">
                     <div class="step-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
                         <div class="step-number">1</div>
-                        <h3>Upload Your Files Securely</h3>
-                        <p>Begin by securely uploading your PDF files through our encrypted connection. You can drag and drop files directly into the browser, select from your device storage, or import from cloud services like Google Drive, Dropbox, and OneDrive. Our system supports all major PDF versions and maintains file integrity during upload. Large files are handled efficiently with our chunked upload technology, ensuring reliable transfer even with slow internet connections. Your files remain protected with 256-bit SSL encryption throughout the entire process.</p>
+                        <h3>Upload Your File</h3>
+                        <p>Select the PDF file you want to process by clicking the upload button or dragging it to the designated area.</p>
                     </div>
                     
                     <div class="step-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
                         <div class="step-number">2</div>
-                        <h3>Choose Tool & Customize Settings</h3>
-                        <p>Select from our comprehensive range of PDF tools and customize settings to match your specific requirements. Each tool offers advanced options - from setting page ranges for splitting to choosing image quality for conversions. Our intuitive interface provides real-time previews and detailed tooltips to help you make informed decisions. Whether you need to merge documents in a specific order, add custom watermarks, or convert to precise formats, our tools give you complete control over the output without requiring technical expertise.</p>
+                        <h3>Choose Tool & Settings</h3>
+                        <p>Select the tool you need and configure any specific settings for your desired output.</p>
                     </div>
                     
                     <div class="step-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
                         <div class="step-number">3</div>
-                        <h3>Advanced Processing & Quality Assurance</h3>
-                        <p>Initiate processing with a single click and watch as our advanced algorithms work their magic. Behind the scenes, our distributed computing infrastructure processes your files using optimized techniques that preserve quality while maximizing speed. Each tool employs specialized methods - OCR for text extraction, vector preservation for conversions, and intelligent layout analysis for reorganization. Our quality assurance systems automatically verify output integrity, ensuring your processed files meet the highest standards before they're ready for download.</p>
+                        <h3>Process Your File</h3>
+                        <p>Click the process button and let our advanced algorithms handle the rest. Processing is usually completed within seconds.</p>
                     </div>
                     
                     <div class="step-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
                         <div class="step-number">4</div>
-                        <h3>Download & Automatic Cleanup</h3>
-                        <p>Download your processed files instantly once processing completes. We provide multiple download options including direct browser download, email delivery for large files, and cloud storage integration. All original and processed files are automatically scheduled for deletion from our servers within one hour, though you can manually trigger immediate deletion after download. Our system generates detailed processing reports and maintains no persistent records of your activities. Your privacy is guaranteed with our strict data retention policies and transparent operations.</p>
+                        <h3>Download Result</h3>
+                        <p>Once processing is complete, download your file. Your original files are automatically deleted from our servers.</p>
                     </div>
                 </div>
             </div>
@@ -1385,66 +961,66 @@
         <!-- Features Section -->
         <section class="features-section" id="features">
             <div class="container">
-                <h2 class="section-title animate__animated animate__fadeIn">Advanced Features & Capabilities</h2>
+                <h2 class="section-title animate__animated animate__fadeIn">Why Choose Our PDF Tools?</h2>
                 
                 <div class="features-grid">
                     <div class="feature-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
                         <div class="feature-icon">
-                            <i class="fas fa-cloud-upload-alt"></i>
+                            <i class="fas fa-bolt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Multi-Source File Import</h3>
-                            <p>Import files directly from cloud storage providers including Google Drive, Dropbox, OneDrive, and Box. Our seamless integration eliminates the need for manual downloads and uploads, saving time and streamlining your workflow. You can also fetch files directly from URLs or scan documents using your device camera for immediate processing.</p>
+                            <h3>Lightning Fast Processing</h3>
+                            <p>Our cloud-powered servers process your files in seconds, no matter how large they are.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
                         <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-lock"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>AI-Powered Optimization</h3>
-                            <p>Leverage artificial intelligence for automatic document optimization, including intelligent compression that reduces file size without visible quality loss. Our AI algorithms can detect and correct common PDF issues like skewed scans, poor contrast, and inconsistent formatting, delivering professional results automatically.</p>
+                            <h3>Military-Grade Security</h3>
+                            <p>Your files are protected with 256-bit SSL encryption and automatically deleted after processing.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
                         <div class="feature-icon">
-                            <i class="fas fa-batch-processing"></i>
+                            <i class="fas fa-desktop"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Batch Processing</h3>
-                            <p>Process multiple files simultaneously with our advanced batch processing capabilities. Apply the same operation to dozens or even hundreds of files at once, saving hours of manual work. Set up processing queues, apply custom naming conventions, and download all results in a single compressed archive for maximum efficiency.</p>
+                            <h3>Works on Any Device</h3>
+                            <p>Access all tools from your computer, tablet or smartphone. No installation required.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
                         <div class="feature-icon">
-                            <i class="fas fa-tools"></i>
+                            <i class="fas fa-infinity"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Advanced Editing Suite</h3>
-                            <p>Access powerful editing tools beyond basic PDF manipulation. Redact sensitive information permanently, add digital signatures, fill interactive forms, and extract specific data elements. Our advanced editing capabilities rival expensive desktop software while maintaining the convenience of browser-based access from any device.</p>
+                            <h3>No Limits</h3>
+                            <p>No watermarks, no file size limits, no daily restrictions. Process as many files as you need.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
                         <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-cloud"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Performance Analytics</h3>
-                            <p>Gain insights into your PDF processing with detailed analytics and reporting. Track processing times, success rates, and output quality metrics. Our performance dashboard helps identify optimization opportunities and provides usage statistics that can inform your document management strategies and workflow improvements.</p>
+                            <h3>Cloud Integration</h3>
+                            <p>Directly import files from Google Drive, Dropbox, or OneDrive and save results back to the cloud.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
                         <div class="feature-icon">
-                            <i class="fas fa-users-cog"></i>
+                            <i class="fas fa-headset"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Team Collaboration</h3>
-                            <p>Share processing templates and workflows with team members using our collaboration features. Create custom tool combinations, save frequently used settings, and distribute processing tasks across your organization. Perfect for businesses and educational institutions that need consistent PDF processing across multiple users and departments.</p>
+                            <h3>24/7 Support</h3>
+                            <p>Our support team is always ready to help you with any questions or issues.</p>
                         </div>
                     </div>
                 </div>
@@ -1454,30 +1030,20 @@
 
         
         <!-- Footer -->
-        <footer class="animate__animated animate__fadeInUp" id="contact">
+        <footer class="animate__animated animate__fadeInUp">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-column">
                         <h3>PDF Tools</h3>
                         <ul>
-                            <li><a href="#tools" class="footer-link" data-category="all">All Tools</a></li>
-                            <li><a href="#tools" class="footer-link" data-category="organize">Organize PDF</a></li>
-                            <li><a href="#tools" class="footer-link" data-category="convert">Convert PDF</a></li>
-                            <li><a href="#tools" class="footer-link" data-category="edit">Edit PDF</a></li>
-                            <li><a href="#tools" class="footer-link" data-category="security">Security Tools</a></li>
+                            <li><a href="#">All Tools</a></li>
+                            <li><a href="#">Popular Tools</a></li>
+                            <li><a href="#">New Tools</a></li>
+                            
                         </ul>
                     </div>
                     
-                    <div class="footer-column">
-                        <h3>Resources</h3>
-                        <ul>
-                            <li><a href="#how-it-works">How It Works</a></li>
-                            <li><a href="#features">Features</a></li>
-                            <li><a href="#why-use">Why Use Us</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#tutorials">Tutorials</a></li>
-                        </ul>
-                    </div>
+                    
                     
                     <div class="footer-column">
                         <h3>Company</h3>
@@ -1489,15 +1055,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-column">
-                        <h3>Connect With Us</h3>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                   
                 </div>
                 
                 <div class="copyright">
@@ -1507,141 +1065,12 @@
         </footer>
     </div>
 
-    <!-- Enhanced CTA Button with Wave Animation -->
-    <div class="floating-cta-container">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="floating-cta" id="floatingCta">
-            <i class="fas fa-file-upload"></i>
-        </div>
-    </div>
-
-    <!-- CTA Modal -->
-    <div class="cta-modal" id="ctaModal">
-        <div class="cta-modal-content">
-            <h2>Upload Your Files</h2>
-            <p>Select files to upload or drag and drop them here.</p>
-            <div class="cta-modal-buttons">
-                <button class="cta-btn cta-btn-primary" id="uploadBtn">Select Files</button>
-                <button class="cta-btn cta-btn-secondary" id="closeModal">Cancel</button>
-            </div>
-        </div>
+    <!-- Floating CTA Button -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s">
+        <i class="fas fa-file-upload"></i>
     </div>
 
     <script>
-        // Tool Details Data
-        const toolDetails = {
-            "merge": {
-                "title": "Merge PDF",
-                "whyToUse": "Combine multiple PDF documents into a single file for easier organization and sharing. Perfect for compiling reports, presentations, or combining related documents. Our merge tool preserves the original quality and formatting of all pages while creating a seamless reading experience. Whether you're consolidating financial reports, combining research papers, or creating comprehensive project documentation, this tool ensures all your content flows naturally in the desired sequence.",
-                "howTo": "Simply upload your PDF files using drag-and-drop or file selection, arrange them in your preferred order using our intuitive interface, and click the merge button. Our advanced algorithm processes the files while maintaining all formatting, links, and embedded media. The resulting document will be available for immediate download with optimized file structure and complete preservation of all original elements.",
-                "features": "Drag & drop interface, visual page reordering, batch processing of unlimited files, format preservation, hyperlink maintenance, embedded media support, quality optimization, and instant download"
-            },
-            "split": {
-                "title": "Split PDF",
-                "whyToUse": "Divide large PDF files into smaller, more manageable documents for focused distribution or organization. Extract specific pages or split by page ranges to create targeted content packages. This is particularly useful for sharing only relevant sections of lengthy documents, creating excerpts for review, or organizing chapters separately. Legal professionals can extract specific clauses, educators can create individual assignments from master documents, and businesses can separate departments-specific information from comprehensive reports.",
-                "howTo": "Upload your PDF document and choose your splitting method: by page ranges (e.g., 1-5, 6-10), by extracting specific pages, or by splitting at every page. Our interface provides a visual preview of your document to help you make precise selections. Once configured, the tool processes your file and generates individual PDFs for each specified section, ready for immediate download.",
-                "features": "Multiple splitting methods, visual page preview, range selection, individual page extraction, batch output, format preservation, and customizable naming"
-            },
-            "extract": {
-                "title": "Extract PDF Pages",
-                "whyToUse": "Select and save only the pages you need from a larger document, eliminating the need to share entire files when only specific sections are relevant. This tool is perfect for creating focused excerpts, compiling reference materials, or distributing targeted information without exposing confidential content from other pages. Researchers can extract relevant studies, students can save specific textbook pages, and professionals can create precise reference documents from comprehensive manuals.",
-                "howTo": "Upload your source PDF and use our interactive page selector to choose the specific pages you want to extract. The interface displays thumbnails of all pages for easy identification. Select individual pages or ranges, preview your selection, and execute the extraction. The tool creates a new PDF containing only your chosen pages while maintaining all original formatting, images, and text quality.",
-                "features": "Visual page selection, thumbnail preview, multiple selection methods, format preservation, quality maintenance, and instant processing"
-            },
-            "page-number": {
-                "title": "Add Page Numbers",
-                "whyToUse": "Add professional, customizable page numbers to your PDF documents for better organization, reference, and formal presentation. Proper pagination is essential for legal documents, academic papers, business reports, and any multi-page document requiring easy navigation. Our tool allows complete control over numbering style, position, format, and starting number, ensuring your documents meet specific formatting requirements while maintaining a polished, professional appearance.",
-                "howTo": "Upload your PDF and access the page numbering interface. Choose numbering position (header/footer, corners), select font style and size, define numbering format (1,2,3 or i,ii,iii), set starting number, and specify page ranges if needed. The tool applies numbering consistently throughout your document while preserving all original content and layout. Preview the results before finalizing and downloading your professionally numbered PDF.",
-                "features": "Custom positioning, multiple font options, various numbering formats, page range specification, starting number control, real-time preview, and layout preservation"
-            },
-            "reorder": {
-                "title": "Reorder PDF Pages",
-                "whyToUse": "Rearrange pages within your PDF document to create the perfect flow and organization. Fix scanning errors, reorganize content for better logical progression, or customize document structure for specific audiences. This tool is invaluable for correcting out-of-sequence pages, creating custom presentations from existing materials, or preparing documents for specific purposes by prioritizing certain content. The intuitive drag-and-drop interface makes reorganization simple and visual.",
-                "howTo": "Upload your PDF to access our visual page organizer. View all pages as thumbnails and simply drag them into your desired order. Use multi-select features for moving multiple pages simultaneously. The interface provides real-time feedback and numbering to help you track your new organization. Once satisfied with the arrangement, process the document to generate your reordered PDF with all original formatting intact.",
-                "features": "Drag-and-drop interface, visual thumbnail display, multi-page selection, real-time numbering, layout preservation, and instant reorganization"
-            },
-            "pdf-to-jpg": {
-                "title": "PDF to JPG Converter",
-                "whyToUse": "Convert PDF pages to high-quality JPG images for use in presentations, websites, social media, or any application requiring image format compatibility. This conversion is perfect for extracting visual content, creating image galleries from document pages, or preparing content for platforms that don't support PDF viewing. Marketing professionals can convert brochure pages for digital campaigns, educators can create visual teaching materials, and designers can extract graphics from PDF documents.",
-                "howTo": "Upload your PDF document and select the specific pages or ranges you want to convert to JPG format. Choose your preferred image quality and resolution settings based on your intended use. The tool processes each selected page individually, converting vector content and text to high-quality raster images while preserving colors and details. Download your JPG files individually or as a compressed archive.",
-                "features": "Page selection, quality control, resolution options, batch conversion, color preservation, and archive download"
-            },
-            "pdf-to-img": {
-                "title": "PDF to Image Converter",
-                "whyToUse": "Convert PDF documents to multiple image formats including PNG, JPG, TIFF, and BMP to meet various application requirements. Different formats serve different purposes - PNG for web graphics with transparency, JPG for photographs, TIFF for print quality, and BMP for uncompressed editing. This versatility makes the tool essential for graphic designers, web developers, archivists, and anyone needing to repurpose PDF content across different media and platforms.",
-                "howTo": "Upload your PDF and select your desired output format from the supported options. Configure format-specific settings like compression level for JPG, transparency for PNG, or compression method for TIFF. Choose pages for conversion and set resolution parameters. The tool processes each page with format-optimized algorithms to ensure the best possible quality for your selected format while maintaining color accuracy and detail.",
-                "features": "Multiple format support, format-specific optimization, quality settings, resolution control, batch processing, and color management"
-            },
-            "pdf-to-html": {
-                "title": "PDF to HTML Converter",
-                "whyToUse": "Transform PDF documents into HTML web pages for online publishing, content management systems, or digital archives. This conversion preserves text structure, formatting, and basic layout while creating web-compatible code. Essential for repurposing printed documents for websites, creating accessible web content from existing materials, or migrating documentation to online platforms. The resulting HTML maintains readability and can be easily edited in web editors or integrated into existing websites.",
-                "howTo": "Upload your PDF document and select conversion preferences including CSS inclusion, image handling, and layout preservation options. The tool analyzes the PDF structure, extracts text and formatting information, converts graphical elements to web-compatible images if needed, and generates clean HTML code with appropriate semantic markup. Download the HTML file along with any associated images and CSS files for complete web deployment.",
-                "features": "Structure preservation, CSS generation, image extraction, semantic markup, layout adaptation, and complete file package"
-            },
-            "pdf-to-json": {
-                "title": "PDF to JSON Converter",
-                "whyToUse": "Convert PDF data into structured JSON format for data processing, analysis, or integration with web applications and databases. This tool extracts textual content, metadata, and structural information into a machine-readable format ideal for developers, data analysts, and automation workflows. Use it to feed document content into applications, create searchable databases from PDF collections, or analyze document patterns programmatically. The JSON output can be easily parsed and manipulated using standard programming languages.",
-                "howTo": "Upload your PDF document and configure extraction parameters including content scope (text, metadata, structure), formatting inclusion, and output structure. The tool processes the document, identifies textual elements and their relationships, extracts metadata, and constructs a comprehensive JSON object representing the document content and organization. Download the JSON file for immediate use in your applications or data analysis tools.",
-                "features": "Structured data extraction, metadata inclusion, formatting preservation, customizable output, API-ready format, and data validation"
-            },
-            "pdf-to-svg": {
-                "title": "PDF to SVG Converter",
-                "whyToUse": "Convert PDF graphics, illustrations, and vector content to scalable SVG format for web design, high-quality printing, and vector editing applications. SVG format maintains scalability without quality loss, making it ideal for logos, diagrams, and illustrations that need to display at various sizes. Designers can extract vector artwork for editing in applications like Illustrator, developers can create resolution-independent web graphics, and publishers can prepare high-quality visual content for both print and digital media.",
-                "howTo": "Upload your PDF containing vector graphics and select the pages or elements for conversion. The tool identifies vector content, converts it to SVG paths and shapes while preserving colors, gradients, and transparency. For mixed content documents, you can choose to convert entire pages or extract specific graphical elements. Download the resulting SVG files ready for editing, web deployment, or high-resolution printing.",
-                "features": "Vector preservation, scalability maintenance, color accuracy, element extraction, editing compatibility, and high precision"
-            },
-            "html-to-pdf": {
-                "title": "HTML to PDF Converter",
-                "whyToUse": "Convert web pages or HTML content to PDF documents for offline reading, printing, archiving, or formal distribution. This tool captures web content exactly as it appears in browsers, making it perfect for saving online articles, creating printable versions of web forms, archiving website content, or generating reports from web applications. Businesses can create permanent records of web content, researchers can archive online sources, and individuals can save web pages for offline reference.",
-                "howTo": "Enter the URL of the web page you want to convert or upload HTML files directly. Configure conversion settings including page size, orientation, margins, and whether to include background images. The tool renders the web content using a browser engine, captures the precise layout and styling, and generates a PDF that faithfully reproduces the original appearance. Download the PDF for offline use or distribution.",
-                "features": "URL conversion, HTML upload, layout fidelity, styling preservation, custom page settings, and background inclusion"
-            },
-            "img-to-pdf": {
-                "title": "Image to PDF Converter",
-                "whyToUse": "Convert multiple images into a single PDF document for organized storage, professional presentation, or easy distribution. This tool is perfect for creating digital photo albums, compiling scanned documents, building portfolios, or converting image collections into a unified format. Real estate agents can create property portfolios, photographers can deliver client galleries, students can compile research images, and businesses can convert product photos into catalogues - all in a universally accessible PDF format.",
-                "howTo": "Upload your images (JPG, PNG, TIFF, etc.) and arrange them in your desired order using our drag-and-drop interface. Configure page layout options including size, orientation, margins, and image scaling. The tool processes each image, optimizes it for PDF inclusion, and creates a cohesive document with your images presented in sequence. Download the resulting PDF with all images embedded at high quality.",
-                "features": "Multiple image support, drag-and-drop ordering, layout customization, image optimization, quality preservation, and unified output"
-            },
-            "rotate": {
-                "title": "Rotate PDF Pages",
-                "whyToUse": "Fix incorrectly oriented pages in your PDF documents caused by scanning issues or original creation errors. This tool allows precise rotation of individual pages or the entire document to ensure proper viewing orientation. Essential for correcting scanned documents where pages were fed in different orientations, adjusting landscape/portrait mismatches, or preparing documents for consistent reading experience. Legal professionals, archivists, and anyone working with scanned documents will find this tool indispensable for document correction and standardization.",
-                "howTo": "Upload your PDF and view page thumbnails to identify incorrectly oriented pages. Select individual pages or ranges and choose rotation angle (90°, 180°, 270°). The interface provides real-time preview of changes. Apply rotations to correct all orientation issues throughout the document. The tool processes the rotations while maintaining all content quality and formatting, delivering a professionally oriented PDF ready for viewing or printing.",
-                "features": "Individual page control, multiple rotation angles, visual preview, batch application, quality preservation, and layout maintenance"
-            },
-            "watermark": {
-                "title": "Add Watermark to PDF",
-                "whyToUse": "Protect your documents and establish ownership by adding text or image watermarks. Use this tool to mark documents as drafts, confidential, or for specific recipients; add copyright notices; or apply branding elements. Watermarks deter unauthorized distribution while maintaining document readability. Businesses can protect proprietary information, creators can assert copyright, and organizations can classify document sensitivity. The flexible positioning and transparency controls ensure watermarks are visible without obstructing content.",
-                "howTo": "Upload your PDF and choose between text or image watermark. For text watermarks, enter your text, select font, size, color, and transparency. For image watermarks, upload your image file. Position the watermark using precise controls for placement, rotation, and page coverage. Apply to all pages or specific ranges. The tool embeds the watermark throughout the document while preserving original content quality. Preview before finalizing and downloading your protected PDF.",
-                "features": "Text and image support, custom positioning, transparency control, font selection, page range specification, and preview functionality"
-            },
-            "metadata": {
-                "title": "PDF Metadata Remover",
-                "whyToUse": "Clean sensitive information from PDF metadata before sharing documents externally. PDF files contain hidden metadata including author names, creation dates, editing history, software used, and potentially confidential information. This tool completely removes all metadata to protect privacy and prevent information leakage. Essential for legal documents, confidential business materials, anonymous submissions, or any situation where document origins should remain private. Ensure you share only the content you intend, without hidden digital footprints.",
-                "howTo": "Upload your PDF document and the tool automatically scans for all embedded metadata including document properties, custom fields, editing history, and software information. The cleaning process removes all identified metadata while preserving the visible document content exactly as originally created. Download the cleaned PDF which contains only the content you see, with all hidden information permanently erased. The process is fast, thorough, and irreversible for maximum privacy protection.",
-                "features": "Complete metadata removal, privacy protection, batch processing, content preservation, irreversible cleaning, and security assurance"
-            },
-            "qr": {
-                "title": "QR Code Generator",
-                "whyToUse": "Create custom QR codes for URLs, contact information, WiFi credentials, or any text content you need to share digitally. QR codes provide a convenient bridge between physical and digital worlds, allowing instant access to information through smartphone scanning. Use them in presentations, printed materials, product packaging, or digital communications to provide quick access to websites, contact details, app downloads, or specific information. Our generator offers extensive customization to match your branding and use case requirements.",
-                "howTo": "Select your QR code content type (URL, text, contact, etc.) and enter the relevant information. Customize the appearance with color choices, design patterns, and optional logo inclusion. Adjust error correction levels for better scan reliability if the code might be damaged. Generate and preview your QR code, testing its scannability with various devices. Download in your preferred format (PNG, SVG, PDF) for implementation in your materials.",
-                "features": "Multiple content types, design customization, color selection, logo inclusion, format options, and scannability testing"
-            },
-            "barcode": {
-                "title": "Barcode Generator",
-                "whyToUse": "Generate various barcode types for product labeling, inventory management, asset tracking, or document identification. Different barcode formats serve different purposes - UPC for retail products, Code 128 for shipping, QR codes for information density, and many others for specific industries. This tool supports all major barcode symbologies, making it suitable for businesses, libraries, warehouses, event management, and any application requiring automated data capture. Create professional, scannable barcodes tailored to your specific needs.",
-                "howTo": "Select your desired barcode type from the supported formats list. Enter the data to be encoded - this varies by barcode type (numeric, alphanumeric, etc.). Customize appearance including size, color, and text inclusion. Generate the barcode and verify its scannability using our testing feature. Download in your preferred format (vector or raster) for printing or digital use. The tool includes guidance on optimal sizing and placement for reliable scanning in your intended application.",
-                "features": "Multiple barcode types, data validation, appearance customization, scannability testing, format options, and usage guidance"
-            },
-            "link-shortener": {
-                "title": "Permanent Link Shortener",
-                "whyToUse": "Create shortened, permanent URLs for easy sharing, tracking, and management of web links. Shortened URLs are ideal for social media, printed materials, presentations, and situations where long URLs are impractical. Our service provides permanent links that won't expire, along with basic analytics to track click-through rates. Marketing professionals can create trackable campaign links, educators can share resource links more easily, and businesses can create memorable URLs for important resources without relying on external services.",
-                "howTo": "Paste your long URL into the shortening tool and optionally customize the URL slug for branding or memorability. Generate the shortened link and test it to ensure proper redirection. Access basic analytics showing click counts and referral sources if needed. The shortened links remain active permanently unless manually deactivated. Share your shortened URLs confidently knowing they will continue working indefinitely and provide insight into their usage when accessed through our platform.",
-                "features": "Permanent links, custom slugs, basic analytics, click tracking, referral monitoring, and management dashboard"
-            }
-        };
-
         // Tool Category Filter
         const categoryTabs = document.querySelectorAll('.category-tab');
         const toolCards = document.querySelectorAll('.tool-card');
@@ -1665,92 +1094,15 @@
             });
         });
         
-        // Enhanced CTA Button Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctaButton = document.getElementById('floatingCta');
-            const ctaModal = document.getElementById('ctaModal');
-            const closeModal = document.getElementById('closeModal');
-            const uploadBtn = document.getElementById('uploadBtn');
-            
-            // Open modal when CTA button is clicked
-            ctaButton.addEventListener('click', function() {
-                ctaModal.style.display = 'flex';
-            });
-            
-            // Close modal when close button is clicked
-            closeModal.addEventListener('click', function() {
-                ctaModal.style.display = 'none';
-            });
-            
-            // Close modal when clicking outside the content
-            ctaModal.addEventListener('click', function(e) {
-                if (e.target === ctaModal) {
-                    ctaModal.style.display = 'none';
-                }
-            });
-            
-            // Handle file upload
-            uploadBtn.addEventListener('click', function() {
-                const fileInput = document.createElement('input');
-                fileInput.type = 'file';
-                fileInput.multiple = true;
-                fileInput.style.display = 'none';
-                document.body.appendChild(fileInput);
-                
-                fileInput.click();
-                
-                fileInput.addEventListener('change', function() {
-                    if (this.files.length > 0) {
-                        alert(`Selected ${this.files.length} file(s) for upload!`);
-                        ctaModal.style.display = 'none';
-                    }
-                    document.body.removeChild(fileInput);
-                });
-            });
-            
-            // Optional: Add keyboard support (ESC to close modal)
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && ctaModal.style.display === 'flex') {
-                    ctaModal.style.display = 'none';
-                }
-            });
-        });
-        
-        // Footer Link Handler
-        document.querySelectorAll('.footer-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const category = this.dataset.category;
-                
-                // Update active tab
-                categoryTabs.forEach(t => t.classList.remove('active'));
-                document.querySelector(`.category-tab[data-category="${category}"]`).classList.add('active');
-                
-                // Filter tools
-                toolCards.forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-                
-                // Scroll to tools section
-                document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        
-        // Hero Button Handler
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                const target = this.dataset.scroll;
-                document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
-            });
+        // Floating CTA Click Handler
+        document.querySelector('.floating-cta').addEventListener('click', function() {
+            alert('Upload your PDF files now!');
+            // In real implementation: document.getElementById('pdf-upload').click();
         });
         
         // Scroll Animation
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.tool-card, .feature-card, .why-use-card, .step-card');
+            const elements = document.querySelectorAll('.tool-card, .feature-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1777,4 +1129,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
