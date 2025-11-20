@@ -1,15 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Organize PDF - Reorder, Rotate & Delete Pages | PDFMasterPro</title>
     <meta name="description" content="Free online tool to organize PDF pages. Reorder, rotate, delete pages and save your modified PDF.">
     <meta name="keywords" content="organize PDF, reorder PDF pages, rotate PDF pages, delete PDF pages, PDF editor">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Organize PDF - Reorder, Rotate & Delete Pages | PDFMasterPro">
     <meta property="og:description" content="Free online tool to organize PDF pages">
-    <link rel="canonical" href="https://pdfmasterpro.com/organize-pdf">
+    <link rel="canonical" href="https://pdfmasterpro.in/organize-pdf.html">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDFMasterPro - Organize PDF",
+        "description": "Free online tool to organize PDF pages by reordering, rotating, and deleting pages",
+        "url": "https://pdfmasterpro.in/organize-pdf.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "permissions": "none",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "PDFMasterPro",
+            "url": "https://pdfmasterpro.in",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://pdfmasterpro.in/logo.png",
+                "width": "200",
+                "height": "60"
+            }
+        },
+        "screenshot": "https://pdfmasterpro.in/screenshot-organize-pdf.jpg",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://pdfmasterpro.in/organize-pdf.html"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://pdfmasterpro.in"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "PDF Tools",
+                "item": "https://pdfmasterpro.in/tools"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Organize PDF",
+                "item": "https://pdfmasterpro.in/organize-pdf.html"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I reorder PDF pages with drag and drop?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Our PDF organizer supports intuitive drag and drop functionality to easily reorder your PDF pages."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my PDF data secure when using this tool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it possible to rotate PDF pages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! You can rotate individual pages or all pages at once in 90-degree increments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I delete unwanted pages from my PDF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can easily delete any unwanted pages with a single click and save the modified PDF."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this PDF organizer completely free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our PDF organizer is completely free with no limitations on usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will the organized PDF maintain original quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all organized pages maintain the original quality of your PDF document, including text, images, and formatting."
+                }
+            }
+        ]
+    }
+    </script>
     
     <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
@@ -50,7 +175,7 @@
             color: var(--light);
             min-height: 100vh;
             line-height: 1.6;
-            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         /* Glassmorphism Effect */
@@ -66,7 +191,7 @@
         
         /* Layout */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -74,14 +199,17 @@
         /* Header */
         header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 30px 0;
-            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
         .logo {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             font-weight: 700;
             background: linear-gradient(to right, var(--secondary), #f97316);
             -webkit-background-clip: text;
@@ -90,17 +218,56 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
         
         .logo i {
             margin-right: 10px;
-            font-size: 32px;
+            font-size: clamp(26px, 5vw, 32px);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: clamp(15px, 3vw, 25px);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: clamp(14px, 2vw, 16px);
+            cursor: pointer;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: clamp(40px, 8vw, 60px) 0;
+            text-align: center;
         }
         
         .tool-title {
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: clamp(32px, 6vw, 42px);
+            margin-bottom: 20px;
             background: linear-gradient(to right, var(--light), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -108,17 +275,18 @@
         }
         
         .tool-description {
-            color: rgba(255, 255, 255, 0.8);
+            font-size: clamp(16px, 3vw, 18px);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* Main Card */
         .main-card {
             padding: 30px;
             margin-bottom: 30px;
-            overflow: hidden;
         }
         
         /* Upload Area */
@@ -164,19 +332,12 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
         }
         
         .file-name {
             font-weight: 500;
             margin-bottom: 5px;
             color: var(--light);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         
         .file-size {
@@ -184,13 +345,13 @@
             font-size: 14px;
         }
         
-        /* Preview Section */
-        .preview-section {
+        /* Settings Section */
+        .settings-section {
             display: none;
             margin-top: 20px;
         }
         
-        .preview-header {
+        .settings-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -199,7 +360,7 @@
             gap: 10px;
         }
         
-        .preview-title {
+        .settings-title {
             font-size: 20px;
             color: var(--light);
         }
@@ -209,10 +370,26 @@
             font-size: 14px;
         }
         
+        /* Selection Controls */
+        .selection-controls {
+            display: none;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .selection-controls.active {
+            display: flex;
+        }
+        
         .preview-scroll-container {
-            max-height: 60vh;
+            max-height: 65vh;
             overflow-y: auto;
-            padding: 5px;
+            padding: 15px;
             margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
@@ -221,32 +398,23 @@
         
         .preview-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 15px;
-            padding: 5px;
-        }
-        
-        .preview-container.vertical-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .preview-container.vertical-layout .page-preview {
-            width: 100%;
-            max-width: 300px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
         
         .page-preview {
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            padding: 10px;
+            padding: 15px;
+            cursor: pointer;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.05);
             position: relative;
-            user-select: none;
-            cursor: pointer;
+            height: 0;
+            padding-bottom: 141.4%; /* A4 aspect ratio (1:√2) */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         .page-preview:hover {
@@ -267,30 +435,25 @@
             z-index: 100;
         }
         
-        .page-preview.placeholder {
-            border: 2px dashed var(--selected-blue);
-            background: transparent;
-        }
-        
         .page-number {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 15px;
+            left: 15px;
             background: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 3px 8px;
             border-radius: 4px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
             z-index: 1;
         }
         
         .page-actions {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             display: flex;
-            gap: 5px;
+            gap: 8px;
             z-index: 1;
         }
         
@@ -298,14 +461,14 @@
             background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         
         .page-action-btn:hover {
@@ -321,9 +484,12 @@
         }
         
         .page-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            display: block;
+            height: 100%;
+            object-fit: contain;
             border-radius: 4px;
             pointer-events: none;
         }
@@ -372,6 +538,12 @@
             transform: translateY(-2px);
         }
         
+        .btn-hold-active {
+            background: var(--primary) !important;
+            transform: scale(0.95);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
         /* Processing Section */
         .processing-container {
             display: none;
@@ -394,6 +566,22 @@
             font-size: 18px;
         }
         
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
         /* Result Section */
         .result-container {
             display: none;
@@ -414,19 +602,275 @@
             color: var(--light);
         }
         
-        /* Footer */
+        /* Footer - Shifted to Left */
         footer {
-            text-align: center;
+            text-align: left;
             padding: 20px 0;
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+       footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Floating CTA Button Animation */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--darker);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-15px);}
+            60% {transform: translateY(-7px);}
+        }
+        
+        /* Wave animation for floating CTA */
+        .wave-circle {
+            position: absolute;
+            border: 2px solid var(--secondary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: wave 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes wave {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .floating-cta:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+        
+        /* Features Section */
+        .features-section{
+            background: rgba(0, 0, 0, 0.2);
+            padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
+            position: relative;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 10px;
+        }
+        
+        .feature-card {
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .feature-card.scroll-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 36px;
+            color: var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+        
+        .feature-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            width: 100%;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px;
+            overflow: hidden;
+        }
+        
+        /* Footer Content - Shifted to Left */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+            text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .footer-column {
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 18px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-column:hover h3::after {
+            width: 100%;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-column li {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: block;
+            position: relative;
+            padding-left: 0;
+            cursor: pointer;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .social-links a {
+            color: var(--light);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .copyright {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
         }
         
         /* Animations */
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -438,19 +882,8 @@
             }
         }
         
-        /* Scrollbar */
-        .preview-scroll-container::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        .preview-scroll-container::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        
-        .preview-scroll-container::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Responsive */
@@ -464,7 +897,7 @@
             }
             
             .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             }
         }
         
@@ -486,12 +919,22 @@
             }
             
             .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
             
             .btn {
                 padding: 10px 15px;
                 font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            /* Footer adjustments for mobile */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
         }
         
@@ -501,101 +944,406 @@
             }
             
             .preview-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
                 gap: 10px;
             }
             
             .btn-group {
                 gap: 10px;
             }
-        }
+            
+            /* Footer adjustments for small mobile */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        } 
+        
+html {
+  scroll-behavior: smooth;
+}
     </style>
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
     <div class="container">
+        <!-- Header with Navigation -->
         <header>
-            <a href="/" class="logo">
+            <a href="https://pdfmasterpro.in/" class="logo" itemprop="url">
                 <i class="fas fa-file-pdf"></i>
-                <span>PDFMasterPro</span>
+                <span itemprop="name">PDFMasterPro</span>
             </a>
-            <h1 class="tool-title animate__animated animate__fadeIn">Organize PDF</h1>
-            <p class="tool-description animate__animated animate__fadeIn">Reorder, rotate and delete pages from your PDF document</p>
+            <nav>
+                <ul>
+                    <li><a href="https://pdfmasterpro.in/" itemprop="url">Home</a></li>
+                    <li><a href="#features" itemprop="url">Features</a></li>
+                    <li><a href="#how-it-works" itemprop="url">How It Works</a></li>
+                    <li><a href="#contact" itemprop="url">Contact</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <div class="main-card glass-card animate__animated animate__fadeIn">
-            <div class="drop-zone" id="dropZone">
-                <div class="upload-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h3 class="upload-text">Drag & Drop PDF File Here</h3>
-                <p class="upload-hint">or click to browse files</p>
-                <input type="file" id="fileInput" accept=".pdf" style="display: none;">
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="selectFileBtn">
-                        <i class="fas fa-folder-open"></i> Select PDF
-                    </button>
-                </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">Organize PDF</h1>
+            <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
+                Reorder, rotate and delete pages from your PDF documents with our intuitive drag & drop interface.
+            </p>
+            
+            <!-- Ad Container (Top) -->
+            <div class="ad-container animate__animated animate__fadeIn animate__delay-2s">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-
-            <div class="file-info" id="fileInfo" style="display: none;">
-                <div class="file-name" id="fileName"></div>
-                <div class="file-size" id="fileSize"></div>
-            </div>
-
-            <div class="preview-section" id="previewSection">
-                <div class="preview-header">
-                    <h3 class="preview-title">Organize Pages</h3>
-                    <div class="page-count" id="pageCount"></div>
+            
+            <!-- PDF Organizer Tool -->
+            <div class="main-card glass-card animate__animated animate__fadeIn animate__delay-3s" id="mainToolCard" itemprop="mainEntity" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <meta itemprop="applicationCategory" content="UtilityApplication">
+                <meta itemprop="operatingSystem" content="Any">
+                <meta itemprop="name" content="PDFMasterPro Organize PDF">
+                <meta itemprop="description" content="Free online tool to organize PDF pages by reordering, rotating, and deleting pages">
+                <meta itemprop="url" content="https://pdfmasterpro.in/organize-pdf.html">
+                <meta itemprop="softwareVersion" content="1.0">
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="USD">
                 </div>
                 
-                <div class="preview-scroll-container" id="previewScrollContainer">
-                    <div class="preview-container" id="previewContainer"></div>
+                <div class="drop-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="upload-text">Drag & Drop PDF File Here</h3>
+                    <p class="upload-hint">or click to browse files</p>
+                    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="selectFileBtn">
+                            <i class="fas fa-folder-open"></i> Select PDF
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="btn-group">
-                    <button class="btn btn-secondary" id="rotateAllBtn">
-                        <i class="fas fa-sync"></i> Rotate All
-                    </button>
-                    <button class="btn btn-secondary" id="layoutBtn">
-                        <i class="fas fa-th-list"></i> Vertical Layout
-                    </button>
-                    <button class="btn btn-secondary" id="resetBtn">
-                        <i class="fas fa-undo"></i> Reset
-                    </button>
-                    <button class="btn btn-primary" id="saveBtn">
-                        <i class="fas fa-save"></i> Save PDF
-                    </button>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                </div>
+
+                <div class="settings-section" id="settingsSection">
+                    <div class="settings-header">
+                        <h3 class="settings-title">Organize PDF Pages</h3>
+                        <div class="page-count" id="pageCount"></div>
+                    </div>
+                    
+                    <!-- Selection Controls -->
+                    <div class="selection-controls" id="selectionControls">
+                        <button class="btn btn-secondary" id="moveUpBtn">
+                            <i class="fas fa-arrow-up"></i> Move Up
+                        </button>
+                        <button class="btn btn-secondary" id="moveDownBtn">
+                            <i class="fas fa-arrow-down"></i> Move Down
+                        </button>
+                        <button class="btn btn-secondary" id="deselectBtn">
+                            <i class="fas fa-times"></i> Deselect
+                        </button>
+                    </div>
+                    
+                    <div class="preview-scroll-container" id="previewScrollContainer">
+                        <div class="preview-container" id="previewContainer"></div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="rotateAllBtn">
+                            <i class="fas fa-sync"></i> Rotate All
+                        </button>
+                        <button class="btn btn-secondary" id="resetBtn">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                        <button class="btn btn-primary" id="saveBtn">
+                            <i class="fas fa-save"></i> Save PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="processing-container" id="processingContainer">
+                    <div class="processing-spinner"></div>
+                    <h3 class="processing-text">Processing your PDF...</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div id="progressText">Processing page 0 of 0</div>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="result-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="result-message">Your organized PDF is ready!</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                        <button class="btn btn-secondary" id="newFileBtn">
+                            <i class="fas fa-file-upload"></i> New File
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <div class="processing-container" id="processingContainer">
-                <div class="processing-spinner"></div>
-                <h3 class="processing-text">Processing your PDF...</h3>
+            <!-- Ad Container (Middle) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-
-            <div class="result-container" id="resultContainer">
-                <div class="result-icon">
-                    <i class="fas fa-check-circle"></i>
+            
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="features-section" itemscope itemtype="https://schema.org/HowTo">
+                <h2 class="section-title" itemprop="name">How to Organize PDF Pages</h2>
+                <meta itemprop="description" content="Step-by-step guide on how to organize PDF pages using PDFMasterPro">
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Upload Your PDF</h3>
+                            <p itemprop="text">Drag and drop your PDF file or click to browse and select the document you want to organize.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-arrows-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Drag & Drop to Reorder</h3>
+                            <p itemprop="text">Simply drag pages to rearrange them in any order you prefer with our intuitive interface.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Rotate & Delete</h3>
+                            <p itemprop="text">Rotate pages to fix orientation or delete unwanted pages with single click actions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Save & Download</h3>
+                            <p itemprop="text">Save your organized PDF and download it with all your changes applied.</p>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="result-message">Your organized PDF is ready!</h3>
-                <div class="btn-group">
-                    <button class="btn btn-primary" id="downloadBtn">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-secondary" id="newFileBtn">
-                        <i class="fas fa-file-upload"></i> New File
-                    </button>
+            </section>
+            
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2 class="section-title">Advanced PDF Organization Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Secure Processing</h3>
+                            <p>Your PDF files are processed directly in your browser. No files are uploaded to our servers, ensuring complete privacy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s">
+                        <div class="feature-icon">
+                            <i class="fas fa-arrows-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Drag & Drop Reordering</h3>
+                            <p>Intuitive drag and drop interface makes reordering PDF pages as simple as moving files on your desktop.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s">
+                        <div class="feature-icon">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Flexible Rotation</h3>
+                            <p>Rotate individual pages or all pages at once in 90-degree increments to fix orientation issues.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s">
+                        <div class="feature-icon">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Easy Page Deletion</h3>
+                            <p>Remove unwanted pages with a single click. Perfect for cleaning up documents and removing unnecessary content.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Visual Page Preview</h3>
+                            <p>See thumbnails of all pages with clear page numbers, making it easy to identify and organize content.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s">
+                        <div class="feature-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Unlimited Usage</h3>
+                            <p>Organize as many PDFs as you need with no limitations or watermarks on your output documents.</p>
+                        </div>
+                    </div>
                 </div>
+            </section>
+            
+            <!-- FAQ Section -->
+            <section class="features-section" itemscope itemtype="https://schema.org/FAQPage">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card" style="animation-delay: 0.1s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Can I reorder PDF pages with drag and drop?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes! Our PDF organizer supports intuitive drag and drop functionality to easily reorder your PDF pages.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.2s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Is my PDF data secure when using this tool?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Is it possible to rotate PDF pages?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Absolutely! You can rotate individual pages or all pages at once in 90-degree increments.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Can I delete unwanted pages from my PDF?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, you can easily delete any unwanted pages with a single click and save the modified PDF.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.5s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Is this PDF organizer completely free?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, our PDF organizer is completely free with no limitations on usage.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card glass-card" style="animation-delay: 0.6s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 itemprop="name">Will the organized PDF maintain original quality?</h3>
+                            <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <span itemprop="text">Yes, all organized pages maintain the original quality of your PDF document, including text, images, and formatting.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ad Container (Bottom) -->
+            <div class="ad-container">
+                <!-- Ad content would go here -->
+                <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
             </div>
-        </div>
+        </main>
+        
+        <!-- Footer - Shifted to Left -->
+        <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>PDF Tools</h3>
+                                            <ul>  
+                        <li><a href="https://pdfmasterpro.in/mergepdf.html" itemprop="url">Merge PDF</a></li>  
+                        <li><a href="https://pdfmasterpro.in/pdf-to-html.html" itemprop="url">Pdf to html</a></li>  
+                        <li><a href="https://pdfmasterpro.in/splitpdf.html" itemprop="url">Split Pdf</a></li>  
+                        <li><a href="https://pdfmasterpro.in/meta-data-remove.html" itemprop="url">Meta Data Remove r</a></li>  
+                    </ul>  
+                </div>  
+                    
+                          
+                <div class="footer-column">  
+                    <h3>Other Tools</h3>  
+                    <ul>  
+                        <li><a href="https://pdfmasterpro.in/extractpdf.html" itemprop="url">Extract PDF Pages</a></li>  
+                        <li><a href="https://pdfmasterpro.in/img-to-pdf.html" itemprop="url">Image To Pdf</a></li>  
+                        <li><a href="https://pdfmasterpro.in/rotate-pdf.html" itemprop="url">Rotate Pdf Pages</a></li>  
+                        <li><a href="https://pdfmasterpro.in/qr.html" itemprop="url">Grediente Qr Generator</a></li>  
+                    </ul>  
+                </div>  
+                      <div class="footer-column">  
+                    <h3>Company</h3>  
+                    <ul>  
+                        <li><a href="https://pdfmasterpro.in/index/aboutus.html" itemprop="url">About Us</a></li>  
+                        <li><a href="https://pdfmasterpro.in/index/privacy.html" itemprop="url">Privacy Policy</a></li>  
+                        <li><a href="https://pdfmasterpro.in/index/terms.html" itemprop="url">Terms of Service</a></li>  
+                        <li><a href="https://pdfmasterpro.in/index/contact.html" itemprop="url">Contact Us</a></li>  
+                    </ul>  
+                </div>  
+                  
 
-        <footer>
-            <p>PDFMasterPro &copy; 2025 | Free Online PDF Tools</p>
-        </footer>
+            <div class="copyright">  
+                <p>&copy; 2025 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">PDFMasterPro</span></span>. All rights reserved. | </p>  
+            </div>  
+        </div>  
+    </footer>  
+</div>  
+
+
+                    
+
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-file-upload"></i>
     </div>
 
     <script>
-        // Initialize PDF.js worker
+        // Set up PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.worker.min.js';
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -605,18 +1353,25 @@
             const fileInfo = document.getElementById('fileInfo');
             const fileName = document.getElementById('fileName');
             const fileSize = document.getElementById('fileSize');
-            const previewSection = document.getElementById('previewSection');
+            const settingsSection = document.getElementById('settingsSection');
             const previewScrollContainer = document.getElementById('previewScrollContainer');
             const previewContainer = document.getElementById('previewContainer');
             const pageCount = document.getElementById('pageCount');
+            const selectionControls = document.getElementById('selectionControls');
+            const moveUpBtn = document.getElementById('moveUpBtn');
+            const moveDownBtn = document.getElementById('moveDownBtn');
+            const deselectBtn = document.getElementById('deselectBtn');
             const rotateAllBtn = document.getElementById('rotateAllBtn');
-            const layoutBtn = document.getElementById('layoutBtn');
             const resetBtn = document.getElementById('resetBtn');
             const saveBtn = document.getElementById('saveBtn');
             const processingContainer = document.getElementById('processingContainer');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
             const resultContainer = document.getElementById('resultContainer');
             const downloadBtn = document.getElementById('downloadBtn');
             const newFileBtn = document.getElementById('newFileBtn');
+            const floatingCta = document.getElementById('floatingCta');
+            const mainToolCard = document.getElementById('mainToolCard');
 
             let pdfFile = null;
             let pdfDoc = null;
@@ -624,7 +1379,6 @@
             let modifiedPdfBytes = null;
             let pageRotations = {};
             let deletedPages = new Set();
-            let isVerticalLayout = false;
             let selectedPage = null;
             let draggedPage = null;
             let draggedPageIndex = -1;
@@ -636,15 +1390,63 @@
             let scrollSpeed = 0;
             let scrollDirection = 0;
             const scrollEdgeThreshold = 100;
-            const maxScrollSpeed = 40; // Increased scroll speed
-            const scrollAcceleration = 1.5; // Faster acceleration
-            const scrollDeceleration = 0.7;
+            const maxScrollSpeed = 40;
+
+            // Continuous movement variables
+            let moveUpInterval = null;
+            let moveDownInterval = null;
+            let moveDelay = 300; // Initial delay before continuous movement starts
+            let moveSpeed = 150; // Speed of continuous movement
+
+            // Add wave animation to floating CTA
+            function addWaveAnimation() {
+                const waves = [];
+                
+                // Create 3 wave circles
+                for (let i = 0; i < 3; i++) {
+                    const wave = document.createElement('div');
+                    wave.className = 'wave-circle';
+                    wave.style.width = '56px';
+                    wave.style.height = '56px';
+                    wave.style.position = 'absolute';
+                    wave.style.top = '0';
+                    wave.style.left = '0';
+                    wave.style.animationDelay = `${i * 0.3}s`;
+                    floatingCta.appendChild(wave);
+                    waves.push(wave);
+                }
+                
+                return waves;
+            }
+            
+            // Initialize wave animation
+            const waveCircles = addWaveAnimation();
+            
+            // Floating CTA click handler
+            floatingCta.addEventListener('click', () => fileInput.click());
 
             // Handle file selection via button
             selectFileBtn.addEventListener('click', () => fileInput.click());
             
             // Handle file input change
             fileInput.addEventListener('change', handleFile);
+
+            // Move Up button functionality
+            moveUpBtn.addEventListener('mousedown', startMoveUp);
+            moveUpBtn.addEventListener('touchstart', startMoveUp);
+            moveUpBtn.addEventListener('mouseup', stopMove);
+            moveUpBtn.addEventListener('touchend', stopMove);
+            moveUpBtn.addEventListener('mouseleave', stopMove);
+
+            // Move Down button functionality
+            moveDownBtn.addEventListener('mousedown', startMoveDown);
+            moveDownBtn.addEventListener('touchstart', startMoveDown);
+            moveDownBtn.addEventListener('mouseup', stopMove);
+            moveDownBtn.addEventListener('touchend', stopMove);
+            moveDownBtn.addEventListener('mouseleave', stopMove);
+
+            // Deselect button
+            deselectBtn.addEventListener('click', deselectPage);
 
             // Handle drag and drop
             ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -699,40 +1501,53 @@
                 fileSize.textContent = formatFileSize(file.size);
                 fileInfo.style.display = 'block';
                 
-                // Load PDF for preview
+                // Load PDF for processing
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
                     const arrayBuffer = await readFileAsArrayBuffer(file);
                     originalPdfBytes = arrayBuffer;
                     pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
+                    const totalPages = pdfDoc.numPages;
                     
                     // Initialize page rotations (0 degrees by default)
                     pageRotations = {};
-                    for (let i = 1; i <= pdfDoc.numPages; i++) {
+                    for (let i = 1; i <= totalPages; i++) {
                         pageRotations[i] = 0;
                     }
                     
                     // Clear deleted pages and selections
                     deletedPages = new Set();
                     selectedPage = null;
+                    selectionControls.classList.remove('active');
                     
-                    // Show page count
-                    pageCount.textContent = `${pdfDoc.numPages} pages`;
+                    // Update page count
+                    pageCount.textContent = `${totalPages} pages`;
                     
-                    // Render page previews
-                    await renderPagePreviews(pdfDoc);
+                    // Render page previews with progress
+                    await renderPagePreviewsWithProgress(pdfDoc);
                     
-                    previewSection.style.display = 'block';
+                    settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
+                    
+                    // Auto-scroll back to main card after PDF is selected
+                    scrollToMainCard();
                     
                 } catch (error) {
                     console.error('Error loading PDF:', error);
                     processingContainer.style.display = 'none';
                     alert('Error loading PDF. Please try again.');
                 }
+            }
+
+            // Function to scroll back to the main tool card
+            function scrollToMainCard() {
+                mainToolCard.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
             }
 
             function formatFileSize(bytes) {
@@ -743,18 +1558,20 @@
                 return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
             }
 
-            async function renderPagePreviews(pdfDoc) {
+            async function renderPagePreviewsWithProgress(pdfDoc) {
                 previewContainer.innerHTML = '';
+                const totalPages = pdfDoc.numPages;
                 
-                // Set layout class
-                previewContainer.classList.toggle('vertical-layout', isVerticalLayout);
-                
-                // Render all pages (with limited resolution for performance)
-                for (let i = 1; i <= pdfDoc.numPages; i++) {
+                for (let i = 1; i <= totalPages; i++) {
                     if (deletedPages.has(i)) continue;
                     
+                    // Update progress
+                    const progress = ((i) / totalPages) * 100;
+                    progressFill.style.width = `${progress}%`;
+                    progressText.textContent = `Processing page ${i} of ${totalPages}`;
+                    
                     const page = await pdfDoc.getPage(i);
-                    const viewport = page.getViewport({ scale: isVerticalLayout ? 0.8 : 0.5, rotation: pageRotations[i] || 0 });
+                    const viewport = page.getViewport({ scale: 0.6, rotation: pageRotations[i] || 0 });
                     
                     const pagePreview = document.createElement('div');
                     pagePreview.className = 'page-preview';
@@ -766,6 +1583,10 @@
                     
                     // Add click event listener for selection
                     pagePreview.addEventListener('click', handlePageClick);
+                    
+                    // Add drag event listeners
+                    pagePreview.addEventListener('mousedown', startDrag);
+                    pagePreview.addEventListener('touchstart', startTouchDrag, { passive: false });
                     
                     const pageNumber = document.createElement('div');
                     pageNumber.className = 'page-number';
@@ -819,19 +1640,6 @@
                 if (!pagePreview) return;
                 
                 const pageNum = parseInt(pagePreview.dataset.pageNumber);
-                
-                // If already selected, unselect it
-                if (selectedPage === pageNum) {
-                    selectedPage = null;
-                    pagePreview.classList.remove('selected');
-                    
-                    // Remove drag event listeners
-                    pagePreview.removeEventListener('mousedown', startDrag);
-                    pagePreview.removeEventListener('touchstart', startTouchDrag);
-                    return;
-                }
-                
-                // Select the page
                 selectPage(pageNum);
             }
 
@@ -841,8 +1649,6 @@
                     const prevSelected = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
                     if (prevSelected) {
                         prevSelected.classList.remove('selected');
-                        prevSelected.removeEventListener('mousedown', startDrag);
-                        prevSelected.removeEventListener('touchstart', startTouchDrag);
                     }
                 }
                 
@@ -852,9 +1658,110 @@
                 if (newSelected) {
                     newSelected.classList.add('selected');
                     
-                    // Add drag event listeners to the selected page
-                    newSelected.addEventListener('mousedown', startDrag);
-                    newSelected.addEventListener('touchstart', startTouchDrag, { passive: false });
+                    // Show selection controls
+                    selectionControls.classList.add('active');
+                    
+                    // Scroll to the selected page
+                    newSelected.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            function startMoveUp(e) {
+                e.preventDefault();
+                if (!selectedPage) return;
+                
+                // Add active class for visual feedback
+                moveUpBtn.classList.add('btn-hold-active');
+                
+                // Move immediately once
+                movePageUp();
+                
+                // Set up continuous movement after initial delay
+                moveUpInterval = setTimeout(function() {
+                    moveUpInterval = setInterval(movePageUp, moveSpeed);
+                }, moveDelay);
+            }
+
+            function startMoveDown(e) {
+                e.preventDefault();
+                if (!selectedPage) return;
+                
+                // Add active class for visual feedback
+                moveDownBtn.classList.add('btn-hold-active');
+                
+                // Move immediately once
+                movePageDown();
+                
+                // Set up continuous movement after initial delay
+                moveDownInterval = setTimeout(function() {
+                    moveDownInterval = setInterval(movePageDown, moveSpeed);
+                }, moveDelay);
+            }
+
+            function stopMove() {
+                // Remove active class
+                moveUpBtn.classList.remove('btn-hold-active');
+                moveDownBtn.classList.remove('btn-hold-active');
+                
+                // Clear intervals
+                if (moveUpInterval) {
+                    clearTimeout(moveUpInterval);
+                    clearInterval(moveUpInterval);
+                    moveUpInterval = null;
+                }
+                if (moveDownInterval) {
+                    clearTimeout(moveDownInterval);
+                    clearInterval(moveDownInterval);
+                    moveDownInterval = null;
+                }
+            }
+
+            function movePageUp() {
+                if (!selectedPage) return;
+                
+                const pageElements = Array.from(previewContainer.children);
+                const currentIndex = pageElements.findIndex(el => 
+                    parseInt(el.dataset.pageNumber) === selectedPage
+                );
+                
+                if (currentIndex > 0) {
+                    // Swap with previous element
+                    const prevElement = pageElements[currentIndex - 1];
+                    previewContainer.insertBefore(pageElements[currentIndex], prevElement);
+                    
+                    // Update selection
+                    selectPage(selectedPage);
+                }
+            }
+
+            function movePageDown() {
+                if (!selectedPage) return;
+                
+                const pageElements = Array.from(previewContainer.children);
+                const currentIndex = pageElements.findIndex(el => 
+                    parseInt(el.dataset.pageNumber) === selectedPage
+                );
+                
+                if (currentIndex < pageElements.length - 1) {
+                    // Swap with next element
+                    const nextElement = pageElements[currentIndex + 1];
+                    previewContainer.insertBefore(nextElement, pageElements[currentIndex]);
+                    
+                    // Update selection
+                    selectPage(selectedPage);
+                }
+            }
+
+            function deselectPage() {
+                if (selectedPage !== null) {
+                    const selectedElement = document.querySelector(`.page-preview[data-page-number="${selectedPage}"]`);
+                    if (selectedElement) {
+                        selectedElement.classList.remove('selected');
+                    }
+                    selectedPage = null;
+                    
+                    // Hide selection controls
+                    selectionControls.classList.remove('active');
                 }
             }
 
@@ -990,9 +1897,6 @@
                             const adjustedDropIndex = dropIndex > draggedPageIndex ? dropIndex - 1 : dropIndex;
                             previewContainer.insertBefore(draggedPage, previewContainer.children[adjustedDropIndex]);
                         }
-                        
-                        // Update the selected page's position
-                        selectedPage = parseInt(draggedPage.dataset.pageNumber);
                     }
                 }
                 
@@ -1022,7 +1926,7 @@
                 if (!pdfDoc) return;
                 
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 
                 try {
                     // Rotate all pages 90 degrees
@@ -1033,37 +1937,14 @@
                     }
                     
                     // Re-render previews
-                    await renderPagePreviews(pdfDoc);
+                    await renderPagePreviewsWithProgress(pdfDoc);
                     
-                    previewSection.style.display = 'block';
+                    settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
                 } catch (error) {
                     console.error('Error rotating pages:', error);
                     processingContainer.style.display = 'none';
                     alert('Error rotating pages. Please try again.');
-                }
-            });
-
-            // Toggle between grid and vertical layouts
-            layoutBtn.addEventListener('click', async function() {
-                if (!pdfDoc) return;
-                
-                isVerticalLayout = !isVerticalLayout;
-                layoutBtn.innerHTML = isVerticalLayout 
-                    ? '<i class="fas fa-th-large"></i> Grid Layout' 
-                    : '<i class="fas fa-th-list"></i> Vertical Layout';
-                
-                processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
-                
-                try {
-                    await renderPagePreviews(pdfDoc);
-                    
-                    previewSection.style.display = 'block';
-                    processingContainer.style.display = 'none';
-                } catch (error) {
-                    console.error('Error changing layout:', error);
-                    processingContainer.style.display = 'none';
                 }
             });
 
@@ -1074,7 +1955,7 @@
                 // Re-render the preview for this page
                 const page = await pdfDoc.getPage(pageNum);
                 const viewport = page.getViewport({ 
-                    scale: isVerticalLayout ? 0.8 : 0.5, 
+                    scale: 0.6, 
                     rotation: pageRotations[pageNum] 
                 });
                 
@@ -1096,7 +1977,7 @@
                 if (confirm(`Are you sure you want to delete page ${pageNum}?`)) {
                     deletedPages.add(pageNum);
                     if (selectedPage === pageNum) {
-                        selectedPage = null;
+                        deselectPage();
                     }
                     pageElement.remove();
                     
@@ -1111,7 +1992,7 @@
                 if (!pdfDoc) return;
                 
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 
                 try {
                     // Reset rotations, deleted pages and selections
@@ -1120,15 +2001,15 @@
                         pageRotations[i] = 0;
                     }
                     deletedPages = new Set();
-                    selectedPage = null;
+                    deselectPage();
                     
                     // Re-render previews
-                    await renderPagePreviews(pdfDoc);
+                    await renderPagePreviewsWithProgress(pdfDoc);
                     
                     // Update page count
                     pageCount.textContent = `${pdfDoc.numPages} pages`;
                     
-                    previewSection.style.display = 'block';
+                    settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
                     
                 } catch (error) {
@@ -1143,7 +2024,7 @@
                 if (!pdfDoc) return;
                 
                 processingContainer.style.display = 'block';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
                 
                 try {
@@ -1196,8 +2077,9 @@
             // Start with a new file
             newFileBtn.addEventListener('click', function() {
                 fileInfo.style.display = 'none';
-                previewSection.style.display = 'none';
+                settingsSection.style.display = 'none';
                 resultContainer.style.display = 'none';
+                dropZone.style.display = 'block';
                 fileInput.value = '';
                 pdfFile = null;
                 pdfDoc = null;
@@ -1205,9 +2087,7 @@
                 modifiedPdfBytes = null;
                 pageRotations = {};
                 deletedPages = new Set();
-                selectedPage = null;
-                isVerticalLayout = false;
-                layoutBtn.innerHTML = '<i class="fas fa-th-list"></i> Vertical Layout';
+                deselectPage();
             });
 
             function readFileAsArrayBuffer(file) {
@@ -1218,29 +2098,80 @@
                     reader.readAsArrayBuffer(file);
                 });
             }
+            
+            // Simple Scroll Animation for Feature Cards
+            function initializeScrollAnimation() {
+                const featureCards = document.querySelectorAll('.feature-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Add scroll-visible class when element comes into view
+                            entry.target.classList.add('scroll-visible');
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust trigger point slightly
+                });
+                
+                // Observe each feature card
+                featureCards.forEach(card => {
+                    observer.observe(card);
+                });
+            }
+            
+            // Initialize scroll animation when page loads
+            initializeScrollAnimation();
+             
+            // Initialize navigation functionality
+            function initializeNavigation() {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for footer links
+                document.querySelectorAll('.footer-column a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+                
+                // Smooth scrolling for contact link
+                document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navigation when page loads
+            initializeNavigation();
         });
-    </script>
-    
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Organize PDF - PDFMasterPro",
-        "description": "Free online tool to reorder, rotate and delete pages from PDF files",
-        "url": "https://pdfmasterpro.com/organize-pdf",
-        "applicationCategory": "DocumentUtility",
-        "operatingSystem": "Any",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "creator": {
-            "@type": "Organization",
-            "name": "PDFMasterPro"
-        }
-    }
     </script>
 </body>
 </html>

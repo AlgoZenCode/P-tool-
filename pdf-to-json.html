@@ -17,8 +17,8 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "PDFMasterPro - Convert PDF to JSON",
-        "description": "Free online tool to convert PDF files to JSON format with text extraction capabilities",
-        "url": "https://pdfmasterpro.in/pdf-to-json.html",
+        "description": "Free online tool to convert PDF files to JSON format with text and metadata extraction",
+        "url": "https://pdfmasterpro.in/pdf-to-json",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Any",
         "browserRequirements": "Requires JavaScript",
@@ -73,7 +73,7 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "PDF to JSON",
-                "item": "https://pdfmasterpro.in/pdf-to-json.html"
+                "item": "https://pdfmasterpro.in/pdf-to-json.in"
             }
         ]
     }
@@ -86,10 +86,10 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What JSON formats can I convert my PDF to?",
+                "name": "What data can be extracted from PDF to JSON?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can convert PDF files to detailed JSON with metadata, text-only format, or structured pages format with customizable extraction options."
+                    "text": "You can extract text content, page metadata, document information, and structure data from PDF files in JSON format."
                 }
             },
             {
@@ -97,7 +97,7 @@
                 "name": "Is my PDF data secure when using this tool?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security."
+                    "text": "Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy."
                 }
             },
             {
@@ -105,15 +105,15 @@
                 "name": "Can I extract specific pages instead of the whole PDF?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! You can extract text from all pages or choose to process specific page ranges with our flexible extraction options."
+                    "text": "Yes, you can extract text from all pages, specific page ranges, or individual pages from your PDF document."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What text extraction options are available?",
+                "name": "What JSON structure options are available?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can extract text by pages, remove empty lines, preserve formatting, and include PDF metadata in your JSON output."
+                    "text": "You can choose between detailed JSON with metadata, text-only format, or structured pages format for different use cases."
                 }
             },
             {
@@ -121,7 +121,7 @@
                 "name": "Is this PDF to JSON converter completely free?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, our PDF to JSON converter is completely free with no limitations on usage or file size."
+                    "text": "Yes, our PDF to JSON converter is completely free with no limitations on usage."
                 }
             },
             {
@@ -129,7 +129,7 @@
                 "name": "Can I preview the JSON before downloading?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Absolutely! You can preview the generated JSON, copy it to clipboard, and then download it in your preferred format."
+                    "text": "Yes, you can preview the generated JSON structure and copy it to clipboard before downloading the file."
                 }
             }
         ]
@@ -603,8 +603,18 @@
             opacity: 1;
         }
         
-        /* Footer */
+        /* Footer - Shifted to Left */
         footer {
+            text-align: left;
+            padding: 20px 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin-left: 0;
+            margin-right: auto;
+            max-width: 100%;
+        } 
+        
+       footer {
             background: rgba(0, 0, 0, 0.2);
             padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 4vw, 30px);
             position: relative;
@@ -672,7 +682,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .section-title {
             text-align: center;
             margin-bottom: 40px;
@@ -755,7 +764,7 @@
             overflow: hidden;
         }
         
-        /* Footer Content */
+        /* Footer Content - Shifted to Left */
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -763,6 +772,9 @@
             margin-bottom: 30px;
             padding: 0 15px;
             text-align: left;
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
         }
         
         .footer-column {
@@ -849,11 +861,14 @@
         }
         
         .copyright {
-            text-align: center;
+            text-align: left;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
+            padding: 0 15px;
+            margin-left: 0;
+            margin-right: auto;
         }
         
         /* Animations */
@@ -866,10 +881,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
         
         /* Responsive */
@@ -909,6 +920,7 @@
                 font-size: 28px;
             }
             
+            /* Footer adjustments for mobile */
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
@@ -928,15 +940,20 @@
                 grid-template-columns: 1fr;
             }
             
+            /* Footer adjustments for small mobile */
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
-        }
+        } 
         
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -976,7 +993,7 @@
                 <meta itemprop="operatingSystem" content="Any">
                 <meta itemprop="name" content="PDFMasterPro PDF to JSON Converter">
                 <meta itemprop="description" content="Free online tool to convert PDF files to JSON format">
-                <meta itemprop="url" content="https://pdfmasterpro.in/pdf-to-json.html">
+                <meta itemprop="url" content="https://pdfmasterpro.in/pdf-to-json">
                 <meta itemprop="softwareVersion" content="1.0">
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                     <meta itemprop="price" content="0">
@@ -988,7 +1005,7 @@
                         <i class="fas fa-file-code"></i>
                     </div>
                     <h3 class="upload-text">Drag & Drop PDF File Here</h3>
-                    <p class="upload-hint">or click to browse files</p>
+                    <p class="upload-hint">or click to browse files (single PDF conversion)</p>
                     <input type="file" id="fileInput" accept=".pdf" style="display: none;">
                     <div class="btn-group">
                         <button class="btn btn-primary" id="selectFileBtn">
@@ -1069,7 +1086,7 @@
 
                 <div class="processing-container" id="processingContainer">
                     <div class="processing-spinner"></div>
-                    <h3 class="processing-text">Converting your PDF to JSON...</h3>
+                    <h3 class="processing-text">Converting PDF to JSON...</h3>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progressFill" style="width: 0%"></div>
                     </div>
@@ -1080,7 +1097,7 @@
                     <div class="result-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="result-message">Your JSON is ready!</h3>
+                    <h3 class="result-message">Your PDF has been converted to JSON!</h3>
                     
                     <div class="json-preview-container">
                         <div class="json-preview" id="jsonPreview">
@@ -1129,7 +1146,7 @@
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Adjust Settings</h3>
-                            <p itemprop="text">Choose your preferred JSON structure, extraction options, and output filename.</p>
+                            <p itemprop="text">Choose your preferred JSON structure, text extraction options, and output filename.</p>
                         </div>
                     </div>
                     
@@ -1139,7 +1156,7 @@
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Convert & Process</h3>
-                            <p itemprop="text">Click convert and watch as your PDF text is extracted and transformed into structured JSON.</p>
+                            <p itemprop="text">Click convert and watch as your PDF content is extracted and structured into JSON format.</p>
                         </div>
                     </div>
                     
@@ -1149,7 +1166,7 @@
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Download JSON</h3>
-                            <p itemprop="text">Preview, copy to clipboard, or download your JSON file with extracted PDF content.</p>
+                            <p itemprop="text">Preview the JSON output, copy to clipboard, or download the JSON file for your applications.</p>
                         </div>
                     </div>
                 </div>
@@ -1174,8 +1191,8 @@
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Multiple JSON Formats</h3>
-                            <p>Convert to detailed JSON with metadata, text-only format, or structured pages format with customizable extraction.</p>
+                            <h3>Multiple JSON Structures</h3>
+                            <p>Choose between detailed JSON with metadata, text-only format, or structured pages format for different use cases.</p>
                         </div>
                     </div>
                     
@@ -1184,28 +1201,28 @@
                             <i class="fas fa-cogs"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Flexible Extraction</h3>
-                            <p>Extract text by pages, remove empty lines, preserve formatting, and include PDF metadata in your JSON output.</p>
+                            <h3>Customizable Extraction</h3>
+                            <p>Extract text by pages, preserve formatting, remove empty lines, and include or exclude metadata as needed.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card" style="animation-delay: 0.4s">
                         <div class="feature-icon">
-                            <i class="fas fa-eye"></i>
+                            <i class="fas fa-file-alt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Live Preview</h3>
-                            <p>Preview the generated JSON before downloading, with options to copy to clipboard or save as file.</p>
+                            <h3>Flexible Page Selection</h3>
+                            <p>Extract text from all pages, specific page ranges, or individual pages from your PDF document.</p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card" style="animation-delay: 0.5s">
                         <div class="feature-icon">
-                            <i class="fas fa-bolt"></i>
+                            <i class="fas fa-eye"></i>
                         </div>
                         <div class="feature-content">
-                            <h3>Fast Processing</h3>
-                            <p>Quick text extraction and JSON conversion with progress tracking for large PDF documents.</p>
+                            <h3>Preview & Copy</h3>
+                            <p>Preview the generated JSON structure and copy it to clipboard before downloading the file.</p>
                         </div>
                     </div>
                     
@@ -1215,7 +1232,7 @@
                         </div>
                         <div class="feature-content">
                             <h3>Unlimited Usage</h3>
-                            <p>Convert as many PDFs as you need with no limitations or watermarks on your output JSON.</p>
+                            <p>Convert as many PDFs as you need with no limitations or restrictions on your output JSON.</p>
                         </div>
                     </div>
                 </div>
@@ -1230,9 +1247,9 @@
                             <i class="fas fa-question-circle"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 itemprop="name">What JSON formats can I convert my PDF to?</h3>
+                            <h3 itemprop="name">What data can be extracted from PDF to JSON?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">You can convert PDF files to detailed JSON with metadata, text-only format, or structured pages format with customizable extraction options.</span>
+                                <span itemprop="text">You can extract text content, page metadata, document information, and structure data from PDF files in JSON format.</span>
                             </p>
                         </div>
                     </div>
@@ -1244,31 +1261,31 @@
                         <div class="feature-content">
                             <h3 itemprop="name">Is my PDF data secure when using this tool?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy and security.</span>
+                                <span itemprop="text">Yes! All PDF processing happens directly in your browser. Your files never leave your computer, ensuring complete privacy.</span>
                             </p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card" style="animation-delay: 0.3s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-file-alt"></i>
+                            <i class="fas fa-file-code"></i>
                         </div>
                         <div class="feature-content">
                             <h3 itemprop="name">Can I extract specific pages instead of the whole PDF?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">Yes! You can extract text from all pages or choose to process specific page ranges with our flexible extraction options.</span>
+                                <span itemprop="text">Yes, you can extract text from all pages, specific page ranges, or individual pages from your PDF document.</span>
                             </p>
                         </div>
                     </div>
                     
                     <div class="feature-card glass-card" style="animation-delay: 0.4s" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <div class="feature-icon">
-                            <i class="fas fa-sliders-h"></i>
+                            <i class="fas fa-cogs"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 itemprop="name">What text extraction options are available?</h3>
+                            <h3 itemprop="name">What JSON structure options are available?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">You can extract text by pages, remove empty lines, preserve formatting, and include PDF metadata in your JSON output.</span>
+                                <span itemprop="text">You can choose between detailed JSON with metadata, text-only format, or structured pages format for different use cases.</span>
                             </p>
                         </div>
                     </div>
@@ -1280,7 +1297,7 @@
                         <div class="feature-content">
                             <h3 itemprop="name">Is this PDF to JSON converter completely free?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">Yes, our PDF to JSON converter is completely free with no limitations on usage or file size.</span>
+                                <span itemprop="text">Yes, our PDF to JSON converter is completely free with no limitations on usage.</span>
                             </p>
                         </div>
                     </div>
@@ -1292,7 +1309,7 @@
                         <div class="feature-content">
                             <h3 itemprop="name">Can I preview the JSON before downloading?</h3>
                             <p itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <span itemprop="text">Absolutely! You can preview the generated JSON, copy it to clipboard, and then download it in your preferred format.</span>
+                                <span itemprop="text">Yes, you can preview the generated JSON structure and copy it to clipboard before downloading the file.</span>
                             </p>
                         </div>
                     </div>
@@ -1306,78 +1323,53 @@
             </div>
         </main>
         
-        <!-- Footer -->
+        <!-- Footer - Shifted to Left -->
         <footer id="contact" class="animate__animated animate__fadeInUp" itemscope itemtype="https://schema.org/WPFooter">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-column">
                         <h3>PDF Tools</h3>
-                        <ul>
-                            <li><a href="https://pdfmasterpro.in/merge-pdf" itemprop="url">Merge PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/watermark-pdf" itemprop="url">Watermark PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/compress-pdf" itemprop="url">Compress PDF</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-word" itemprop="url">PDF to Word</a></li>
-                        </ul>
-                    </div>
+                                     <ul>    
+                    <li><a href="https://pdfmasterpro.in/mergepdf.html" itemprop="url">Merge PDF</a></li>    
+                    <li><a href="https://pdfmasterpro.in/pdf-to-html.html" itemprop="url">Pdf to html</a></li>    
+                    <li><a href="https://pdfmasterpro.in/splitpdf.html" itemprop="url">Split Pdf</a></li>    
+                    <li><a href="https://pdfmasterpro.in/meta-data-remove.html" itemprop="url">Meta Data Remove r</a></li>    
+                </ul>    
+            </div>    
                     
                     <div class="footer-column">
                         <h3>Conversion Tools</h3>
                         <ul>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-img" itemprop="url">PDF to Images</a></li>
                             <li><a href="https://pdfmasterpro.in/pdf-to-json.html" itemprop="url">PDF to JSON</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-text" itemprop="url">PDF to Text</a></li>
-                            <li><a href="https://pdfmasterpro.in/pdf-to-html" itemprop="url">PDF to HTML</a></li>
+                            <li><a href="https://pdfmasterpro.in/pdf-to-img.html" itemprop="url">PDF to Images</a></li>
+                            <li><a href="https://pdfmasterpro.in/qr.html" itemprop="url">Qr code Generator</a></li>
+                            <li><a href="https://pdfmasterpro.in/img-to-pdf.html" itemprop="url">Image to PDF</a></li>
                         </ul>
                     </div>
-                    
-                    <div class="footer-column">
-                        <h3>Resources</h3>
-                        <ul>
-                            <li><a href="https://pdfmasterpro.in/blog" itemprop="url">Blog</a></li>
-                            <li><a href="https://pdfmasterpro.in/tutorials" itemprop="url">Tutorials</a></li>
-                            <li><a href="https://pdfmasterpro.in/help" itemprop="url">Help Center</a></li>
-                            <li><a href="https://pdfmasterpro.in/faq" itemprop="url">FAQ</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="https://pdfmasterpro.in/about" itemprop="url">About Us</a></li>
-                            <li><a href="https://pdfmasterpro.in/privacy" itemprop="url">Privacy Policy</a></li>
-                            <li><a href="https://pdfmasterpro.in/terms" itemprop="url">Terms of Service</a></li>
-                            <li><a href="https://pdfmasterpro.in/contact" itemprop="url">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h3>Connect With Us</h3>
-                        <ul>
-                            <li><a href="https://facebook.com/pdfmasterpro" target="_blank" itemprop="url">Facebook</a></li>
-                            <li><a href="https://twitter.com/pdfmasterpro" target="_blank" itemprop="url">Twitter</a></li>
-                            <li><a href="https://linkedin.com/company/pdfmasterpro" target="_blank" itemprop="url">LinkedIn</a></li>
-                        </ul>
-                        <div class="social-links">
-                            <a href="https://facebook.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-facebook"></i></a>
-                            <a href="https://twitter.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/pdfmasterpro" target="_blank" itemprop="url"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
+                                <div class="footer-column">    
+                <h3>Company</h3>    
+                <ul>    
+                    <li><a href="https://pdfmasterpro.in/index/aboutus.html" itemprop="url">About Us</a></li>    
+                    <li><a href="https://pdfmasterpro.in/index/privacy.html" itemprop="url">Privacy Policy</a></li>    
+                    <li><a href="https://pdfmasterpro.in/index/terms.html" itemprop="url">Terms of Service</a></li>    
+                    <li><a href="https://pdfmasterpro.in/index/contact.html" itemprop="url">Contact Us</a></li>    
+                </ul>    
+            </div>    
                 
-                <div class="copyright">
-                    <p>&copy; 2023 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">PDFMasterPro</span></span>. All rights reserved. | Serving over 1 million users monthly</p>
-                </div>
-            </div>
-        </footer>
-    </div>
 
+        <div class="copyright">    
+            <p>&copy; 2025 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">PDFMasterPro</span></span>. All rights reserved. | </p>    
+        </div>    
+    </div>    
+</footer>
+
+</div>    
+                   
     <!-- Floating CTA Button with Wave Animation -->
     <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
         <i class="fas fa-file-upload"></i>
     </div>
 
-    <!-- Copy Notification -->
     <div class="copy-notification" id="copyNotification">
         JSON copied to clipboard!
     </div>
@@ -1496,8 +1488,8 @@
             async function handleFile(e) {
                 const file = e.target.files[0];
                 
-                if (file.type !== 'application/pdf') {
-                    alert('Please select a PDF file.');
+                if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
+                    alert('Please select a valid PDF file.');
                     return;
                 }
                 
@@ -1519,7 +1511,7 @@
                     totalPages = pdfDoc.numPages;
                     
                     // Update page count
-                    pageCount.textContent = `${totalPages} pages`;
+                    pageCount.textContent = `${totalPages} pages detected`;
                     
                     settingsSection.style.display = 'block';
                     processingContainer.style.display = 'none';
@@ -1611,6 +1603,7 @@
                     const pages = [];
                     
                     for (let i = 1; i <= numPages; i++) {
+                        // Update progress
                         const progress = ((i) / numPages) * 100;
                         progressFill.style.width = `${progress}%`;
                         progressText.textContent = `Processing page ${i} of ${numPages}`;
