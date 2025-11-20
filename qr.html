@@ -573,6 +573,7 @@
             z-index: 100;
             transition: all 0.3s ease;
             animation: bounce 2s infinite;
+
         }
         
         @keyframes bounce {
@@ -698,6 +699,7 @@
             overflow: hidden;
         }
         
+
         /* Footer Content */
         .footer-content {
             display: grid;
@@ -1058,6 +1060,7 @@
                         <div class="feature-content">
                             <h3 itemprop="name">Enter Your Content</h3>
                             <p itemprop="text">Add your URL, text, or any data you want to encode in the QR code.</p>
+
                         </div>
                     </div>
                     
@@ -1076,6 +1079,8 @@
                             <i class="fas fa-image"></i>
                         </div>
                         <div class="feature-content">
+
+                        
                             <h3 itemprop="name">Add Logo (Optional)</h3>
                             <p itemprop="text">Upload your logo and adjust its size to create branded QR codes.</p>
                         </div>
@@ -1105,6 +1110,7 @@
                             <h3>Multiple Dot Styles</h3>
                             <p>Choose from squares, dots, rounded, classy, and various corner styles for unique QR codes.</p>
                         </div>
+
                     </div>
                     
                     <div class="feature-card glass-card" style="animation-delay: 0.2s">
@@ -1127,6 +1133,7 @@
                         </div>
                     </div>
                     
+
                     <div class="feature-card glass-card" style="animation-delay: 0.4s">
                         <div class="feature-icon">
                             <i class="fas fa-download"></i>
@@ -1155,6 +1162,7 @@
                             <h3>Unlimited Generation</h3>
                             <p>Create as many QR codes as you need with no limitations or watermarks.</p>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -1233,10 +1241,12 @@
                                 <span itemprop="text">Yes, all generated QR codes are fully compliant with QR code standards and work with any standard QR code scanner.</span>
                             </p>
                         </div>
+
                     </div>
                 </div>
             </section>
             
+
             <!-- Ad Container (Bottom) -->
             <div class="ad-container">
                 <div style="color: rgba(255,255,255,0.5);">Advertisement</div>
@@ -1287,6 +1297,15 @@
 
 
                     
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-qrcode"></i>
+
+            
+                    
+                    
+    </div>
+
     <!-- Floating CTA Button with Wave Animation -->
     <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
         <i class="fas fa-qrcode"></i>
@@ -1522,6 +1541,7 @@
                 
                 return waves;
             }
+
             
             // Initialize wave animation
             const waveCircles = addWaveAnimation();
@@ -1558,6 +1578,7 @@
                 });
             }
             
+
             // Initialize scroll animation when page loads
             initializeScrollAnimation();
              

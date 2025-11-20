@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
     <title>Convert PDF to SVG | PDFMasterPro - Free Online Tool</title>
     <meta name="description" content="Free online tool to convert PDF files to SVG vector images. Extract pages from PDFs as scalable vector graphics with high quality.">
     <meta name="keywords" content="PDF to SVG, convert PDF, vector graphics, PDF tools, scalable vector, SVG converter">
+
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Convert PDF to SVG | PDFMasterPro">
     <meta property="og:description" content="Free online tool to convert PDF files to SVG vector images">
     <link rel="canonical" href="https://pdfmasterpro.in/pdf-to-svg.html">
+
     
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -137,6 +140,7 @@
     }
     </script>
     
+
     <!-- Required Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -713,10 +717,12 @@
             transform: translateY(20px);
         }
         
+
         .feature-card.scroll-visible {
             opacity: 1;
             transform: translateY(0);
             transition: opacity 0.6s ease, transform 0.6s ease;
+
         }
         
         .feature-card:hover {
@@ -950,6 +956,19 @@ html {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+
+/* Scroll Animation for Feature Cards */
+.feature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.feature-card.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -974,7 +993,9 @@ html {
         <main class="main-content">
             <h1 class="tool-title animate__animated animate__fadeInDown" itemprop="headline">Convert PDF to SVG</h1>
             <p class="tool-description animate__animated animate__fadeInDown animate__delay-1s" itemprop="description">
+
                 Convert your PDF files to scalable SVG vector graphics with high quality output. Perfect for logos, diagrams, and illustrations.
+
             </p>
             
             <!-- Ad Container (Top) -->
@@ -989,7 +1010,9 @@ html {
                 <meta itemprop="operatingSystem" content="Any">
                 <meta itemprop="name" content="PDFMasterPro PDF to SVG Converter">
                 <meta itemprop="description" content="Free online tool to convert PDF files to SVG vector images">
+
                 <meta itemprop="url" content="https://pdfmasterpro.in/pdf-to-svg">
+
                 <meta itemprop="softwareVersion" content="1.0">
                 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
                     <meta itemprop="price" content="0">
@@ -1359,6 +1382,11 @@ html {
                     
                     
                     
+    <!-- Floating CTA Button with Wave Animation -->
+    <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
+        <i class="fas fa-file-upload"></i>
+    </div>
+
     <!-- Floating CTA Button with Wave Animation -->
     <div class="floating-cta animate__animated animate__bounceInRight animate__delay-2s" id="floatingCta">
         <i class="fas fa-file-upload"></i>
