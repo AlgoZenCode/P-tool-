@@ -1,9 +1,14 @@
-User-agent: *
+# Allow Googlebot full access
+User-agent: Googlebot
 Allow: /
 
+# Block all other bots completely
+User-agent: *
+Disallow: /
+
+# Extra protection (even for Google, these should never be crawled)
+User-agent: *
 Disallow: /.env
 Disallow: /.git
 
 Sitemap: https://pdfmasterpro.in/sitemap.xml
-
-
